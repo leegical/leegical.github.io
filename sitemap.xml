@@ -2,10 +2,11 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://leegical.github.io/posts/</loc><lastmod>2023-11-07T23:13:11&#43;08:00</lastmod></url><url>
+            <loc>https://leegical.github.io/posts/windows_hugo_github_pages_blog/</loc><lastmod>2023-11-07T23:13:11&#43;08:00</lastmod></url><url>
+            <loc>https://leegical.github.io/</loc><lastmod>2023-11-07T23:13:11&#43;08:00</lastmod></url><url>
             <loc>https://leegical.github.io/categories/</loc><lastmod>2023-11-07T15:19:01&#43;08:00</lastmod></url><url>
-            <loc>https://leegical.github.io/posts/</loc><lastmod>2023-11-07T15:19:01&#43;08:00</lastmod></url><url>
             <loc>https://leegical.github.io/tags/</loc><lastmod>2023-11-07T15:19:01&#43;08:00</lastmod></url><url>
-            <loc>https://leegical.github.io/</loc><lastmod>2023-11-07T15:19:01&#43;08:00</lastmod></url><url>
             <loc>https://leegical.github.io/posts/zotero-config/</loc><lastmod>2023-11-07T15:19:01&#43;08:00</lastmod></url><url>
             <loc>https://leegical.github.io/tags/%E7%A7%91%E7%A0%94/</loc><lastmod>2023-11-07T15:19:01&#43;08:00</lastmod></url><url>
             <loc>https://leegical.github.io/categories/%E7%A7%91%E7%A0%94/</loc><lastmod>2023-11-07T15:19:01&#43;08:00</lastmod></url></urlset>

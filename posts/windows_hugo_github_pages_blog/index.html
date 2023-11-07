@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Windows下使用hugo和Github Pages配置博客 - 云吱的小站</title><meta name="Description" content="色相事一刹那，光阴里无尽藏"><meta property="og:title" content="Windows下使用hugo和Github Pages配置博客" />
+<meta property="og:description" content="前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leegical.github.io/posts/windows_hugo_github_pages_blog/" /><meta property="og:image" content="https://leegical.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-07T23:13:11+08:00" />
+<meta property="article:modified_time" content="2023-11-07T23:13:11+08:00" /><meta property="og:site_name" content="云吱的小站" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://leegical.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Windows下使用hugo和Github Pages配置博客"/>
+<meta name="twitter:description" content="前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。"/>
+<meta name="application-name" content="云吱的小站">
+<meta name="apple-mobile-web-app-title" content="云吱的小站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://leegical.github.io/posts/windows_hugo_github_pages_blog/" /><link rel="prev" href="https://leegical.github.io/posts/zotero-config/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Windows下使用hugo和Github Pages配置博客",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/leegical.github.io\/posts\/windows_hugo_github_pages_blog\/"
+        },"genre": "posts","wordcount":  4483 ,
+        "url": "https:\/\/leegical.github.io\/posts\/windows_hugo_github_pages_blog\/","datePublished": "2023-11-07T23:13:11+08:00","dateModified": "2023-11-07T23:13:11+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "云吱"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="云吱的小站">应是天仙狂醉，乱把白云揉碎</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="云吱的小站">应是天仙狂醉，乱把白云揉碎</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Windows下使用hugo和Github Pages配置博客</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>云吱</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-07">2023-11-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;4483 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;9 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前提">前提</a></li>
+    <li><a href="#hugo-配置">hugo 配置</a>
+      <ul>
+        <li><a href="#1-安装-hugohttpsgohugoioinstallationwindows">1. <a href="https://gohugo.io/installation/windows/">安装 Hugo</a></a></li>
+        <li><a href="#2创建-hugo-网站">2.创建 Hugo 网站</a></li>
+        <li><a href="#3主题">3.主题</a></li>
+        <li><a href="#4创建你的第一篇文章">4.创建你的第一篇文章</a></li>
+        <li><a href="#5本地调试">5.本地调试</a></li>
+      </ul>
+    </li>
+    <li><a href="#github">Github</a>
+      <ul>
+        <li><a href="#1在-windows-上创建-ssh-密钥并将其添加到-github">1.在 Windows 上创建 SSH 密钥并将其添加到 GitHub</a></li>
+        <li><a href="#2创建-blog-仓库">2.创建 blog 仓库</a></li>
+        <li><a href="#3创建-github-pages-仓库">3.创建 Github Pages 仓库</a></li>
+        <li><a href="#4上传页面">4.上传页面</a></li>
+        <li><a href="#5github-action-自动发布">5.Github Action 自动发布</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+    <li><a href="#选择和配置-hugo-主题httpshugoloveitcomzh-cntheme-documentation-basics"><a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/">选择和配置 Hugo 主题</a></a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前提">前提</h2>
+<p>默认本地已安装了 <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreffer ">Git</a>、<a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener noreffer ">VSCode</a>。</p>
+<h2 id="hugo-配置">hugo 配置</h2>
+<h3 id="1-安装-hugohttpsgohugoioinstallationwindows">1. <a href="https://gohugo.io/installation/windows/" target="_blank" rel="noopener noreffer ">安装 Hugo</a></h3>
+<p>推荐使用 <code>Hugo extended</code> 版本</p>
+<h4 id="预构建的二进制文件">预构建的二进制文件</h4>
+<p>访问<a href="https://github.com/gohugoio/hugo/releases/latest" target="_blank" rel="noopener noreffer ">最新版本</a>页面，然后向下滚动到<strong>Assets</strong>部分。选择对应平台下载。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png"
+        title="image.png" /></p>
+<p>解压到某个目录，然后将该目录添加到环境变量中：
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png"
+        title="image.png" /></p>
+<h4 id="通过包管理器windows">通过包管理器（Windows）</h4>
+<h5 id="chocolateyhttpsgohugoioinstallationwindowschocolatey"><a href="https://gohugo.io/installation/windows/#chocolatey" target="_blank" rel="noopener noreffer ">Chocolatey</a></h5>
+<p><a href="https://chocolatey.org/" target="_blank" rel="noopener noreffer ">Chocolatey</a> 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">choco install hugo-extended
+</span></span></code></pre></div><h5 id="scoophttpsgohugoioinstallationwindowsscoop"><a href="https://gohugo.io/installation/windows/#scoop" target="_blank" rel="noopener noreffer ">Scoop</a></h5>
+<p><a href="https://scoop.sh/" target="_blank" rel="noopener noreffer ">Scoop</a> 是适用于 Windows 的免费开源包管理器。这将安装 Hugo 的扩展版本：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">scoop install hugo-extended
+</span></span></code></pre></div><h5 id="wingethttpsgohugoioinstallationwindowswinget"><a href="https://gohugo.io/installation/windows/#winget" target="_blank" rel="noopener noreffer ">Winget</a></h5>
+<p><a href="https://learn.microsoft.com/en-us/windows/package-manager/" target="_blank" rel="noopener noreffer ">Winget</a>是Microsoft的官方免费开源Windows包管理器。这将安装 Hugo 的扩展版本：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">winget install Hugo.Hugo.Extended
+</span></span></code></pre></div><h3 id="2创建-hugo-网站">2.创建 Hugo 网站</h3>
+<p>通过上述操作安装 hugo 程序后，就可以通过 <code>hugo new site</code> 命令进行网站创建、配置与本地调试了。
+选择一个本地文件夹作为根目录，右键——<code>Git Bash Here</code>，输入下面的命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new site &lt;site-name&gt;
+</span></span></code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png"
+        title="image.png" />
+<strong>注：后续命令未经说明，均在 Git Bash 中的 <code>E:\Workspace\blog</code> 目录下运行</strong></p>
+<h3 id="3主题">3.主题</h3>
+<h4 id="31-安装">3.1 安装</h4>
+<p>推荐使用 <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer "><strong>LoveIt</strong> 主题</a>。
+初始化你的项目目录为 git 仓库, 并且把主题仓库作为你的网站目录的子模块:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
+</span></span></code></pre></div><h4 id="32-基础配置">3.2 基础配置</h4>
+<p>用<code>VScode</code>打开<code>E:\Workspace\blog</code>文件夹，用下面的内容覆盖<code>hugo.toml</code>文件。并自行修改<code>baseURL</code>和<code>title</code>。
+其中，<code>baseURL</code>为<code>你的github账户名.github.io</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s2">&#34;http://example.org/&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 更改使用 Hugo 构建网站时使用的默认主题</span>
+</span></span><span class="line"><span class="cl"><span class="nx">theme</span> <span class="p">=</span> <span class="s2">&#34;LoveIt&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 网站标题</span>
+</span></span><span class="line"><span class="cl"><span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;我的全新 Hugo 网站&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 网站语言, 仅在这里 CN 大写 [&#34;en&#34;, &#34;zh-CN&#34;, &#34;fr&#34;, &#34;pl&#34;, ...]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">languageCode</span> <span class="p">=</span> <span class="s2">&#34;zh-CN&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c"># 语言名称 [&#34;English&#34;, &#34;简体中文&#34;, &#34;Français&#34;, &#34;Polski&#34;, ...]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">languageName</span> <span class="p">=</span> <span class="s2">&#34;简体中文&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c"># 是否包括中日韩文字</span>
+</span></span><span class="line"><span class="cl"><span class="nx">hasCJKLanguage</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 作者配置</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">author</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;xxxx&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">email</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">link</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 菜单配置</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">menu</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;posts&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;文章&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/posts/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 当你将鼠标悬停在此菜单链接上时, 将显示的标题</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;标签&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/tags/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;categories&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;分类&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/categories/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Hugo 解析文档的配置</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">markup</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">highlight</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">noClasses</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span></code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png"
+        title="image.png" /></p>
+<h4 id="34-修改文章前缀模板">3.4 修改文章前缀模板</h4>
+<p>在每篇 markdown 文章最前面可以用一部分注释来告诉<code>LoveIt主题</code>，这篇文章的属性，譬如文章标签、分类、是否为草稿等。</p>
+<blockquote>
+<p>详细可参考 <a href="https://hugoloveit.com/zh-cn/theme-documentation-content/#front-matter" target="_blank" rel="noopener noreffer ">LoveIt 官方文档</a></p>
+</blockquote>
+<p>用下面的内容覆盖<code>archetypes/default.md</code>文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">+++
+</span></span><span class="line"><span class="cl">title = &#34;{{ replace.TranslationBaseName &#34;-&#34; &#34; &#34; | title }}&#34;
+</span></span><span class="line"><span class="cl">subtitle = &#34;&#34;
+</span></span><span class="line"><span class="cl">date = {{ .Date }}
+</span></span><span class="line"><span class="cl">draft = false  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tags = []
+</span></span><span class="line"><span class="cl">categories = []  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">hiddenFromHomePage = false
+</span></span><span class="line"><span class="cl">hiddenFromSearch = false
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">featuredImage = &#34;&#34;
+</span></span><span class="line"><span class="cl">featuredImagePreview = &#34;&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">license = &#39;<span class="p">&lt;</span><span class="nt">a</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;license external nofollow noopener noreffer&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>CC BY-NC 4.0<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>&#39;
+</span></span><span class="line"><span class="cl">+++
+</span></span></code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071848940.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071848940.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071848940.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071848940.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071848940.png"
+        title="image.png" /></p>
+<h3 id="4创建你的第一篇文章">4.创建你的第一篇文章</h3>
+<p>以下是创建新文章的命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new posts/文章标题.md
+</span></span></code></pre></div><p>执行完成后，在<code>./content/posts</code>目录下应该可以看到新文件，同时里面已经有 markdown 模版中的文章前缀参数。
+你可以在<code>VScode</code>中随意编辑文章。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png"
+        title="image.png" /></p>
+<h3 id="5本地调试">5.本地调试</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo serve
+</span></span></code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png"
+        title="image.png" /></p>
+<p>浏览器中打开 <a href="http://localhost:1313/" target="_blank" rel="noopener noreffer ">http://localhost:1313/</a>，就能看到网站效果。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png"
+        title="image.png" /></p>
+<h2 id="github">Github</h2>
+<h3 id="1在-windows-上创建-ssh-密钥并将其添加到-github">1.在 Windows 上创建 SSH 密钥并将其添加到 GitHub</h3>
+<h4 id="windows-端生成-ssh-密钥">Windows 端生成 SSH 密钥</h4>
+<p>使用 Git Bash 或命令行打开终端窗口，输入以下命令。记得把<code>your_email@example.com</code>改成你自己的邮箱地址。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;your_email@example.com&#34;</span>
+</span></span></code></pre></div><p>按照提示键入您想要保存密钥的文件名和路径，或使用默认设置。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png"
+        title="f787fdcf066f2d0b29903ca7c7b256c.png" />
+接下来，系统将生成一个随机字符串作为密钥密码。此处可以选用默认密码以便于不需要输入密码进行 SSH 登录。进入生成密钥的文件夹，查看密钥：
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png"
+        title="deb3195730865e730b1eae75c73eb74.png" /></p>
+<h4 id="添加到-github">添加到 GitHub</h4>
+<ol>
+<li>
+<p>登录到 GitHub 账户，并转到“Settings”（设置）中的“SSH and GPG keys”（SSH 和 GPG 密钥）页面。</p>
+</li>
+<li>
+<p>点击“New SSH key”（新建 SSH 密钥），填写标题和密钥的内容。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png"
+        title="8dbbc792ad52ef00645804d345f70c5.png" /></p>
+</li>
+<li>
+<p>打开<code>id_rsa.pub</code>公钥文件 (即你在生成的时候保存的文件) ，将其内容复制到 GitHub 的 “Key” 字段中。</p>
+</li>
+<li>
+<p>最后，点击“Add SSH key” （添加 SSH 密钥），完成密钥添加。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png"
+        title="f37b5f0d629c09d20904268fd3da2c8.png" /></p>
+</li>
+</ol>
+<h3 id="2创建-blog-仓库">2.创建 blog 仓库</h3>
+<p>用于存储博客源文件，也就是刚才的本地项目文件。</p>
+<ol>
+<li>在 GitHub 网站上登录你的账号，然后点击页面右上角的加号图标，选择 &ldquo;New repository&rdquo;（新建仓库）。</li>
+<li>在 &ldquo;Initialize this repository with&rdquo;（使用以下方式初始化仓库）部分，选择 &ldquo;Add a README file&rdquo;（添加一个 README 文件）选项。</li>
+<li>暂存并提交现有文件</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add . 
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;init blog files&#34;</span>
+</span></span></code></pre></div><ol start="4">
+<li>
+<p>点击 &ldquo;Create repository&rdquo;（创建仓库）按钮，完成 GitHub 仓库的创建。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png"
+        title="image.png" /></p>
+</li>
+<li>
+<p>将本地仓库与远程 GitHub 仓库关联起来。在项目目录中打开 Git Bash，执行以下命令，将 <code>&lt;remote-url&gt;</code> 替换为你的 GitHub 仓库的远程 URL：</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote add origin &lt;remote-url&gt;
+</span></span></code></pre></div><p>例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote add origin https://github.com/your-username/your-repository.git
+</span></span></code></pre></div><ol start="6">
+<li>将本地代码推送到远程仓库的 main 分支。执行以下命令：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git push -u origin main
+</span></span></code></pre></div><p>这将把本地的代码推送到远程仓库的 <code>main</code> 分支，并将其设置为默认上游分支。</p>
+<h3 id="3创建-github-pages-仓库">3.创建 Github Pages 仓库</h3>
+<p>用于实际展示博客。</p>
+<ol>
+<li>
+<p>创建新仓库
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png"
+        title="image.png" /></p>
+</li>
+<li>
+<p><code>Repository name</code> 这里一定要填 <code>[你的github账号].github.io</code>。<code>你的github账号</code>必须小写字母。仓库可见性设为<code>Public</code>。选择“使用 README 初始化此存储库”。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png"
+        title="image.png" /></p>
+</li>
+</ol>
+<h3 id="4上传页面">4.上传页面</h3>
+<h5 id="41-进入项目根目录执行">4.1 进入项目根目录，执行：</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo
+</span></span></code></pre></div><p>执行后，站点根目录下会生成一个 <code>public</code> 文件夹，该文件下的内容即 Hugo 生成的整个静态网站。每次更新内容后，将 <code>pubilc</code> 目录里所有文件 push 到 GitHub Pages 所在的仓库即可。</p>
+<h5 id="42-上传代码至-master">4.2 上传代码至 master</h5>
+<p>首次使用的时候要执行以下命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> public
+</span></span><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git remote add origin https://github.com/leegical/leegical.github.io.git <span class="c1"># 将本地目录链接到远程服务器的代码仓库</span>
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;[介绍，随便写点什么，比如日期]&#34;</span>
+</span></span><span class="line"><span class="cl">git push -u origin master
+</span></span></code></pre></div><h5 id="43-更改-pages-展示分支">4.3 更改 Pages 展示分支</h5>
+<p>进入 Github Pages 仓库的<code>Setting</code>-<code>Pages</code>，把<code>Branch</code>修改为<code>master</code>，点击 save。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png"
+        title="image.png" /></p>
+<p>稍等几分钟即可通过<code>[你的github账号].github.io</code>来访问博客站点了，和<code>hugo serve -D</code>本地调试完全一致。</p>
+<h3 id="5github-action-自动发布">5.Github Action 自动发布</h3>
+<p>通过上述命令我们可以手动发布我们的静态文件，但还是有以下弊端：</p>
+<ol>
+<li>发布步骤还是比较繁琐，本地调试后还需要切换到 <code>public/</code> 目录进行上传</li>
+<li>无法对博客 <code>.md</code> 源文件进行备份与版本管理
+可以通过官方提供的 GitHub Action 进行 CI 自动发布。</li>
+</ol>
+<h4 id="51-增加-action-配置文件">5.1 增加 action 配置文件</h4>
+<p>回到 blog 仓库的本地文件夹，新增`.github/workflows/deploy.yml``</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir .github
+</span></span><span class="line"><span class="cl">mkdir .github/workflows
+</span></span><span class="line"><span class="cl">touch .github/workflows/deploy.yml
+</span></span></code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png"
+        title="image.png" /></p>
+<p>用 vscode 编辑 deploy.yml 的内容，参考如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">deploy  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">push</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">pull_request</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">schedule</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># Runs everyday at 0:00 AM</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;0 0 * * *&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Checkout</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">submodules</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Setup Hugo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-hugo@v2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">hugo-version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;latest&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">extended</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Build Web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">hugo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Deploy Web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-gh-pages@v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">PERSONAL_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.PERSONAL_TOKEN }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">EXTERNAL_REPOSITORY</span><span class="p">:</span><span class="w"> </span><span class="l">leegical/leegical.github.io</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">PUBLISH_BRANCH</span><span class="p">:</span><span class="w"> </span><span class="l">master</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">PUBLISH_DIR</span><span class="p">:</span><span class="w"> </span><span class="l">./public</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">commit_message</span><span class="p">:</span><span class="w"> </span><span class="l">${{ github.event.head_commit.message }}</span><span class="w">
+</span></span></span></code></pre></div><p>注意：<code>EXTERNAL_REPOSITORY</code>要修改为 Github Pages 的链接
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png"
+        title="image.png" /></p>
+<p>提交变更到 Github：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;add action config&#34;</span>
+</span></span><span class="line"><span class="cl">git push
+</span></span></code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png"
+        title="image.png" /></p>
+<h4 id="52-设置-action-变量">5.2 设置 action 变量</h4>
+<p>进入 <a href="https://github.com/settings/tokens" target="_blank" rel="noopener noreffer ">Github tokens</a> ，点击<code>Generate new token</code>——<code>Generate new token (classic)</code>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png"
+        title="image.png" /></p>
+<ul>
+<li>Note：随便写</li>
+<li>Expiration：<code>No expiration</code></li>
+<li>Select scopes：只勾选 <code>repo</code>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png"
+        title="image.png" />
+拉到最下面，点击生成。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png"
+        title="image.png" /></li>
+</ul>
+<p>注意生成的 token 只会显示这一次，形如 <code>ghp_xxxxxxxxxx</code>，点击复制。
+回到 blog 仓库——Setting，新建仓库密钥
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png"
+        title="image.png" /></p>
+<ul>
+<li>Name：PERSONAL_TOKEN</li>
+<li>Secret：填刚才复制的密钥
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png"
+        title="image.png" /></li>
+</ul>
+<h2 id="总结">总结</h2>
+<p>以上整个环境部署好之后，接下来的常用命令就是以下几个：</p>
+<ul>
+<li>
+<ol>
+<li><strong>站点目录</strong>下，新建文章，执行：</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new posts/文章名.md
+</span></span></code></pre></div><ul>
+<li>
+<ol start="2">
+<li>使用<code>VScode</code>编辑文章内容或修改，包括修改主题之类的。在本地进行调试:</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo serve -D
+</span></span></code></pre></div><ul>
+<li>
+<ol start="3">
+<li>修改完成，确定要上传到GitHub上后，<strong>站点目录</strong>下执行：</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo
+</span></span></code></pre></div><p>进行编译，没错误的话修改的内容就顺利同步到<code>public</code>下了，然后<code>cd public</code>下，执行提交命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> public
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;随便写点提交信息&#34;</span>
+</span></span><span class="line"><span class="cl">git push -u origin master
+</span></span></code></pre></div><h2 id="选择和配置-hugo-主题httpshugoloveitcomzh-cntheme-documentation-basics"><a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/" target="_blank" rel="noopener noreffer ">选择和配置 Hugo 主题</a></h2>
+<p>在本地项目文件夹<code>static</code>中添加一个方形 png 图片，命名为<code>avatar.png</code>作为网站头像：
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072307596.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072307596.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072307596.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072307596.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072307596.png"
+        title="image.png" /></p>
+<p>修改<code>hugo.toml</code>文件，参考下面的文件自行修改：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s2">&#34;https://leegical.github.io/&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 更改使用 Hugo 构建网站时使用的默认主题</span>
+</span></span><span class="line"><span class="cl"><span class="nx">theme</span> <span class="p">=</span> <span class="s2">&#34;LoveIt&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 网站标题</span>
+</span></span><span class="line"><span class="cl"><span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;云吱的小站&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 网站语言, 仅在这里 CN 大写 [&#34;en&#34;, &#34;zh-CN&#34;, &#34;fr&#34;, &#34;pl&#34;, ...]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">languageCode</span> <span class="p">=</span> <span class="s2">&#34;zh-CN&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c"># 语言名称 [&#34;English&#34;, &#34;简体中文&#34;, &#34;Français&#34;, &#34;Polski&#34;, ...]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">languageName</span> <span class="p">=</span> <span class="s2">&#34;简体中文&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c"># 是否包括中日韩文字</span>
+</span></span><span class="line"><span class="cl"><span class="nx">hasCJKLanguage</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 忽略一些构建错误</span>
+</span></span><span class="line"><span class="cl"><span class="nx">ignoreErrors</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;error-remote-getjson&#34;</span><span class="p">,</span> <span class="s2">&#34;error-missing-instagram-accesstoken&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 作者配置</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">author</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;云吱&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">email</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">link</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 菜单配置</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">menu</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;posts&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;文章&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/posts/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 当你将鼠标悬停在此菜单链接上时, 将显示的标题</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;标签&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/tags/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;categories&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;分类&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/categories/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Hugo 解析文档的配置</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">markup</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">highlight</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">noClasses</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">outputs</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">home</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;HTML&#34;</span><span class="p">,</span> <span class="s2">&#34;RSS&#34;</span><span class="p">,</span> <span class="s2">&#34;JSON&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># 网站默认主题样式 [&#34;auto&#34;, &#34;light&#34;, &#34;dark&#34;]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">defaultTheme</span> <span class="p">=</span> <span class="s2">&#34;auto&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># 公共 git 仓库路径，仅在 enableGitInfo 设为 true 时有效</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">gitRepo</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c">#  哪种哈希函数用来 SRI, 为空时表示不使用 SRI</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># [&#34;sha256&#34;, &#34;sha384&#34;, &#34;sha512&#34;, &#34;md5&#34;]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">fingerprint</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c">#  日期格式</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">dateFormat</span> <span class="p">=</span> <span class="s2">&#34;2006-01-02&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># 网站标题, 用于 Open Graph 和 Twitter Cards</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;云吱的小站&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># 网站描述, 用于 RSS, SEO, Open Graph 和 Twitter Cards</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">description</span> <span class="p">=</span> <span class="s2">&#34;色相事一刹那，光阴里无尽藏&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># 网站图片, 用于 Open Graph 和 Twitter Cards</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">images</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;/logo.png&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c"># 页面头部导航栏配置</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">header</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 桌面端导航栏模式 [&#34;fixed&#34;, &#34;normal&#34;, &#34;auto&#34;]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">desktopMode</span> <span class="p">=</span> <span class="s2">&#34;fixed&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 移动端导航栏模式 [&#34;fixed&#34;, &#34;normal&#34;, &#34;auto&#34;]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">mobileMode</span> <span class="p">=</span> <span class="s2">&#34;auto&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#  页面头部导航栏标题配置</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">header</span><span class="p">.</span><span class="nx">title</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># LOGO 的 URL</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">logo</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># 标题名称</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;应是天仙狂醉，乱把白云揉碎&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="c">#  是否为标题显示打字机动画</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">typeit</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c"># 页面底部信息配置</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">footer</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#  自定义内容 (支持 HTML 格式)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">custom</span> <span class="p">=</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#  是否显示 Hugo 和主题信息</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">hugo</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#  是否显示版权信息</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">copyright</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#  是否显示作者</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">author</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 网站创立年份</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">since</span> <span class="p">=</span> <span class="mi">2019</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># ICP 备案信息，仅在中国使用 (支持 HTML 格式)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">icp</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 许可协议信息 (支持 HTML 格式)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">license</span> <span class="p">=</span> <span class="s1">&#39;&lt;a rel=&#34;license external nofollow noopener noreffer&#34; href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34;&gt;CC BY-NC 4.0&lt;/a&gt;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">#  Section (所有文章) 页面配置</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">section</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># section 页面每页显示文章数量</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">paginate</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 日期格式 (月和日)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">dateFormat</span> <span class="p">=</span> <span class="s2">&#34;01-02&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># RSS 文章数目</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">rss</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">#  List (目录或标签) 页面配置</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">list</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># list 页面每页显示文章数量</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">paginate</span> <span class="p">=</span> <span class="mi">20</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 日期格式 (月和日)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">dateFormat</span> <span class="p">=</span> <span class="s2">&#34;01-02&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># RSS 文章数目</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">rss</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">#  应用图标配置</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">app</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;云吱的小站&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 是否隐藏网站图标资源链接</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">noFavicon</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">svgFavicon</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># Android 浏览器主题色</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">themeColor</span> <span class="p">=</span> <span class="s2">&#34;#ffffff&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># Safari 图标颜色</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">iconColor</span> <span class="p">=</span> <span class="s2">&#34;#5bbad5&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># Windows v8-10磁贴颜色</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">tileColor</span> <span class="p">=</span> <span class="s2">&#34;#da532c&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c">#  搜索配置</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">search</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 搜索引擎的类型 [&#34;lunr&#34;, &#34;algolia&#34;]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">type</span> <span class="p">=</span> <span class="s2">&#34;lunr&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 文章内容最长索引长度</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">contentLength</span> <span class="p">=</span> <span class="mi">4000</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 搜索框的占位提示语</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">placeholder</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#  最大结果数目</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">maxResultLength</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#  结果内容片段长度</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">snippetLength</span> <span class="p">=</span> <span class="mi">50</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#  搜索结果中高亮部分的 HTML 标签</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">highlightTag</span> <span class="p">=</span> <span class="s2">&#34;em&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#  是否在搜索索引中使用基于 baseURL 的绝对路径</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">absoluteURL</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">search</span><span class="p">.</span><span class="nx">algolia</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">index</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">appID</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">searchKey</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c"># 主页配置</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">home</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c">#  RSS 文章数目</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">rss</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 主页个人信息</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">home</span><span class="p">.</span><span class="nx">profile</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># Gravatar 邮箱，用于优先在主页显示的头像</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">gravatarEmail</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># 主页显示头像的 URL</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">avatarURL</span> <span class="p">=</span> <span class="s2">&#34;/avatar.png&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="c">#  主页显示的网站标题 (支持 HTML 格式)</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;云吱的小站&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># 主页显示的网站副标题 (允许 HTML 格式)</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">subtitle</span> <span class="p">=</span> <span class="s2">&#34;色相事一刹那，光阴里无尽藏&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># 是否为副标题显示打字机动画</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">typeit</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># 是否显示社交账号</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">social</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">      <span class="c">#  免责声明 (支持 HTML 格式)</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">disclaimer</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 主页文章列表</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">home</span><span class="p">.</span><span class="nx">posts</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># 主页每页显示文章数量</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">paginate</span> <span class="p">=</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl">      <span class="c">#  被 params.page 中的 hiddenFromHomePage 替代</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># 当你没有在文章前置参数中设置 &#34;hiddenFromHomePage&#34; 时的默认行为</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">defaultHiddenFromHomePage</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span></code></pre></div><p>记得提交更改</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;修改主题&#34;</span>
+</span></span><span class="line"><span class="cl">git push
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> public
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;修改主题&#34;</span>
+</span></span><span class="line"><span class="cl">git push -u origin master
+</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-11-07</span>
+            </div><div class="post-info-license">
+                <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://leegical.github.io/posts/windows_hugo_github_pages_blog/" data-title="Windows下使用hugo和Github Pages配置博客"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://leegical.github.io/posts/windows_hugo_github_pages_blog/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://leegical.github.io/posts/windows_hugo_github_pages_blog/" data-title="Windows下使用hugo和Github Pages配置博客"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://leegical.github.io/posts/windows_hugo_github_pages_blog/" data-title="Windows下使用hugo和Github Pages配置博客"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://leegical.github.io/posts/windows_hugo_github_pages_blog/" data-title="Windows下使用hugo和Github Pages配置博客"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/zotero-config/" class="prev" rel="prev" title="文献管理软件zotero下载安装使用与配置分享"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>文献管理软件zotero下载安装使用与配置分享</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">云吱</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
