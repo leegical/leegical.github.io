@@ -5,7 +5,106 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>Windows下使用hugo和Github Pages配置博客 - 云吱的小站</title><meta name="Description" content="色相事一刹那，光阴里无尽藏"><meta property="og:title" content="Windows下使用hugo和Github Pages配置博客" />
-<meta property="og:description" content="前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。" />
+<meta property="og:description" content="前提
+默认本地已安装了 Git、VSCode。
+hugo 配置
+1. 安装 Hugo
+推荐使用 Hugo extended 版本
+预构建的二进制文件
+访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。
+
+解压到某个目录，然后将该目录添加到环境变量中：
+
+通过包管理器（Windows）
+Chocolatey
+Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：
+choco install hugo-extended
+Scoop
+Scoop 是适用于 Windows 的免费开源包管理器。这将安装 Hugo 的扩展版本：
+scoop install hugo-extended
+Winget
+Winget是Microsoft的官方免费开源Windows包管理器。这将安装 Hugo 的扩展版本：
+winget install Hugo.Hugo.Extended
+2.创建 Hugo 网站
+通过上述操作安装 hugo 程序后，就可以通过 hugo new site 命令进行网站创建、配置与本地调试了。
+选择一个本地文件夹作为根目录，右键——Git Bash Here，输入下面的命令
+hugo new site &lt;site-name&gt;
+
+注：后续命令未经说明，均在 Git Bash 中的 E:\Workspace\blog 目录下运行
+3.主题
+3.1 安装
+推荐使用 LoveIt 主题。
+初始化你的项目目录为 git 仓库, 并且把主题仓库作为你的网站目录的子模块:
+git init
+git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
+3.2 基础配置
+用VScode打开E:\Workspace\blog文件夹，用下面的内容覆盖hugo.toml文件。并自行修改baseURL和title。
+其中，baseURL为你的github账户名.github.io
+baseURL = &#34;http://example.org/&#34;
+
+# 更改使用 Hugo 构建网站时使用的默认主题
+theme = &#34;LoveIt&#34;
+
+# 网站标题
+title = &#34;我的全新 Hugo 网站&#34;
+
+# 网站语言, 仅在这里 CN 大写 [&#34;en&#34;, &#34;zh-CN&#34;, &#34;fr&#34;, &#34;pl&#34;, ...]
+languageCode = &#34;zh-CN&#34;
+# 语言名称 [&#34;English&#34;, &#34;简体中文&#34;, &#34;Français&#34;, &#34;Polski&#34;, ...]
+languageName = &#34;简体中文&#34;
+# 是否包括中日韩文字
+hasCJKLanguage = true
+
+# 作者配置
+[author]
+  name = &#34;xxxx&#34;
+  email = &#34;&#34;
+  link = &#34;&#34;
+
+# 菜单配置
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = &#34;posts&#34;
+    # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+    pre = &#34;&#34;
+    # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+    post = &#34;&#34;
+    name = &#34;文章&#34;
+    url = &#34;/posts/&#34;
+    # 当你将鼠标悬停在此菜单链接上时, 将显示的标题
+    title = &#34;&#34;
+  [[menu.main]]
+    weight = 2
+    identifier = &#34;tags&#34;
+    pre = &#34;&#34;
+    post = &#34;&#34;
+    name = &#34;标签&#34;
+    url = &#34;/tags/&#34;
+    title = &#34;&#34;
+  [[menu.main]]
+    weight = 3
+    identifier = &#34;categories&#34;
+    pre = &#34;&#34;
+    post = &#34;&#34;
+    name = &#34;分类&#34;
+    url = &#34;/categories/&#34;
+    title = &#34;&#34;
+
+# Hugo 解析文档的配置
+[markup]
+  # 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+
+3.4 修改文章前缀模板
+在每篇 markdown 文章最前面可以用一部分注释来告诉LoveIt主题，这篇文章的属性，譬如文章标签、分类、是否为草稿等。
+
+详细可参考 LoveIt 官方文档
+
+用下面的内容覆盖archetypes/default.md文件
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://leegical.github.io/posts/windows_hugo_github_pages_blog/" /><meta property="og:image" content="https://leegical.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-11-07T23:13:11+08:00" />
@@ -15,11 +114,110 @@
 <meta name="twitter:image" content="https://leegical.github.io/logo.png"/>
 
 <meta name="twitter:title" content="Windows下使用hugo和Github Pages配置博客"/>
-<meta name="twitter:description" content="前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。"/>
+<meta name="twitter:description" content="前提
+默认本地已安装了 Git、VSCode。
+hugo 配置
+1. 安装 Hugo
+推荐使用 Hugo extended 版本
+预构建的二进制文件
+访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。
+
+解压到某个目录，然后将该目录添加到环境变量中：
+
+通过包管理器（Windows）
+Chocolatey
+Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：
+choco install hugo-extended
+Scoop
+Scoop 是适用于 Windows 的免费开源包管理器。这将安装 Hugo 的扩展版本：
+scoop install hugo-extended
+Winget
+Winget是Microsoft的官方免费开源Windows包管理器。这将安装 Hugo 的扩展版本：
+winget install Hugo.Hugo.Extended
+2.创建 Hugo 网站
+通过上述操作安装 hugo 程序后，就可以通过 hugo new site 命令进行网站创建、配置与本地调试了。
+选择一个本地文件夹作为根目录，右键——Git Bash Here，输入下面的命令
+hugo new site &lt;site-name&gt;
+
+注：后续命令未经说明，均在 Git Bash 中的 E:\Workspace\blog 目录下运行
+3.主题
+3.1 安装
+推荐使用 LoveIt 主题。
+初始化你的项目目录为 git 仓库, 并且把主题仓库作为你的网站目录的子模块:
+git init
+git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
+3.2 基础配置
+用VScode打开E:\Workspace\blog文件夹，用下面的内容覆盖hugo.toml文件。并自行修改baseURL和title。
+其中，baseURL为你的github账户名.github.io
+baseURL = &#34;http://example.org/&#34;
+
+# 更改使用 Hugo 构建网站时使用的默认主题
+theme = &#34;LoveIt&#34;
+
+# 网站标题
+title = &#34;我的全新 Hugo 网站&#34;
+
+# 网站语言, 仅在这里 CN 大写 [&#34;en&#34;, &#34;zh-CN&#34;, &#34;fr&#34;, &#34;pl&#34;, ...]
+languageCode = &#34;zh-CN&#34;
+# 语言名称 [&#34;English&#34;, &#34;简体中文&#34;, &#34;Français&#34;, &#34;Polski&#34;, ...]
+languageName = &#34;简体中文&#34;
+# 是否包括中日韩文字
+hasCJKLanguage = true
+
+# 作者配置
+[author]
+  name = &#34;xxxx&#34;
+  email = &#34;&#34;
+  link = &#34;&#34;
+
+# 菜单配置
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = &#34;posts&#34;
+    # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+    pre = &#34;&#34;
+    # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+    post = &#34;&#34;
+    name = &#34;文章&#34;
+    url = &#34;/posts/&#34;
+    # 当你将鼠标悬停在此菜单链接上时, 将显示的标题
+    title = &#34;&#34;
+  [[menu.main]]
+    weight = 2
+    identifier = &#34;tags&#34;
+    pre = &#34;&#34;
+    post = &#34;&#34;
+    name = &#34;标签&#34;
+    url = &#34;/tags/&#34;
+    title = &#34;&#34;
+  [[menu.main]]
+    weight = 3
+    identifier = &#34;categories&#34;
+    pre = &#34;&#34;
+    post = &#34;&#34;
+    name = &#34;分类&#34;
+    url = &#34;/categories/&#34;
+    title = &#34;&#34;
+
+# Hugo 解析文档的配置
+[markup]
+  # 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+
+3.4 修改文章前缀模板
+在每篇 markdown 文章最前面可以用一部分注释来告诉LoveIt主题，这篇文章的属性，譬如文章标签、分类、是否为草稿等。
+
+详细可参考 LoveIt 官方文档
+
+用下面的内容覆盖archetypes/default.md文件
+"/>
 <meta name="application-name" content="云吱的小站">
 <meta name="apple-mobile-web-app-title" content="云吱的小站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://leegical.github.io/posts/windows_hugo_github_pages_blog/" /><link rel="prev" href="https://leegical.github.io/posts/zotero-config/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://leegical.github.io/posts/windows_hugo_github_pages_blog/" /><link rel="prev" href="https://leegical.github.io/posts/zotero-config/" /><link rel="next" href="https://leegical.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-giscus-%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -30,7 +228,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/leegical.github.io\/posts\/windows_hugo_github_pages_blog\/"
-        },"genre": "posts","keywords": "git, hugo","wordcount":  4867 ,
+        },"genre": "posts","keywords": "git, hugo","wordcount":  4815 ,
         "url": "https:\/\/leegical.github.io\/posts\/windows_hugo_github_pages_blog\/","datePublished": "2023-11-07T23:13:11+08:00","dateModified": "2023-11-07T23:13:11+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -104,7 +302,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Windows下使用hugo和Github Pages配置博客</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>云吱</a></span>&nbsp;<span class="post-category">included in <a href="/categories/git/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>git</a>&nbsp;<a href="/categories/hugo/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>hugo</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-07">2023-11-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;4867 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-07">2023-11-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;4815 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;10 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -181,8 +379,8 @@
         data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png 2x"
         data-sizes="auto"
         alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png"
-        title="image.png" />
-<strong>注：后续命令未经说明，均在 Git Bash 中的 <code>E:\Workspace\blog</code> 目录下运行</strong></p>
+        title="image.png" /></p>
+<p><strong>注：后续命令未经说明，均在 Git Bash 中的 <code>E:\Workspace\blog</code> 目录下运行</strong></p>
 <h3 id="3主题">3.主题</h3>
 <h4 id="31-安装">3.1 安装</h4>
 <p>推荐使用 <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer "><strong>LoveIt</strong> 主题</a>。
@@ -263,31 +461,14 @@
 <p>详细可参考 <a href="https://hugoloveit.com/zh-cn/theme-documentation-content/#front-matter" target="_blank" rel="noopener noreffer ">LoveIt 官方文档</a></p>
 </blockquote>
 <p>用下面的内容覆盖<code>archetypes/default.md</code>文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">+++
-</span></span><span class="line"><span class="cl">title = &#34;{{ replace.TranslationBaseName &#34;-&#34; &#34; &#34; | title }}&#34;
-</span></span><span class="line"><span class="cl">subtitle = &#34;&#34;
-</span></span><span class="line"><span class="cl">date = {{ .Date }}
-</span></span><span class="line"><span class="cl">draft = false  
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">tags = []
-</span></span><span class="line"><span class="cl">categories = []  
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">hiddenFromHomePage = false
-</span></span><span class="line"><span class="cl">hiddenFromSearch = false
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">featuredImage = &#34;&#34;
-</span></span><span class="line"><span class="cl">featuredImagePreview = &#34;&#34;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">license = &#39;<span class="p">&lt;</span><span class="nt">a</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;license external nofollow noopener noreffer&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>CC BY-NC 4.0<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>&#39;
-</span></span><span class="line"><span class="cl">+++
-</span></span></code></pre></div><p><img
+<div class="highlight">e></div><p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071848940.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071848940.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071848940.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071848940.png 2x"
+        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081309352.png"
+        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081309352.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081309352.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081309352.png 2x"
         data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071848940.png"
-        title="image.png" /></p>
+        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081309352.png"
+        title="文章前缀模板" /></p>
 <h3 id="4创建你的第一篇文章">4.创建你的第一篇文章</h3>
 <p>以下是创建新文章的命令：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new posts/文章标题.md
@@ -923,7 +1104,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/zotero-config/" class="prev" rel="prev" title="文献管理软件zotero下载安装使用与配置分享"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>文献管理软件zotero下载安装使用与配置分享</a></div>
+    <div class="post-nav"><a href="/posts/zotero-config/" class="prev" rel="prev" title="文献管理软件zotero下载安装使用与配置分享"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>文献管理软件zotero下载安装使用与配置分享</a>
+            <a href="/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-giscus-%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/" class="next" rel="next" title="Hugo 博客添加 Giscus 评论功能">Hugo 博客添加 Giscus 评论功能<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="giscus" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.

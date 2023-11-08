@@ -3,13 +3,120 @@
         <title>All Posts - 云吱的小站</title>
         <link>https://leegical.github.io/posts/</link>
         <description>All Posts | 云吱的小站</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 07 Nov 2023 23:13:11 &#43;0800</lastBuildDate><atom:link href="https://leegical.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 08 Nov 2023 12:58:06 &#43;0800</lastBuildDate><atom:link href="https://leegical.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Hugo 博客添加 Giscus 评论功能</title>
+    <link>https://leegical.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-giscus-%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</link>
+    <pubDate>Wed, 08 Nov 2023 12:58:06 &#43;0800</pubDate>
+    <author>云吱</author>
+    <guid>https://leegical.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-giscus-%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</guid>
+    <description><![CDATA[<p>本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。</p>]]></description>
+</item>
+<item>
     <title>Windows下使用hugo和Github Pages配置博客</title>
     <link>https://leegical.github.io/posts/windows_hugo_github_pages_blog/</link>
     <pubDate>Tue, 07 Nov 2023 23:13:11 &#43;0800</pubDate>
     <author>云吱</author>
     <guid>https://leegical.github.io/posts/windows_hugo_github_pages_blog/</guid>
-    <description><![CDATA[前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。]]></description>
+    <description><![CDATA[<h2 id="前提">前提</h2>
+<p>默认本地已安装了 <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreffer ">Git</a>、<a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener noreffer ">VSCode</a>。</p>
+<h2 id="hugo-配置">hugo 配置</h2>
+<h3 id="1-安装-hugohttpsgohugoioinstallationwindows">1. <a href="https://gohugo.io/installation/windows/" target="_blank" rel="noopener noreffer ">安装 Hugo</a></h3>
+<p>推荐使用 <code>Hugo extended</code> 版本</p>
+<h4 id="预构建的二进制文件">预构建的二进制文件</h4>
+<p>访问<a href="https://github.com/gohugoio/hugo/releases/latest" target="_blank" rel="noopener noreffer ">最新版本</a>页面，然后向下滚动到<strong>Assets</strong>部分。选择对应平台下载。
+</p>
+<p>解压到某个目录，然后将该目录添加到环境变量中：
+</p>
+<h4 id="通过包管理器windows">通过包管理器（Windows）</h4>
+<h5 id="chocolateyhttpsgohugoioinstallationwindowschocolatey"><a href="https://gohugo.io/installation/windows/#chocolatey" target="_blank" rel="noopener noreffer ">Chocolatey</a></h5>
+<p><a href="https://chocolatey.org/" target="_blank" rel="noopener noreffer ">Chocolatey</a> 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">choco install hugo-extended
+</span></span></code></pre></div><h5 id="scoophttpsgohugoioinstallationwindowsscoop"><a href="https://gohugo.io/installation/windows/#scoop" target="_blank" rel="noopener noreffer ">Scoop</a></h5>
+<p><a href="https://scoop.sh/" target="_blank" rel="noopener noreffer ">Scoop</a> 是适用于 Windows 的免费开源包管理器。这将安装 Hugo 的扩展版本：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">scoop install hugo-extended
+</span></span></code></pre></div><h5 id="wingethttpsgohugoioinstallationwindowswinget"><a href="https://gohugo.io/installation/windows/#winget" target="_blank" rel="noopener noreffer ">Winget</a></h5>
+<p><a href="https://learn.microsoft.com/en-us/windows/package-manager/" target="_blank" rel="noopener noreffer ">Winget</a>是Microsoft的官方免费开源Windows包管理器。这将安装 Hugo 的扩展版本：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">winget install Hugo.Hugo.Extended
+</span></span></code></pre></div><h3 id="2创建-hugo-网站">2.创建 Hugo 网站</h3>
+<p>通过上述操作安装 hugo 程序后，就可以通过 <code>hugo new site</code> 命令进行网站创建、配置与本地调试了。
+选择一个本地文件夹作为根目录，右键——<code>Git Bash Here</code>，输入下面的命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new site &lt;site-name&gt;
+</span></span></code></pre></div><p></p>
+<p><strong>注：后续命令未经说明，均在 Git Bash 中的 <code>E:\Workspace\blog</code> 目录下运行</strong></p>
+<h3 id="3主题">3.主题</h3>
+<h4 id="31-安装">3.1 安装</h4>
+<p>推荐使用 <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer "><strong>LoveIt</strong> 主题</a>。
+初始化你的项目目录为 git 仓库, 并且把主题仓库作为你的网站目录的子模块:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
+</span></span></code></pre></div><h4 id="32-基础配置">3.2 基础配置</h4>
+<p>用<code>VScode</code>打开<code>E:\Workspace\blog</code>文件夹，用下面的内容覆盖<code>hugo.toml</code>文件。并自行修改<code>baseURL</code>和<code>title</code>。
+其中，<code>baseURL</code>为<code>你的github账户名.github.io</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s2">&#34;http://example.org/&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 更改使用 Hugo 构建网站时使用的默认主题</span>
+</span></span><span class="line"><span class="cl"><span class="nx">theme</span> <span class="p">=</span> <span class="s2">&#34;LoveIt&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 网站标题</span>
+</span></span><span class="line"><span class="cl"><span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;我的全新 Hugo 网站&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 网站语言, 仅在这里 CN 大写 [&#34;en&#34;, &#34;zh-CN&#34;, &#34;fr&#34;, &#34;pl&#34;, ...]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">languageCode</span> <span class="p">=</span> <span class="s2">&#34;zh-CN&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c"># 语言名称 [&#34;English&#34;, &#34;简体中文&#34;, &#34;Français&#34;, &#34;Polski&#34;, ...]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">languageName</span> <span class="p">=</span> <span class="s2">&#34;简体中文&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c"># 是否包括中日韩文字</span>
+</span></span><span class="line"><span class="cl"><span class="nx">hasCJKLanguage</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 作者配置</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">author</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;xxxx&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">email</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">link</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 菜单配置</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">menu</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;posts&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;文章&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/posts/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># 当你将鼠标悬停在此菜单链接上时, 将显示的标题</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;标签&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/tags/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;categories&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">pre</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;分类&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/categories/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Hugo 解析文档的配置</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">markup</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="c"># 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">highlight</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">noClasses</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span></code></pre></div><p></p>
+<h4 id="34-修改文章前缀模板">3.4 修改文章前缀模板</h4>
+<p>在每篇 markdown 文章最前面可以用一部分注释来告诉<code>LoveIt主题</code>，这篇文章的属性，譬如文章标签、分类、是否为草稿等。</p>
+<blockquote>
+<p>详细可参考 <a href="https://hugoloveit.com/zh-cn/theme-documentation-content/#front-matter" target="_blank" rel="noopener noreffer ">LoveIt 官方文档</a></p>
+</blockquote>
+<p>用下面的内容覆盖<code>archetypes/default.md</code>文件</p>
+<div class="highlight">]]></description>
 </item>
 <item>
     <title>文献管理软件zotero下载安装使用与配置分享</title>
