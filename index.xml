@@ -7,34 +7,34 @@
             <atom:link href="https://leegical.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</title>
-    <link>https://leegical.github.io/posts/windows-%E4%B8%8B%E4%BD%BF%E7%94%A8-hugo-%E5%92%8C-cloudflare-pages-%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2/</link>
+    <link>https://leegical.github.io/posts/windows-hugo-blog-cloudflare/</link>
     <pubDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</pubDate>
     <author>云吱</author>
-    <guid>https://leegical.github.io/posts/windows-%E4%B8%8B%E4%BD%BF%E7%94%A8-hugo-%E5%92%8C-cloudflare-pages-%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2/</guid>
+    <guid>https://leegical.github.io/posts/windows-hugo-blog-cloudflare/</guid>
     <description><![CDATA[使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。]]></description>
 </item>
 <item>
     <title>Hugo 博客添加 Giscus 评论功能</title>
-    <link>https://leegical.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-giscus-%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</link>
+    <link>https://leegical.github.io/posts/hugo-add-component/</link>
     <pubDate>Wed, 08 Nov 2023 12:58:06 &#43;0800</pubDate>
     <author>云吱</author>
-    <guid>https://leegical.github.io/posts/hugo-%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-giscus-%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</guid>
+    <guid>https://leegical.github.io/posts/hugo-add-component/</guid>
     <description><![CDATA[<p>本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。</p>]]></description>
 </item>
 <item>
     <title>Windows下使用hugo和Github Pages配置博客</title>
-    <link>https://leegical.github.io/posts/windows%E4%B8%8B%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub-pages%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2/</link>
+    <link>https://leegical.github.io/posts/windows-hugo-blog-github/</link>
     <pubDate>Tue, 07 Nov 2023 23:13:11 &#43;0800</pubDate>
     <author>云吱</author>
-    <guid>https://leegical.github.io/posts/windows%E4%B8%8B%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub-pages%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2/</guid>
+    <guid>https://leegical.github.io/posts/windows-hugo-blog-github/</guid>
     <description><![CDATA[前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。]]></description>
 </item>
 <item>
     <title>文献管理软件zotero下载安装使用与配置分享</title>
-    <link>https://leegical.github.io/posts/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6zotero%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE%E5%88%86%E4%BA%AB/</link>
+    <link>https://leegical.github.io/posts/zotero6-config/</link>
     <pubDate>Tue, 07 Nov 2023 15:19:01 &#43;0800</pubDate>
     <author>云吱</author>
-    <guid>https://leegical.github.io/posts/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6zotero%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E4%B8%8E%E9%85%8D%E7%BD%AE%E5%88%86%E4%BA%AB/</guid>
+    <guid>https://leegical.github.io/posts/zotero6-config/</guid>
     <description><![CDATA[前言 最开始阅读文献是使用readpaper平台，在线翻译、做笔记、文献管理都很方便，具体使用可以参考同济子豪兄和官方ReadPaper保姆级]]></description>
 </item>
 </channel>
