@@ -3,9 +3,17 @@
         <title>云吱</title>
         <link>https://leegical.github.io/</link>
         <description>色相事一刹那，光阴里无尽藏</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 08 Nov 2023 22:49:04 &#43;0800</lastBuildDate>
             <atom:link href="https://leegical.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>通过ZeroTier SSH连接内网主机</title>
+    <link>https://leegical.github.io/posts/zerotier-ssh/</link>
+    <pubDate>Wed, 08 Nov 2023 22:49:04 &#43;0800</pubDate>
+    <author>云吱</author>
+    <guid>https://leegical.github.io/posts/zerotier-ssh/</guid>
+    <description><![CDATA[一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。]]></description>
+</item>
+<item>
     <title>Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</title>
     <link>https://leegical.github.io/posts/windows-hugo-blog-cloudflare/</link>
     <pubDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</pubDate>
