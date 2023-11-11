@@ -1,0 +1,10 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>云吱</title>
+        <link>https://leegical.github.io/zh-cn/</link>
+        <description>色相事一刹那，光阴里无尽藏</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
+            <webMaster>chuxuange@gmail.com (云吱)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+            <atom:link href="https://leegical.github.io/zh-cn/index.xml" rel="self" type="application/rss+xml" />
+        </channel>
+</rss>

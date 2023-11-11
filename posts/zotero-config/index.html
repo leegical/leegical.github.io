@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,19 +17,19 @@
 <meta name="twitter:title" content="文献管理软件 zotero 下载安装使用与配置分享"/>
 <meta name="twitter:description" content="前言 最开始阅读文献是使用readpaper 平台，在线翻译、做笔记、文献管理都很方便，具体使用可以参考同济子豪兄和官方 ReadPaper 保姆级教程。 但随着科研"/>
 <meta name="application-name" content="云吱的小站">
-<meta name="apple-mobile-web-app-title" content="云吱的小站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://leegical.github.io/posts/zotero-config/" /><link rel="next" href="https://leegical.github.io/posts/windows-hugo-blog-github/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="云吱的小站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://leegical.github.io/posts/zotero-config/" /><link rel="next" href="https://leegical.github.io/posts/windows-hugo-blog-github/" /><link rel="stylesheet" href="/css/style.min.cf6878db51c51b2d04ae155284a4403dbee8db33e16c066f954c95279c271fcd.css" integrity="sha256-z2h421HFGy0ErhVShKRAPb7o2zPhbAZvlUyVJ5wnH80="><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "文献管理软件 zotero 下载安装使用与配置分享",
-        "inLanguage": "zh-CN",
+        "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/leegical.github.io\/posts\/zotero-config\/"
-        },"genre": "posts","keywords": "科研","wordcount":  6156 ,
-        "url": "https:\/\/leegical.github.io\/posts\/zotero-config\/","datePublished": "2023-11-07T15:19:01+08:00","dateModified": "2023-11-07T15:19:01+08:00","publisher": {
+        },"genre": "posts","keywords": "科研","wordcount":  6205 ,
+        "url": "https:\/\/leegical.github.io\/posts\/zotero-config\/","datePublished": "2023-11-07T15:19:01+08:00","dateModified": "2023-11-07T15:19:01+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -52,19 +52,11 @@
         title="/logo.png" />云吱的小站</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/zotero-config/" selected>English</option></select>
                 </a></div>
         </div>
     </div>
@@ -85,38 +77,20 @@
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/posts/zotero-config/" selected>English</option></select>
+                </a></div>
     </div>
-</header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
+</header><main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">文献管理软件 zotero 下载安装使用与配置分享</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>云吱</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E7%A7%91%E7%A0%94/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>科研</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar fa-fw"></i>&nbsp;<time datetime="2023-11-07">2023-11-07</time>&nbsp;<i class="far fa-calendar-plus fa-fw"></i>&nbsp;<time datetime="2023-11-07">2023-11-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;6156 words&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>云吱</a></span>&nbsp;<span class="post-category">included in <a href="/categories/%E7%A7%91%E7%A0%94/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>科研</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar fa-fw"></i>&nbsp;<time datetime="2023-11-07">2023-11-07</time>&nbsp;<i class="far fa-calendar-plus fa-fw"></i>&nbsp;<time datetime="2023-11-07">2023-11-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;6205 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;13 minutes&nbsp;
     
 
@@ -192,14 +166,17 @@
 <blockquote>
 <p>密码:2333</p>
 </blockquote>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323017.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323017.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323017.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323017.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323017.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323017.png" /></p>
+<p>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323017.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323017.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323017.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323017.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323017.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323017.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323017.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <h3 id="12-官网下载">1.2 官网下载</h3>
 <h4 id="121-本体zotero-下载-httpswwwzoteroorg-zotero-下载">1.2.1 本体<a href="https://www.zotero.org/" title="Zotero 下载" target="_blank" rel="noopener noreffer ">Zotero 下载</a></h4>
 <p>Zotero 官网访问速度慢的，建议使用蓝奏云中<code>Zotero-6.0.18_setup.exe</code>进行安装。</p>
@@ -216,15 +193,19 @@
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">强烈建议下载<a href="https://github.com/syt2/zotero-addons" target="_blank" rel="noopener noreffer ">Zotero 插件合集</a>，这个插件可以帮你自动管理、更新zotero插件。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082226948.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082226948.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082226948.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082226948.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082226948.png"
-        title="image.png" /></div>
+            <div class="admonition-content"><p>强烈建议下载<a href="https://github.com/syt2/zotero-addons" target="_blank" rel="noopener noreffer ">Zotero 插件合集</a>，这个插件可以帮你自动管理、更新zotero插件。
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082226948.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082226948.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082226948.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082226948.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082226948.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082226948.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082226948.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
+</div>
         </div>
     </div></li>
 </ul>
@@ -236,46 +217,61 @@
 点击【工具】—【插件】
 点击右上角【⚙】—【Install Add-on From File…】—选中需要安装的插件（部分插件不适用该方法）
 安装完毕后重启【Zotero】
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323817.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323817.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323817.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323817.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323817.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323817.png" />
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071535599.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071535599.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071535599.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071535599.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071535599.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071535599.png" />
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323892.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323892.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323892.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323892.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323892.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323892.png" />
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323977.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323977.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323977.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323977.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323977.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323977.png" />
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323064.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323064.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323064.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323064.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323064.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323064.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323817.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323817.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323817.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323817.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323817.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323817.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323817.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071535599.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071535599.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071535599.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071535599.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071535599.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071535599.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071535599.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323892.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323892.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323892.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323892.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323892.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323892.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323892.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323977.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323977.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323977.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323977.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323977.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323977.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323977.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323064.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323064.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323064.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323064.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323064.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323064.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071323064.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 </li>
 <li>
 <p>方法二：
@@ -286,48 +282,60 @@
 </li>
 </ul>
 <p>按需启用插件。我的插件启用情况如下：
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071536098.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071536098.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071536098.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071536098.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071536098.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071536098.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071536098.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071536098.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071536098.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071536098.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071536098.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071536098.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071536098.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <h2 id="2基础配置">2.基础配置</h2>
 <p>打开【Zotero】—【编辑】—【首选项】</p>
 <h3 id="20-高级">2.0 高级</h3>
 <h4 id="201-更改数据存储位置">2.0.1 更改数据存储位置</h4>
 <p>安装完 zotero 后，第一件事就是更改数据存储位置。因为以后要存 PDF 文献，所以建议放在一个存储空间充裕的地方。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537731.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537731.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537731.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537731.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537731.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537731.png" />
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537731.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537731.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537731.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537731.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537731.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537731.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537731.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure>
 改完位置后点击 OK 保存，重启 zotero 生效。</p>
 <h4 id="202-添加搜索引擎">2.0.2 添加搜索引擎</h4>
 <ol>
 <li>【Zotero】—【编辑】—【首选项】— 文件和文件夹 —【打开数据文件夹】
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537485.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537485.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537485.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537485.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537485.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537485.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537485.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537485.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537485.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537485.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537485.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537485.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071537485.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 <li>locate — 打开<code>engines.json</code>文件
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538437.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538437.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538437.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538437.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538437.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538437.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538437.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538437.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538437.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538437.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538437.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538437.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538437.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 <li>编辑<code>engines.json</code>文件，将里面的内容全选删除，粘贴为以下内容并保存。</li>
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">[</span>
@@ -921,52 +929,67 @@
 </blockquote>
 <ol>
 <li>将蓝奏云中<code>translators.zip</code>解压，将解压后的文件全部复制，粘贴到 zotero 数据文件夹——translators 文件夹中
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538689.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538689.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538689.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538689.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538689.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538689.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538689.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538689.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538689.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538689.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538689.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538689.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071538689.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 <li>【Zotero】—【编辑】—【首选项】—【茉莉花】—【非官方维护中文翻译器】，先点<code>刷新</code>，再点<code>更新全部</code>
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539794.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539794.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539794.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539794.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539794.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539794.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539794.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539794.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539794.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539794.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539794.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539794.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539794.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 <li>打开安装了 Zotero Connector 插件的浏览器，我这里是 edge。打开扩展，将 Zotero Connector 插件设为<code>在工具栏中显示</code>
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539438.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539438.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539438.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539438.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539438.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539438.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539438.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539438.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539438.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539438.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539438.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539438.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539438.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 <li>右键单击 Zotero Connector 插件图标——扩展选项——Advanced——勾选图中两项，然后多点几下 update
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539986.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539986.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539986.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539986.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539986.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539986.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539986.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539986.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539986.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539986.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539986.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539986.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539986.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 </ol>
 <h4 id="204-设置-scihub-下载文献">2.0.4 设置 scihub 下载文献</h4>
 <p>【Zotero】—【编辑】—【首选项】—— 【高级】—— 【设置编辑器】
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539685.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539685.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539685.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539685.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539685.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539685.png" />
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539685.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539685.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539685.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539685.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539685.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539685.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071539685.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure>
 搜索<code>extensions.zotero.findPDFs.resolvers</code>，双击打开，默认情况下是只有一对<code>[]</code>，删除<code>[]</code>，并将以下代码粘贴进去。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;Sci-Hub&#34;</span><span class="p">,</span>
@@ -983,24 +1006,30 @@
 </blockquote>
 <h3 id="21-常规">2.1 常规</h3>
 <p>我的常规配置：
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540110.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540110.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540110.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540110.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540110.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540110.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540110.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540110.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540110.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540110.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540110.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540110.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540110.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <h3 id="22-同步">2.2 同步</h3>
 <p>我采用了坚果云进行同步。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540066.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540066.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540066.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540066.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540066.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540066.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540066.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540066.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540066.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540066.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540066.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540066.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540066.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <h4 id="坚果云使用">坚果云使用</h4>
 <ol>
 <li>注册【<a href="https://www.jianguoyun.com/" title="坚果云" target="_blank" rel="noopener noreffer ">坚果云</a>账户】</li>
@@ -1008,23 +1037,29 @@
 <li>进入【安全选项】</li>
 <li>向下拖动进入【第三方应用管理】—点击【添加应用】—输入应用名【zotero】
 这里【示例】中的【服务器地址】、【账户】和【密码】（应用密码）即是【WebDAV】需填写的【URL】、【用户名】和【密码】
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540455.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540455.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540455.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540455.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540455.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540455.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540455.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540455.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540455.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540455.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540455.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540455.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540455.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 <li>返回【Zotero】—【首选项】—【同步】 将【同步文献库的附件】改为【WebDAV】，输入【URL】、【用户名】和【密码】，点击【验证服务器】成功即可。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540139.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540139.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540139.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540139.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540139.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540139.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540139.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540139.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540139.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540139.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540139.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540139.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071540139.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 </ol>
 <blockquote>
 <p>【注】坚果云验证失败看<a href="https://mp.weixin.qq.com/s/2QhDmtWu6ISgDZ9FrIdIBw" title="这里" target="_blank" rel="noopener noreffer ">这里</a>。</p>
@@ -1034,66 +1069,84 @@
 <ol>
 <li>点击【获取更多样式】</li>
 <li>搜索【7714】即可安装国标引用样式。注意有1987、2005和2015三个时间，note、author-date 和 numeric 三个格式，鼠标悬停即可【预览】样式。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542774.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542774.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542774.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542774.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542774.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542774.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542774.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542774.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542774.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542774.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542774.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542774.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542774.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 </ol>
 <h4 id="232-比较贴近东北大学要求的7714样式">2.3.2 比较贴近东北大学要求的7714样式</h4>
 <p>zotero 官方的7714样式存在一些问题，如不能区分中英文文献，导致引用英文文献也是“等”，而不是“et al”。github 上的<a href="https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl" title="Chinese-STD-GB-T-7714-related-csl" target="_blank" rel="noopener noreffer ">Chinese-STD-GB-T-7714-related-csl</a>仓库（<a href="https://gitee.com/redleafnew00/Chinese-STD-GB-T-7714-related-csl" title="Gitee" target="_blank" rel="noopener noreffer ">Gitee</a>）提供7714 2015的官方样式及众多修改版，其中<a href="https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl/blob/main/002gb-t-7714-2015-numeric-bilingual-no-uppercase-no-url-doi.csl" title="002gb" target="_blank" rel="noopener noreffer ">002gb</a>样式比较符合东北大学的要求，除了网络文献的引用顺序有点差异。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542161.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542161.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542161.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542161.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542161.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542161.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542161.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542161.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542161.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542161.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542161.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542161.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542161.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <ol>
 <li>从仓库或者前文的蓝奏云链接中下载样式</li>
 <li>点击+号，选中已下载的002 csl 样式，打开。
 会提示<code>***.csl不是一个有效的 CSL 1.0.2 样式文件，你可能不能和Zotero一起正常工作</code>，不用管，点击 OK 继续导入。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542053.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542053.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542053.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542053.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542053.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542053.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542053.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542053.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542053.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542053.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542053.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542053.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542053.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 <li>点击 OK 保存退出首选项。然后重新打开【编辑】—【首选项】— 【导出】— 项目格式，选择为7714
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542424.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542424.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542424.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542424.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542424.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542424.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542424.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542424.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542424.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542424.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542424.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542424.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071542424.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 </ol>
 <h2 id="3插件配置">3.插件配置</h2>
 <p>下面这些插件都建议在<a href="https://plugins.zotero-chinese.com/#/" target="_blank" rel="noopener noreffer ">中文插件网站</a>下载。注意要下载对应 zotero 版本的插件，本文中下载的都是 zotero6的插件。</p>
 <h3 id="31-zotero-插件合集">3.1 Zotero 插件合集</h3>
-<p>点击工具栏中的 <a href="https://github.com/syt2/zotero-addons/blob/z6/addon/chrome/content/icons/favicon.png" target="_blank" rel="noopener noreffer "><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png"
-        data-srcset="https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png, https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png 1.5x, https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png 2x"
-        data-sizes="auto"
-        alt="https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png"
-        title="https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png" /></a> ，自动管理、更新、添加 Zotero 插件
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082224234.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082224234.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082224234.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082224234.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082224234.png"
-        title="image.png" /></p>
+<p>点击工具栏中的 <a href="https://github.com/syt2/zotero-addons/blob/z6/addon/chrome/content/icons/favicon.png" target="_blank" rel="noopener noreffer ">
+<figure><a class="lightgallery" href="https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png" title="image" data-thumbnail="https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png"
+            data-srcset="https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png, https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png 1.5x, https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png 2x"
+            data-sizes="auto"
+            alt="https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></a> ，自动管理、更新、添加 Zotero 插件
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082224234.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082224234.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082224234.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082224234.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082224234.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082224234.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082224234.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <h3 id="31-zotfile">3.1 ZotFile</h3>
 <h4 id="功能">功能</h4>
 <ul>
@@ -1108,25 +1161,31 @@
 <li>【General Settings】
   - 【Source Folder For Attaching New Files】：自动抓取新附件建议设置为【浏览器等默认下载地址】
   - 【Location of Files】：附件本地存储地址建议选择【Attach stored copy of files(s)】，存储在 Zotero 的根目录下
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543441.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543441.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543441.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543441.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543441.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543441.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543441.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543441.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543441.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543441.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543441.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543441.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543441.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 <li>【Send to Tablet】：若非本地存储空间不够，不建议使用
 具体设置可参考<a href="https://mp.weixin.qq.com/s/uHOY2a_EZqJAQOrB2v9rFQ" title="此处" target="_blank" rel="noopener noreffer ">此处</a></li>
 <li>【Renaming Rules】和【Advanced Settings】：可自行修改
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543092.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543092.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543092.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543092.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543092.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543092.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543092.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543092.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543092.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543092.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543092.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543092.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543092.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 </ul>
 <h3 id="32-zoteroquicklook-httpsgithubcom404nekozoteroquicklookreload-zoteroquicklook">3.2 <a href="https://github.com/404neko/ZoteroQuickLookReload" title="ZoteroQuickLook" target="_blank" rel="noopener noreffer ">ZoteroQuickLook</a></h3>
 <h4 id="功能-1">功能</h4>
@@ -1136,14 +1195,17 @@
 <li>下载【QuickLook】本体安装，记住安装目录
 Windows：<a href="https://github.com/QL-Win/QuickLook/releases" title="QuickLook for Windows" target="_blank" rel="noopener noreffer ">QuickLook for Windows</a></li>
 <li>【Zotero】—【编辑】—【首选项】—— 【高级】—— 【设置编辑器】，搜索<code>extensions.zoteroquicklook.customviewcommand</code>，双击将里面的内容修改为<code>QuickLook.exe</code>的文件路径
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543870.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543870.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543870.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543870.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543870.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543870.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543870.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543870.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543870.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543870.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543870.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543870.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543870.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 </ol>
 <h3 id="33-茉莉花-jasminum-httpsgithubcoml0o0jasminum-茉莉花-jasminum">3.3 <a href="https://github.com/l0o0/jasminum" title="茉莉花-Jasminum" target="_blank" rel="noopener noreffer ">茉莉花-Jasminum</a></h3>
 <h4 id="功能-2">功能</h4>
@@ -1159,36 +1221,45 @@ Windows：<a href="https://github.com/QL-Win/QuickLook/releases" title="QuickLoo
 从知网下载的 PDF 格式【学位论文】不显示书签（CAJ 格式显示），【茉莉花】提供自动添加功能。要使用添加【书签】功能需要下载【PDFtk Server】，文件见网盘。</p>
 <p>下载并安装【PDFtk Server】，蓝奏云里有
 打开【Zotero】—进入【首选项】—进入【茉莉花】 选择【PDFtk Server】的路径，最后须选择 bin
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543556.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543556.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543556.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543556.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543556.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543556.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543556.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543556.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543556.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543556.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543556.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543556.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543556.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <h3 id="34-zotero-citation-update">3.4 zotero citation update</h3>
 <h4 id="功能-3">功能</h4>
 <p>更新文献被引用数</p>
 <h4 id="配置-3">配置</h4>
 <p>列标题启用【存档位置】
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543229.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543229.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543229.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543229.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543229.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543229.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543229.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543229.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543229.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543229.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543229.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543229.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071543229.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <p>使用：工具——更新引用
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544321.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544321.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544321.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544321.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544321.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544321.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544321.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544321.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544321.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544321.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544321.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544321.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544321.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <h3 id="35-zotero-pdf-translate">3.5 Zotero PDF Translate</h3>
 <ul>
 <li>各翻译引擎 api 格式设置详见<a href="https://github.com/windingwind/zotero-pdf-translate#readme" title="github" target="_blank" rel="noopener noreffer ">github</a></li>
@@ -1201,37 +1272,46 @@ Windows：<a href="https://github.com/QL-Win/QuickLook/releases" title="QuickLoo
 </blockquote>
 <h4 id="使用与功能">使用与功能</h4>
 <p>双击 PDF 附件（要用 zotero 打开 PDF）。点击右上角展开翻译窗口。鼠标选中文字自动翻译。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544208.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544208.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544208.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544208.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544208.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544208.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544208.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544208.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544208.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544208.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544208.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544208.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544208.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <h4 id="翻译引擎配置">翻译引擎配置</h4>
 <p>建议使用腾讯云 api，免费额度量大管饱，翻译效果也很好。或者小牛、有道智云，这两虽然免费额度是有期限的，但是可以建立自己的术语表，翻译起来更准确。</p>
 <blockquote>
 <p>【注】小牛翻译注册后需要在首页手动领取100万免费流量，有效期一年
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544542.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544542.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544542.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544542.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544542.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544542.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544542.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544542.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544542.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544542.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544542.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544542.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071544542.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 </blockquote>
 <h3 id="36-crush-referencehttpsgithubcommuisedestinyzotero-reference">3.6 <a href="https://github.com/MuiseDestiny/zotero-reference" target="_blank" rel="noopener noreffer ">Crush Reference</a></h3>
 <p>论文右侧——参考文献——点击“刷新”，自动拉取参考文献目录。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082216865.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082216865.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082216865.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082216865.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082216865.png"
-        title="image.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082216865.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082216865.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082216865.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082216865.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082216865.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082216865.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311082216865.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <h3 id="37-移动端-多平台同步阅读环境配置">3.7 移动端 ：多平台同步阅读环境配置</h3>
 <p>具体操作与 <a href="#22-%e5%90%8c%e6%ad%a5" rel="">#2.2 同步</a> 设置相同</p>
 <ul>
@@ -1245,14 +1325,17 @@ Windows：<a href="https://github.com/QL-Win/QuickLook/releases" title="QuickLoo
 <p>参考<a href="https://blog.csdn.net/qq_43309940/article/details/125150487" target="_blank" rel="noopener noreffer ">最新zotero与obsidian笔记联动教程（可代替citations和mdnotes）</a></p>
 <h3 id="41-工作流以-zotero-为中枢">4.1 工作流：以 Zotero 为中枢</h3>
 <p>还是参考 Eleven 的<a href="https://zhuanlan.zhihu.com/p/347493385" title="知乎专栏" target="_blank" rel="noopener noreffer ">知乎专栏</a></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545111.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545111.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545111.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545111.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545111.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545111.png" /></p>
+<p>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545111.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545111.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545111.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545111.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545111.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545111.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545111.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <ul>
 <li>检索 / 阅读 / 笔记
 <ul>
@@ -1286,25 +1369,31 @@ Windows：<a href="https://github.com/QL-Win/QuickLook/releases" title="QuickLoo
 <ul>
 <li>
 <p>单篇——浏览器中打开一篇论文的详情页，左键点击右上角【插件】，出现【Full Text PDF】即为成功
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545565.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545565.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545565.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545565.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545565.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545565.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545565.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545565.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545565.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545565.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545565.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545565.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545565.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 </li>
 <li>
 <p>批量——在知网搜索页面点击右上角【插件】，跳出【Zotero Item Selector】
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545250.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545250.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545250.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545250.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545250.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545250.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545250.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545250.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545250.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545250.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545250.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545250.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545250.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 </li>
 </ul>
 </li>
@@ -1314,128 +1403,161 @@ Windows：<a href="https://github.com/QL-Win/QuickLook/releases" title="QuickLoo
 <li>
 <p>识别：从文献到题录
 英文文献会自动抓取元数据，若失败请点【重新抓取 PDF 的元数据】
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545378.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545378.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545378.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545378.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545378.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545378.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545378.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545378.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545378.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545378.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545378.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545378.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545378.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 </li>
 <li>
 <p>检索：从题录到文献，利用【搜索引擎】进入知网下载文献
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545208.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545208.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545208.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545208.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545208.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545208.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545208.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545208.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545208.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545208.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545208.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545208.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071545208.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 </li>
 </ul>
 </li>
 </ul>
 <h3 id="43-储存分类">4.3 储存&amp;分类</h3>
 <h4 id="431-新建分类">4.3.1 新建分类</h4>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546648.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546648.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546648.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546648.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546648.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546648.png" /></p>
+<p>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546648.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546648.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546648.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546648.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546648.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546648.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546648.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <h4 id="432-tag-管理">4.3.2 Tag 管理</h4>
 <ul>
 <li>
 <p>添加 Tag
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546235.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546235.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546235.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546235.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546235.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546235.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546235.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546235.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546235.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546235.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546235.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546235.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546235.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 </li>
 <li>
 <p>给 Tag 添加颜色
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546746.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546746.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546746.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546746.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546746.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546746.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546746.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546746.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546746.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546746.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546746.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546746.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546746.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 </li>
 <li>
 <p>检索 Tag：单击左下角【Tag 区】中的 Tag</p>
 </li>
 </ul>
 <h4 id="433-高级检索">4.3.3 高级检索</h4>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546029.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546029.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546029.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546029.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546029.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546029.png" /></p>
+<p>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546029.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546029.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546029.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546029.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546029.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546029.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546029.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <h3 id="44-阅读">4.4 阅读</h3>
 <h4 id="441-导出-pdf-批注">4.4.1 导出 PDF 批注</h4>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546337.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546337.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546337.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546337.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546337.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546337.png" /></p>
+<p>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546337.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546337.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546337.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546337.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546337.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546337.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071546337.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <h4 id="442-联结文献笔记">4.4.2 联结文献笔记</h4>
 <h3 id="45-写作">4.5 写作</h3>
 <h4 id="451-插入参考文献">4.5.1 插入参考文献</h4>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547790.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547790.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547790.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547790.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547790.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547790.png" /></p>
+<p>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547790.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547790.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547790.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547790.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547790.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547790.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547790.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <h3 id="46-分享">4.6 分享</h3>
 <h4 id="461-导出条目及附件">4.6.1 导出条目及附件</h4>
 <p>导出分类，然后选择【Zotero RDF】格式，勾选附件和笔记
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547804.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547804.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547804.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547804.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547804.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547804.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547804.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547804.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547804.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547804.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547804.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547804.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547804.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></p>
 <h4 id="462-团队协作">4.6.2 团队协作</h4>
 <ul>
 <li>新建群组
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547803.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547803.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547803.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547803.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547803.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547803.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547803.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547803.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547803.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547803.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547803.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547803.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547803.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 <li>三种类型的群组
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547093.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547093.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547093.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547093.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547093.png"
-        title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547093.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547093.png" title="image" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547093.png" data-sub-html="<h2> </h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547093.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547093.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547093.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547093.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071547093.png" />
+    </a><figcaption class="image-caption">image</figcaption>
+    </figure></li>
 </ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -1467,7 +1589,7 @@ Windows：<a href="https://github.com/QL-Win/QuickLook/releases" title="QuickLoo
                 Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">云吱</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://haoyep.com/" target="_blank">云吱</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
     
         
         <script async src=" //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js "></script>
@@ -1508,5 +1630,5 @@ Windows：<a href="https://github.com/QL-Win/QuickLook/releases" title="QuickLoo
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOKqVEVs4Cax6P","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"leegical/leegical.github.io","repoId":"R_kgDOKqVEVg"}},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOKqVEVs4Cax6P","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"leegical/leegical.github.io","repoId":"R_kgDOKqVEVg"}},"lightgallery":true};</script><script type="text/javascript" src="/js/theme.min.e8d2be21e46b332dc48b46049b0c07b11a65970524ed512fac5d352f19eea7a5.js" integrity="sha256-6NK+IeRrMy3Ei0YEmwwHsRpllwUk7VEvrF01Lxnup6U="></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="/js/custom.js"></script></body>
 </html>

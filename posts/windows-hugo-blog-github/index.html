@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://leegical.github.io/posts/windows-hugo-blog-github/" /><meta property="og:image" content="https://leegical.github.io/android-chrome-512x512.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-11-07T23:13:11+08:00" />
-<meta property="article:modified_time" content="2023-11-07T23:13:11+08:00" /><meta property="og:site_name" content="云吱的小站" />
+<meta property="article:modified_time" content="2023-11-10T18:58:06+08:00" /><meta property="og:site_name" content="云吱的小站" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://leegical.github.io/android-chrome-512x512.png"/>
@@ -17,19 +17,19 @@
 <meta name="twitter:title" content="Windows下使用hugo和Github Pages配置博客"/>
 <meta name="twitter:description" content="前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。"/>
 <meta name="application-name" content="云吱的小站">
-<meta name="apple-mobile-web-app-title" content="云吱的小站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://leegical.github.io/posts/windows-hugo-blog-github/" /><link rel="prev" href="https://leegical.github.io/posts/zotero-config/" /><link rel="next" href="https://leegical.github.io/posts/hugo-add-component/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="云吱的小站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://leegical.github.io/posts/windows-hugo-blog-github/" /><link rel="prev" href="https://leegical.github.io/posts/zotero-config/" /><link rel="next" href="https://leegical.github.io/posts/hugo-add-component/" /><link rel="stylesheet" href="/css/style.min.cf6878db51c51b2d04ae155284a4403dbee8db33e16c066f954c95279c271fcd.css" integrity="sha256-z2h421HFGy0ErhVShKRAPb7o2zPhbAZvlUyVJ5wnH80="><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "Windows下使用hugo和Github Pages配置博客",
-        "inLanguage": "zh-CN",
+        "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/leegical.github.io\/posts\/windows-hugo-blog-github\/"
-        },"genre": "posts","keywords": "git, hugo","wordcount":  5207 ,
-        "url": "https:\/\/leegical.github.io\/posts\/windows-hugo-blog-github\/","datePublished": "2023-11-07T23:13:11+08:00","dateModified": "2023-11-07T23:13:11+08:00","publisher": {
+        },"genre": "posts","keywords": "git, hugo","wordcount":  5232 ,
+        "url": "https:\/\/leegical.github.io\/posts\/windows-hugo-blog-github\/","datePublished": "2023-11-07T23:13:11+08:00","dateModified": "2023-11-10T18:58:06+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -52,19 +52,11 @@
         title="/logo.png" />云吱的小站</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/windows-hugo-blog-github/" selected>English</option></select>
                 </a></div>
         </div>
     </div>
@@ -85,38 +77,20 @@
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/posts/windows-hugo-blog-github/" selected>English</option></select>
+                </a></div>
     </div>
-</header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
+</header><main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Windows下使用hugo和Github Pages配置博客</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>云吱</a></span>&nbsp;<span class="post-category">included in <a href="/categories/git/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>git</a>&nbsp;<a href="/categories/hugo/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>hugo</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar fa-fw"></i>&nbsp;<time datetime="2023-11-07">2023-11-07</time>&nbsp;<i class="far fa-calendar-plus fa-fw"></i>&nbsp;<time datetime="2023-11-07">2023-11-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;5207 words&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>云吱</a></span>&nbsp;<span class="post-category">included in <a href="/categories/git/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>git</a>&nbsp;<a href="/categories/hugo/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>hugo</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar fa-fw"></i>&nbsp;<time datetime="2023-11-07">2023-11-07</time>&nbsp;<i class="far fa-calendar-plus fa-fw"></i>&nbsp;<time datetime="2023-11-10">2023-11-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;5232 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;11 minutes&nbsp;
     
 
@@ -169,23 +143,29 @@
 <p>推荐使用 <code>Hugo extended</code> 版本</p>
 <h4 id="预构建的二进制文件">预构建的二进制文件</h4>
 <p>访问<a href="https://github.com/gohugoio/hugo/releases/latest" target="_blank" rel="noopener noreffer ">最新版本</a>页面，然后向下滚动到<strong>Assets</strong>部分。选择对应平台下载。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png"
-        title="image.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <p>解压到某个目录，然后将该目录添加到环境变量中：
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png"
-        title="image.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <h4 id="通过包管理器windows">通过包管理器（Windows）</h4>
 <h5 id="chocolateyhttpsgohugoioinstallationwindowschocolatey"><a href="https://gohugo.io/installation/windows/#chocolatey" target="_blank" rel="noopener noreffer ">Chocolatey</a></h5>
 <p><a href="https://chocolatey.org/" target="_blank" rel="noopener noreffer ">Chocolatey</a> 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：</p>
@@ -200,14 +180,17 @@
 <p>通过上述操作安装 hugo 程序后，就可以通过 <code>hugo new site</code> 命令进行网站创建、配置与本地调试了。
 选择一个本地文件夹作为根目录，右键——<code>Git Bash Here</code>，输入下面的命令</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new site &lt;site-name&gt;
-</span></span></code></pre></div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png"
-        title="image.png" /></p>
+</span></span></code></pre></div><p>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <p><strong>注：后续命令未经说明，均在 Git Bash 中的 <code>E:\Workspace\blog</code> 目录下运行</strong></p>
 <h3 id="3主题">3.主题</h3>
 <h4 id="31-安装">3.1 安装</h4>
@@ -275,14 +258,17 @@
 </span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">highlight</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">    <span class="c"># false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">noClasses</span> <span class="p">=</span> <span class="kc">false</span>
-</span></span></code></pre></div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png"
-        title="image.png" /></p>
+</span></span></code></pre></div><p>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <h4 id="34-修改文章前缀模板">3.4 修改文章前缀模板</h4>
 <p>在每篇 markdown 文章最前面可以用一部分注释来告诉<code>LoveIt主题</code>，这篇文章的属性，譬如文章标签、分类、是否为草稿等。</p>
 <blockquote>
@@ -323,69 +309,87 @@
 </span></span><span class="line"><span class="cl"><span class="c">&lt;!--</span>\m<span class="c">ore--&gt;</span> # 此处的“\”用于转义，否则无法正常显示，实际使用须删去。
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">此处开始为正文
-</span></span></code></pre></div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png"
-        title="文章前缀模板" /></p>
+</span></span></code></pre></div><p>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png" title="文章前缀模板" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png" data-sub-html="<h2> </h2><p>文章前缀模板</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png" />
+    </a><figcaption class="image-caption">文章前缀模板</figcaption>
+    </figure></p>
 <h3 id="4创建你的第一篇文章">4.创建你的第一篇文章</h3>
 <p>以下是创建新文章的命令：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new posts/文章标题.md
 </span></span></code></pre></div><p>执行完成后，在<code>./content/posts</code>目录下应该可以看到新文件，同时里面已经有 markdown 模版中的文章前缀参数。
 你可以在<code>VScode</code>中随意编辑文章。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png"
-        title="image.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <h3 id="5本地调试">5.本地调试</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo serve
-</span></span></code></pre></div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png"
-        title="image.png" /></p>
+</span></span></code></pre></div><p>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <p>浏览器中打开 <a href="http://localhost:1313/" target="_blank" rel="noopener noreffer ">http://localhost:1313/</a>，就能看到网站效果。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png"
-        title="image.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <h2 id="github">Github</h2>
 <h3 id="1在-windows-上创建-ssh-密钥并将其添加到-github">1.在 Windows 上创建 SSH 密钥并将其添加到 GitHub</h3>
 <h4 id="windows-端生成-ssh-密钥">Windows 端生成 SSH 密钥</h4>
 <p>使用 Git Bash 或命令行打开终端窗口，输入以下命令。记得把<code>your_email@example.com</code>改成你自己的邮箱地址。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;your_email@example.com&#34;</span>
 </span></span></code></pre></div><p>按照提示键入您想要保存密钥的文件名和路径，或使用默认设置。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png"
-        title="f787fdcf066f2d0b29903ca7c7b256c.png" />
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png" title="f787fdcf066f2d0b29903ca7c7b256c.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png" data-sub-html="<h2> </h2><p>f787fdcf066f2d0b29903ca7c7b256c.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png" />
+    </a><figcaption class="image-caption">f787fdcf066f2d0b29903ca7c7b256c.png</figcaption>
+    </figure>
 接下来，系统将生成一个随机字符串作为密钥密码。此处可以选用默认密码以便于不需要输入密码进行 SSH 登录。进入生成密钥的文件夹，查看密钥：
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png"
-        title="deb3195730865e730b1eae75c73eb74.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png" title="deb3195730865e730b1eae75c73eb74.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png" data-sub-html="<h2> </h2><p>deb3195730865e730b1eae75c73eb74.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png" />
+    </a><figcaption class="image-caption">deb3195730865e730b1eae75c73eb74.png</figcaption>
+    </figure></p>
 <h4 id="添加到-github">添加到 GitHub</h4>
 <ol>
 <li>
@@ -393,28 +397,34 @@
 </li>
 <li>
 <p>点击“New SSH key”（新建 SSH 密钥），填写标题和密钥的内容。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png"
-        title="8dbbc792ad52ef00645804d345f70c5.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png" title="8dbbc792ad52ef00645804d345f70c5.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png" data-sub-html="<h2> </h2><p>8dbbc792ad52ef00645804d345f70c5.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png" />
+    </a><figcaption class="image-caption">8dbbc792ad52ef00645804d345f70c5.png</figcaption>
+    </figure></p>
 </li>
 <li>
 <p>打开<code>id_rsa.pub</code>公钥文件 (即你在生成的时候保存的文件) ，将其内容复制到 GitHub 的 “Key” 字段中。</p>
 </li>
 <li>
 <p>最后，点击“Add SSH key” （添加 SSH 密钥），完成密钥添加。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png"
-        title="f37b5f0d629c09d20904268fd3da2c8.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png" title="f37b5f0d629c09d20904268fd3da2c8.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png" data-sub-html="<h2> </h2><p>f37b5f0d629c09d20904268fd3da2c8.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png" />
+    </a><figcaption class="image-caption">f37b5f0d629c09d20904268fd3da2c8.png</figcaption>
+    </figure></p>
 </li>
 </ol>
 <h3 id="2创建-blog-仓库">2.创建 blog 仓库</h3>
@@ -429,14 +439,17 @@
 </span></span></code></pre></div><ol start="4">
 <li>
 <p>点击 &ldquo;Create repository&rdquo;（创建仓库）按钮，完成 GitHub 仓库的创建。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png"
-        title="image.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 </li>
 <li>
 <p>将本地仓库与远程 GitHub 仓库关联起来。在项目目录中打开 Git Bash，执行以下命令，将 <code>&lt;remote-url&gt;</code> 替换为你的 GitHub 仓库的远程 URL：</p>
@@ -455,25 +468,31 @@
 <ol>
 <li>
 <p>创建新仓库
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png"
-        title="image.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 </li>
 <li>
 <p><code>Repository name</code> 这里一定要填 <code>[你的github账号].github.io</code>。<code>你的github账号</code>必须小写字母。仓库可见性设为<code>Public</code>。选择“使用 README 初始化此存储库”。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png"
-        title="image.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 </li>
 </ol>
 <h3 id="4上传页面">4.上传页面</h3>
@@ -490,14 +509,17 @@
 </span></span><span class="line"><span class="cl">git push -u origin master
 </span></span></code></pre></div><h5 id="43-更改-pages-展示分支">4.3 更改 Pages 展示分支</h5>
 <p>进入 Github Pages 仓库的<code>Setting</code>-<code>Pages</code>，把<code>Branch</code>修改为<code>master</code>，点击 save。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png"
-        title="image.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <p>稍等几分钟即可通过<code>[你的github账号].github.io</code>来访问博客站点了，和<code>hugo serve -D</code>本地调试完全一致。</p>
 <h3 id="5github-action-自动发布">5.Github Action 自动发布</h3>
 <p>通过上述命令我们可以手动发布我们的静态文件，但还是有以下弊端：</p>
@@ -511,14 +533,17 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir .github
 </span></span><span class="line"><span class="cl">mkdir .github/workflows
 </span></span><span class="line"><span class="cl">touch .github/workflows/deploy.yml
-</span></span></code></pre></div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png"
-        title="image.png" /></p>
+</span></span></code></pre></div><p>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <p>用 vscode 编辑 deploy.yml 的内容，参考如下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">deploy  </span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
@@ -558,79 +583,100 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">PUBLISH_DIR</span><span class="p">:</span><span class="w"> </span><span class="l">./public</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">commit_message</span><span class="p">:</span><span class="w"> </span><span class="l">${{ github.event.head_commit.message }}</span><span class="w">
 </span></span></span></code></pre></div><p>注意：<code>EXTERNAL_REPOSITORY</code>要修改为 Github Pages 的链接
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png"
-        title="image.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <p>提交变更到 Github：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add .
 </span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;add action config&#34;</span>
 </span></span><span class="line"><span class="cl">git push
-</span></span></code></pre></div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png"
-        title="image.png" /></p>
+</span></span></code></pre></div><p>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <h4 id="52-设置-action-变量">5.2 设置 action 变量</h4>
 <p>进入 <a href="https://github.com/settings/tokens" target="_blank" rel="noopener noreffer ">Github tokens</a> ，点击<code>Generate new token</code>——<code>Generate new token (classic)</code>
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png"
-        title="image.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <ul>
 <li>Note：随便写</li>
 <li>Expiration：<code>No expiration</code></li>
 <li>Select scopes：只勾选 <code>repo</code>
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png"
-        title="image.png" />
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure>
 拉到最下面，点击生成。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png"
-        title="image.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></li>
 </ul>
 <p>注意生成的 token 只会显示这一次，形如 <code>ghp_xxxxxxxxxx</code>，点击复制。
 回到 blog 仓库——Setting，新建仓库密钥
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png"
-        title="image.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <ul>
 <li>Name：PERSONAL_TOKEN</li>
 <li>Secret：填刚才复制的密钥
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png"
-        title="image.png" /></li>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></li>
 </ul>
 <h2 id="总结">总结</h2>
 <p>以上整个环境部署好之后，接下来的常用命令就是以下几个：</p>
@@ -665,14 +711,17 @@
 </span></span></code></pre></div><p>稍等片刻，github action执行完毕，页面就会更新了。</p>
 <h2 id="选择和配置hugo主题httpshugoloveitcomzh-cntheme-documentation-basics">选择和配置<a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/" target="_blank" rel="noopener noreffer ">Hugo主题</a></h2>
 <p>在本地项目文件夹<code>static</code>中添加2个方形 png 图片，命名为<code>avatar.png</code>、<code>logo.png</code>，作为网站头像和 logo：
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png"
-        data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png 2x"
-        data-sizes="auto"
-        alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png"
-        title="image.png" /></p>
+
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png" data-sub-html="<h2> </h2><p>image.png</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png"
+            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png 2x"
+            data-sizes="auto"
+            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png" />
+    </a><figcaption class="image-caption">image.png</figcaption>
+    </figure></p>
 <p>修改<code>hugo.toml</code>文件，参考下面的文件自行修改：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s2">&#34;https://leegical.github.io/&#34;</span>
 </span></span><span class="line"><span class="cl">
@@ -939,15 +988,14 @@
 </span></span></code></pre></div><p>稍等片刻，github action执行完毕，页面就会更新了。</p>
 <div class="details admonition quote open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-quote-right fa-fw" aria-hidden="true"></i>Quote<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-quote-right fa-fw" aria-hidden="true"></i>一些进阶玩法<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>一些进阶玩法：</p>
-<ul>
+            <div class="admonition-content"><ul>
 <li><a href="https://lewky.cn/categories/hugo%E7%B3%BB%E5%88%97/" target="_blank" rel="noopener noreffer ">Hugo系列(3.0) - LoveIt主题美化与博客功能增强</a></li>
 <li><a href="https://stilig.me/posts/hugo-adds-busuanzi/" target="_blank" rel="noopener noreffer ">Hugo 添加访问统计功能</a></li>
 <li><a href="https://haoyep.com/posts/hugo-add-component/" target="_blank" rel="noopener noreffer ">Hugo 博客添加 Giscus 评论功能</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/646556566" target="_blank" rel="noopener noreffer ">Hugo 的 LoveIt 主题修改及增强（一）</a></li>
+<li><a href="https://stilig.me/categories/hugo-%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener noreffer ">Hugo 的 LoveIt 主题修改及增强</a></li>
 <li><a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/#32-%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87-%E6%B5%8F%E8%A7%88%E5%99%A8%E9%85%8D%E7%BD%AE-%E7%BD%91%E7%AB%99%E6%B8%85%E5%8D%95" target="_blank" rel="noopener noreffer ">网站图标, 浏览器配置, 网站清单生成</a></li>
 </ul>
 </div>
@@ -957,7 +1005,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2023-11-07</span>
+                <span>Updated on 2023-11-10</span>
             </div><div class="post-info-license">
                 <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
             </div></div>
@@ -983,7 +1031,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">云吱</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://haoyep.com/" target="_blank">云吱</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
     
         
         <script async src=" //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js "></script>
@@ -1024,5 +1072,5 @@
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOKqVEVs4Cax6P","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"leegical/leegical.github.io","repoId":"R_kgDOKqVEVg"}},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOKqVEVs4Cax6P","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"en","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"leegical/leegical.github.io","repoId":"R_kgDOKqVEVg"}},"lightgallery":true};</script><script type="text/javascript" src="/js/theme.min.e8d2be21e46b332dc48b46049b0c07b11a65970524ed512fac5d352f19eea7a5.js" integrity="sha256-6NK+IeRrMy3Ei0YEmwwHsRpllwUk7VEvrF01Lxnup6U="></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="/js/custom.js"></script></body>
 </html>
