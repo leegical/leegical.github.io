@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>科研 - Category - 云吱</title>
+        <title>科研 - 分类 - 云吱</title>
         <link>https://leegical.github.io/categories/%E7%A7%91%E7%A0%94/</link>
-        <description>科研 - Category - 云吱</description>
+        <description>科研 - 分类 - 云吱</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
             <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</lastBuildDate><atom:link href="https://leegical.github.io/categories/%E7%A7%91%E7%A0%94/" rel="self" type="application/rss+xml" /><item>
     <title>文献管理软件 zotero 下载安装使用与配置分享</title>
