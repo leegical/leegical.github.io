@@ -1,306 +1,284 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>Windows下使用hugo和Github Pages配置博客 - 云吱</title><meta name="Description" content="色相事一刹那，光阴里无尽藏"><meta property="og:title" content="Windows下使用hugo和Github Pages配置博客" />
-<meta property="og:description" content="前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。" />
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Windows下使用hugo和Github Pages配置博客 - 云吱</title><meta name="author" content="云吱">
+<meta name="author-link" content="https://haoyep.com/">
+<meta name="description" content="前提 默认本地已安装了 Git、VSCode。
+hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本
+预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png 解压到某个目录，然后将该目录添加到环境变量中： image.png 通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：
+1 choco install hugo-extended Scoop Scoop 是适用于 Windows 的免费开源包管理器。这将安装 Hugo 的扩展版本：
+1 scoop install hugo-extended Winget Winget是Microsoft的官方免费开源Windows包管理器。这将安装 Hugo 的扩展版本：
+1 winget install Hugo.Hugo.Extended 2.创建 Hugo 网站 通过上述操作安装 hugo 程序后，就可以通过 hugo new site 命令进行网站创建、配置与本地调试了。 选择一个本地文件夹作为根目录，右键——Git Bash Here，输入下面的命令
+1 hugo new site &lt;site-name&gt; image.png 注：后续命令未经说明，均在 Git Bash 中的 E:\Workspace\blog 目录下运行" /><meta name="keywords" content='git, hugo' /><meta itemprop="name" content="Windows下使用hugo和Github Pages配置博客">
+<meta itemprop="description" content="前提 默认本地已安装了 Git、VSCode。
+hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本
+预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png 解压到某个目录，然后将该目录添加到环境变量中： image.png 通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：
+1 choco install hugo-extended Scoop Scoop 是适用于 Windows 的免费开源包管理器。这将安装 Hugo 的扩展版本：
+1 scoop install hugo-extended Winget Winget是Microsoft的官方免费开源Windows包管理器。这将安装 Hugo 的扩展版本：
+1 winget install Hugo.Hugo.Extended 2.创建 Hugo 网站 通过上述操作安装 hugo 程序后，就可以通过 hugo new site 命令进行网站创建、配置与本地调试了。 选择一个本地文件夹作为根目录，右键——Git Bash Here，输入下面的命令
+1 hugo new site &lt;site-name&gt; image.png 注：后续命令未经说明，均在 Git Bash 中的 E:\Workspace\blog 目录下运行"><meta itemprop="datePublished" content="2023-11-07T23:13:11+08:00" />
+<meta itemprop="dateModified" content="2023-11-10T18:58:06+08:00" />
+<meta itemprop="wordCount" content="2047"><meta itemprop="image" content="https://haoyep.com/android-chrome-512x512.png"/>
+<meta itemprop="keywords" content="git,hugo," /><meta property="og:title" content="Windows下使用hugo和Github Pages配置博客" />
+<meta property="og:description" content="前提 默认本地已安装了 Git、VSCode。
+hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本
+预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png 解压到某个目录，然后将该目录添加到环境变量中： image.png 通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：
+1 choco install hugo-extended Scoop Scoop 是适用于 Windows 的免费开源包管理器。这将安装 Hugo 的扩展版本：
+1 scoop install hugo-extended Winget Winget是Microsoft的官方免费开源Windows包管理器。这将安装 Hugo 的扩展版本：
+1 winget install Hugo.Hugo.Extended 2.创建 Hugo 网站 通过上述操作安装 hugo 程序后，就可以通过 hugo new site 命令进行网站创建、配置与本地调试了。 选择一个本地文件夹作为根目录，右键——Git Bash Here，输入下面的命令
+1 hugo new site &lt;site-name&gt; image.png 注：后续命令未经说明，均在 Git Bash 中的 E:\Workspace\blog 目录下运行" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://haoyep.com/posts/windows-hugo-blog-github/" /><meta property="og:image" content="https://haoyep.com/android-chrome-512x512.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-11-07T23:13:11+08:00" />
-<meta property="article:modified_time" content="2023-11-11T15:25:28+08:00" /><meta property="og:site_name" content="云吱的小站" />
+<meta property="article:modified_time" content="2023-11-10T18:58:06+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://haoyep.com/android-chrome-512x512.png"/>
 
 <meta name="twitter:title" content="Windows下使用hugo和Github Pages配置博客"/>
-<meta name="twitter:description" content="前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。"/>
+<meta name="twitter:description" content="前提 默认本地已安装了 Git、VSCode。
+hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本
+预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png 解压到某个目录，然后将该目录添加到环境变量中： image.png 通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：
+1 choco install hugo-extended Scoop Scoop 是适用于 Windows 的免费开源包管理器。这将安装 Hugo 的扩展版本：
+1 scoop install hugo-extended Winget Winget是Microsoft的官方免费开源Windows包管理器。这将安装 Hugo 的扩展版本：
+1 winget install Hugo.Hugo.Extended 2.创建 Hugo 网站 通过上述操作安装 hugo 程序后，就可以通过 hugo new site 命令进行网站创建、配置与本地调试了。 选择一个本地文件夹作为根目录，右键——Git Bash Here，输入下面的命令
+1 hugo new site &lt;site-name&gt; image.png 注：后续命令未经说明，均在 Git Bash 中的 E:\Workspace\blog 目录下运行"/>
 <meta name="application-name" content="云吱的小站">
-<meta name="apple-mobile-web-app-title" content="云吱的小站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haoyep.com/posts/windows-hugo-blog-github/" /><link rel="next" href="https://haoyep.com/posts/hugo-add-component/" /><link rel="stylesheet" href="/css/style.min.304b8d1d671415fc9e19f907043d4807aa825629e7ca9b02b3068581461d36c8.css" integrity="sha256-MEuNHWcUFfyeGfkHBD1IB6qCVinnypsCswaFgUYdNsg="><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Windows下使用hugo和Github Pages配置博客",
-        "inLanguage": "zh-CN",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/haoyep.com\/posts\/windows-hugo-blog-github\/"
-        },"image": ["https:\/\/haoyep.com\/favicon.ico"],"genre": "posts","keywords": "git, hugo","wordcount":  5653 ,
-        "url": "https:\/\/haoyep.com\/posts\/windows-hugo-blog-github\/","datePublished": "2023-11-07T23:13:11+08:00","dateModified": "2023-11-11T15:25:28+08:00","publisher": {
-            "@type": "Organization",
-            "name": "云吱","logo": "https:\/\/haoyep.com\/logo.png"},"author": {
-                "@type": "Person",
-                "name": "云吱"
-            },"description": ""
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="云吱"><img
-        class="lazyload logo"
-        src="/svg/loading.min.svg"
-        data-src="/logo.png"
-        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
-        data-sizes="auto"
-        alt="/logo.png"
-        title="/logo.png" />云吱的小站</a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="输入关键词进行搜索......" id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="云吱"><img
-        class="lazyload logo"
-        src="/svg/loading.min.svg"
-        data-src="/logo.png"
-        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
-        data-sizes="auto"
-        alt="/logo.png"
-        title="/logo.png" />云吱的小站</a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="输入关键词进行搜索......" id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        取消
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
-</header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">目录</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Windows下使用hugo和Github Pages配置博客</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>云吱</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/git/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>git</a>&nbsp;<a href="/categories/hugo/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>hugo</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar fa-fw"></i>&nbsp;<time datetime="2023-11-07">2023-11-07</time>&nbsp;<i class="far fa-calendar-plus fa-fw"></i>&nbsp;<time datetime="2023-11-11">2023-11-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 5653 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 12 分钟&nbsp;
-    
-
-    
-        
-
-        
-        
-            <span id="busuanzi_container_value_page_pv"><i class="far fa-eye fa-fw"></i>
+<meta name="apple-mobile-web-app-title" content="云吱的小站"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://haoyep.com/posts/windows-hugo-blog-github/" /><link rel="next" href="https://haoyep.com/posts/hugo-add-component/" /><link rel="stylesheet" href="/css/style.min.3ea4eaa312a4513cbc2a5d8c7bd7ab07d8cce31056e0224968fa27770be9fba2.css" integrity="sha256-PqTqoxKkUTy8Kl2Me9erB9jM4xBW4CJJaPondwvp&#43;6I="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU="><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Windows下使用hugo和Github Pages配置博客",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/haoyep.com\/posts\/windows-hugo-blog-github\/"
+    },"image": ["https:\/\/haoyep.com\/favicon.ico"],"genre": "posts","keywords": "git, hugo","wordcount":  2047 ,
+    "url": "https:\/\/haoyep.com\/posts\/windows-hugo-blog-github\/","datePublished": "2023-11-07T23:13:11+08:00","dateModified": "2023-11-10T18:58:06+08:00","publisher": {
+      "@type": "Organization",
+      "name": "云吱","logo": "https:\/\/haoyep.com\/logo.png"},"author": {
+        "@type": "Person",
+        "name": "云吱"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="云吱"><img loading="lazy" src="/logo.png" data-title="云吱" data-alt="云吱" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">云吱的小站</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
                 
-                <span id="busuanzi_value_page_pv"></span>&nbsp;次阅读</span>
-        
-    
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="输入关键词进行搜索......" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="云吱"><img loading="lazy" src="/logo.png" data-title="/logo.png" data-alt="/logo.png" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">云吱的小站</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="输入关键词进行搜索......" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
 
-</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Windows下使用hugo和Github Pages配置博客</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://www.gravatar.com/avatar/867c2859fc58e987cb357c7a67ac01cb?s=32&amp;d=" data-title="云吱" data-alt="云吱" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;云吱</a></span>
+          <span class="post-category">收录于 <a href="/categories/git/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> git</a>&ensp;<a href="/categories/hugo/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> hugo</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2023-11-07 23:13:11"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-07">2023-11-07</time></span>&nbsp;<span title="更新于 2023-11-10 18:58:06"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-10">2023-11-10</time></span>&nbsp;<span title="2047 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 2100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 10 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Windows下使用hugo和Github Pages配置博客">
+              <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#前提">前提</a></li>
     <li><a href="#hugo-配置">hugo 配置</a>
       <ul>
-        <li><a href="#1-安装-hugohttpsgohugoioinstallationwindows">1. <a href="https://gohugo.io/installation/windows/">安装 Hugo</a></a>
-          <ul>
-            <li><a href="#预构建的二进制文件">预构建的二进制文件</a></li>
-            <li><a href="#通过包管理器windows">通过包管理器（Windows）</a>
-              <ul>
-                <li><a href="#chocolateyhttpsgohugoioinstallationwindowschocolatey"><a href="https://gohugo.io/installation/windows/#chocolatey">Chocolatey</a></a></li>
-                <li><a href="#scoophttpsgohugoioinstallationwindowsscoop"><a href="https://gohugo.io/installation/windows/#scoop">Scoop</a></a></li>
-                <li><a href="#wingethttpsgohugoioinstallationwindowswinget"><a href="https://gohugo.io/installation/windows/#winget">Winget</a></a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
+        <li><a href="#1-安装-hugohttpsgohugoioinstallationwindows">1. <a href="https://gohugo.io/installation/windows/">安装 Hugo</a></a></li>
         <li><a href="#2创建-hugo-网站">2.创建 Hugo 网站</a></li>
-        <li><a href="#3主题">3.主题</a>
-          <ul>
-            <li><a href="#31-安装">3.1 安装</a></li>
-            <li><a href="#32-基础配置">3.2 基础配置</a></li>
-            <li><a href="#34-修改文章前缀模板">3.4 修改文章前缀模板</a></li>
-          </ul>
-        </li>
+        <li><a href="#3主题">3.主题</a></li>
         <li><a href="#4创建你的第一篇文章">4.创建你的第一篇文章</a></li>
         <li><a href="#5本地调试">5.本地调试</a></li>
       </ul>
     </li>
     <li><a href="#github">Github</a>
       <ul>
-        <li><a href="#1在-windows-上创建-ssh-密钥并将其添加到-github">1.在 Windows 上创建 SSH 密钥并将其添加到 GitHub</a>
-          <ul>
-            <li><a href="#windows-端生成-ssh-密钥">Windows 端生成 SSH 密钥</a></li>
-            <li><a href="#添加到-github">添加到 GitHub</a></li>
-          </ul>
-        </li>
+        <li><a href="#1在-windows-上创建-ssh-密钥并将其添加到-github">1.在 Windows 上创建 SSH 密钥并将其添加到 GitHub</a></li>
         <li><a href="#2创建-blog-仓库">2.创建 blog 仓库</a></li>
         <li><a href="#3创建-github-pages-仓库">3.创建 Github Pages 仓库</a></li>
-        <li><a href="#4上传页面">4.上传页面</a>
-          <ul>
-            <li>
-              <ul>
-                <li><a href="#41-进入项目根目录执行">4.1 进入项目根目录，执行：</a></li>
-                <li><a href="#42-上传代码至-master">4.2 上传代码至 master</a></li>
-                <li><a href="#43-更改-pages-展示分支">4.3 更改 Pages 展示分支</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#5github-action-自动发布">5.Github Action 自动发布</a>
-          <ul>
-            <li><a href="#51-增加-action-配置文件">5.1 增加 action 配置文件</a></li>
-            <li><a href="#52-设置-action-变量">5.2 设置 action 变量</a></li>
-          </ul>
-        </li>
+        <li><a href="#4上传页面">4.上传页面</a></li>
+        <li><a href="#5github-action-自动发布">5.Github Action 自动发布</a></li>
       </ul>
     </li>
     <li><a href="#总结">总结</a></li>
     <li><a href="#选择和配置hugo主题httpshugoloveitcomzh-cntheme-documentation-basics">选择和配置<a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/">Hugo主题</a></a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="前提">前提</h2>
-<p>默认本地已安装了 <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreffer ">Git</a>、<a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener noreffer ">VSCode</a>。</p>
+      </div><div class="content" id="content"><h2 id="前提">前提</h2>
+<p>默认本地已安装了 <a href="https://git-scm.com/downloads"target="_blank" rel="external nofollow noopener noreferrer">Git</a>、<a href="https://code.visualstudio.com/Download"target="_blank" rel="external nofollow noopener noreferrer">VSCode</a>。</p>
 <h2 id="hugo-配置">hugo 配置</h2>
-<h3 id="1-安装-hugohttpsgohugoioinstallationwindows">1. <a href="https://gohugo.io/installation/windows/" target="_blank" rel="noopener noreffer ">安装 Hugo</a></h3>
+<h3 id="1-安装-hugohttpsgohugoioinstallationwindows">1. <a href="https://gohugo.io/installation/windows/"target="_blank" rel="external nofollow noopener noreferrer">安装 Hugo</a></h3>
 <p>推荐使用 <code>Hugo extended</code> 版本</p>
 <h4 id="预构建的二进制文件">预构建的二进制文件</h4>
-<p>访问<a href="https://github.com/gohugoio/hugo/releases/latest" target="_blank" rel="noopener noreffer ">最新版本</a>页面，然后向下滚动到<strong>Assets</strong>部分。选择对应平台下载。
+<p>访问<a href="https://github.com/gohugoio/hugo/releases/latest"target="_blank" rel="external nofollow noopener noreferrer">最新版本</a>页面，然后向下滚动到<strong>Assets</strong>部分。选择对应平台下载。
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071821427.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <p>解压到某个目录，然后将该目录添加到环境变量中：
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071828192.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <h4 id="通过包管理器windows">通过包管理器（Windows）</h4>
-<h5 id="chocolateyhttpsgohugoioinstallationwindowschocolatey"><a href="https://gohugo.io/installation/windows/#chocolatey" target="_blank" rel="noopener noreffer ">Chocolatey</a></h5>
-<p><a href="https://chocolatey.org/" target="_blank" rel="noopener noreffer ">Chocolatey</a> 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：</p>
-<div class="highlight"><div class="chroma">
+<h5 id="chocolateyhttpsgohugoioinstallationwindowschocolatey"><a href="https://gohugo.io/installation/windows/#chocolatey"target="_blank" rel="external nofollow noopener noreferrer">Chocolatey</a></h5>
+<p><a href="https://chocolatey.org/"target="_blank" rel="external nofollow noopener noreferrer">Chocolatey</a> 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：</p>
+<div class="highlight" id="id-1"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">choco install hugo-extended
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">choco install hugo-extended</span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="scoophttpsgohugoioinstallationwindowsscoop"><a href="https://gohugo.io/installation/windows/#scoop" target="_blank" rel="noopener noreffer ">Scoop</a></h5>
-<p><a href="https://scoop.sh/" target="_blank" rel="noopener noreffer ">Scoop</a> 是适用于 Windows 的免费开源包管理器。这将安装 Hugo 的扩展版本：</p>
-<div class="highlight"><div class="chroma">
+</div><h5 id="scoophttpsgohugoioinstallationwindowsscoop"><a href="https://gohugo.io/installation/windows/#scoop"target="_blank" rel="external nofollow noopener noreferrer">Scoop</a></h5>
+<p><a href="https://scoop.sh/"target="_blank" rel="external nofollow noopener noreferrer">Scoop</a> 是适用于 Windows 的免费开源包管理器。这将安装 Hugo 的扩展版本：</p>
+<div class="highlight" id="id-2"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">scoop install hugo-extended
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">scoop install hugo-extended</span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="wingethttpsgohugoioinstallationwindowswinget"><a href="https://gohugo.io/installation/windows/#winget" target="_blank" rel="noopener noreffer ">Winget</a></h5>
-<p><a href="https://learn.microsoft.com/en-us/windows/package-manager/" target="_blank" rel="noopener noreffer ">Winget</a>是Microsoft的官方免费开源Windows包管理器。这将安装 Hugo 的扩展版本：</p>
-<div class="highlight"><div class="chroma">
+</div><h5 id="wingethttpsgohugoioinstallationwindowswinget"><a href="https://gohugo.io/installation/windows/#winget"target="_blank" rel="external nofollow noopener noreferrer">Winget</a></h5>
+<p><a href="https://learn.microsoft.com/en-us/windows/package-manager/"target="_blank" rel="external nofollow noopener noreferrer">Winget</a>是Microsoft的官方免费开源Windows包管理器。这将安装 Hugo 的扩展版本：</p>
+<div class="highlight" id="id-3"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">winget install Hugo.Hugo.Extended
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">winget install Hugo.Hugo.Extended</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="2创建-hugo-网站">2.创建 Hugo 网站</h3>
 <p>通过上述操作安装 hugo 程序后，就可以通过 <code>hugo new site</code> 命令进行网站创建、配置与本地调试了。
 选择一个本地文件夹作为根目录，右键——<code>Git Bash Here</code>，输入下面的命令</p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-4"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new site &lt;site-name&gt;
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new site &lt;site-name&gt;</span></span></code></pre></td></tr></table>
 </div>
 </div><p>
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071836363.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <p><strong>注：后续命令未经说明，均在 Git Bash 中的 <code>E:\Workspace\blog</code> 目录下运行</strong></p>
 <h3 id="3主题">3.主题</h3>
 <h4 id="31-安装">3.1 安装</h4>
-<p>推荐使用 <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer "><strong>LoveIt</strong> 主题</a>。
+<p>推荐使用 <a href="https://github.com/dillonzq/LoveIt"target="_blank" rel="external nofollow noopener noreferrer"><strong>LoveIt</strong> 主题</a>。
 初始化你的项目目录为 git 仓库, 并且把主题仓库作为你的网站目录的子模块:</p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-5"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init
-</span></span><span class="line"><span class="cl">git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="32-基础配置">3.2 基础配置</h4>
 <p>用<code>VScode</code>打开<code>E:\Workspace\blog</code>文件夹，用下面的内容覆盖<code>hugo.toml</code>文件。并自行修改<code>baseURL</code>和<code>title</code>。
 其中，<code>baseURL</code>为<code>你的github账户名.github.io</code></p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-6"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -417,28 +395,19 @@
 </span></span><span class="line"><span class="cl">  <span class="c"># 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">highlight</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">    <span class="c"># false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">noClasses</span> <span class="p">=</span> <span class="kc">false</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">    <span class="nx">noClasses</span> <span class="p">=</span> <span class="kc">false</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071844868.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <h4 id="34-修改文章前缀模板">3.4 修改文章前缀模板</h4>
 <p>在每篇 markdown 文章最前面可以用一部分注释来告诉<code>LoveIt主题</code>，这篇文章的属性，譬如文章标签、分类、是否为草稿等。</p>
 <blockquote>
-<p>详细可参考 <a href="https://hugoloveit.com/zh-cn/theme-documentation-content/#front-matter" target="_blank" rel="noopener noreffer ">LoveIt 官方文档</a></p>
+<p>详细可参考 <a href="https://hugoloveit.com/zh-cn/theme-documentation-content/#front-matter"target="_blank" rel="external nofollow noopener noreferrer">LoveIt 官方文档</a></p>
 </blockquote>
 <p>用下面的内容覆盖<code>archetypes/default.md</code>文件。
 <strong>注意：实际使用的时候要把摘要的斜杠去掉</strong></p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-7"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -507,110 +476,58 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">&lt;!--</span>\m<span class="c">ore--&gt;</span> # 此处的“\”用于转义，否则无法正常显示，实际使用须删去。
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">此处开始为正文
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">此处开始为正文</span></span></code></pre></td></tr></table>
 </div>
 </div><p>
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png" title="文章前缀模板" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png" data-sub-html="<h2> </h2><p>文章前缀模板</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png" />
-    </a><figcaption class="image-caption">文章前缀模板</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png" data-sub-html="<h2> </h2><p>文章前缀模板</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png" data-title="文章前缀模板" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081325332.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">文章前缀模板</figcaption>
     </figure></p>
 <h3 id="4创建你的第一篇文章">4.创建你的第一篇文章</h3>
 <p>以下是创建新文章的命令：</p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-8"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new posts/文章标题.md
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new posts/文章标题.md</span></span></code></pre></td></tr></table>
 </div>
 </div><p>执行完成后，在<code>./content/posts</code>目录下应该可以看到新文件，同时里面已经有 markdown 模版中的文章前缀参数。
 你可以在<code>VScode</code>中随意编辑文章。
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071853708.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <h3 id="5本地调试">5.本地调试</h3>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-9"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo serve
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo serve</span></span></code></pre></td></tr></table>
 </div>
 </div><p>
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071857438.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
-<p>浏览器中打开 <a href="http://localhost:1313/" target="_blank" rel="noopener noreffer ">http://localhost:1313/</a>，就能看到网站效果。
+<p>浏览器中打开 <a href="http://localhost:1313/"target="_blank" rel="external nofollow noopener noreferrer">http://localhost:1313/</a>，就能看到网站效果。
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311071855184.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <h2 id="github">Github</h2>
 <h3 id="1在-windows-上创建-ssh-密钥并将其添加到-github">1.在 Windows 上创建 SSH 密钥并将其添加到 GitHub</h3>
 <h4 id="windows-端生成-ssh-密钥">Windows 端生成 SSH 密钥</h4>
 <p>使用 Git Bash 或命令行打开终端窗口，输入以下命令。记得把<code>your_email@example.com</code>改成你自己的邮箱地址。</p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-10"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;your_email@example.com&#34;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;your_email@example.com&#34;</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>按照提示键入您想要保存密钥的文件名和路径，或使用默认设置。
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png" title="f787fdcf066f2d0b29903ca7c7b256c.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png" data-sub-html="<h2> </h2><p>f787fdcf066f2d0b29903ca7c7b256c.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png" />
-    </a><figcaption class="image-caption">f787fdcf066f2d0b29903ca7c7b256c.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png" data-sub-html="<h2> </h2><p>f787fdcf066f2d0b29903ca7c7b256c.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png" data-title="f787fdcf066f2d0b29903ca7c7b256c.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001005.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">f787fdcf066f2d0b29903ca7c7b256c.png</figcaption>
     </figure>
 接下来，系统将生成一个随机字符串作为密钥密码。此处可以选用默认密码以便于不需要输入密码进行 SSH 登录。进入生成密钥的文件夹，查看密钥：
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png" title="deb3195730865e730b1eae75c73eb74.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png" data-sub-html="<h2> </h2><p>deb3195730865e730b1eae75c73eb74.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png" />
-    </a><figcaption class="image-caption">deb3195730865e730b1eae75c73eb74.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png" data-sub-html="<h2> </h2><p>deb3195730865e730b1eae75c73eb74.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png" data-title="deb3195730865e730b1eae75c73eb74.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072001269.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">deb3195730865e730b1eae75c73eb74.png</figcaption>
     </figure></p>
 <h4 id="添加到-github">添加到 GitHub</h4>
 <ol>
@@ -620,15 +537,7 @@
 <li>
 <p>点击“New SSH key”（新建 SSH 密钥），填写标题和密钥的内容。
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png" title="8dbbc792ad52ef00645804d345f70c5.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png" data-sub-html="<h2> </h2><p>8dbbc792ad52ef00645804d345f70c5.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png" />
-    </a><figcaption class="image-caption">8dbbc792ad52ef00645804d345f70c5.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png" data-sub-html="<h2> </h2><p>8dbbc792ad52ef00645804d345f70c5.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png" data-title="8dbbc792ad52ef00645804d345f70c5.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003644.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">8dbbc792ad52ef00645804d345f70c5.png</figcaption>
     </figure></p>
 </li>
 <li>
@@ -637,15 +546,7 @@
 <li>
 <p>最后，点击“Add SSH key” （添加 SSH 密钥），完成密钥添加。
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png" title="f37b5f0d629c09d20904268fd3da2c8.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png" data-sub-html="<h2> </h2><p>f37b5f0d629c09d20904268fd3da2c8.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png" />
-    </a><figcaption class="image-caption">f37b5f0d629c09d20904268fd3da2c8.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png" data-sub-html="<h2> </h2><p>f37b5f0d629c09d20904268fd3da2c8.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png" data-title="f37b5f0d629c09d20904268fd3da2c8.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072003901.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">f37b5f0d629c09d20904268fd3da2c8.png</figcaption>
     </figure></p>
 </li>
 </ol>
@@ -656,62 +557,50 @@
 <li>在 &ldquo;Initialize this repository with&rdquo;（使用以下方式初始化仓库）部分，选择 &ldquo;Add a README file&rdquo;（添加一个 README 文件）选项。</li>
 <li>暂存并提交现有文件</li>
 </ol>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-11"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add . 
-</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;init blog files&#34;</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;init blog files&#34;</span></span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="4">
 <li>
 <p>点击 &ldquo;Create repository&rdquo;（创建仓库）按钮，完成 GitHub 仓库的创建。
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072113562.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 </li>
 <li>
 <p>将本地仓库与远程 GitHub 仓库关联起来。在项目目录中打开 Git Bash，执行以下命令，将 <code>&lt;remote-url&gt;</code> 替换为你的 GitHub 仓库的远程 URL：</p>
 </li>
 </ol>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-12"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote add origin &lt;remote-url&gt;
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote add origin &lt;remote-url&gt;</span></span></code></pre></td></tr></table>
 </div>
 </div><p>例如：</p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-13"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote add origin https://github.com/your-username/your-repository.git
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote add origin https://github.com/your-username/your-repository.git</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="6">
 <li>将本地代码推送到远程仓库的 main 分支。执行以下命令：</li>
 </ol>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-14"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git push -u origin main
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git push -u origin main</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这将把本地的代码推送到远程仓库的 <code>main</code> 分支，并将其设置为默认上游分支。</p>
 <h3 id="3创建-github-pages-仓库">3.创建 Github Pages 仓库</h3>
@@ -720,46 +609,29 @@
 <li>
 <p>创建新仓库
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072139904.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 </li>
 <li>
 <p><code>Repository name</code> 这里一定要填 <code>[你的github账号].github.io</code>。<code>你的github账号</code>必须小写字母。仓库可见性设为<code>Public</code>。选择“使用 README 初始化此存储库”。
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072138854.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 </li>
 </ol>
 <h3 id="4上传页面">4.上传页面</h3>
 <h5 id="41-进入项目根目录执行">4.1 进入项目根目录，执行：</h5>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-15"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo</span></span></code></pre></td></tr></table>
 </div>
 </div><p>执行后，站点根目录下会生成一个 <code>public</code> 文件夹，该文件下的内容即 Hugo 生成的整个静态网站。每次更新内容后，将 <code>pubilc</code> 目录里所有文件 push 到 GitHub Pages 所在的仓库即可。</p>
 <h5 id="42-上传代码至-master">4.2 上传代码至 master</h5>
 <p>首次使用的时候要执行以下命令：</p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-16"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -774,21 +646,12 @@
 </span></span><span class="line"><span class="cl">git remote add origin https://github.com/leegical/leegical.github.io.git <span class="c1"># 将本地目录链接到远程服务器的代码仓库</span>
 </span></span><span class="line"><span class="cl">git add .
 </span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;[介绍，随便写点什么，比如日期]&#34;</span>
-</span></span><span class="line"><span class="cl">git push -u origin master
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">git push -u origin master</span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="43-更改-pages-展示分支">4.3 更改 Pages 展示分支</h5>
 <p>进入 Github Pages 仓库的<code>Setting</code>-<code>Pages</code>，把<code>Branch</code>修改为<code>master</code>，点击 save。
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072154011.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <p>稍等几分钟即可通过<code>[你的github账号].github.io</code>来访问博客站点了，和<code>hugo serve -D</code>本地调试完全一致。</p>
 <h3 id="5github-action-自动发布">5.Github Action 自动发布</h3>
@@ -800,7 +663,7 @@
 </ol>
 <h4 id="51-增加-action-配置文件">5.1 增加 action 配置文件</h4>
 <p>回到 blog 仓库的本地文件夹，新增`.github/workflows/deploy.yml``</p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-17"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -809,22 +672,13 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir .github
 </span></span><span class="line"><span class="cl">mkdir .github/workflows
-</span></span><span class="line"><span class="cl">touch .github/workflows/deploy.yml
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">touch .github/workflows/deploy.yml</span></span></code></pre></td></tr></table>
 </div>
 </div><p>
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072211265.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <p>用 vscode 编辑 deploy.yml 的内容，参考如下：</p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-18"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -901,23 +755,14 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">EXTERNAL_REPOSITORY</span><span class="p">:</span><span class="w"> </span><span class="l">leegical/leegical.github.io</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">PUBLISH_BRANCH</span><span class="p">:</span><span class="w"> </span><span class="l">master</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">PUBLISH_DIR</span><span class="p">:</span><span class="w"> </span><span class="l">./public</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">commit_message</span><span class="p">:</span><span class="w"> </span><span class="l">${{ github.event.head_commit.message }}</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">commit_message</span><span class="p">:</span><span class="w"> </span><span class="l">${{ github.event.head_commit.message }}</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>注意：<code>EXTERNAL_REPOSITORY</code>要修改为 Github Pages 的链接
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072215164.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <p>提交变更到 Github：</p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-19"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -926,87 +771,38 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add .
 </span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;add action config&#34;</span>
-</span></span><span class="line"><span class="cl">git push
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">git push</span></span></code></pre></td></tr></table>
 </div>
 </div><p>
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072218321.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <h4 id="52-设置-action-变量">5.2 设置 action 变量</h4>
-<p>进入 <a href="https://github.com/settings/tokens" target="_blank" rel="noopener noreffer ">Github tokens</a> ，点击<code>Generate new token</code>——<code>Generate new token (classic)</code>
+<p>进入 <a href="https://github.com/settings/tokens"target="_blank" rel="external nofollow noopener noreferrer">Github tokens</a> ，点击<code>Generate new token</code>——<code>Generate new token (classic)</code>
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072222173.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <ul>
 <li>Note：随便写</li>
 <li>Expiration：<code>No expiration</code></li>
 <li>Select scopes：只勾选 <code>repo</code>
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225222.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure>
 拉到最下面，点击生成。
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072225119.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></li>
 </ul>
 <p>注意生成的 token 只会显示这一次，形如 <code>ghp_xxxxxxxxxx</code>，点击复制。
 回到 blog 仓库——Setting，新建仓库密钥
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072227540.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <ul>
 <li>Name：PERSONAL_TOKEN</li>
 <li>Secret：填刚才复制的密钥
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311072229504.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></li>
 </ul>
 <h2 id="总结">总结</h2>
@@ -1018,13 +814,12 @@
 </ol>
 </li>
 </ul>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-20"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new posts/文章名.md
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new posts/文章名.md</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -1033,13 +828,12 @@
 </ol>
 </li>
 </ul>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-21"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo serve -D
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo serve -D</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -1048,16 +842,15 @@
 </ol>
 </li>
 </ul>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-22"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo</span></span></code></pre></td></tr></table>
 </div>
 </div><p>进行编译，没错误的话修改的内容就顺利同步到<code>public</code>下了，然后执行提交命令：</p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-23"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1066,25 +859,16 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git add .
 </span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;随便写点提交信息&#34;</span>
-</span></span><span class="line"><span class="cl">git push
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">git push</span></span></code></pre></td></tr></table>
 </div>
 </div><p>稍等片刻，github action执行完毕，页面就会更新了。</p>
-<h2 id="选择和配置hugo主题httpshugoloveitcomzh-cntheme-documentation-basics">选择和配置<a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/" target="_blank" rel="noopener noreffer ">Hugo主题</a></h2>
+<h2 id="选择和配置hugo主题httpshugoloveitcomzh-cntheme-documentation-basics">选择和配置<a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/"target="_blank" rel="external nofollow noopener noreferrer">Hugo主题</a></h2>
 <p>在本地项目文件夹<code>static</code>中添加2个方形 png 图片，命名为<code>avatar.png</code>、<code>logo.png</code>，作为网站头像和 logo：
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081638404.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <p>修改<code>hugo.toml</code>文件，参考下面的文件自行修改：</p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-24"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
@@ -1601,11 +1385,10 @@
 </span></span><span class="line"><span class="cl">      <span class="nx">copy</span> <span class="p">=</span> <span class="kc">true</span>
 </span></span><span class="line"><span class="cl">      <span class="c"># the maximum number of lines of displayed code by default</span>
 </span></span><span class="line"><span class="cl">      <span class="c"># 默认展开显示的代码行数</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">maxShownLines</span> <span class="p">=</span> <span class="mi">20</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">      <span class="nx">maxShownLines</span> <span class="p">=</span> <span class="mi">20</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>记得提交更改</p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-25"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1616,99 +1399,88 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo
 </span></span><span class="line"><span class="cl">git add .
 </span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;修改主题&#34;</span>
-</span></span><span class="line"><span class="cl">git push
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">git push</span></span></code></pre></td></tr></table>
 </div>
 </div><p>稍等片刻，github action执行完毕，页面就会更新了。</p>
 <div class="details admonition quote open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-quote-right fa-fw" aria-hidden="true"></i>一些进阶玩法<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li><a href="https://lewky.cn/categories/hugo%E7%B3%BB%E5%88%97/" target="_blank" rel="noopener noreffer ">Hugo系列(3.0) - LoveIt主题美化与博客功能增强</a></li>
-<li><a href="https://stilig.me/posts/hugo-adds-busuanzi/" target="_blank" rel="noopener noreffer ">Hugo 添加访问统计功能</a></li>
-<li><a href="https://haoyep.com/posts/hugo-add-component/" target="_blank" rel="noopener noreffer ">Hugo 博客添加 Giscus 评论功能</a></li>
-<li><a href="https://stilig.me/categories/hugo-%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener noreffer ">Hugo 的 LoveIt 主题修改及增强</a></li>
-<li><a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/#32-%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87-%E6%B5%8F%E8%A7%88%E5%99%A8%E9%85%8D%E7%BD%AE-%E7%BD%91%E7%AB%99%E6%B8%85%E5%8D%95" target="_blank" rel="noopener noreffer ">网站图标, 浏览器配置, 网站清单生成</a></li>
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-quote-right fa-fw" aria-hidden="true"></i>一些进阶玩法<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><ul>
+<li><a href="https://lewky.cn/categories/hugo%E7%B3%BB%E5%88%97/"target="_blank" rel="external nofollow noopener noreferrer">Hugo系列(3.0) - LoveIt主题美化与博客功能增强</a></li>
+<li><a href="https://stilig.me/posts/hugo-adds-busuanzi/"target="_blank" rel="external nofollow noopener noreferrer">Hugo 添加访问统计功能</a></li>
+<li><a href="https://haoyep.com/posts/hugo-add-component/"target="_blank" rel="external nofollow noopener noreferrer">Hugo 博客添加 Giscus 评论功能</a></li>
+<li><a href="https://stilig.me/categories/hugo-%E5%8D%9A%E5%AE%A2/"target="_blank" rel="external nofollow noopener noreferrer">Hugo 的 LoveIt 主题修改及增强</a></li>
+<li><a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/#32-%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87-%E6%B5%8F%E8%A7%88%E5%99%A8%E9%85%8D%E7%BD%AE-%E7%BD%91%E7%AB%99%E6%B8%85%E5%8D%95"target="_blank" rel="external nofollow noopener noreferrer">网站图标, 浏览器配置, 网站清单生成</a></li>
 </ul>
 </div>
-        </div>
     </div>
+  </div>
 </div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>更新于 2023-11-11&nbsp;<a class="git-hash" href="https://github.com/leegical/leegical.github.io/commit/b4aebcf361bcef4cc9abdd4eff57c12933354a39" target="_blank" title="commit by CXG-L(chuxuange@gmail.com) b4aebcf361bcef4cc9abdd4eff57c12933354a39: image">
-                                    <i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>b4aebcf</a></span>
-            </div><div class="post-info-license">
-                <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"></div>
-            <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haoyep.com/posts/windows-hugo-blog-github/" data-title="Windows下使用hugo和Github Pages配置博客" data-hashtags="git,hugo"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haoyep.com/posts/windows-hugo-blog-github/" data-hashtag="git"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://haoyep.com/posts/windows-hugo-blog-github/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haoyep.com/posts/windows-hugo-blog-github/" data-title="Windows下使用hugo和Github Pages配置博客" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://haoyep.com/posts/windows-hugo-blog-github/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://haoyep.com/posts/windows-hugo-blog-github/" data-title="Windows下使用hugo和Github Pages配置博客"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://haoyep.com/posts/windows-hugo-blog-github/" data-title="Windows下使用hugo和Github Pages配置博客"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/baidu.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://haoyep.com/posts/windows-hugo-blog-github/" data-title="Windows下使用hugo和Github Pages配置博客"><i class="fab fa-skype fa-fw" aria-hidden="true"></i></a></span>
-            </div>
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-11-10 18:58:06">更新于 2023-11-10&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haoyep.com/posts/windows-hugo-blog-github/" data-title="Windows下使用hugo和Github Pages配置博客" data-hashtags="git,hugo"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haoyep.com/posts/windows-hugo-blog-github/" data-hashtag="git"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://haoyep.com/posts/windows-hugo-blog-github/" data-title="Windows下使用hugo和Github Pages配置博客"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/git/' class="post-tag">git</a><a href='/tags/hugo/' class="post-tag">hugo</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav">
+      <a href="/posts/hugo-add-component/" class="post-nav-item" rel="next" title="Hugo 博客添加 Giscus 评论功能">Hugo 博客添加 Giscus 评论功能<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="leegical/leegical.github.io"
+            data-repo-id="R_kgDOKqVEVg"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOKqVEVs4Cax6P"
+            data-mapping=""
+            data-strict="0"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-lang="zh-cn"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
         </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/git/">git</a>,&nbsp;<a href="/tags/hugo/">hugo</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav">
-            <a href="/posts/hugo-add-component/" class="next" rel="next" title="Hugo 博客添加 Giscus 评论功能">Hugo 博客添加 Giscus 评论功能<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
-</div>
-<div id="comments"><div id="giscus" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://haoyep.com/" target="_blank">云吱</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-    
-        
-        <script async src=" //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js "></script>
-    
-
-    
-        
-            <section>
-                
-                    <span id="busuanzi_container_value_site_pv"><i class="far fa-eye fa-fw"></i>
-                        
-                        <span id="busuanzi_value_site_pv"></span>
-                    </span>
-                
-
-                
-                    &nbsp;|&nbsp;              
-                
-
-                
-                    <span id="busuanzi_container_value_site_uv"><i class="fa fa-user"></i>
-                        
-                        <span id="busuanzi_value_site_uv"></span>
-                    </span>
-                
-            </section>
-        
-
-        
-        
-    
-
-</div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.8127f0ca4cabc7246f3620f3ef3bf9b1db02805dfe03d6d4c57bc74bc0bf6eea.js" integrity="sha256-gSfwykyrxyRvNiDz7zv5sdsCgF3+A9bUxXvHS8C/buo="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.825fab54c26891370cbd3df4cdff5c9de31af8bb84474e6774573463d8708ae7.js" integrity="sha256-gl+rVMJokTcMvT30zf9cneMa+LuER05ndFc0Y9hwiuc="></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOKqVEVs4Cax6P","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"leegical/leegical.github.io","repoId":"R_kgDOKqVEVg"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":20,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.e8d2be21e46b332dc48b46049b0c07b11a65970524ed512fac5d352f19eea7a5.js" integrity="sha256-6NK+IeRrMy3Ei0YEmwwHsRpllwUk7VEvrF01Lxnup6U="></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="/js/custom.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-QNC2G9BGVM', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-QNC2G9BGVM" async></script></body>
+        <noscript>
+          Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+        </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://haoyep.com/"target="_blank" rel="external nofollow noopener noreferrer">云吱</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.120f067ebd6f322339e2ccccd7e87e334d7c7ea5b2bd553f325f2ae3c3ae6fe8.css" integrity="sha256-Eg8Gfr1vMiM54szM1&#43;h&#43;M018fqWyvVU/Ml8q48Oub&#43;g="><link rel="stylesheet" href="/lib/katex/katex.min.505d5f829022bb7b4f24dfee0aa1141cd7bba67afe411d1240335f820960b5c3.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr&#43;QR0SQDNfgglgtcM="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.8127f0ca4cabc7246f3620f3ef3bf9b1db02805dfe03d6d4c57bc74bc0bf6eea.js" integrity="sha256-gSfwykyrxyRvNiDz7zv5sdsCgF3+A9bUxXvHS8C/buo=" defer></script><script src="/lib/lunr/lunr.zh.min.825fab54c26891370cbd3df4cdff5c9de31af8bb84474e6774573463d8708ae7.js" integrity="sha256-gl+rVMJokTcMvT30zf9cneMa+LuER05ndFc0Y9hwiuc=" defer></script><script src="/lib/lightgallery/lightgallery.min.7de2854e7954105f2b91ff5983749c4e3c7af51e05aae279f8a5d66994a85777.js" integrity="sha256-feKFTnlUEF8rkf9Zg3ScTjx69R4FquJ5+KXWaZSoV3c=" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.4fbc3ec1878e90348b71b3594d8ef27c4f10a1a4c6d5e74948d0ee59018fd87c.js" integrity="sha256-T7w+wYeOkDSLcbNZTY7yfE8QoaTG1edJSNDuWQGP2Hw=" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.821a2adb8005511c0ad9ef6f395c1b74beacc2da194cd13a4ac43d341246e085.js" integrity="sha256-ghoq24AFURwK2e9vOVwbdL6swtoZTNE6SsQ9NBJG4IU=" defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw+iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.f0ca03df194b8c3d6017ff455db6a0ef98857905663fa311a6cded788b15340b.js" integrity="sha256-8MoD3xlLjD1gF/9FXbag75iFeQVmP6MRps3teIsVNAs=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"autoBookmark":true,"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":15},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":15,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.4e4479520e47200975433dcd9dd04ae4e964603e422090620b8d048c13e25fc0.js" integrity="sha256-TkR5Ug5HIAl1Qz3NndBK5OlkYD5CIJBiC40EjBPiX8A=" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-QNC2G9BGVM', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-QNC2G9BGVM" async></script></body>
 </html>

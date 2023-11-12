@@ -1,0 +1,7 @@
+https://haoyep.com/posts/zotero-config/
+https://haoyep.com/posts/loveit-admonition/
+https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/
+https://haoyep.com/posts/zerotier-ssh/
+https://haoyep.com/posts/windows-hugo-blog-cloudflare/
+https://haoyep.com/posts/hugo-add-component/
+https://haoyep.com/posts/windows-hugo-blog-github/

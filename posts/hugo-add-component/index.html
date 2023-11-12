@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <title>Hugo 博客添加 Giscus 评论功能 - 云吱</title><meta name="Description" content="本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。"><meta property="og:title" content="Hugo 博客添加 Giscus 评论功能" />
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Hugo 博客添加 Giscus 评论功能 - 云吱</title><meta name="author" content="云吱">
+<meta name="author-link" content="https://haoyep.com/">
+<meta name="description" content="本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。" /><meta name="keywords" content='git, hugo' /><meta itemprop="name" content="Hugo 博客添加 Giscus 评论功能">
+<meta itemprop="description" content="本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。"><meta itemprop="datePublished" content="2023-11-08T12:58:06+08:00" />
+<meta itemprop="dateModified" content="2023-11-08T12:58:06+08:00" />
+<meta itemprop="wordCount" content="181"><meta itemprop="image" content="https://haoyep.com/android-chrome-512x512.png"/>
+<meta itemprop="keywords" content="git,hugo," /><meta property="og:title" content="Hugo 博客添加 Giscus 评论功能" />
 <meta property="og:description" content="本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://haoyep.com/posts/hugo-add-component/" /><meta property="og:image" content="https://haoyep.com/android-chrome-512x512.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-11-08T12:58:06+08:00" />
-<meta property="article:modified_time" content="2023-11-08T12:58:06+08:00" /><meta property="og:site_name" content="云吱的小站" />
+<meta property="article:modified_time" content="2023-11-08T12:58:06+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://haoyep.com/android-chrome-512x512.png"/>
@@ -17,127 +24,140 @@
 <meta name="twitter:title" content="Hugo 博客添加 Giscus 评论功能"/>
 <meta name="twitter:description" content="本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。"/>
 <meta name="application-name" content="云吱的小站">
-<meta name="apple-mobile-web-app-title" content="云吱的小站"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haoyep.com/posts/hugo-add-component/" /><link rel="prev" href="https://haoyep.com/posts/windows-hugo-blog-github/" /><link rel="next" href="https://haoyep.com/posts/windows-hugo-blog-cloudflare/" /><link rel="stylesheet" href="/css/style.min.304b8d1d671415fc9e19f907043d4807aa825629e7ca9b02b3068581461d36c8.css" integrity="sha256-MEuNHWcUFfyeGfkHBD1IB6qCVinnypsCswaFgUYdNsg="><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Hugo 博客添加 Giscus 评论功能",
-        "inLanguage": "zh-CN",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/haoyep.com\/posts\/hugo-add-component\/"
-        },"image": ["https:\/\/haoyep.com\/favicon.ico"],"genre": "posts","keywords": "git, hugo","wordcount":  719 ,
-        "url": "https:\/\/haoyep.com\/posts\/hugo-add-component\/","datePublished": "2023-11-08T12:58:06+08:00","dateModified": "2023-11-08T12:58:06+08:00","publisher": {
-            "@type": "Organization",
-            "name": "云吱","logo": "https:\/\/haoyep.com\/logo.png"},"author": {
-                "@type": "Person",
-                "name": "云吱"
-            },"description": "本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。"
-    }
-    </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="云吱"><img
-        class="lazyload logo"
-        src="/svg/loading.min.svg"
-        data-src="/logo.png"
-        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
-        data-sizes="auto"
-        alt="/logo.png"
-        title="/logo.png" />云吱的小站</a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="输入关键词进行搜索......" id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a></div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="云吱"><img
-        class="lazyload logo"
-        src="/svg/loading.min.svg"
-        data-src="/logo.png"
-        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
-        data-sizes="auto"
-        alt="/logo.png"
-        title="/logo.png" />云吱的小站</a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="输入关键词进行搜索......" id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
-                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        取消
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
-                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a></div>
-    </div>
-</header><div class="search-dropdown desktop">
-        <div id="search-dropdown-desktop"></div>
-    </div>
-    <div class="search-dropdown mobile">
-        <div id="search-dropdown-mobile"></div>
-    </div><main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">目录</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Hugo 博客添加 Giscus 评论功能</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>云吱</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/git/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>git</a>&nbsp;<a href="/categories/hugo/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>hugo</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar fa-fw"></i>&nbsp;<time datetime="2023-11-08">2023-11-08</time>&nbsp;<i class="far fa-calendar-plus fa-fw"></i>&nbsp;<time datetime="2023-11-08">2023-11-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 719 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;
-    
-
-    
-        
-
-        
-        
-            <span id="busuanzi_container_value_page_pv"><i class="far fa-eye fa-fw"></i>
+<meta name="apple-mobile-web-app-title" content="云吱的小站"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://haoyep.com/posts/hugo-add-component/" /><link rel="prev" href="https://haoyep.com/posts/windows-hugo-blog-github/" /><link rel="next" href="https://haoyep.com/posts/windows-hugo-blog-cloudflare/" /><link rel="stylesheet" href="/css/style.min.3ea4eaa312a4513cbc2a5d8c7bd7ab07d8cce31056e0224968fa27770be9fba2.css" integrity="sha256-PqTqoxKkUTy8Kl2Me9erB9jM4xBW4CJJaPondwvp&#43;6I="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU="><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Hugo 博客添加 Giscus 评论功能",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/haoyep.com\/posts\/hugo-add-component\/"
+    },"image": ["https:\/\/haoyep.com\/favicon.ico"],"genre": "posts","keywords": "git, hugo","wordcount":  181 ,
+    "url": "https:\/\/haoyep.com\/posts\/hugo-add-component\/","datePublished": "2023-11-08T12:58:06+08:00","dateModified": "2023-11-08T12:58:06+08:00","publisher": {
+      "@type": "Organization",
+      "name": "云吱","logo": "https:\/\/haoyep.com\/logo.png"},"author": {
+        "@type": "Person",
+        "name": "云吱"
+      },"description": "本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。"
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="云吱"><img loading="lazy" src="/logo.png" data-title="云吱" data-alt="云吱" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">云吱的小站</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
                 
-                <span id="busuanzi_value_page_pv"></span>&nbsp;次阅读</span>
-        
-    
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="输入关键词进行搜索......" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="云吱"><img loading="lazy" src="/logo.png" data-title="/logo.png" data-alt="/logo.png" class="logo" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">云吱的小站</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="输入关键词进行搜索......" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
 
-</div>
-        </div><div class="details toc" id="toc-static"  data-kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <aside class="aside-custom">
+    </aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Hugo 博客添加 Giscus 评论功能</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://www.gravatar.com/avatar/867c2859fc58e987cb357c7a67ac01cb?s=32&amp;d=" data-title="云吱" data-alt="云吱" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;云吱</a></span>
+          <span class="post-category">收录于 <a href="/categories/git/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> git</a>&ensp;<a href="/categories/hugo/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> hugo</a></span></div>
+      <div class="post-meta-line"><span title="发布于 2023-11-08 12:58:06"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-08">2023-11-08</time></span>&nbsp;<span title="更新于 2023-11-08 12:58:06"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-08">2023-11-08</time></span>&nbsp;<span title="181 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Hugo 博客添加 Giscus 评论功能">
+              <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#配置-github-仓库">配置 Github 仓库</a></li>
     <li><a href="#安装-giscus">安装 Giscus</a></li>
@@ -150,88 +170,48 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。</p>
+      </div><div class="content" id="content"><p>本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。</p>
 <blockquote>
-<p>参考知乎 <a href="https://zhuanlan.zhihu.com/p/642438343" target="_blank" rel="noopener noreffer ">Hugo 的 LoveIt 主题添加 Giscus 评论</a>：Giscus 是一个由 Github Discussions 驱动的评论系统，无需自己单独配置，直接白嫖 Github 的资源即可，而且 UI 和功能都十分地合适我，配合 LoveIt 的配置还可以做到十分美观。</p>
+<p>参考知乎 <a href="https://zhuanlan.zhihu.com/p/642438343"target="_blank" rel="external nofollow noopener noreferrer">Hugo 的 LoveIt 主题添加 Giscus 评论</a>：Giscus 是一个由 Github Discussions 驱动的评论系统，无需自己单独配置，直接白嫖 Github 的资源即可，而且 UI 和功能都十分地合适我，配合 LoveIt 的配置还可以做到十分美观。</p>
 </blockquote>
 <h2 id="配置-github-仓库">配置 Github 仓库</h2>
 <p>进入 Github Pages 仓库，找到<code>Settings -&gt; General -&gt; Features -&gt; Discussions</code> 勾选，为仓库启动 Discussions 功能
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081213743.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081213743.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081213743.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081213743.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081213743.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081213743.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081213743.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081213743.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081213743.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081213743.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081213743.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <h2 id="安装-giscus">安装 Giscus</h2>
 <ul>
 <li>
-<p>点击<a href="https://github.com/apps/giscus" target="_blank" rel="noopener noreffer ">这里</a>，我们将会看到下面的界面，我们点击<code>Install</code>
+<p>点击<a href="https://github.com/apps/giscus"target="_blank" rel="external nofollow noopener noreferrer">这里</a>，我们将会看到下面的界面，我们点击<code>Install</code>
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081216731.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081216731.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081216731.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081216731.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081216731.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081216731.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081216731.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081216731.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081216731.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081216731.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081216731.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 </li>
 <li>
 <p>点击安装后，依次选择<code>Only select repositories</code>——<code>Select repositories</code>——选择 Github Pages 仓库。点击<code>Install</code>安装。
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081217166.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081217166.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081217166.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081217166.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081217166.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081217166.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081217166.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081217166.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081217166.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081217166.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081217166.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 </li>
 </ul>
 <h2 id="配置-giscus">配置 Giscus</h2>
 <p>接下来，我们只需到 Giscus 官网获取配置信息，然后将配置信息填到 Hugo 的配置文件中即可。但是由于主题的不同，所以配置文件的填写也不同，这里以 LoveIt 为例。</p>
-<h3 id="来到giscus-官网httpsgiscusappzh-cn">来到 <a href="https://giscus.app/zh-CN" target="_blank" rel="noopener noreffer ">Giscus 官网</a></h3>
+<h3 id="来到giscus-官网httpsgiscusappzh-cn">来到 <a href="https://giscus.app/zh-CN"target="_blank" rel="external nofollow noopener noreferrer">Giscus 官网</a></h3>
 <ul>
 <li>仓库：填写 Github Pages 仓库名</li>
 <li>页面 ↔️ discussion 映射关系：<strong>Discussion 的标题包含页面的 <code>pathname</code></strong></li>
 <li>Discussion 分类：Announcements
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081221150.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081221150.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081221150.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081221150.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081221150.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081221150.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081221150.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081221150.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081221150.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081221150.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081221150.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></li>
 <li>其他选项默认。往下滑，找到配置文件。记下<code>data-repo</code>，<code>data-repo-id</code>，<code>data-category</code>，<code>data-category-id</code>，<code>data-mapping</code>这几个值。
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081226064.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081226064.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081226064.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081226064.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081226064.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081226064.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081226064.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081226064.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081226064.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081226064.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081226064.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></li>
 </ul>
 <h3 id="修改-hugo-配置">修改 Hugo 配置</h3>
 <p>使用 vscode 打开 blog 仓库的本地项目文件夹，修改<code>hugo.toml</code>。在[params]——[params.page]处添加评论功能：</p>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-1"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -272,22 +252,13 @@
 </span></span><span class="line"><span class="cl">        <span class="nx">inputPosition</span> <span class="p">=</span> <span class="s2">&#34;bottom&#34;</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">lazyLoading</span> <span class="p">=</span> <span class="kc">false</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">lightTheme</span> <span class="p">=</span> <span class="s2">&#34;light&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">darkTheme</span> <span class="p">=</span> <span class="s2">&#34;dark&#34;</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">        <span class="nx">darkTheme</span> <span class="p">=</span> <span class="s2">&#34;dark&#34;</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081236503.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081236503.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081236503.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081236503.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081236503.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081236503.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081236503.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081236503.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081236503.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081236503.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081236503.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p>
 <h3 id="提交更改">提交更改</h3>
-<div class="highlight"><div class="chroma">
+<div class="highlight" id="id-2"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -296,94 +267,76 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add .
 </span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;add comment func&#34;</span>
-</span></span><span class="line"><span class="cl">git push
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">git push</span></span></code></pre></td></tr></table>
 </div>
 </div><p>稍等片刻，Github Action 会自动更改。</p>
 <p>用户登录 Github 后即可评论，效果图如下：
 
-<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081302484.png" title="image.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081302484.png" data-sub-html="<h2> </h2><p>image.png</p>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081302484.png"
-            data-srcset="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081302484.png, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081302484.png 1.5x, https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081302484.png 2x"
-            data-sizes="auto"
-            alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081302484.png" />
-    </a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081302484.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081302484.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081302484.png" data-title="image.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311081302484.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
     </figure></p></div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>更新于 2023-11-08</span>
-            </div><div class="post-info-license">
-                <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
-            </div></div>
-        <div class="post-info-line">
-            <div class="post-info-md"></div>
-            <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haoyep.com/posts/hugo-add-component/" data-title="Hugo 博客添加 Giscus 评论功能" data-hashtags="git,hugo"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haoyep.com/posts/hugo-add-component/" data-hashtag="git"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://haoyep.com/posts/hugo-add-component/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://haoyep.com/posts/hugo-add-component/" data-title="Hugo 博客添加 Giscus 评论功能" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://haoyep.com/posts/hugo-add-component/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://haoyep.com/posts/hugo-add-component/" data-title="Hugo 博客添加 Giscus 评论功能"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://haoyep.com/posts/hugo-add-component/" data-title="Hugo 博客添加 Giscus 评论功能"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/baidu.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://haoyep.com/posts/hugo-add-component/" data-title="Hugo 博客添加 Giscus 评论功能"><i class="fab fa-skype fa-fw" aria-hidden="true"></i></a></span>
-            </div>
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-11-08 12:58:06">更新于 2023-11-08&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haoyep.com/posts/hugo-add-component/" data-title="Hugo 博客添加 Giscus 评论功能" data-hashtags="git,hugo"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haoyep.com/posts/hugo-add-component/" data-hashtag="git"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://haoyep.com/posts/hugo-add-component/" data-title="Hugo 博客添加 Giscus 评论功能"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/git/' class="post-tag">git</a><a href='/tags/hugo/' class="post-tag">hugo</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/windows-hugo-blog-github/" class="post-nav-item" rel="prev" title="Windows下使用hugo和Github Pages配置博客"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Windows下使用hugo和Github Pages配置博客</a>
+      <a href="/posts/windows-hugo-blog-cloudflare/" class="post-nav-item" rel="next" title="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客">Windows 下使用 Hugo 和 Cloudflare Pages 配置博客<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="leegical/leegical.github.io"
+            data-repo-id="R_kgDOKqVEVg"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOKqVEVs4Cax6P"
+            data-mapping=""
+            data-strict="0"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-lang="zh-cn"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
         </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/git/">git</a>,&nbsp;<a href="/tags/hugo/">hugo</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="/posts/windows-hugo-blog-github/" class="prev" rel="prev" title="Windows下使用hugo和Github Pages配置博客"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Windows下使用hugo和Github Pages配置博客</a>
-            <a href="/posts/windows-hugo-blog-cloudflare/" class="next" rel="next" title="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客">Windows 下使用 Hugo 和 Cloudflare Pages 配置博客<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
-</div>
-<div id="comments"><div id="giscus" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
-            </noscript></div></article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://haoyep.com/" target="_blank">云吱</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-    
-        
-        <script async src=" //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js "></script>
-    
-
-    
-        
-            <section>
-                
-                    <span id="busuanzi_container_value_site_pv"><i class="far fa-eye fa-fw"></i>
-                        
-                        <span id="busuanzi_value_site_pv"></span>
-                    </span>
-                
-
-                
-                    &nbsp;|&nbsp;              
-                
-
-                
-                    <span id="busuanzi_container_value_site_uv"><i class="fa fa-user"></i>
-                        
-                        <span id="busuanzi_value_site_uv"></span>
-                    </span>
-                
-            </section>
-        
-
-        
-        
-    
-
-</div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
-                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
-            </a>
-        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.8127f0ca4cabc7246f3620f3ef3bf9b1db02805dfe03d6d4c57bc74bc0bf6eea.js" integrity="sha256-gSfwykyrxyRvNiDz7zv5sdsCgF3+A9bUxXvHS8C/buo="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.825fab54c26891370cbd3df4cdff5c9de31af8bb84474e6774573463d8708ae7.js" integrity="sha256-gl+rVMJokTcMvT30zf9cneMa+LuER05ndFc0Y9hwiuc="></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOKqVEVs4Cax6P","darkTheme":"dark","emitMetadata":"0","inputPosition":"bottom","lang":"zh-CN","lazyLoading":false,"lightTheme":"light","mapping":"pathname","reactionsEnabled":"1","repo":"leegical/leegical.github.io","repoId":"R_kgDOKqVEVg"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":20,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.e8d2be21e46b332dc48b46049b0c07b11a65970524ed512fac5d352f19eea7a5.js" integrity="sha256-6NK+IeRrMy3Ei0YEmwwHsRpllwUk7VEvrF01Lxnup6U="></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script><script type="text/javascript" src="/js/custom.js"></script><script type="text/javascript">
-            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-            gtag('config', 'G-QNC2G9BGVM', { 'anonymize_ip': true });
-        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-QNC2G9BGVM" async></script></body>
+        <noscript>
+          Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+        </noscript></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://haoyep.com/"target="_blank" rel="external nofollow noopener noreferrer">云吱</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.120f067ebd6f322339e2ccccd7e87e334d7c7ea5b2bd553f325f2ae3c3ae6fe8.css" integrity="sha256-Eg8Gfr1vMiM54szM1&#43;h&#43;M018fqWyvVU/Ml8q48Oub&#43;g="><link rel="stylesheet" href="/lib/katex/katex.min.505d5f829022bb7b4f24dfee0aa1141cd7bba67afe411d1240335f820960b5c3.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr&#43;QR0SQDNfgglgtcM="><script src="/lib/autocomplete/autocomplete.min.ae2da1bd62c6469ee27770ad1cddf2e8296d8a7f6d85b091463e5200c5e320af.js" integrity="sha256-ri2hvWLGRp7id3CtHN3y6Cltin9thbCRRj5SAMXjIK8=" defer></script><script src="/lib/lunr/lunr.min.08a93c0120364b01159db3c287f39b2180bb740334472bda0675bd3f18981676.js" integrity="sha256-CKk8ASA2SwEVnbPCh/ObIYC7dAM0RyvaBnW9PxiYFnY=" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.8127f0ca4cabc7246f3620f3ef3bf9b1db02805dfe03d6d4c57bc74bc0bf6eea.js" integrity="sha256-gSfwykyrxyRvNiDz7zv5sdsCgF3+A9bUxXvHS8C/buo=" defer></script><script src="/lib/lunr/lunr.zh.min.825fab54c26891370cbd3df4cdff5c9de31af8bb84474e6774573463d8708ae7.js" integrity="sha256-gl+rVMJokTcMvT30zf9cneMa+LuER05ndFc0Y9hwiuc=" defer></script><script src="/lib/lightgallery/lightgallery.min.7de2854e7954105f2b91ff5983749c4e3c7af51e05aae279f8a5d66994a85777.js" integrity="sha256-feKFTnlUEF8rkf9Zg3ScTjx69R4FquJ5+KXWaZSoV3c=" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.4fbc3ec1878e90348b71b3594d8ef27c4f10a1a4c6d5e74948d0ee59018fd87c.js" integrity="sha256-T7w+wYeOkDSLcbNZTY7yfE8QoaTG1edJSNDuWQGP2Hw=" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.821a2adb8005511c0ad9ef6f395c1b74beacc2da194cd13a4ac43d341246e085.js" integrity="sha256-ghoq24AFURwK2e9vOVwbdL6swtoZTNE6SsQ9NBJG4IU=" defer></script><script src="/lib/sharer/sharer.min.ba5171a78670b031914e623431a33a3d73c1ea9897e552ba73bc2c2da7c777b9.js" integrity="sha256-ulFxp4ZwsDGRTmI0MaM6PXPB6piX5VK6c7wsLafHd7k=" async defer></script><script src="/lib/katex/katex.min.dc84b296ec3e884de093158f760fd9d45b6c7abe58b5381557f4e138f46a58ae.js" integrity="sha256-3ISyluw+iE3gkxWPdg/Z1Ftser5YtTgVV/ThOPRqWK4=" defer></script><script src="/lib/katex/auto-render.min.9cb8dacfc086c2966c9ec4ba54f4a2dc43b7cbe2b33cec1a2743d886c7fb47a7.js" integrity="sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=" defer></script><script src="/lib/katex/copy-tex.min.52ce78fab4860d24ef22128a52ce24ca01368a9034457a565a1d3fccbab0ddbb.js" integrity="sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs=" defer></script><script src="/lib/katex/mhchem.min.f0ca03df194b8c3d6017ff455db6a0ef98857905663fa311a6cded788b15340b.js" integrity="sha256-8MoD3xlLjD1gF/9FXbag75iFeQVmP6MRps3teIsVNAs=" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"autoBookmark":true,"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":15},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":15,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.4e4479520e47200975433dcd9dd04ae4e964603e422090620b8d048c13e25fc0.js" integrity="sha256-TkR5Ug5HIAl1Qz3NndBK5OlkYD5CIJBiC40EjBPiX8A=" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-QNC2G9BGVM', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-QNC2G9BGVM" async></script></body>
 </html>
