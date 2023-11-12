@@ -1,31 +1,31 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>git - 标签 - 云吱</title>
-        <link>https://leegical.github.io/tags/git/</link>
+        <link>https://haoyep.com/tags/git/</link>
         <description>git - 标签 - 云吱</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
-            <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</lastBuildDate><atom:link href="https://leegical.github.io/tags/git/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/tags/git/" rel="self" type="application/rss+xml" /><item>
     <title>Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</title>
-    <link>https://leegical.github.io/posts/windows-hugo-blog-cloudflare/</link>
+    <link>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</link>
     <pubDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</pubDate>
     <author>云吱</author>
-    <guid>https://leegical.github.io/posts/windows-hugo-blog-cloudflare/</guid>
+    <guid>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</guid>
     <description><![CDATA[使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。]]></description>
 </item>
 <item>
     <title>Hugo 博客添加 Giscus 评论功能</title>
-    <link>https://leegical.github.io/posts/hugo-add-component/</link>
+    <link>https://haoyep.com/posts/hugo-add-component/</link>
     <pubDate>Wed, 08 Nov 2023 12:58:06 &#43;0800</pubDate>
     <author>云吱</author>
-    <guid>https://leegical.github.io/posts/hugo-add-component/</guid>
+    <guid>https://haoyep.com/posts/hugo-add-component/</guid>
     <description><![CDATA[<p>本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。</p>]]></description>
 </item>
 <item>
     <title>Windows下使用hugo和Github Pages配置博客</title>
-    <link>https://leegical.github.io/posts/windows-hugo-blog-github/</link>
+    <link>https://haoyep.com/posts/windows-hugo-blog-github/</link>
     <pubDate>Tue, 07 Nov 2023 23:13:11 &#43;0800</pubDate>
     <author>云吱</author>
-    <guid>https://leegical.github.io/posts/windows-hugo-blog-github/</guid>
+    <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
     <description><![CDATA[前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。]]></description>
 </item>
 </channel>

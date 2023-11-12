@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>SSH - 标签 - 云吱</title>
-        <link>https://leegical.github.io/tags/ssh/</link>
+        <link>https://haoyep.com/tags/ssh/</link>
         <description>SSH - 标签 - 云吱</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
-            <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Wed, 08 Nov 2023 22:49:04 &#43;0800</lastBuildDate><atom:link href="https://leegical.github.io/tags/ssh/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Wed, 08 Nov 2023 22:49:04 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/tags/ssh/" rel="self" type="application/rss+xml" /><item>
     <title>通过ZeroTier SSH连接内网主机</title>
-    <link>https://leegical.github.io/posts/zerotier-ssh/</link>
+    <link>https://haoyep.com/posts/zerotier-ssh/</link>
     <pubDate>Wed, 08 Nov 2023 22:49:04 &#43;0800</pubDate>
     <author>云吱</author>
-    <guid>https://leegical.github.io/posts/zerotier-ssh/</guid>
+    <guid>https://haoyep.com/posts/zerotier-ssh/</guid>
     <description><![CDATA[一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。]]></description>
 </item>
 </channel>
