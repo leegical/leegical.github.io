@@ -18,9 +18,9 @@
 【注】本文参考了知乎专栏。
 1.下载安装 1.1 蓝奏云 官网访问困难的，可以点击蓝奏云链接下载，更新于2023-11-8
 密码:2333
-image1.2 官网下载 1.2.1 本体Zotero 下载 Zotero 官网访问速度慢的，建议使用蓝奏云中Zotero-6.0.18_setup.exe进行安装。
+image 1.2 官网下载 1.2.1 本体Zotero 下载 Zotero 官网访问速度慢的，建议使用蓝奏云中Zotero-6.0.18_setup.exe进行安装。
 1.2.2 浏览器插件：Zotero Connector下载 1.2.3 翻译器：Zotero translators_CN下载 Zotero 官网访问速度慢的，建议下载蓝奏云中的translators.zip。
-1.2.4 插件 zotero 官方插件下载地址： https://www.zotero.org/support/plugins zotero 中文社区推荐插件： https://plugins.zotero-chinese.com/#/ 访问速度慢的，建议下载蓝奏云中插件.zip，压缩包里包含本文全部插件。 技巧强烈建议下载Zotero 插件合集，这个插件可以帮你自动管理、更新zotero插件。 image.png插件安装 方法一： 打开【Zotero】 点击【工具】—【插件】 点击右上角【⚙】—【Install Add-on From File…】—选中需要安装的插件（部分插件不适用该方法） 安装完毕后重启【Zotero】 imageimageimageimageimage方法二： 打开【Zotero】 点击【工具】—【插件】 将需要安装的插件【拖动】至该页面 安装完毕后重启【Zotero】]]></description>
+1.2.4 插件 zotero 官方插件下载地址： https://www.zotero.org/support/plugins zotero 中文社区推荐插件： https://plugins.zotero-chinese.com/#/ 访问速度慢的，建议下载蓝奏云中插件.zip，压缩包里包含本文全部插件。 技巧 强烈建议下载Zotero 插件合集，这个插件可以帮你自动管理、更新zotero插件。 image.png 插件安装 方法一： 打开【Zotero】 点击【工具】—【插件】 点击右上角【⚙】—【Install Add-on From File…】—选中需要安装的插件（部分插件不适用该方法） 安装完毕后重启【Zotero】 image image image image image 方法二： 打开【Zotero】 点击【工具】—【插件】 将需要安装的插件【拖动】至该页面 安装完毕后重启【Zotero】]]></description>
 </item>
 <item>
   <title>Windows下使用hugo和Github Pages配置博客</title>
@@ -30,11 +30,11 @@ image1.2 官网下载 1.2.1 本体Zotero 下载 Zotero 官网访问速度慢的
   <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
   <description><![CDATA[前提 默认本地已安装了 Git、VSCode。
 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本
-预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png解压到某个目录，然后将该目录添加到环境变量中： image.png通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：
+预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png 解压到某个目录，然后将该目录添加到环境变量中： image.png 通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：
 1 choco install hugo-extended Scoop Scoop 是适用于 Windows 的免费开源包管理器。这将安装 Hugo 的扩展版本：
 1 scoop install hugo-extended Winget Winget是Microsoft的官方免费开源Windows包管理器。这将安装 Hugo 的扩展版本：
 1 winget install Hugo.Hugo.Extended 2.创建 Hugo 网站 通过上述操作安装 hugo 程序后，就可以通过 hugo new site 命令进行网站创建、配置与本地调试了。 选择一个本地文件夹作为根目录，右键——Git Bash Here，输入下面的命令
-1 hugo new site &lt;site-name&gt; image.png注：后续命令未经说明，均在 Git Bash 中的 E:\Workspace\blog 目录下运行]]></description>
+1 hugo new site &lt;site-name&gt; image.png 注：后续命令未经说明，均在 Git Bash 中的 E:\Workspace\blog 目录下运行]]></description>
 </item>
 <item>
   <title>Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</title>
@@ -58,9 +58,9 @@ hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本
 【注】本文参考了知乎专栏。
 1.下载安装 1.1 蓝奏云 官网访问困难的，可以点击蓝奏云链接下载，更新于2023-11-8
 密码:2333
-image1.2 官网下载 1.2.1 本体Zotero 下载 Zotero 官网访问速度慢的，建议使用蓝奏云中Zotero-6.0.18_setup.exe进行安装。
+image 1.2 官网下载 1.2.1 本体Zotero 下载 Zotero 官网访问速度慢的，建议使用蓝奏云中Zotero-6.0.18_setup.exe进行安装。
 1.2.2 浏览器插件：Zotero Connector下载 1.2.3 翻译器：Zotero translators_CN下载 Zotero 官网访问速度慢的，建议下载蓝奏云中的translators.zip。
-1.2.4 插件 zotero 官方插件下载地址： https://www.zotero.org/support/plugins zotero 中文社区推荐插件： https://plugins.zotero-chinese.com/#/ 访问速度慢的，建议下载蓝奏云中插件.zip，压缩包里包含本文全部插件。 技巧强烈建议下载Zotero 插件合集，这个插件可以帮你自动管理、更新zotero插件。 image.png插件安装 方法一： 打开【Zotero】 点击【工具】—【插件】 点击右上角【⚙】—【Install Add-on From File…】—选中需要安装的插件（部分插件不适用该方法） 安装完毕后重启【Zotero】 imageimageimageimageimage方法二： 打开【Zotero】 点击【工具】—【插件】 将需要安装的插件【拖动】至该页面 安装完毕后重启【Zotero】]]></description>
+1.2.4 插件 zotero 官方插件下载地址： https://www.zotero.org/support/plugins zotero 中文社区推荐插件： https://plugins.zotero-chinese.com/#/ 访问速度慢的，建议下载蓝奏云中插件.zip，压缩包里包含本文全部插件。 技巧 强烈建议下载Zotero 插件合集，这个插件可以帮你自动管理、更新zotero插件。 image.png 插件安装 方法一： 打开【Zotero】 点击【工具】—【插件】 点击右上角【⚙】—【Install Add-on From File…】—选中需要安装的插件（部分插件不适用该方法） 安装完毕后重启【Zotero】 image image image image image 方法二： 打开【Zotero】 点击【工具】—【插件】 将需要安装的插件【拖动】至该页面 安装完毕后重启【Zotero】]]></description>
 </item>
 <item>
   <title>Loveit自带的admonition样式</title>
@@ -110,11 +110,11 @@ image1.2 官网下载 1.2.1 本体Zotero 下载 Zotero 官网访问速度慢的
   <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
   <description><![CDATA[前提 默认本地已安装了 Git、VSCode。
 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本
-预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png解压到某个目录，然后将该目录添加到环境变量中： image.png通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：
+预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png 解压到某个目录，然后将该目录添加到环境变量中： image.png 通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：
 1 choco install hugo-extended Scoop Scoop 是适用于 Windows 的免费开源包管理器。这将安装 Hugo 的扩展版本：
 1 scoop install hugo-extended Winget Winget是Microsoft的官方免费开源Windows包管理器。这将安装 Hugo 的扩展版本：
 1 winget install Hugo.Hugo.Extended 2.创建 Hugo 网站 通过上述操作安装 hugo 程序后，就可以通过 hugo new site 命令进行网站创建、配置与本地调试了。 选择一个本地文件夹作为根目录，右键——Git Bash Here，输入下面的命令
-1 hugo new site &lt;site-name&gt; image.png注：后续命令未经说明，均在 Git Bash 中的 E:\Workspace\blog 目录下运行]]></description>
+1 hugo new site &lt;site-name&gt; image.png 注：后续命令未经说明，均在 Git Bash 中的 E:\Workspace\blog 目录下运行]]></description>
 </item>
 </channel>
 </rss>

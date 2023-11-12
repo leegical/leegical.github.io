@@ -28,11 +28,11 @@
   <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
   <description><![CDATA[前提 默认本地已安装了 Git、VSCode。
 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本
-预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png解压到某个目录，然后将该目录添加到环境变量中： image.png通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：
+预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png 解压到某个目录，然后将该目录添加到环境变量中： image.png 通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：
 1 choco install hugo-extended Scoop Scoop 是适用于 Windows 的免费开源包管理器。这将安装 Hugo 的扩展版本：
 1 scoop install hugo-extended Winget Winget是Microsoft的官方免费开源Windows包管理器。这将安装 Hugo 的扩展版本：
 1 winget install Hugo.Hugo.Extended 2.创建 Hugo 网站 通过上述操作安装 hugo 程序后，就可以通过 hugo new site 命令进行网站创建、配置与本地调试了。 选择一个本地文件夹作为根目录，右键——Git Bash Here，输入下面的命令
-1 hugo new site &lt;site-name&gt; image.png注：后续命令未经说明，均在 Git Bash 中的 E:\Workspace\blog 目录下运行]]></description>
+1 hugo new site &lt;site-name&gt; image.png 注：后续命令未经说明，均在 Git Bash 中的 E:\Workspace\blog 目录下运行]]></description>
 </item>
 </channel>
 </rss>
