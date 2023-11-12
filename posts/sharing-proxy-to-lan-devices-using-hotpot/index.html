@@ -10,21 +10,21 @@
 <meta name="description" content="通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理" /><meta name="keywords" content='计算机网络, VPN' /><meta itemprop="name" content="通过热点共享网络，让局域网内的手机等设备共享本机代理">
 <meta itemprop="description" content="通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理"><meta itemprop="datePublished" content="2023-11-08T22:59:29+08:00" />
 <meta itemprop="dateModified" content="2023-11-08T22:59:29+08:00" />
-<meta itemprop="wordCount" content="92"><meta itemprop="image" content="https://haoyep.com/android-chrome-512x512.png"/>
+<meta itemprop="wordCount" content="92"><meta itemprop="image" content="https://leegical.github.io/android-chrome-512x512.png"/>
 <meta itemprop="keywords" content="计算机网络,VPN," /><meta property="og:title" content="通过热点共享网络，让局域网内的手机等设备共享本机代理" />
 <meta property="og:description" content="通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/" /><meta property="og:image" content="https://haoyep.com/android-chrome-512x512.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://leegical.github.io/posts/sharing-proxy-to-lan-devices-using-hotpot/" /><meta property="og:image" content="https://leegical.github.io/android-chrome-512x512.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-11-08T22:59:29+08:00" />
 <meta property="article:modified_time" content="2023-11-08T22:59:29+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://haoyep.com/android-chrome-512x512.png"/>
+<meta name="twitter:image" content="https://leegical.github.io/android-chrome-512x512.png"/>
 
 <meta name="twitter:title" content="通过热点共享网络，让局域网内的手机等设备共享本机代理"/>
 <meta name="twitter:description" content="通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理"/>
 <meta name="application-name" content="云吱的小站">
-<meta name="apple-mobile-web-app-title" content="云吱的小站"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/" /><link rel="prev" href="https://haoyep.com/posts/zerotier-ssh/" /><link rel="next" href="https://haoyep.com/posts/loveit-admonition/" /><link rel="stylesheet" href="/css/style.min.3ea4eaa312a4513cbc2a5d8c7bd7ab07d8cce31056e0224968fa27770be9fba2.css" integrity="sha256-PqTqoxKkUTy8Kl2Me9erB9jM4xBW4CJJaPondwvp&#43;6I="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU="><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="云吱的小站"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://leegical.github.io/posts/sharing-proxy-to-lan-devices-using-hotpot/" /><link rel="prev" href="https://leegical.github.io/posts/zerotier-ssh/" /><link rel="next" href="https://leegical.github.io/posts/loveit-admonition/" /><link rel="stylesheet" href="/css/style.min.3ea4eaa312a4513cbc2a5d8c7bd7ab07d8cce31056e0224968fa27770be9fba2.css" integrity="sha256-PqTqoxKkUTy8Kl2Me9erB9jM4xBW4CJJaPondwvp&#43;6I="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU="><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -32,11 +32,11 @@
     "inLanguage": "zh-cn",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/haoyep.com\/posts\/sharing-proxy-to-lan-devices-using-hotpot\/"
-    },"image": ["https:\/\/haoyep.com\/favicon.ico"],"genre": "posts","keywords": "计算机网络, VPN","wordcount":  92 ,
-    "url": "https:\/\/haoyep.com\/posts\/sharing-proxy-to-lan-devices-using-hotpot\/","datePublished": "2023-11-08T22:59:29+08:00","dateModified": "2023-11-08T22:59:29+08:00","publisher": {
+      "@id": "https:\/\/leegical.github.io\/posts\/sharing-proxy-to-lan-devices-using-hotpot\/"
+    },"image": ["https:\/\/leegical.github.io\/favicon.ico"],"genre": "posts","keywords": "计算机网络, VPN","wordcount":  92 ,
+    "url": "https:\/\/leegical.github.io\/posts\/sharing-proxy-to-lan-devices-using-hotpot\/","datePublished": "2023-11-08T22:59:29+08:00","dateModified": "2023-11-08T22:59:29+08:00","publisher": {
       "@type": "Organization",
-      "name": "云吱","logo": "https:\/\/haoyep.com\/logo.png"},"author": {
+      "name": "云吱","logo": "https:\/\/leegical.github.io\/logo.png"},"author": {
         "@type": "Person",
         "name": "云吱"
       },"description": "通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理"
@@ -331,9 +331,9 @@
     <div class="post-info-line">
       <div class="post-info-md"></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/" data-title="通过热点共享网络，让局域网内的手机等设备共享本机代理" data-hashtags="计算机网络,VPN"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/" data-hashtag="计算机网络"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/" data-title="通过热点共享网络，让局域网内的手机等设备共享本机代理"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://leegical.github.io/posts/sharing-proxy-to-lan-devices-using-hotpot/" data-title="通过热点共享网络，让局域网内的手机等设备共享本机代理" data-hashtags="计算机网络,VPN"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://leegical.github.io/posts/sharing-proxy-to-lan-devices-using-hotpot/" data-hashtag="计算机网络"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://leegical.github.io/posts/sharing-proxy-to-lan-devices-using-hotpot/" data-title="通过热点共享网络，让局域网内的手机等设备共享本机代理"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
   </span>
       </div>
     </div>
