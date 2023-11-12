@@ -12,7 +12,9 @@
   <pubDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/zotero-config/</guid>
-  <description><![CDATA[前言 最开始阅读文献是使用readpaper 平台，在线翻译、做笔记、文献管理都很方便，具体使用可以参考同济子豪兄和官方 ReadPaper 保姆级教程。
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311121634466.png" referrerpolicy="no-referrer">
+      </div>前言 最开始阅读文献是使用readpaper 平台，在线翻译、做笔记、文献管理都很方便，具体使用可以参考同济子豪兄和官方 ReadPaper 保姆级教程。
 但随着科研深入，readpaper 的文献管理功能逐渐跟不上了，而且很多文献没有 PDF 文件，需要自己下载后上传。
 经过研究发现，相比 Endnote，zotero 功能够用，而且开源。通过插件也可以实现 readpaper 的在线翻译功能，配合 snipaste 软件可以截图固定，非常 nice！
 【注】本文参考了知乎专栏。
