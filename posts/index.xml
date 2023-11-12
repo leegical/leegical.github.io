@@ -5,22 +5,14 @@
     <description>所有文章 | 云吱</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
       <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/posts/" rel="self" type="application/rss+xml" /><item>
-  <title>文献管理软件 zotero 下载安装使用与配置分享</title>
-  <link>https://haoyep.com/posts/zotero-config/</link>
-  <pubDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/zotero-config/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311121634466.png" referrerpolicy="no-referrer">
-      </div>前言 最开始阅读文献是使用readpaper 平台，在线翻译、做笔记、文献管理都很方便，具体使用可以参考同济子豪兄和官方 ReadPaper 保姆级教程。 但随着科研深入，readpaper 的文献管理功能逐渐跟不上了，而且很多文献没有 PDF 文件，需要自己下载后上传。 经过研究发现，相比 Endnote，zotero 功能够用，而且开源]]></description>
-</item>
-<item>
   <title>Windows下使用hugo和Github Pages配置博客</title>
   <link>https://haoyep.com/posts/windows-hugo-blog-github/</link>
   <pubDate>Tue, 07 Nov 2023 23:13:11 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
-  <description><![CDATA[前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png 解压到某个目录，然后将该目录添加到环境变量中： image.png 通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本： 1 choco install hugo-extended]]></description>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122214250.png" referrerpolicy="no-referrer">
+      </div>前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png 解压到某个目录，然后将该目录添加到环境变量中： image.png 通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本： 1 choco install hugo-extended]]></description>
 </item>
 <item>
   <title>通过ZeroTier SSH连接内网主机</title>
@@ -28,7 +20,9 @@
   <pubDate>Wed, 08 Nov 2023 22:49:04 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/zerotier-ssh/</guid>
-  <description><![CDATA[一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。]]></description>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122217763.png" referrerpolicy="no-referrer">
+      </div>一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。]]></description>
 </item>
 <item>
   <title>通过热点共享网络，让局域网内的手机等设备共享本机代理</title>
@@ -36,7 +30,19 @@
   <pubDate>Wed, 08 Nov 2023 22:59:29 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/</guid>
-  <description><![CDATA[通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理]]></description>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122213294.png" referrerpolicy="no-referrer">
+      </div>通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理]]></description>
+</item>
+<item>
+  <title>文献管理软件 zotero 下载安装使用与配置分享</title>
+  <link>https://haoyep.com/posts/zotero-config/</link>
+  <pubDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/zotero-config/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311121634466.png" referrerpolicy="no-referrer">
+      </div>前言 最开始阅读文献是使用readpaper 平台，在线翻译、做笔记、文献管理都很方便，具体使用可以参考同济子豪兄和官方 ReadPaper 保姆级教程。 但随着科研深入，readpaper 的文献管理功能逐渐跟不上了，而且很多文献没有 PDF 文件，需要自己下载后上传。 经过研究发现，相比 Endnote，zotero 功能够用，而且开源]]></description>
 </item>
 <item>
   <title>Loveit自带的admonition样式</title>
@@ -52,7 +58,9 @@
   <pubDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</guid>
-  <description><![CDATA[使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。]]></description>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122216423.png" referrerpolicy="no-referrer">
+      </div>使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。]]></description>
 </item>
 <item>
   <title>文献管理软件 zotero 下载安装使用与配置分享</title>
@@ -78,7 +86,9 @@
   <pubDate>Wed, 08 Nov 2023 22:59:29 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/</guid>
-  <description><![CDATA[通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理]]></description>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122213294.png" referrerpolicy="no-referrer">
+      </div>通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理]]></description>
 </item>
 <item>
   <title>通过ZeroTier SSH连接内网主机</title>
@@ -86,7 +96,9 @@
   <pubDate>Wed, 08 Nov 2023 22:49:04 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/zerotier-ssh/</guid>
-  <description><![CDATA[一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。]]></description>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122217763.png" referrerpolicy="no-referrer">
+      </div>一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。]]></description>
 </item>
 <item>
   <title>Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</title>
@@ -94,7 +106,9 @@
   <pubDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</guid>
-  <description><![CDATA[使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。]]></description>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122216423.png" referrerpolicy="no-referrer">
+      </div>使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。]]></description>
 </item>
 <item>
   <title>Hugo 博客添加 Giscus 评论功能</title>
@@ -102,7 +116,9 @@
   <pubDate>Wed, 08 Nov 2023 12:58:06 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/hugo-add-component/</guid>
-  <description><![CDATA[<p>本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。</p>]]></description>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122215835.png" referrerpolicy="no-referrer">
+      </div><p>本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。</p>]]></description>
 </item>
 <item>
   <title>Windows下使用hugo和Github Pages配置博客</title>
@@ -110,7 +126,9 @@
   <pubDate>Tue, 07 Nov 2023 23:13:11 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
-  <description><![CDATA[前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png 解压到某个目录，然后将该目录添加到环境变量中： image.png 通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本： 1 choco install hugo-extended]]></description>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122214250.png" referrerpolicy="no-referrer">
+      </div>前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png 解压到某个目录，然后将该目录添加到环境变量中： image.png 通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本： 1 choco install hugo-extended]]></description>
 </item>
 </channel>
 </rss>

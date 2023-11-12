@@ -10,7 +10,9 @@
   <pubDate>Wed, 08 Nov 2023 22:59:29 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/</guid>
-  <description><![CDATA[通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理]]></description>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122213294.png" referrerpolicy="no-referrer">
+      </div>通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理]]></description>
 </item>
 </channel>
 </rss>
