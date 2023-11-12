@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>科研 - 标签 - 云吱</title>
-    <link>/tags/%E7%A7%91%E7%A0%94/</link>
+    <link>https://haoyep.com/tags/%E7%A7%91%E7%A0%94/</link>
     <description>科研 - 标签 - 云吱</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
-      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</lastBuildDate><atom:link href="/tags/%E7%A7%91%E7%A0%94/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/tags/%E7%A7%91%E7%A0%94/" rel="self" type="application/rss+xml" /><item>
   <title>文献管理软件 zotero 下载安装使用与配置分享</title>
-  <link>/posts/zotero-config/</link>
+  <link>https://haoyep.com/posts/zotero-config/</link>
   <pubDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</pubDate>
   <author>云吱</author>
-  <guid>/posts/zotero-config/</guid>
+  <guid>https://haoyep.com/posts/zotero-config/</guid>
   <description><![CDATA[前言 最开始阅读文献是使用readpaper 平台，在线翻译、做笔记、文献管理都很方便，具体使用可以参考同济子豪兄和官方 ReadPaper 保姆级教程。
 但随着科研深入，readpaper 的文献管理功能逐渐跟不上了，而且很多文献没有 PDF 文件，需要自己下载后上传。
 经过研究发现，相比 Endnote，zotero 功能够用，而且开源。通过插件也可以实现 readpaper 的在线翻译功能，配合 snipaste 软件可以截图固定，非常 nice！
