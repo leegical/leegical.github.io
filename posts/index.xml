@@ -4,7 +4,15 @@
     <link>https://haoyep.com/posts/</link>
     <description>所有文章 | 云吱</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
-      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/posts/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Sat, 18 Nov 2023 20:42:47 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>PTATM（一）：初始化工作</title>
+  <link>https://haoyep.com/posts/ptatm-1/</link>
+  <pubDate>Sat, 18 Nov 2023 20:42:47 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/ptatm-1/</guid>
+  <description><![CDATA[本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。]]></description>
+</item>
+<item>
   <title>Windows下使用hugo和Github Pages配置博客</title>
   <link>https://haoyep.com/posts/windows-hugo-blog-github/</link>
   <pubDate>Tue, 07 Nov 2023 23:13:11 &#43;0800</pubDate>
@@ -61,6 +69,14 @@
   <description><![CDATA[<div class="featured-image">
         <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122216423.png" referrerpolicy="no-referrer">
       </div>使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。]]></description>
+</item>
+<item>
+  <title>PTATM（一）：初始化工作</title>
+  <link>https://haoyep.com/posts/ptatm-1/</link>
+  <pubDate>Sat, 18 Nov 2023 20:42:47 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/ptatm-1/</guid>
+  <description><![CDATA[本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。]]></description>
 </item>
 <item>
   <title>文献管理软件 zotero 下载安装使用与配置分享</title>
