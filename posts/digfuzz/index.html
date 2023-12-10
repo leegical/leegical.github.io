@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》" /><meta name="keywords" content='符号执行, 模糊测试' /><meta itemprop="name" content="Digfuzz工具论文调研">
 <meta itemprop="description" content="论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》"><meta itemprop="datePublished" content="2023-12-10T17:04:08+08:00" />
-<meta itemprop="dateModified" content="2023-12-10T18:01:33+08:00" />
-<meta itemprop="wordCount" content="13597"><meta itemprop="image" content="https://haoyep.com/logo.png" />
+<meta itemprop="dateModified" content="2023-12-10T20:52:14+08:00" />
+<meta itemprop="wordCount" content="13598"><meta itemprop="image" content="https://haoyep.com/logo.png" />
 <meta itemprop="keywords" content="符号执行,模糊测试," /><meta property="og:title" content="Digfuzz工具论文调研" />
 <meta property="og:description" content="论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://haoyep.com/posts/digfuzz/" /><meta property="og:image" content="https://haoyep.com/logo.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-12-10T17:04:08+08:00" />
-<meta property="article:modified_time" content="2023-12-10T18:01:33+08:00" />
+<meta property="article:modified_time" content="2023-12-10T20:52:14+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://haoyep.com/logo.png" /><meta name="twitter:title" content="Digfuzz工具论文调研"/>
@@ -33,8 +33,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/haoyep.com\/posts\/digfuzz\/"
-    },"image": ["https:\/\/haoyep.com\/favicon.ico"],"genre": "posts","keywords": "符号执行, 模糊测试","wordcount":  13597 ,
-    "url": "https:\/\/haoyep.com\/posts\/digfuzz\/","datePublished": "2023-12-10T17:04:08+08:00","dateModified": "2023-12-10T18:01:33+08:00","publisher": {
+    },"image": ["https:\/\/haoyep.com\/favicon.ico"],"genre": "posts","keywords": "符号执行, 模糊测试","wordcount":  13598 ,
+    "url": "https:\/\/haoyep.com\/posts\/digfuzz\/","datePublished": "2023-12-10T17:04:08+08:00","dateModified": "2023-12-10T20:52:14+08:00","publisher": {
       "@type": "Organization",
       "name": "云吱","logo": "https:\/\/haoyep.com\/logo.png"},"author": {
         "@type": "Person",
@@ -150,7 +150,7 @@
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       </span></span>
           <span class="post-category">收录于 <a href="/categories/%E7%A7%91%E7%A0%94/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 科研</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2023-12-10 17:04:08"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-10">2023-12-10</time></span>&nbsp;<span title="更新于 2023-12-10 18:01:33"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-10">2023-12-10</time></span>&nbsp;<span title="13597 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 13600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 28 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Digfuzz工具论文调研">
+      <div class="post-meta-line"><span title="发布于 2023-12-10 17:04:08"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-10">2023-12-10</time></span>&nbsp;<span title="更新于 2023-12-10 20:52:14"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-10">2023-12-10</time></span>&nbsp;<span title="13598 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 13600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 28 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Digfuzz工具论文调研">
               <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="featured-image"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" data-title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
@@ -201,34 +201,36 @@
 <p><a href="https://ieeexplore.ieee.org/abstract/document/9280412"target="_blank" rel="external nofollow noopener noreferrer">Probabilistic Path Prioritization for Hybrid Fuzzing</a>
 主要翻译参考自 <a href="https://fgroove.github.io/2019/03/27/digfuzz/"target="_blank" rel="external nofollow noopener noreferrer">DigFuzz</a>。</p>
 <h2 id="abstract">Abstract</h2>
-<p>混合模糊测试结合了模糊测试和符号执行，是一种先进的软件漏洞检测技术。基于对模糊和符号执行本质上是互补的观察，最先进的混合模糊测试系统部署了<code>需求启动 demand launch</code>和<code>最优切换 optimal switch</code>策略。虽然这些想法听起来很有意思，但由于过于简单的假设，我们指出了它们中的几个基本限制。
-然后，我们提出了一种新颖的<code>判别调度 discriminative dispatch</code>策略，以更好地利用符号执行的能力。我们设计了一种新的基于<code>Monte Carlo</code>的概率路径优先级模型，用于量化每条路径的难度，并优先考虑它们的符号执行。此模型将模糊测试视为随机抽样过程，根据采样信息计算每个路径的概率。最后，我们的模型<strong>优先考虑并指定最困难的路径来符号执行</strong>。
-我们实现了原型系统<code>DigFuzz</code>，并使用两个有代表性的数据集评估我们的系统。结果表明，在各个主要方面，<code>DigFuzz</code>中的符号执行性能优于最先进的混合模糊测试系统。特别是，<code>DigFuzz</code>中的符号执行有助于发现更多的漏洞（12对5），并在<code>CQE</code>数据集上产生比在<code>Driller</code>中执行的更多代码覆盖（18.9％对3.8％）。</p>
+<p>混合模糊测试结合了模糊测试和符号执行，是一种先进的软件漏洞检测技术。基于对模糊和符号执行本质上是互补的观察，最先进的混合模糊测试系统部署了<code>需求启动 demand launch</code>和<code>最佳切换 optimal switch</code>策略。虽然这些想法听起来很有意思，但由于过于简单的假设，我们指出了它们中的几个基本限制。</p>
+<p>然后，我们提出了一种新颖的<code>判别式调度 discriminative dispatch</code>策略，以更好地利用符号执行的能力。我们设计了一种新的基于<code>Monte Carlo</code>的概率路径优先级模型，用于量化每条路径的难度，并优先考虑它们的符号执行。此模型将模糊测试视为随机抽样过程，根据采样信息计算每个路径的概率。最后，我们的模型<strong>优先考虑并指定最困难的路径来符号执行</strong>。</p>
+<p>我们实现了原型系统<code>DigFuzz</code>，并使用两个有代表性的数据集评估我们的系统。结果表明，在各个主要方面，<code>DigFuzz</code>中的符号执行性能优于最先进的混合模糊测试系统。特别是，<code>DigFuzz</code>中的符号执行有助于发现更多的漏洞（12对5），并在<code>CQE</code>数据集上产生比在<code>Driller</code>中执行的更多代码覆盖（18.9％对3.8％）。</p>
 <h2 id="1introduction">1.Introduction</h2>
-<p>软件漏洞被认为是对网络空间最严重的威胁之一。因此，发现一个软件中的漏洞至关重要[12]，[16]，[25]，[27]，[32]。最近，模糊测试和符号执行的组合——混合模糊测试，在漏洞发现中变得越来越流行[5]，[29]，[31]，[39]，[42]，[46]。由于模糊测试和符号执行本质上是互补的，因此将它们结合起来可以潜在地利用它们的独特优势并减轻弱点。更具体地说，模糊测试（Fuzzing）擅长探索包含一般分支（具有大的满足值空间的分支，比如 x&gt;100）的路径，但是不能探索包含特定分支的路径（具有非常窄的满足值空间的分支,比如 x=2）[27]。相反，符号执行能够生成具体的输入，确保程序沿着特定的执行路径执行，但它会遇到路径爆炸问题[9]。在混合方案中，模糊测试由于高吞吐量通常承担路径探索的大多数任务，而符号执行辅助模糊测试探索低概率的路径、并且生成满足特定分支的输入。通过这种方式，可以减轻分支符号执行中的路径爆炸问题，因为符号执行仅负责探索可能阻止模糊测试的低概率路径。</p>
-<p><strong>关键的研究问题是如何结合模糊测试和符号执行以实现最佳的整体性能</strong>。 <code>Driller</code> [39]和<code>hybrid concolic testing</code>[29]采取<code>需求启动</code>策略：模糊测试首先开始，并且只有当模糊测试在一段时间内无法取得任何进展（即卡住<code>stuck</code>）时才会启动符号执行。最近的一项工作[42]提出了一种<code>最佳转换</code>策略：它通过模糊测试和符号执行来量化探索每条路径的成本，并选择更经济的方法来探索这条路径。</p>
-<p>我们使用<code>DARPA CQE</code>数据集[13]<code>和LAVA-m</code>数据集[15]评估了<code>需求启动</code>和<code>最佳转换</code>策略，并发现尽管这些策略听起来很有趣，但由于不太现实或过度简化的假设，它们都没有充分发挥作用。</p>
+<p>软件漏洞被认为是对网络空间最严重的威胁之一。因此，发现一个软件中的漏洞至关重要[12]，[16]，[25]，[27]，[32]。最近，模糊测试和符号执行的组合——混合模糊测试，在漏洞发现中变得越来越流行[5]，[29]，[31]，[39]，[42]，[46]。</p>
+<p>由于模糊测试和符号执行本质上是互补的，因此将它们结合起来可以潜在地利用它们的独特优势并减轻弱点。更具体地说，模糊测试（Fuzzing）擅长探索包含一般分支（具有大的满足值空间的分支，比如 x&gt;100）的路径，但是不能探索包含特定分支的路径（具有非常窄的满足值空间的分支,比如 x=2）[27]。相反，符号执行能够生成具体的输入，确保程序沿着特定的执行路径执行，但它会遇到路径爆炸问题[9]。</p>
+<p>在混合方案中，模糊测试由于高吞吐量通常承担路径探索的大多数任务，而符号执行辅助模糊测试探索低概率的路径、并且生成满足特定分支的输入。通过这种方式，可以减轻分支符号执行中的路径爆炸问题，因为符号执行仅负责探索可能阻止模糊测试的低概率路径。</p>
+<p><strong>关键的研究问题是如何结合模糊测试和符号执行以实现最佳的整体性能</strong>。<code>Driller</code>[39]和<code>hybrid concolic testing</code>[29]采取<code>需求启动</code>策略：模糊测试首先开始，并且只有当模糊测试在一段时间内无法取得任何进展（即卡住<code>stuck</code>）时才会启动符号执行。最近的一项工作[42]提出了一种<code>最佳切换 optimal switch</code>策略：它通过模糊测试和符号执行来量化探索每条路径的成本，并选择更经济的方法来探索这条路径。</p>
+<p>我们使用<code>DARPA CQE</code>数据集[13]<code>和LAVA-m</code>数据集[15]评估了<code>需求启动</code>和<code>最佳切换</code>策略，并发现尽管这些策略听起来很有趣，但由于不太现实或过度简化的假设，它们都没有充分发挥作用。</p>
 <ol>
-<li>对于<code>需求启动</code>策略：</li>
+<li>对于<code>需求启动 demand launch</code>策略：</li>
 </ol>
 <ul>
-<li>模糊器(Fuzzer)的卡住状态不是良好的启动符号执行指标
+<li>模糊器(<code>Fuzzer</code>)的卡住状态不是良好的启动符号执行指标
 模糊测试正在取得进展，并不一定意味着不需要进行符号执行。模糊器仍然可以探索新代码，即使它已经被许多特定分支阻塞，而因为模糊器未处于卡住状态，因此符号执行器被迫空闲。</li>
 <li>该策略无法识别阻止模糊测试的特定路径
-一旦模糊器卡住，<code>需求启动</code>策略就会将模糊器保留的所有种子提供给符号执行，用于探索所有错过路径。然后，这种大量错过的路径会让执符号执行不堪重负，并且可能会在很长一段时间后为特定路径生成有效的输入。到那时，模糊器可能已经生成了一个良好的输入来遍历该特定路径，从而使整个符号执行变得毫无用处。</li>
+一旦模糊器卡住，<code>需求启动 demand launch</code>策略就会将模糊器保留的所有种子提供给符号执行，用于探索所有错过路径。然后，这种大量错过的路径会让执符号执行不堪重负，并且可能会在很长一段时间后为特定路径生成有效的输入。到那时，模糊器可能已经生成了一个良好的输入来遍历该特定路径，从而使整个符号执行变得毫无用处。</li>
 </ul>
 <ol start="2">
-<li>同样，尽管<code>最佳切换</code>策略旨在基于可靠的数学模型（即，具有成本的马尔可夫决策过程，简称<code>MDPC</code>）做出最优决策，但是量化每条路径的模糊测试和符号执行的成本是非常重要的。例如，为了量化特定路径的独立执行成本，<code>MDPC</code>需要收集已经很昂贵的路径约束。结果，<code>MDPC</code>的总吞吐量大大降低。此外，在量化模糊测试的成本时，<code>MDPC</code>假设所有测试用例均匀分布。这种假设过于简单，因为许多最先进的模糊测试技术[4]，[12]，[16]是自适应和进化的。最后，即使可以准确地估计模糊测试和符号执行的成本，但要将它们标准化以进行统一比较是具有挑战性的，因为这两种成本是通过具有不同度量的技术来估计的。</li>
+<li>同样，尽管<code>最佳切换 optimal switch</code>策略旨在基于可靠的数学模型（即，具有成本的马尔可夫决策过程，简称<code>MDPC</code>）做出最优决策，但是量化每条路径的模糊测试和符号执行的成本是非常重要的。例如，为了量化特定路径的独立执行成本，<code>MDPC</code>需要收集已经很昂贵的路径约束。结果，<code>MDPC</code>的总吞吐量大大降低。此外，在量化模糊测试的成本时，<code>MDPC</code>假设所有测试用例均匀分布。这种假设过于简单，因为许多最先进的模糊测试技术[4]，[12]，[16]是自适应和进化的。最后，即使可以准确地估计模糊测试和符号执行的成本，但要将它们标准化以进行统一比较是具有挑战性的，因为这两种成本是通过具有不同度量的技术来估计的。</li>
 </ol>
 <p>基于这些观察，我们在构建混合模糊测试系统时争论以下设计原则：</p>
 <ol>
 <li>由于符号执行比模糊测试慢几个数量级，我们应该只让它解决<code>最难的问题</code>，并让模糊测试采取路径探索的多数任务</li>
 <li>由于高吞吐量对于模糊测试至关重要，因此任何额外的分析都必须是轻量级的，以避免对模糊测试的性能产生不利影响。</li>
 </ol>
-<p>在本文中，我们提出了一种<code>判别性调度 discriminative dispatch</code>策略，以更好地结合模糊测试和符号执行：</p>
+<p>在本文中，我们提出了一种<code>判别式调度 discriminative dispatch</code>策略，以更好地结合模糊测试和符号执行：</p>
 <ol>
 <li>优先考虑路径，更好地利用符号执行的能力：以便<strong>符号执行仅用于模糊测试最难以突破的选择性路径</strong></li>
-<li>这种<code>歧视性调度</code>策略的关键是<strong>量化每条路径的难度级别的轻量级方法</strong>。先前的工作通过执行昂贵的符号执行来解决这个问题[18]，因此不适合我们的目的。</li>
+<li>这种<code>判别式调度</code>策略的关键是<strong>量化每条路径的难度级别的轻量级方法</strong>。先前的工作通过执行昂贵的符号执行来解决这个问题[18]，因此不适合我们的目的。</li>
 </ol>
 <p>特别地，我们提出了一种新的基于蒙特卡罗的概率路径优先级（$MCP^3$）模型，以有效的方式量化每个路径的难度。通过随机输入$\Rightarrow$遍历该路径的概率$\Rightarrow$量化路径的难度。我们使用蒙特卡罗方法[35]计算这个概率。核心思想是<strong>将模糊测试视为随机抽样过程，将随机执行视为整个程序空间的样本，然后根据抽样信息计算每个路径的概率</strong>。</p>
 <p>我们已经实现了一个名为<strong>DigFuzz</strong>的原型系统。它利用流行的模糊器，<code>American Fuzzy Lop(AFL)</code>[47]作为模糊组件，并在开源符号执行引擎<code>Angr</code>之上构建了一个符号执行器[38]。我们使用来自ARPA Cyber Grand Challenge [13]和LAVA数据集[15]的CQE评估来评估DigFuzz的有效性。评估结果表明，与最先进的混合系统相比，DigFuzz中的复杂执行对代码覆盖率的增加和发现的漏洞数量的增加做出了更大的贡献。更具体地说，DigFuzz中的执行执行有助于发现更多的漏洞（12对5），并在CQE数据集上产生更多的代码覆盖率（18.9％对3.8％），而不是在Driller [39]中执行。</p>
@@ -271,11 +273,11 @@
 <li><em>对代码覆盖率的贡献很小</em>。在 12 小时的测试结束时，“需求启动”策略在 49 个 CQE 二进制文件上调用了 concolic 执行，并完成了 1709 次运行。更详细的调查显示，总共只有 51 个由 concolic 执行生成的输入是通过模糊测试导入的，并且 concolic 执行只能通过生成至少一个导致新代码覆盖率的输入来帮助对 13 个二进制文件进行模糊测试。</li>
 </ol>
 <h4 id="局限性">局限性</h4>
-<p>上述结果表明<code>需求启动</code>战略的两个主要局限。
-首先，<strong>模糊器的卡住状态不是判断是否需要执行模板的好指标</strong>。根据事实1，模糊器仅停留在49个二进制文件上，这意味着其他77个二进制文件永远不会启动模仿执行。对这77个二进制文件的源代码进行手动调查表明，它们都包含可以阻止模糊测试的特定分支。进一步结合事实2，我们可以看到处于卡住状态的模糊器并不一定意味着它实际上需要执行，因为大多数卡住状态非常短（85％的卡住状态不到100秒）。这些事实打破了上述假设1。
-其次，<strong>“需求启动”策略无法识别阻止模糊测试的特定路径，从而导致非常低效的执行</strong>。一方面，平均执行平均需要1654秒来处理一个输入（事实3）。另一方面，模糊器通常比常规执行可以保留更多的输入（事实4）。结果，对应于阻止模糊测试的特定分支的输入（即，可能导致执行到目标位置的输入）仅具有非常小的机会被通过结构执行来拾取和处理。因此，上述假设2在实践中并不真正成立。事实5可以进一步证实这一结论，尽管它是在49个二进制文件上发布的，但是对于仅仅13个二进制文件的执行可以帮助模糊测试。此外，在1709次符号执行之后，模糊执行器仅导入了51个来自符号执行的输入，表明由符号执行而产生的输入质量非常低。</p>
+<p>上述结果表明<code>需求启动</code>策略的两个主要局限。</p>
+<p>首先，<strong>模糊器的卡住状态不是判断是否需要执行模板的好指标</strong>。根据事实1，模糊器仅停留在49个二进制文件上，这意味着其他77个二进制文件永远不会启动模仿执行。对这77个二进制文件的源代码进行手动调查表明，它们都包含可以阻止模糊测试的特定分支。进一步结合事实2，我们可以看到处于卡住状态的模糊器并不一定意味着它实际上需要执行，因为大多数卡住状态非常短（85％的卡住状态不到100秒）。这些事实打破了上述假设1。</p>
+<p>其次，<strong>“需求启动”策略无法识别阻止模糊测试的特定路径，从而导致非常低效的执行</strong>。一方面，平均执行平均需要1654秒来处理一个输入（事实3）。另一方面，模糊器通常比常规执行可以保留更多的输入（事实4）。结果，对应于阻止模糊测试的特定分支的输入（即，可能导致执行到目标位置的输入）仅具有非常小的机会被通过结构执行来拾取和处理。因此，上述假设2在实践中并不真正成立。事实5可以进一步证实这一结论，尽管它是在49个二进制文件上发布的，但是对于仅仅13个二进制文件的执行可以帮助模糊测试。此外，在1709次符号执行之后，模糊执行器仅导入了51个来自符号执行的输入，表明由符号执行而产生的输入质量非常低。</p>
 <h3 id="boptimal-switch">B.Optimal Switch</h3>
-<p>“最佳切换”策略旨在基于数学模型（即，具有成本的马尔可夫决策过程，简称<code>MDPC</code>）对使用哪种方法来探索给定的执行路径做出最佳决策。 为了获得最佳性能，MDPC始终选择成本较低的方法来探索每条路径。 为了使这一战略运作良好，必须遵循以下假设：</p>
+<p>“最佳切换”策略旨在基于数学模型（即，具有成本的马尔可夫决策过程，简称<code>MDPC</code>）对使用哪种方法来探索给定的执行路径做出最佳决策。为了获得最佳性能，MDPC 始终选择成本较低的方法来探索每条路径。为了使这一战略运作良好，必须遵循以下假设：</p>
 <ol>
 <li>可以准确地估计通过模糊和经验执行来探索路径的成本</li>
 <li>成本估算的开销可以忽略不计</li>
@@ -284,50 +286,63 @@
 <h4 id="观察-1">观察</h4>
 <p>为了评估<code>最佳切换</code>的性能，我们评估了 MDPC 如何在 CQE 数据集中对118个二进制文件工作12小时，并有3个有趣的观察结果。</p>
 <ol>
-<li><em>Heavyweight Estimation</em>。表1 显示了模糊测试、MDPC、符号执行（angr、QSYM）中的最佳决策之间的吞吐量差距。可以观察到使用 MDPC 计算概率的成本很高，是模糊测试的大几千倍。
+<li>
+<p><em>Heavyweight Estimation</em>。表1 显示了模糊测试、MDPC、符号执行（angr、QSYM）中的最佳决策之间的吞吐量差距。可以观察到使用 MDPC 计算概率的成本很高，是模糊测试的大几千倍。
 
 <figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101456025.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101456025.png" data-sub-html="<h2> </h2><p>表1 执行时间比较</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101456025.png" data-title="表1 执行时间比较" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101456025.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">表1 执行时间比较</figcaption>
-    </figure></li>
-<li><em>吞吐量降低</em>。由于 MDPC 在探索每条路径之前做出最佳决策，因此整体分析吞吐量显着降低，从纯模糊测试中每秒执行417次到 MDPC 中每秒执行2.6次。由于吞吐量减少的负面影响，下图显示了由 AFL 维护的位图大小，这是代码覆盖的近似。可以观察到，<code>optimal concolic testing</code>发现的代码覆盖较少，而不如纯模糊测试。</li>
-<li><em>估计不准确</em>。由于吞吐量降低的影响，MDPC 仅在29个二进制文件中发现漏洞，而纯模糊测试可以发现67个二进制文件中的漏洞。
+    </figure></p>
+</li>
+<li>
+<p><em>吞吐量降低</em>。由于 MDPC 在探索每条路径之前做出最佳决策，因此整体分析吞吐量显着降低，从纯模糊测试中每秒执行417次到 MDPC 中每秒执行2.6次。由于吞吐量减少的负面影响，下图显示了由 AFL 维护的位图大小，这是代码覆盖的近似。可以观察到，<code>optimal concolic testing</code>发现的代码覆盖较少，而不如纯模糊测试。</p>
+</li>
+<li>
+<p><em>估计不准确</em>。由于吞吐量降低的影响，MDPC 仅在29个二进制文件中发现漏洞，而纯模糊测试可以发现67个二进制文件中的漏洞。
 
 <figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101511673.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101511673.png" data-sub-html="<h2> </h2><p>Fuzing和MDPC的代码覆盖率比较</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101511673.png" data-title="Fuzing和MDPC的代码覆盖率比较" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101511673.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">Fuzing和MDPC的代码覆盖率比较</figcaption>
     </figure>
-由于 MDPC 在探索每条路径之前做出了最佳决策，昂贵的最优决策都会带走模糊测量的高吞吐量。作为优化，使模糊测试和最优决策工作并行进行，而不是像在原始系统中那样按顺序运行，并构建并发 MDPC。使用相同的数据集对其进行评估，并得出以下观察结果，我们有另一个观察。</li>
-<li>在模糊测试开始后的几秒钟内，几乎所有遗漏的路径都决定通过 concolic 执行进行探索。通过检查覆盖率统计，我们观察到模糊器能够在几秒钟内生成数百个测试用例，这导致基于 MDPC 算法的 Fuzzing 搜索遗漏路径的代价很高。相反，即使我们为每个路径约束分配最高的求解成本(如定义[42]所示的50)，也可以降低执行成本。</li>
+由于 MDPC 在探索每条路径之前做出了最佳决策，昂贵的最优决策都会带走模糊测量的高吞吐量。作为优化，使模糊测试和最优决策工作并行进行，而不是像在原始系统中那样按顺序运行，并构建并发 MDPC。使用相同的数据集对其进行评估，并得出以下观察结果，我们有另一个观察。</p>
+</li>
+<li>
+<p>在模糊测试开始后的几秒钟内，几乎所有遗漏的路径都决定通过 concolic 执行进行探索。通过检查覆盖率统计，我们观察到模糊器能够在几秒钟内生成数百个测试用例，这导致基于 MDPC 算法的 Fuzzing 搜索遗漏路径的代价很高。相反，即使我们为每个路径约束分配最高的求解成本(如定义[42]所示的50)，也可以降低执行成本。</p>
+</li>
 </ol>
 <h4 id="限制">限制</h4>
-<p>上述观察结果表明，<code>最佳转换</code>策略的关键限制是估计通过模糊测试和符号执行来探索路径的成本是重量级且不准确的，这掩盖了制定最优解决方案的好处。
-首先，估计 concolic执行的成本依赖于收集路径约束并确定这些约束的解决成本。由于收集路径约束需要将程序语句转换为符号表达式，因此这种解释也是重量级的，特别是对于具有长路径的程序。此外，MDPC 设计了一种贪婪算法以实现最佳决策。该算法依赖于路径敏感的程序分析。对于具有大状态的程序，路径敏感分析也是重量级的。
-其次，准确估计通过模糊测试和符号执行探索给定路径的成本是非常重要的。MDPC 根据路径约束的复杂性估计求解代价，并根据覆盖统计估计随机测试的成本。这些估计涉及模糊测试的运行时吞吐量、约束求解器以及符号执行引擎的性能，它们本质上是不同的程序分析技术。因此，定义一个统一的衡量标准来评估不同技术的成本是具有挑战性的。</p>
+<p>上述观察结果表明，<code>最佳切换</code>策略的关键限制是估计通过模糊测试和符号执行来探索路径的成本是重量级且不准确的，这掩盖了制定最优解决方案的好处。</p>
+<p>首先，估计 concolic 执行的成本依赖于收集路径约束并确定这些约束的解决成本。由于收集路径约束需要将程序语句转换为符号表达式，因此这种解释也是重量级的，特别是对于具有长路径的程序。此外，MDPC 设计了一种贪婪算法以实现最佳决策。该算法依赖于路径敏感的程序分析。对于具有大状态的程序，路径敏感分析也是重量级的。</p>
+<p>其次，准确估计通过模糊测试和符号执行探索给定路径的成本是非常重要的。MDPC 根据路径约束的复杂性估计求解代价，并根据覆盖统计估计随机测试的成本。这些估计涉及模糊测试的运行时吞吐量、约束求解器以及符号执行引擎的性能，它们本质上是不同的程序分析技术。因此，定义一个统一的衡量标准来评估不同技术的成本是具有挑战性的。</p>
 <h2 id="3probabilistic-path-prioritization-guided-by-monte-carlo">3.PROBABILISTIC PATH PRIORITIZATION GUIDED BY MONTE-CARLO</h2>
 <p>为了解决当前混合模糊测试系统的上述局限性，我们提出了一种新颖的<code>判别调度</code>策略，以更好地结合模糊和执行。</p>
 <h3 id="a-key-challenge">A. Key Challenge</h3>
 <p>如上所述，我们策略的关键挑战是<strong>以轻量级方式量化模糊器遍历路径的难度</strong>。</p>
 <blockquote>
-<p>有一些解决方案可以使用昂贵的程序分析来量化路径的难度，例如值分析[45]和概率符号执行[5]。然而，这些技术并没有解决我们的问题：如果我们已经执行了重量级分析来量化一条路径的难度，我们还不如只解决路径约束并生成一个输入来遍历这条路径。
-最近的一项研究[42]提出了一种理论框架，用于优化的结构测试。它定义了基于程序路径概率和约束求解成本的最优策略，然后将问题简化为带有成本的马尔可夫决策过程（简称 MDPC）。本研究与我们的工作有着相似的问题范围。然而，马尔可夫决策过程本身对于具有大状态空间的程序来说是重量级的。此外，模糊测试和符号执行的成本对于评估和标准化以进行比较是具有挑战性的。</p>
+<p>有一些解决方案可以使用昂贵的程序分析来量化路径的难度，例如值分析[45]和概率符号执行[5]。然而，这些技术并没有解决我们的问题：如果我们已经执行了重量级分析来量化一条路径的难度，我们还不如只解决路径约束并生成一个输入来遍历这条路径。</p>
+<p>最近的一项研究[42]提出了一种理论框架，用于优化的结构测试。它定义了基于程序路径概率和约束求解成本的最优策略，然后将问题简化为带有成本的马尔可夫决策过程（简称 MDPC）。本研究与我们的工作有着相似的问题范围。然而，马尔可夫决策过程本身对于具有大状态空间的程序来说是重量级的。此外，模糊测试和符号执行的成本对于评估和标准化以进行比较是具有挑战性的。</p>
 </blockquote>
 <h3 id="bmonte-carlo-based-probabilistic-path-prioritization-model">B.Monte Carlo Based Probabilistic Path Prioritization Model</h3>
 <p>在这项研究中，我们提出了一种新的基于<code>Monte Carlo</code>的概率路径优先级模型（简称 $MCP^3$）来应对这些挑战。为了轻量化，我们的模型应用<code>Monte Carlo</code>方法来计算通过模糊测试探索路径的概率。要使蒙特卡罗方法有效运作，需要满足两个要求：</p>
 <ol>
 <li>对搜索空间的抽样必须是随机的;</li>
-<li>需要大量随机抽样才能使估计具有统计意义。
-由于 fuzzer 随机生成用于测试程序的输入，我们的见解是将这些输入的执行视为整个程序状态空间的随机样本，因此满足第一个要求。此外，由于模糊测试具有非常高的吞吐量，因此也可以满足第二个要求。因此，通过将模糊测试作为抽样过程，我们可以通过覆盖统计以轻量级方式统计估计概率。</li>
+<li>需要大量随机抽样才能使估计具有统计意义。</li>
 </ol>
+<p>由于 fuzzer 随机生成用于测试程序的输入，我们的见解是将这些输入的执行视为整个程序状态空间的随机样本，因此满足第一个要求。此外，由于模糊测试具有非常高的吞吐量，因此也可以满足第二个要求。因此，通过将模糊测试作为抽样过程，我们可以通过覆盖统计以轻量级方式统计估计概率。</p>
 <p>根据蒙特卡罗方法，我们可以通过统计计算遍历此路径的执行与所有执行的比率来简单地估计路径的概率。然而，这种直观的方法并不实用，因为保持路径覆盖是一项具有挑战性和重要性的任务。考虑到这一点，大多数当前的模糊测试技术采用了轻量级覆盖度量，例如块覆盖和分支覆盖。对于这一挑战，我们将执行路径视为连续分支的马尔可夫链[4]。然后，可以基于路径内所有分支的概率来计算路径的概率。</p>
-<p><strong>Probability for each branch:</strong> 量化了模糊测试器通过条件检查并探索分支的难度。方程式1展示了$MCP^3$如何计算分支的概率。
+<h4 id="probability-for-each-branch">Probability for each branch</h4>
+<p>量化了模糊测试器通过条件检查并探索分支的难度。方程式1展示了$MCP^3$如何计算分支的概率。
 \begin{equation*} P\left(br_i\right) = \left\lbrace \begin{array}{lr}\frac{cov \left(br_i \right)}{cov \left(br_i \right) + cov \left(br_j \right)}, &amp; cov \left(br_i \right)\ne 0 \\
-\frac{3} {{cov \left(br_j \right)}} , &amp; cov \left(br_i \right) = 0 \end{array} \right. \tag{1} \end{equation*}
-在<code>方程1</code>中，$b_{ri}$ 和 $b_{rj}$ 是共享相同前继块的两个分支，$cov(b_{ri})$ 和 $cov(b_{rj})$ 分别指的是 $b_{ri}$ 和 $b_{rj}$ 的覆盖统计，表示模糊测试器的样本覆盖了 $b_{ri}$ 和 $b_{rj}$ 的次数。
-当 $b_{ri}$ 已经被模糊测试器探索过（$cov(b_{ri})$ 非零时），$b_{ri}$ 的概率可以通过将 $b_{ri}$ 的覆盖统计除以 $b_{ri}$ 和 $b_{rj}$ 的总覆盖统计来计算。
-当 $b_{ri}$ 之前未被模糊测试器探索过（$cov(b_{ri})$ 为零），我们采用统计学中的三比规则[43]来计算 $b_{ri}$ 的概率。三比规则表明，如果某一事件在包含 n 个主体的样本中未发生，则从 0 到 3/n 的区间是该事件在总体中发生率的95%置信区间。当 n 大于$30$时，这是对来自更敏感测试的结果的一个很好的近似。遵循这个规则，如果 $cov(b_{rj})$ 大于$30$，则 $b_{ri}$ 的概率变为 $3/cov(b_{rj})$。如果 $cov(b_{rj})$ 小于$30$，则该概率在统计上没有意义。换句话说，在覆盖统计大于$30$之前，我们将不计算概率。
-<strong>Probability for each path:</strong> 为了计算路径的概率，我们应用马尔可夫链模型[19]，将路径视为相继分支之间的连续转换[4]。模糊测试器探索路径的概率计算如<code>方程2</code>所示。
-\begin{equation*} P \left(path_j \right) = \prod \lbrace P\left(br_i \right) | br_i \in path_j \rbrace . \tag{2} \end{equation*}
-在方程2中，$path_j$ 代表一个路径，$b_{ri}$ 表示路径覆盖的分支，$P(b_{ri})$ 表示 $b_{ri}$ 的概率。路径 $path_j$ 的概率，即 $P(path_j)$，通过将沿路径的所有分支的概率相乘来计算。</p>
+\frac{3} {{cov \left(br_j \right)}} , &amp; cov \left(br_i \right) = 0 \end{array} \right. \tag{1} \end{equation*}</p>
+<p>在<code>方程1</code>中，$b_{ri}$ 和 $b_{rj}$ 是共享相同前继块的两个分支，$cov(b_{ri})$ 和 $cov(b_{rj})$ 分别指的是 $b_{ri}$ 和 $b_{rj}$ 的覆盖统计，表示模糊测试器的样本覆盖了 $b_{ri}$ 和 $b_{rj}$ 的次数。</p>
+<ul>
+<li>当 $b_{ri}$ 已经被模糊测试器探索过（$cov(b_{ri})$ 非零时），$b_{ri}$ 的概率可以通过将 $b_{ri}$ 的覆盖统计除以 $b_{ri}$ 和 $b_{rj}$ 的总覆盖统计来计算。</li>
+<li>当 $b_{ri}$ 之前未被模糊测试器探索过（$cov(b_{ri})$ 为零），我们采用统计学中的三比规则[43]来计算 $b_{ri}$ 的概率。三比规则表明，如果某一事件在包含 n 个主体的样本中未发生，则从 0 到 3/n 的区间是该事件在总体中发生率的95%置信区间。当 n 大于$30$时，这是对来自更敏感测试的结果的一个很好的近似。遵循这个规则，如果 $cov(b_{rj})$ 大于$30$，则 $b_{ri}$ 的概率变为 $3/cov(b_{rj})$。如果 $cov(b_{rj})$ 小于$30$，则该概率在统计上没有意义。换句话说，在覆盖统计大于$30$之前，我们将不计算概率。</li>
+</ul>
+<h4 id="probability-for-each-path">Probability for each path</h4>
+<p>为了计算路径的概率，我们应用马尔可夫链模型[19]，将路径视为相继分支之间的连续转换[4]。模糊测试器探索路径的概率计算如<code>方程2</code>所示。
+\begin{equation*} P \left(path_j \right) = \prod \lbrace P\left(br_i \right) | br_i \in path_j \rbrace . \tag{2} \end{equation*}</p>
+<p>在方程2中，$path_j$ 代表一个路径，$b_{ri}$ 表示路径覆盖的分支，$P(b_{ri})$ 表示 $b_{ri}$ 的概率。路径 $path_j$ 的概率，即 $P(path_j)$，通过将沿路径的所有分支的概率相乘来计算。</p>
 <h3 id="cmcp3based-execution-tree">C. $MCP^3$ based Execution Tree</h3>
-<p>在我们的<code>判别式调度</code>策略中，关键思想是从模糊测试执行的运行时信息推断并优先考虑符号执行的路径。为此，我们构建并维护一个基于$MCP^3$的执行树，其定义如下：
-<strong>定义1.</strong> 基于$MCP^3$的执行树是是一个有向树 $T = (V, E, \alpha)$，其中：</p>
+<p>在我们的<code>判别式调度</code>策略中，关键思想是从模糊测试执行的运行时信息推断并优先考虑符号执行的路径。为此，我们构建并维护一个基于$MCP^3$的执行树。</p>
+<h4 id="定义1"><strong>定义1</strong></h4>
+<p>基于$MCP^3$的执行树是是一个有向树 $T = (V, E, \alpha)$，其中：</p>
 <ul>
 <li>顶点集合 $V$ 中的每个元素 $v$ 对应于程序执行期间的程序轨迹中的一个唯一基本块；</li>
 <li>边集合 $E⊆V \times V$ 中的每个元素$e$对应于两个顶点 $v$ 和 $w$ 之间的控制流依赖性，其中$v,w \in V$。如果一个顶点包含条件检查，则可以有两个输出边；</li>
@@ -340,22 +355,22 @@
 
 <figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" data-sub-html="<h2> </h2><p>Fig. 3: Overview of DigFuzz</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" data-title="Fig. 3: Overview of DigFuzz" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">Fig. 3: Overview of DigFuzz</figcaption>
     </figure></p>
-<p>我们的系统利用流行的现成模糊器，American Fuzzy Lop（AFL）[47]作为模糊测试组件，并在angr [38]之上构建了一个符号执行器，这是一个开源符号执行引擎，与Driller相同[39]。
-DigFuzz 中最重要的组件是$MCP^3$模型。该组件执行<code>execution sampling</code>，构造基于$MCP^3$的执行树，基于概率计算对路径进行优先级排序，并最终将优先路径馈送到 concolic执行器。
-DigFuzz 通过使用初始种子输入启动测试。只要模糊测试器生成输入，$MCP^3$模型就会执行<code>execution sampling</code>以收集覆盖率统计信息，这些统计信息指示采样期间每个分支被覆盖的次数。同时，它还通过跟踪分析构建基于$MCP^3$的执行树，并使用从覆盖统计计算的概率标记树的所有分支。一旦构造了树并且路径用概率标记，则$MCP^3$模型优先考虑树中的所有遗漏路径，并识别具有最低概率执行的路径。
-由于为了简化路径约束，符号执行同时在具体值和符号值上执行程序，一旦一个被优先的未遗漏路径被识别，$MCP^3$模型还会确定一个相应的输入，该输入可以引导符号执行达到遗漏的路径。也就是说，通过将输入作为具体值，符号执行器可以沿着遗漏路径的前缀执行程序，生成并收集符号路径约束。当到达遗漏分支时，它可以通过将<code>路径前缀的约束</code>与<code>到达该遗漏分支的条件</code>相结合来生成错过路径的约束。最后，<code>concolic executor</code>通过解决路径约束生成遗漏路径的输入，并将生成的输入反馈给模糊器。同时，它还通过符号执行期间已探索的路径更新执行树。通过利用来自符号执行的新输入，模糊器将能够深入探索、扩展代码覆盖并更新执行树。
-总之，DigFuzz 迭代工作。在每次迭代中，$MCP^3$模型通过对模糊器保留的所有输入的跟踪分析来更新执行树。然后，该模型使用执行样本的覆盖统计为每个分支标记其概率。之后，$MCP^3$模型对所有遗漏路径进行优先排序，并选择具有最低执行概率的路径进行符号执行。符号执行器将为跟踪中的遗漏分支生成输入，将通过符号执行期间已探索的路径更新执行树。完成这些步骤后，DigFuzz 将进入另一轮迭代。</p>
+<p>我们的系统利用流行的现成模糊器，American Fuzzy Lop（AFL）[47]作为模糊测试组件，并在 angr [38]之上构建了一个符号执行器，这是一个开源符号执行引擎，与 Driller 相同[39]。</p>
+<p>DigFuzz 中最重要的组件是$MCP^3$模型。该组件执行<code>execution sampling</code>，构造基于$MCP^3$的执行树，基于概率计算对路径进行优先级排序，并最终将优先路径馈送到 concolic 执行器。</p>
+<p>DigFuzz 通过使用初始种子输入启动测试。只要模糊测试器生成输入，$MCP^3$模型就会执行<code>execution sampling</code>以收集覆盖率统计信息，这些统计信息指示采样期间每个分支被覆盖的次数。同时，它还通过跟踪分析构建基于$MCP^3$的执行树，并使用从覆盖统计计算的概率标记树的所有分支。一旦构造了树并且路径用概率标记，则$MCP^3$模型优先考虑树中的所有遗漏路径，并识别具有最低概率执行的路径。</p>
+<p>由于为了简化路径约束，符号执行同时在具体值和符号值上执行程序，一旦一个被优先的未遗漏路径被识别，$MCP^3$模型还会确定一个相应的输入，该输入可以引导符号执行达到遗漏的路径。也就是说，通过将输入作为具体值，符号执行器可以沿着遗漏路径的前缀执行程序，生成并收集符号路径约束。当到达遗漏分支时，它可以通过将<code>路径前缀的约束</code>与<code>到达该遗漏分支的条件</code>相结合来生成错过路径的约束。最后，<code>concolic executor</code>通过解决路径约束生成遗漏路径的输入，并将生成的输入反馈给模糊器。同时，它还通过符号执行期间已探索的路径更新执行树。通过利用来自符号执行的新输入，模糊器将能够深入探索、扩展代码覆盖并更新执行树。</p>
+<p>总之，DigFuzz 迭代工作。在每次迭代中，$MCP^3$模型通过对模糊器保留的所有输入的跟踪分析来更新执行树。然后，该模型使用执行样本的覆盖统计为每个分支标记其概率。之后，$MCP^3$模型对所有遗漏路径进行优先排序，并选择具有最低执行概率的路径进行符号执行。符号执行器将为跟踪中的遗漏分支生成输入，将通过符号执行期间已探索的路径更新执行树。完成这些步骤后，DigFuzz 将进入另一轮迭代。</p>
 <h3 id="b-execution-sampling">B. Execution Sampling</h3>
-<p>DigFuzz 需要进行随机抽样来使用蒙特卡罗方法计算概率[35]。基于模糊器的性质就是生成随机输入，我们将模糊过程视对整个程序状态空间的随机抽样过程。由于模糊测试的高吞吐量，生成的样本数量将很快变得足够大，具有统计意义，这由三个规则定义[43]，其中当样本数大于30时，从0到$3/n$的区间是95%的置信区间。
-基于这一观察，我们提出了执行抽样的算法（Algorithm 1）。该算法接受3个输入并在 $HashMap$ 中生成 coverage 统计信息。
+<p>DigFuzz 需要进行随机抽样来使用蒙特卡罗方法计算概率[35]。基于模糊器的性质就是生成随机输入，我们将模糊过程视对整个程序状态空间的随机抽样过程。由于模糊测试的高吞吐量，生成的样本数量将很快变得足够大，具有统计意义，这由三个规则定义[43]，其中当样本数大于30时，从0到$3/n$的区间是95%的置信区间。</p>
+<p>基于这一观察，我们提出了执行抽样的算法（Algorithm 1）。该算法接受3个输入并在 $HashMap$ 中生成 coverage 统计信息。</p>
 <div class="details admonition info open">
     <div class="details-summary admonition-title">
       <i class="icon fa-solid fa-info-circle fa-fw" aria-hidden="true"></i>算法1的3个输入<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
     <div class="details-content">
-      <div class="admonition-content">1）目标二进制$P$；2）模糊测试器$Fuzzer$；3）存储在$Set_{inputs}$中的初始种子。</div>
+      <div class="admonition-content">1）目标二进制$P$；2）模糊测试器$Fuzzer$；3）存储在$Set_{inputs}$中的初始种子</div>
     </div>
-  </div></p>
+  </div>
 <p>给定这3个输入，算法在模糊测试过程中进行迭代抽样。$Fuzzer$使用$P$和$Set_{inputs}$以生成新输入 $Set_{NewInputs}$（Ln.7）。然后，对于 $NewInputs$ 中的每个输入，我们收集由$P$和$input$（Ln.9）确定的路径内的每个分支的覆盖统计信息，并进一步更新存储在$HashMap_{CovStat}$中的现有覆盖统计（Ln.11和12）。最后，算法将$Set_{NewInputs}$合并到$Set_{inputs}$（Ln.15）并开始新的迭代。
 
 <figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101445625.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101445625.png" data-sub-html="<h2> </h2><p>Algorithm 1 Execution Sampling</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101445625.png" data-title="Algorithm 1 Execution Sampling" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101445625.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">Algorithm 1 Execution Sampling</figcaption>
@@ -374,7 +389,7 @@ DigFuzz 通过使用初始种子输入启动测试。只要模糊测试器生成
       <div class="admonition-content"><p>输入，也是<code>Algorithm 1</code>的输出：
 1）目标二进制文件的控制流图$CFG$；
 2）fuzzer 保留的输入$Set_{inputs}$；
-3）覆盖统计$HashMap_{CovStat}$。</p>
+3）覆盖统计$HashMap_{CovStat}$</p>
 <p>输出：基于$MCP^3$的执行树 $ExecTree$</p>
 </div>
     </div>
@@ -393,12 +408,12 @@ DigFuzz 通过使用初始种子输入启动测试。只要模糊测试器生成
 </ul>
 </li>
 </ul>
-<p>为了避免执行树中潜在的<strong>路径爆炸</strong>问题，我们只对由模糊测试保留的种子输入执行跟踪分析。模糊器通常将那些具有新代码覆盖的突变输入视为进一步突变的种子。对这些保留的种子进行跟踪是一种有前景的方法，可以对探索的程序状态进行建模。对于沿着执行跟踪的每个分支，只要模糊测试器尚未覆盖相反分支，就标识为一个遗漏路径，该路径指的是与未覆盖的分支连接的跟踪前缀。换句话说，执行树不会包括一个相反分支尚未被覆盖的遗漏分支。
-为了简化表示，我们提供了一个运行示例，它简化了CQE数据集[13]中的程序，代码如图4所示。漏洞由特定字符串保护，很难进行模糊检测。
+<p>为了避免执行树中潜在的<strong>路径爆炸</strong>问题，我们只对由模糊测试保留的种子输入执行跟踪分析。模糊器通常将那些具有新代码覆盖的突变输入视为进一步突变的种子。对这些保留的种子进行跟踪是一种有前景的方法，可以对探索的程序状态进行建模。对于沿着执行跟踪的每个分支，只要模糊测试器尚未覆盖相反分支，就标识为一个遗漏路径，该路径指的是与未覆盖的分支连接的跟踪前缀。换句话说，执行树不会包括一个相反分支尚未被覆盖的遗漏分支。</p>
+<p>为了简化表示，我们提供了一个运行示例，它简化了CQE数据集[13]中的程序，代码如图4所示。漏洞由特定字符串保护，很难进行模糊检测。
 
 <figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101535292.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101535292.png" data-sub-html="<h2> </h2><p>图4.运行示例</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101535292.png" data-title="图4.运行示例" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101535292.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">图4.运行示例</figcaption>
-    </figure>
-图5示出了用于图4中的运行示例的基于$MCP^3$的执行树。每个节点表示一个基本块。每条边都是一个用概率标记的分支。可以观察到树中有2个<code>trace</code>（红色：$t1 =⟨b1，b2，b6，b12，b13，b7，b9，b11⟩$和蓝色：$t2 =⟨b1，b3，b4，b12，b14⟩$）。请注意，概率是通过多个执行样本计算的。在此示例中，我们为了简化呈现仅提供了两个跟踪。
+    </figure></p>
+<p>图5示出了用于图4中的运行示例的基于$MCP^3$的执行树。每个节点表示一个基本块。每条边都是一个用概率标记的分支。可以观察到树中有2个<code>trace</code>（红色：$t1 =⟨b1，b2，b6，b12，b13，b7，b9，b11⟩$和蓝色：$t2 =⟨b1，b3，b4，b12，b14⟩$）。请注意，概率是通过多个执行样本计算的。在此示例中，我们为了简化呈现仅提供了两个跟踪。
 
 <figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101538774.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101538774.png" data-sub-html="<h2> </h2><p>图5：具有概率的执行树</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101538774.png" data-title="图5：具有概率的执行树" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101538774.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">图5：具有概率的执行树</figcaption>
     </figure></p>
@@ -406,27 +421,30 @@ DigFuzz 通过使用初始种子输入启动测试。只要模糊测试器生成
 <p>我们基于概率对路径进行优先排序。如方程2所示，路径被视为一个马尔可夫链，其概率是基于路径内所有分支的概率计算得出的。路径可以表示为一系列已覆盖的分支，每个分支都标记有其概率，该概率表示随机输入能够满足条件的可能性有多大。因此，我们利用马尔可夫链模型，将路径的概率看作是转换的概率序列。
 
 <figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101709167.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101709167.png" data-sub-html="<h2> </h2><p>算法3. DigFuzz中的路径优先排序</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101709167.png" data-title="算法3. DigFuzz中的路径优先排序" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101709167.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">算法3. DigFuzz中的路径优先排序</figcaption>
-    </figure>
-<code>Algorithm 3</code>详细地呈现了这个算法。
+    </figure></p>
+<p><code>Algorithm 3</code>详细地呈现了这个算法。
 <div class="details admonition info open">
     <div class="details-summary admonition-title">
       <i class="icon fa-solid fa-info-circle fa-fw" aria-hidden="true"></i>算法3的输入、输出<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
     <div class="details-content">
-      <div class="admonition-content">输入，也是<code>Algorithm 2</code>的输出：基于$MCP^3$的执行树$ExecTree$
-输出：$Set_{Prob}$，一组未探索（遗漏）的路径及其概率</div>
+      <div class="admonition-content"><p>输入，也是<code>Algorithm 2</code>的输出：基于$MCP^3$的执行树$ExecTree$</p>
+<p>输出：$Set_{Prob}$，一组未探索（遗漏）的路径及其概率</p>
+</div>
     </div>
   </div></p>
 <p>DigFuzz 将根据$Set_{Prob}$对这些**未探索（遗漏）**的路径进行进一步的优先排序，并将概率最低的路径提供给符号执行。该算法：</p>
 <ol>
 <li>从执行树遍历开始。对于 $ExecTree$ 中每个跟踪上的每个分支$b_{ri}$，它首先提取相邻的分支$b_{rj}$（Ln. 5），然后收集沿给定跟踪未探索的路径（Ln. 6）。</li>
 <li>然后，算法通过调用实现方程2的 $CalPathProb()$ 计算了未探索路径的概率，并将信息存储在 $Set_{Prob}$中。</li>
-<li>最终，该算法生成$Set_{Prob}$，即每个跟踪的未探索路径及其概率。
-得到$Set_{Prob}$后，我们将</li>
-<li>按概率降序对未探索路径进行优先排序，并确定<strong>概率最低的路径</strong>供符号执行使用。</li>
-<li>确定输入，引导 concolic 执行器优先探索概率最低的路径。
-以图4中的程序为例。在图5中，未探索（遗漏）的分支显示为虚线。在构建了执行树并正确标记之后，使用 <code>Algorithm 3</code>来获取未探索的路径并计算这些路径的概率。我们可以观察到总共有4条未探索的路径，分别记为$P_1$、$P_2$、$P_3$和$P_4$。通过调用 $CalPathProb()$ 函数，这些未探索路径的概率如图中所示计算，其中概率最低的路径是$P_1$。为了引导合符号执行器探索$P_1$，<code>DigFuzz</code>将选择导致跟踪$〈b1, b2, b6, b12, b13, b7, b9, b11〉$的输入，并将此输入分配为 concolic 执行的具体值，因为此跟踪与未探索路径$P_1$共享相同的路径前缀$〈b1, b2, b6, b12, b13, b7, b9〉$。</li>
+<li>最终，该算法生成$Set_{Prob}$，即每个跟踪的未探索路径及其概率。</li>
 </ol>
+<p>得到$Set_{Prob}$后，我们将</p>
+<ol>
+<li>按概率降序对未探索路径进行优先排序，并确定<strong>概率最低的路径</strong>供符号执行使用。</li>
+<li>确定输入，引导 concolic 执行器优先探索概率最低的路径。</li>
+</ol>
+<p>以图4中的程序为例。在图5中，未探索（遗漏）的分支显示为虚线。在构建了执行树并正确标记之后，使用 <code>Algorithm 3</code>来获取未探索的路径并计算这些路径的概率。我们可以观察到总共有4条未探索的路径，分别记为$P_1$、$P_2$、$P_3$和$P_4$。通过调用 $CalPathProb()$ 函数，这些未探索路径的概率如图中所示计算，其中概率最低的路径是$P_1$。为了引导 concolic 执行器探索$P_1$，<code>DigFuzz</code>将选择导致跟踪$〈b1, b2, b6, b12, b13, b7, b9, b11〉$的输入，并将此输入分配为 concolic 执行的具体值，因为此跟踪与未探索路径$P_1$共享相同的路径前缀$〈b1, b2, b6, b12, b13, b7, b9〉$。</p>
 <h2 id="6-discussion">6. Discussion</h2>
 <h3 id="a-threats-to-validity">A. Threats to Validity</h3>
 <p>我们的实验结果基于论文中提供的有限数据集。已经努力在实际程序上评估 DigFuzz，但是当 Angr [38]遇到不支持的系统调用时，它无法对程序进行符号执行。因此，结果可能无法完全代表实际程序。对这些程序进行评估是必要的，以便就拟议技术在实践中的有效性得出结论。我们将把对真实世界程序的评估留作未来的工作。</p>
@@ -434,12 +452,12 @@ DigFuzz 通过使用初始种子输入启动测试。只要模糊测试器生成
 <p>首先，虽然<code>DigFuzz</code>中的“区别性调度”被设计为轻量级方法，但它仍然会产生一些运行时和内存消耗开销，包括收集模糊测试的运行时信息和构造执行树。但根据评估，可以看到对于模糊测试的吞吐量减少是可以忽略不计的。此外，由于树中的每个节点仅携带非常有限的信息，因此执行树的总内存消耗是非常易于管理的。
 其次，由于<code>DigFuzz</code>仅估计模糊探测器的路径难度，但没有考虑约束求解的复杂性，所以挑选的路径收集到的约束可能是不可解的，这可能导致浪费整个符号执行循环。此外，可能导致漏洞的最有希望的路径也可能不是<code>DigFuzz</code>选择的最难的路径。这两个限制是由于我们找到正确的探索路径的模型。我们考虑将它们解决为未来的工作。</p>
 <h2 id="7-related-work">7. Related Work</h2>
-<p><code>模糊测试 Fuzzing</code>和<code>符号执行 symbolic execution</code>是程序测试的两种主流技术。许多先前的努力已经致力于改进它们[3]，[27]，[33]，[36]。
-BuzzFuzz [17]利用动态污点标记来识别由可疑指令处理的输入字节。Dowser [20]采用反向工程技术来识别与可疑功能相关的输入字段。Vuzzer [34]利用控制流和数据流特征来准确确定何时以及如何变异这些输入。Skyfire [40]利用现有样本中的知识生成用于模糊测试程序的分布良好的种子输入。Angora [12]旨在通过解决路径约束而不使用符号执行来增加分支覆盖。T-Fuzz [32]首先允许模糊测试器在去除了无法绕过的健全性检查的转换程序上工作。作为辅助的后处理步骤，T-Fuzz 利用基于符号执行的方法来过滤掉假阳性。CollAFL [16]是一种基于覆盖率敏感的模糊测试解决方案，通过提供更准确的覆盖信息来减轻路径冲突。它还利用覆盖信息应用了三种新的模糊测试策略。Veritesting [1]通过采用静态符号执行来放大动态符号执行的效果，以解决路径爆炸问题。Mayhem [10]提出将在线和离线符号执行结合起来处理内存耗尽的问题。
-DigFuzz 的主要贡献在于提出了一种更有效的策略，将模糊测试与符号执行结合起来。因此，模糊测试和符号执行的进展超出了我们的范围。</p>
+<p><code>模糊测试 Fuzzing</code>和<code>符号执行 symbolic execution</code>是程序测试的两种主流技术。许多先前的努力已经致力于改进它们[3]，[27]，[33]，[36]。</p>
+<p>BuzzFuzz [17]利用动态污点标记来识别由可疑指令处理的输入字节。Dowser [20]采用反向工程技术来识别与可疑功能相关的输入字段。Vuzzer [34]利用控制流和数据流特征来准确确定何时以及如何变异这些输入。Skyfire [40]利用现有样本中的知识生成用于模糊测试程序的分布良好的种子输入。Angora [12]旨在通过解决路径约束而不使用符号执行来增加分支覆盖。T-Fuzz [32]首先允许模糊测试器在去除了无法绕过的健全性检查的转换程序上工作。作为辅助的后处理步骤，T-Fuzz 利用基于符号执行的方法来过滤掉假阳性。CollAFL [16]是一种基于覆盖率敏感的模糊测试解决方案，通过提供更准确的覆盖信息来减轻路径冲突。它还利用覆盖信息应用了三种新的模糊测试策略。Veritesting [1]通过采用静态符号执行来放大动态符号执行的效果，以解决路径爆炸问题。Mayhem [10]提出将在线和离线符号执行结合起来处理内存耗尽的问题。</p>
+<p>DigFuzz 的主要贡献在于提出了一种更有效的策略，将模糊测试与符号执行结合起来。因此，模糊测试和符号执行的进展超出了我们的范围。</p>
 <h4 id="hybrid-fuzzing-system">Hybrid fuzzing system</h4>
-<p>大多数混合模糊测试系统遵循通过选择性符号执行增强模糊测试的观察[9]，[27]，[38]，[40]。TaintScope [40]部署动态污点分析来识别校验点，然后应用符号执行生成满足校验和的输入。T-Fuzz [31]首先允许模糊测试器在经过去除健全性检查的转换程序上工作，然后利用基于符号执行的方法来过滤出假阳性。SAVIOR [13]提出了一种基于漏洞的混合模糊测试系统。它优先考虑具有更高潜力导致发现更多漏洞的种子进行合符号执行。此外，它在合符号执行期间启用了安全检查。HFL [25]将模糊测试与符号执行相结合，以解决内核特定的模糊测试挑战。PANGOLIN [23]设计了基于多面体路径抽象的增量混合模糊测试，该抽象在合符号执行阶段保留了探索状态，并允许对现有技术进行更有效的变异和约束求解。与这些技术相比，DigFuzz 通过基于覆盖统计量量化模糊测试探索路径的难度来优先考虑路径。
-另一种混合模糊测试系统是将符号执行视为输入生成或路径选择的引导者。Pak [30]提出了一种混合模糊测试系统，将符号执行应用于收集路径约束，然后系统生成符合路径谓词并过渡到模糊测试器的输入。DeepFuzz [5]采用概率符号执行为程序路径分配概率，然后利用这些概率来引导模糊测试中的路径探索。</p>
+<p>大多数混合模糊测试系统遵循通过选择性符号执行增强模糊测试的观察[9]，[27]，[38]，[40]。TaintScope [40]部署动态污点分析来识别校验点，然后应用符号执行生成满足校验和的输入。T-Fuzz [31]首先允许模糊测试器在经过去除健全性检查的转换程序上工作，然后利用基于符号执行的方法来过滤出假阳性。SAVIOR [13]提出了一种基于漏洞的混合模糊测试系统。它优先考虑具有更高潜力导致发现更多漏洞的种子进行合符号执行。此外，它在合符号执行期间启用了安全检查。HFL [25]将模糊测试与符号执行相结合，以解决内核特定的模糊测试挑战。PANGOLIN [23]设计了基于多面体路径抽象的增量混合模糊测试，该抽象在合符号执行阶段保留了探索状态，并允许对现有技术进行更有效的变异和约束求解。与这些技术相比，DigFuzz 通过基于覆盖统计量量化模糊测试探索路径的难度来优先考虑路径。</p>
+<p>另一种混合模糊测试系统是将符号执行视为输入生成或路径选择的引导者。Pak [30]提出了一种混合模糊测试系统，将符号执行应用于收集路径约束，然后系统生成符合路径谓词并过渡到模糊测试器的输入。DeepFuzz [5]采用概率符号执行为程序路径分配概率，然后利用这些概率来引导模糊测试中的路径探索。</p>
 <p>MDPC [42]提出了一种理论框架，用于最佳的符号测试。它基于程序路径的概率和约束求解的成本来定义最优策略，这与我们识别路径概率的想法类似。与使用重量级技术来计算模糊测试和符号执行成本的MDPC [42]相比，我们的模型使用覆盖率统计来计算概率，这更加轻巧和实用。</p>
 <p>QSYM [46]使用动态二进制转换将符号仿真与本机执行集成在一起。 它还减轻了传统的严格健全性要求，减轻了传统的严格健全性要求，使其可扩展到现实世界的程序。 主要重点是使其可以扩展到真实世界的程序。 主要重点是使其可以扩展到真实世界的程序。 有选择地只派遣最难的工作的主要焦点。</p>
 <h4 id="path-prioritization-in-symbolic-execution">Path prioritization in symbolic execution</h4>
@@ -453,11 +471,12 @@ DigFuzz 的主要贡献在于提出了一种更有效的策略，将模糊测试
 <li>指出了一些最先进的混合模糊测试系统中采用的“需求启动”和“最优切换”策略中的一些根本限制。</li>
 <li>进一步提出了一种<code>discriminative dispatch</code>策略：通过设计一个基于<code>Monte Carlo</code>的概率路径优先模型来更好地利用<code>concolic execution</code>的能力，以量化每条路径的难度。</li>
 <li>实现了原型系统<code>DigFuzz</code>。评估结果显示，与最先进的混合模糊测试系统相比，DigFuzz 对于增加代码覆盖和发现漏洞的数量贡献更大。</li>
+<li></li>
 </ol></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2023-12-10 18:01:33">更新于 2023-12-10&nbsp;<a class="git-hash" href="https://github.com/leegical/leegical.github.io/commit/f0ccc15cda6d65b2d604ec829bde0724899e2575" rel="external nofollow noopener noreferrer" target="_blank" title="commit by CXG-L(chuxuange@gmail.com) f0ccc15cda6d65b2d604ec829bde0724899e2575: digfuzz-paper"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i>f0ccc15</a></span>
+        <span title="更新于 2023-12-10 20:52:14">更新于 2023-12-10&nbsp;<a class="git-hash" href="https://github.com/leegical/leegical.github.io/commit/75bdda307a69dc2e789cd270daaeeb5886eed14e" rel="external nofollow noopener noreferrer" target="_blank" title="commit by CXG-L(chuxuange@gmail.com) 75bdda307a69dc2e789cd270daaeeb5886eed14e: digfuzz-paper-fix"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i>75bdda3</a></span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
