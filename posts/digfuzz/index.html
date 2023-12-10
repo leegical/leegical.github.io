@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》" /><meta name="keywords" content='符号执行, 模糊测试' /><meta itemprop="name" content="Digfuzz工具论文调研">
 <meta itemprop="description" content="论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》"><meta itemprop="datePublished" content="2023-12-10T17:04:08+08:00" />
-<meta itemprop="dateModified" content="2023-12-10T20:52:14+08:00" />
-<meta itemprop="wordCount" content="13598"><meta itemprop="image" content="https://haoyep.com/logo.png" />
+<meta itemprop="dateModified" content="2023-12-10T21:22:14+08:00" />
+<meta itemprop="wordCount" content="14672"><meta itemprop="image" content="https://haoyep.com/logo.png" />
 <meta itemprop="keywords" content="符号执行,模糊测试," /><meta property="og:title" content="Digfuzz工具论文调研" />
 <meta property="og:description" content="论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://haoyep.com/posts/digfuzz/" /><meta property="og:image" content="https://haoyep.com/logo.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-12-10T17:04:08+08:00" />
-<meta property="article:modified_time" content="2023-12-10T20:52:14+08:00" />
+<meta property="article:modified_time" content="2023-12-10T21:22:14+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://haoyep.com/logo.png" /><meta name="twitter:title" content="Digfuzz工具论文调研"/>
@@ -33,8 +33,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/haoyep.com\/posts\/digfuzz\/"
-    },"image": ["https:\/\/haoyep.com\/favicon.ico"],"genre": "posts","keywords": "符号执行, 模糊测试","wordcount":  13598 ,
-    "url": "https:\/\/haoyep.com\/posts\/digfuzz\/","datePublished": "2023-12-10T17:04:08+08:00","dateModified": "2023-12-10T20:52:14+08:00","publisher": {
+    },"image": ["https:\/\/haoyep.com\/favicon.ico"],"genre": "posts","keywords": "符号执行, 模糊测试","wordcount":  14672 ,
+    "url": "https:\/\/haoyep.com\/posts\/digfuzz\/","datePublished": "2023-12-10T17:04:08+08:00","dateModified": "2023-12-10T21:22:14+08:00","publisher": {
       "@type": "Organization",
       "name": "云吱","logo": "https:\/\/haoyep.com\/logo.png"},"author": {
         "@type": "Person",
@@ -150,7 +150,7 @@
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       </span></span>
           <span class="post-category">收录于 <a href="/categories/%E7%A7%91%E7%A0%94/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 科研</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2023-12-10 17:04:08"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-10">2023-12-10</time></span>&nbsp;<span title="更新于 2023-12-10 20:52:14"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-10">2023-12-10</time></span>&nbsp;<span title="13598 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 13600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 28 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Digfuzz工具论文调研">
+      <div class="post-meta-line"><span title="发布于 2023-12-10 17:04:08"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-10">2023-12-10</time></span>&nbsp;<span title="更新于 2023-12-10 21:22:14"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-10">2023-12-10</time></span>&nbsp;<span title="14672 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 14700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 30 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Digfuzz工具论文调研">
               <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="featured-image"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" data-title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
@@ -160,6 +160,11 @@
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
+    <li><a href="#背景知识">背景知识</a>
+      <ul>
+        <li><a href="#fuzzing-的分类">fuzzing 的分类</a></li>
+      </ul>
+    </li>
     <li><a href="#abstract">Abstract</a></li>
     <li><a href="#1introduction">1.Introduction</a></li>
     <li><a href="#2background-and-motivation">2.Background And Motivation</a>
@@ -198,6 +203,55 @@
   </ul>
 </nav></div>
       </div><div class="content" id="content"><p>论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》</p>
+<h2 id="背景知识">背景知识</h2>
+<div class="details admonition info open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-info-circle fa-fw" aria-hidden="true"></i>参考文章<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p><a href="https://blog.csdn.net/qq_41513009/article/details/121039888"target="_blank" rel="external nofollow noopener noreferrer">阅读笔记：《The Art, Science, and Engineering of Fuzzing: A Survey》</a></p>
+<p><a href="https://www.anquanke.com/post/id/263725"target="_blank" rel="external nofollow noopener noreferrer">Hybrid Fuzzing Paper Summary</a></p>
+</div>
+    </div>
+  </div>
+<h3 id="fuzzing-的分类">fuzzing 的分类</h3>
+<ul>
+<li>根据 fuzzer 观察到的语义粒度，fuzzer 被分为黑盒 fuzzer、灰盒 fuzzer 和白盒 fuzzer。</li>
+<li>根据 PUT 输入可分为 file, network, UI, web, kernel I/O, or threads fuzzer</li>
+</ul>
+<h4 id="黑盒black-boxfuzzer">黑盒（black-box）fuzzer</h4>
+<ul>
+<li>仅考虑输入、输出信息作为 fuzzer 的 knowledgement</li>
+<li>IO-driven or data-driven</li>
+<li>modern fuzzers：the structural informa about inputs</li>
+</ul>
+<h4 id="白盒white-boxfuzzer">白盒（white-box）fuzzer</h4>
+<ul>
+<li>分析 PUT 内部结构以及 PUT 执行所产生的信息，系统探索 PUT 状态空间</li>
+<li>DSE 动态符号执行（dynamic symbolic execution，concolic testing，symbolic execution+concrete execution），简化符号执行的约束条件</li>
+<li>污点分析（taint analysis）</li>
+<li>开销较大（higher overhead）：动态执行+SMT solving</li>
+</ul>
+<h4 id="灰盒grey-boxfuzzer">灰盒（grey-box）fuzzer</h4>
+<ul>
+<li>部分 PUT 内部结构信息以及 PUT 执行所产生的信息</li>
+<li>不考虑完整的语义信息</li>
+<li>lightweight static analysis or dynamic information about execution（e.g. code coverage）</li>
+<li>approximated, imperfect information 加快速度和产生更多的测试用例</li>
+</ul>
+<h4 id="dynamic-symbolic-execution">Dynamic Symbolic Execution</h4>
+<p>经典的符号执行是指使用符号化的值作为输入运行一个程序，这些符号化的变量代表所有可能的值。当符号执行器执行 PUT 时，它会建立一个符号表达式而不是计算实际的变量。当它遇到一个条件分支指令的时候，它会分为两个 symbolic interpreter，一个代表正确分支一个代表错误分支。对每一条路径，symbolic interpreter 会为执行过程中遇到的每一条分支指令建立一个路径公式（路径断言）。如果存在一个实际的输入，能够执行目标路径，那么就说该路径公式是可满足的。可以通过求解 SMT solver 来生成一个适用于路径公式的实际输入。动态符号执行是传统的符号执行的变体，在动态符号执行过程中，符号执行和实际的执行会同时进行。因此，<strong>动态符号执行通常被称为 concolic（concrete+symbolic）测试</strong>。结合动态执行的优点是实际的执行可以减小符号约束的复杂度。</p>
+<p>相比较于灰盒或者黑盒方法而言，动态符号执行是很慢的，这是由于它需要分析 PUT 的每一条指令并插桩。为了解决开销过大的问题，一种缩小动态符号执行范畴的通用策略被提出：让用户确定代码中不感兴趣的部分或者感兴趣的片段、交替使用 conclic testing 和灰盒 fuzzing。</p>
+<div class="details admonition abstract open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-list-ul fa-fw" aria-hidden="true"></i>DigFuzz<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"><p><strong>DigFuzz</strong>: 用灰盒测试确定每个分支执行概率，再使用白盒 fuzzer 对对于灰盒 fuzzing 比较 challenging 的路径进行 fuzzing。</p>
+<p><strong>DigFuzz</strong> 提出基于蒙特卡洛的路径概率排序模型 (Monte Carlo Based Probabilistic Path Prioritization Model, $MCP^3$)，在 fuzzing 的过程中，用 seed 的 trace 构建执行路径树，用覆盖率计算每个分支的概率，路径的概率为路径上分支的概率相乘，最后基于路径的概率对路径进行排序，概率越小代表路径越难探索，将最难探索的路径优先给 concolic execution 进行探索。</p>
+</div>
+    </div>
+  </div>
 <p><a href="https://ieeexplore.ieee.org/abstract/document/9280412"target="_blank" rel="external nofollow noopener noreferrer">Probabilistic Path Prioritization for Hybrid Fuzzing</a>
 主要翻译参考自 <a href="https://fgroove.github.io/2019/03/27/digfuzz/"target="_blank" rel="external nofollow noopener noreferrer">DigFuzz</a>。</p>
 <h2 id="abstract">Abstract</h2>
@@ -476,7 +530,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2023-12-10 20:52:14">更新于 2023-12-10&nbsp;<a class="git-hash" href="https://github.com/leegical/leegical.github.io/commit/75bdda307a69dc2e789cd270daaeeb5886eed14e" rel="external nofollow noopener noreferrer" target="_blank" title="commit by CXG-L(chuxuange@gmail.com) 75bdda307a69dc2e789cd270daaeeb5886eed14e: digfuzz-paper-fix"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i>75bdda3</a></span>
+        <span title="更新于 2023-12-10 21:22:14">更新于 2023-12-10&nbsp;<a class="git-hash" href="https://github.com/leegical/leegical.github.io/commit/4cd62348337a6215791c9b6ae5f031484ac60e5a" rel="external nofollow noopener noreferrer" target="_blank" title="commit by CXG-L(chuxuange@gmail.com) 4cd62348337a6215791c9b6ae5f031484ac60e5a: digfuzz add backgroud"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i>4cd6234</a></span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
