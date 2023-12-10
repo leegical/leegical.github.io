@@ -61,16 +61,6 @@
   <description><![CDATA[LoveIt提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。]]></description>
 </item>
 <item>
-  <title>Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</title>
-  <link>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</link>
-  <pubDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122216423.png" referrerpolicy="no-referrer">
-      </div>使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。]]></description>
-</item>
-<item>
   <title>PTATM（一）：初始化工作</title>
   <link>https://haoyep.com/posts/ptatm-1/</link>
   <pubDate>Sat, 18 Nov 2023 20:42:47 &#43;0800</pubDate>
