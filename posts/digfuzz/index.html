@@ -9,14 +9,14 @@
 <meta name="author-link" content="">
 <meta name="description" content="论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》" /><meta name="keywords" content='符号执行, 模糊测试' /><meta itemprop="name" content="Digfuzz工具论文调研">
 <meta itemprop="description" content="论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》"><meta itemprop="datePublished" content="2023-12-10T17:04:08+08:00" />
-<meta itemprop="dateModified" content="2023-12-10T21:22:14+08:00" />
-<meta itemprop="wordCount" content="14672"><meta itemprop="image" content="https://haoyep.com/logo.png" />
+<meta itemprop="dateModified" content="2023-12-10T22:22:48+08:00" />
+<meta itemprop="wordCount" content="14675"><meta itemprop="image" content="https://haoyep.com/logo.png" />
 <meta itemprop="keywords" content="符号执行,模糊测试," /><meta property="og:title" content="Digfuzz工具论文调研" />
 <meta property="og:description" content="论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://haoyep.com/posts/digfuzz/" /><meta property="og:image" content="https://haoyep.com/logo.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-12-10T17:04:08+08:00" />
-<meta property="article:modified_time" content="2023-12-10T21:22:14+08:00" />
+<meta property="article:modified_time" content="2023-12-10T22:22:48+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://haoyep.com/logo.png" /><meta name="twitter:title" content="Digfuzz工具论文调研"/>
@@ -33,8 +33,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/haoyep.com\/posts\/digfuzz\/"
-    },"image": ["https:\/\/haoyep.com\/favicon.ico"],"genre": "posts","keywords": "符号执行, 模糊测试","wordcount":  14672 ,
-    "url": "https:\/\/haoyep.com\/posts\/digfuzz\/","datePublished": "2023-12-10T17:04:08+08:00","dateModified": "2023-12-10T21:22:14+08:00","publisher": {
+    },"image": ["https:\/\/haoyep.com\/favicon.ico"],"genre": "posts","keywords": "符号执行, 模糊测试","wordcount":  14675 ,
+    "url": "https:\/\/haoyep.com\/posts\/digfuzz\/","datePublished": "2023-12-10T17:04:08+08:00","dateModified": "2023-12-10T22:22:48+08:00","publisher": {
       "@type": "Organization",
       "name": "云吱","logo": "https:\/\/haoyep.com\/logo.png"},"author": {
         "@type": "Person",
@@ -150,7 +150,7 @@
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       </span></span>
           <span class="post-category">收录于 <a href="/categories/%E7%A7%91%E7%A0%94/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 科研</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2023-12-10 17:04:08"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-10">2023-12-10</time></span>&nbsp;<span title="更新于 2023-12-10 21:22:14"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-10">2023-12-10</time></span>&nbsp;<span title="14672 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 14700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 30 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Digfuzz工具论文调研">
+      <div class="post-meta-line"><span title="发布于 2023-12-10 17:04:08"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-10">2023-12-10</time></span>&nbsp;<span title="更新于 2023-12-10 22:22:48"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-10">2023-12-10</time></span>&nbsp;<span title="14675 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 14700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 30 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Digfuzz工具论文调研">
               <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="featured-image"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" data-title="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
@@ -425,12 +425,17 @@
       <div class="admonition-content">1）目标二进制$P$；2）模糊测试器$Fuzzer$；3）存储在$Set_{inputs}$中的初始种子</div>
     </div>
   </div>
-<p>给定这3个输入，算法在模糊测试过程中进行迭代抽样。$Fuzzer$使用$P$和$Set_{inputs}$以生成新输入 $Set_{NewInputs}$（Ln.7）。然后，对于 $NewInputs$ 中的每个输入，我们收集由$P$和$input$（Ln.9）确定的路径内的每个分支的覆盖统计信息，并进一步更新存储在$HashMap_{CovStat}$中的现有覆盖统计（Ln.11和12）。最后，算法将$Set_{NewInputs}$合并到$Set_{inputs}$（Ln.15）并开始新的迭代。
+<p>给定这3个输入，算法在模糊测试过程中进行迭代抽样。</p>
+<ol>
+<li>$Fuzzer$使用$P$和$Set_{inputs}$以生成新输入 $Set_{NewInputs}$（Ln.7）。</li>
+<li>然后，对于 $NewInputs$ 中的每个输入，我们收集由$P$和$input$（Ln.9）确定的路径内的每个分支的覆盖统计信息，并进一步更新存储在$HashMap_{CovStat}$中的现有覆盖统计（Ln.11和12）。</li>
+<li>最后，算法将$Set_{NewInputs}$合并到$Set_{inputs}$（Ln.15）并开始新的迭代。
 
 <figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101445625.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101445625.png" data-sub-html="<h2> </h2><p>Algorithm 1 Execution Sampling</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101445625.png" data-title="Algorithm 1 Execution Sampling" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101445625.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">Algorithm 1 Execution Sampling</figcaption>
-    </figure></p>
+    </figure></li>
+</ol>
 <h3 id="c-execution-tree-construction">C. Execution Tree Construction</h3>
-<p>如图3所示，DigFuzz 使用来自模糊器的运行时信息生成基于 MCP3的执行树。
+<p>如图3所示，DigFuzz 使用来自模糊器的运行时信息生成基于$MCP^3$的执行树。
 
 <figure><a class="lightgallery" href="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" data-thumbnail="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" data-sub-html="<h2> </h2><p>Fig. 3: Overview of DigFuzz</p>"><img loading="lazy" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" data-title="Fig. 3: Overview of DigFuzz" data-alt="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202312101450165.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">Fig. 3: Overview of DigFuzz</figcaption>
     </figure>
@@ -530,7 +535,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2023-12-10 21:22:14">更新于 2023-12-10&nbsp;<a class="git-hash" href="https://github.com/leegical/leegical.github.io/commit/4cd62348337a6215791c9b6ae5f031484ac60e5a" rel="external nofollow noopener noreferrer" target="_blank" title="commit by CXG-L(chuxuange@gmail.com) 4cd62348337a6215791c9b6ae5f031484ac60e5a: digfuzz add backgroud"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i>4cd6234</a></span>
+        <span title="更新于 2023-12-10 22:22:48">更新于 2023-12-10&nbsp;<a class="git-hash" href="https://github.com/leegical/leegical.github.io/commit/7aac56e1f662c4463f3a2d9e6076fd9cec41f068" rel="external nofollow noopener noreferrer" target="_blank" title="commit by CXG-L(chuxuange@gmail.com) 7aac56e1f662c4463f3a2d9e6076fd9cec41f068: digfuzz step"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i>7aac56e</a></span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
