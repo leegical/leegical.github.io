@@ -3,36 +3,29 @@
     <title>git - 分类 - 云吱</title>
     <link>https://haoyep.com/categories/git/</link>
     <description>git - 分类 - 云吱</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
-      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/categories/git/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/categories/git/" rel="self" type="application/rss+xml" /><item>
   <title>Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</title>
   <link>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</link>
   <pubDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</pubDate>
-  <author>云吱</author>
+  <author>作者</author>
   <guid>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122216423.png" referrerpolicy="no-referrer">
-      </div>使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122216423.png" title="使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。" alt="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客" referrerpolicy="no-referrer"/></div>使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。]]></description>
 </item>
 <item>
   <title>Hugo 博客添加 Giscus 评论功能</title>
   <link>https://haoyep.com/posts/hugo-add-component/</link>
   <pubDate>Wed, 08 Nov 2023 12:58:06 &#43;0800</pubDate>
-  <author>云吱</author>
+  <author>作者</author>
   <guid>https://haoyep.com/posts/hugo-add-component/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122215835.png" referrerpolicy="no-referrer">
-      </div><p>本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。</p>]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122215835.png" title="本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。" alt="Hugo 博客添加 Giscus 评论功能" referrerpolicy="no-referrer"/></div><p>本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。</p>]]></description>
 </item>
 <item>
   <title>Windows下使用hugo和Github Pages配置博客</title>
   <link>https://haoyep.com/posts/windows-hugo-blog-github/</link>
   <pubDate>Tue, 07 Nov 2023 23:13:11 &#43;0800</pubDate>
-  <author>云吱</author>
+  <author>作者</author>
   <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122214250.png" referrerpolicy="no-referrer">
-      </div>前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png 解压到某个目录，然后将该目录添加到环境变量中： image.png 通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本： 1 choco install hugo-extended]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311122214250.png" title="Windows下使用hugo和Github Pages配置博客" alt="Windows下使用hugo和Github Pages配置博客" referrerpolicy="no-referrer"/></div>前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png 解压到某个目录，然后将该目录添加到环境变量中： image.png 通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本： 1 choco install hugo-extended]]></description>
 </item>
 </channel>
 </rss>
