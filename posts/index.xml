@@ -52,14 +52,6 @@
   <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://raw.githubusercontent.com/leegical/Blog_img/master/md_img202311121634466.png" title="文献管理软件 zotero 下载安装使用与配置分享" alt="文献管理软件 zotero 下载安装使用与配置分享" referrerpolicy="no-referrer"/></div>前言 最开始阅读文献是使用readpaper 平台，在线翻译、做笔记、文献管理都很方便，具体使用可以参考同济子豪兄和官方 ReadPaper 保姆级教程。 但随着科研深入，readpaper 的文献管理功能逐渐跟不上了，而且很多文献没有 PDF 文件，需要自己下载后上传。 经过研究发现，相比 Endnote，zotero 功能够用，而且开源]]></description>
 </item>
 <item>
-  <title>Loveit自带的admonition样式</title>
-  <link>https://haoyep.com/posts/loveit-admonition/</link>
-  <pubDate>Wed, 08 Nov 2023 23:05:02 &#43;0800</pubDate>
-  <author>作者</author>
-  <guid>https://haoyep.com/posts/loveit-admonition/</guid>
-  <description><![CDATA[LoveIt提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。]]></description>
-</item>
-<item>
   <title>Digfuzz工具论文调研</title>
   <link>https://haoyep.com/posts/digfuzz/</link>
   <pubDate>Sun, 10 Dec 2023 17:04:08 &#43;0800</pubDate>
