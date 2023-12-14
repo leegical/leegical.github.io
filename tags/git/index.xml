@@ -42,7 +42,7 @@
   <pubDate>Tue, 07 Nov 2023 23:13:11 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311122214250.png" title="Windows下使用hugo和Github Pages配置博客" alt="Windows下使用hugo和Github Pages配置博客" referrerpolicy="no-referrer"/></div>前提 默认本地已安装了 Git、VSCode。 hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本 预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311122214250.png" title="本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。" alt="Windows下使用hugo和Github Pages配置博客" referrerpolicy="no-referrer"/></div><p>本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。</p>]]></description>
 </item>
 </channel>
 </rss>

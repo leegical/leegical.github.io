@@ -9,20 +9,20 @@
 <meta name="author-link" content="https://haoyep.com/">
 <meta name="description" content="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。" /><meta name="keywords" content='git, markdown' /><meta itemprop="name" content="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源">
 <meta itemprop="description" content="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。"><meta itemprop="datePublished" content="2023-12-14T19:16:31+08:00" />
-<meta itemprop="dateModified" content="2023-12-14T19:36:00+08:00" />
-<meta itemprop="wordCount" content="1282"><meta itemprop="image" content="https://haoyep.com/logo.png" />
+<meta itemprop="dateModified" content="2023-12-14T20:53:32+08:00" />
+<meta itemprop="wordCount" content="1287"><meta itemprop="image" content="https://haoyep.com/logo.png" />
 <meta itemprop="keywords" content="git,markdown," /><meta property="og:title" content="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源" />
 <meta property="og:description" content="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://haoyep.com/posts/github-graph-beds-cdn/" /><meta property="og:image" content="https://haoyep.com/logo.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-12-14T19:16:31+08:00" />
-<meta property="article:modified_time" content="2023-12-14T19:36:00+08:00" />
+<meta property="article:modified_time" content="2023-12-14T20:53:32+08:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://haoyep.com/logo.png" /><meta name="twitter:title" content="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源"/>
 <meta name="twitter:description" content="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。"/>
 <meta name="application-name" content="云吱的小站">
-<meta name="apple-mobile-web-app-title" content="云吱的小站"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haoyep.com/posts/github-graph-beds-cdn/" /><link rel="prev" href="https://haoyep.com/posts/github-graph-beds/" /><link rel="stylesheet" href="/css/style.min.60ed70ed30207ed7d6398dbe0e9ae3ac8b486c2f3f4c48bb505a1c5b77ce7e46.css" integrity="sha256-YO1w7TAgftfWOY2+DprjrItIbC8/TEi7UFocW3fOfkY="><link rel="preload" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="云吱的小站"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haoyep.com/posts/github-graph-beds-cdn/" /><link rel="prev" href="https://haoyep.com/posts/github-graph-beds/" /><link rel="next" href="https://haoyep.com/posts/test/" /><link rel="stylesheet" href="/css/style.min.60ed70ed30207ed7d6398dbe0e9ae3ac8b486c2f3f4c48bb505a1c5b77ce7e46.css" integrity="sha256-YO1w7TAgftfWOY2+DprjrItIbC8/TEi7UFocW3fOfkY="><link rel="preload" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
@@ -33,8 +33,8 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/haoyep.com\/posts\/github-graph-beds-cdn\/"
-    },"image": ["https:\/\/haoyep.com\/favicon.ico"],"genre": "posts","keywords": "git, markdown","wordcount":  1282 ,
-    "url": "https:\/\/haoyep.com\/posts\/github-graph-beds-cdn\/","datePublished": "2023-12-14T19:16:31+08:00","dateModified": "2023-12-14T19:36:00+08:00","publisher": {
+    },"image": ["https:\/\/haoyep.com\/favicon.ico"],"genre": "posts","keywords": "git, markdown","wordcount":  1287 ,
+    "url": "https:\/\/haoyep.com\/posts\/github-graph-beds-cdn\/","datePublished": "2023-12-14T19:16:31+08:00","dateModified": "2023-12-14T20:53:32+08:00","publisher": {
       "@type": "Organization",
       "name": "云吱","logo": "https:\/\/haoyep.com\/logo.png"},"author": {
         "@type": "Person",
@@ -144,7 +144,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://cn.gravatar.com/avatar/867c2859fc58e987cb357c7a67ac01cb?s=32&amp;d=identicon" data-title="云吱" data-alt="云吱" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;云吱</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/blog/" class="post-category" title="分类 - blog"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> blog</a>&ensp;<a href="/categories/markdown/" class="post-category" title="分类 - markdown"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> markdown</a></span></div>
-      <div class="post-meta-line"><span title="发布于 2023-12-14 19:16:31"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-14">2023-12-14</time></span>&nbsp;<span title="更新于 2023-12-14 19:36:00"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-14">2023-12-14</time></span>&nbsp;<span title="1282 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源">
+      <div class="post-meta-line"><span title="发布于 2023-12-14 19:16:31"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-14">2023-12-14</time></span>&nbsp;<span title="更新于 2023-12-14 20:53:32"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-14">2023-12-14</time></span>&nbsp;<span title="1287 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源">
               <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="featured-image"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141934762.png" data-title="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。" data-alt="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141934762.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
@@ -167,7 +167,7 @@
 </nav></div>
       </div><div class="content" id="content"><p>通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。</p>
 <h2 id="前言">前言</h2>
-<p>上一篇文章讲述了如何使用 PicGo + GitHub 搭建图床，这样搭建的图床很稳定，但缺点是国内访问速度慢。使用<code>jsDelivr</code>免费 CDN 加速。
+<p>上一篇文章讲述了如何使用 PicGo + GitHub 搭建图床，这样搭建的图床很稳定，但缺点是国内访问速度慢。可以使用 <code>jsDelivr</code> 对 Github 图床等静态资源进行免费 CDN 加速
 <a href="https://haoyep.com/posts/github-graph-beds/" title="使用PicGo &#43; GitHub 搭建 Obsidian 图床"target="_blank" rel="external nofollow noopener noreferrer" class="card-link"><span class="cl-backdrop" style="--cl-bg-url: url(/fixit.min.svg);"></span>
     <span class="cl-content">
       <span class="cl-text">
@@ -333,7 +333,7 @@
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2023-12-14 19:36:00">更新于 2023-12-14&nbsp;<a class="git-hash" href="https://github.com/leegical/leegical.github.io/commit/adc442ec37ddc1b181b069fd69df1246123529b0" rel="external nofollow noopener noreferrer" target="_blank" title="commit by CXG-L(chuxuange@gmail.com) adc442ec37ddc1b181b069fd69df1246123529b0: cdn-img"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i>adc442e</a></span>
+        <span title="更新于 2023-12-14 20:53:32">更新于 2023-12-14&nbsp;<a class="git-hash" href="https://github.com/leegical/leegical.github.io/commit/c61c1b5d7a19104ed6e8de01b902d171fc1c0799" rel="external nofollow noopener noreferrer" target="_blank" title="commit by CXG-L(chuxuange@gmail.com) c61c1b5d7a19104ed6e8de01b902d171fc1c0799: update blog-build"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i>c61c1b5</a></span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
@@ -360,7 +360,8 @@
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/github-graph-beds/" class="post-nav-item" rel="prev" title="使用PicGo &#43; GitHub 搭建 Obsidian 图床"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>使用PicGo &#43; GitHub 搭建 Obsidian 图床</a></div>
+  <div class="post-nav"><a href="/posts/github-graph-beds/" class="post-nav-item" rel="prev" title="使用PicGo &#43; GitHub 搭建 Obsidian 图床"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>使用PicGo &#43; GitHub 搭建 Obsidian 图床</a>
+      <a href="/posts/test/" class="post-nav-item" rel="next" title="Test">Test<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="giscus">
           <script

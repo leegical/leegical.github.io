@@ -20,5 +20,13 @@
   <guid>https://haoyep.com/posts/github-graph-beds/</guid>
   <description><![CDATA[<p>使用 Obsidian 等 Markdown 编辑器时，可靠又稳定的图床是必不可少的。PicGo + GitHub 背靠微软，稳定性问题基本不用担心，可以实现粘贴图片自动上传到 GitHub 的公有仓库。而且配置简单，使用优雅。</p>]]></description>
 </item>
+<item>
+  <title>Windows下使用hugo和Github Pages配置博客</title>
+  <link>https://haoyep.com/posts/windows-hugo-blog-github/</link>
+  <pubDate>Tue, 07 Nov 2023 23:13:11 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311122214250.png" title="本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。" alt="Windows下使用hugo和Github Pages配置博客" referrerpolicy="no-referrer"/></div><p>本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。</p>]]></description>
+</item>
 </channel>
 </rss>
