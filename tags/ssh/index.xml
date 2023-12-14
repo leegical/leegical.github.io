@@ -10,7 +10,7 @@
   <pubDate>Wed, 08 Nov 2023 22:49:04 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/zerotier-ssh/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="/md_img202311122217763_6894710773766137840.png" title="一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。" alt="通过ZeroTier SSH连接内网主机" referrerpolicy="no-referrer"/></div>一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="/md_img202311122217763_8206607140435746827.png" title="一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。" alt="通过ZeroTier SSH连接内网主机" referrerpolicy="no-referrer"/></div>一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。]]></description>
 </item>
 </channel>
 </rss>
