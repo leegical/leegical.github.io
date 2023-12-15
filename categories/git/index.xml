@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>git - 分类 - 云吱</title>
+    <title>git - 分类 - 云吱的小站</title>
     <link>https://haoyep.com/categories/git/</link>
-    <description>git - 分类 - 云吱</description>
+    <description>git - 分类 - 云吱的小站</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
       <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/categories/git/" rel="self" type="application/rss+xml" /><item>
   <title>Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</title>
