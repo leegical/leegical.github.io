@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>符号执行 - 标签 - 云吱的小站</title>
+    <link>https://haoyep.com/tags/%E7%AC%A6%E5%8F%B7%E6%89%A7%E8%A1%8C/</link>
+    <description>符号执行 - 标签 - 云吱的小站</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
+      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Sun, 10 Dec 2023 17:04:08 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/tags/%E7%AC%A6%E5%8F%B7%E6%89%A7%E8%A1%8C/" rel="self" type="application/rss+xml" /><item>
+  <title>Digfuzz工具论文调研</title>
+  <link>https://haoyep.com/posts/digfuzz/</link>
+  <pubDate>Sun, 10 Dec 2023 17:04:08 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/digfuzz/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150119403.png" title="Digfuzz工具论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》" alt="Digfuzz工具论文调研" referrerpolicy="no-referrer"/></div><p>论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》</p>]]></description>
+</item>
+</channel>
+</rss>

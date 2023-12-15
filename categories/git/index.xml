@@ -1,16 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>git - 分类 - 云吱</title>
+    <title>git - 分类 - 云吱的小站</title>
     <link>https://haoyep.com/categories/git/</link>
-    <description>git - 分类 - 云吱</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
+    <description>git - 分类 - 云吱的小站</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
       <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/categories/git/" rel="self" type="application/rss+xml" /><item>
   <title>Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</title>
   <link>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</link>
   <pubDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</guid>
-  <description><![CDATA[使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311122216423.png" title="使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。" alt="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客" referrerpolicy="no-referrer"/></div><p>使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。</p>]]></description>
 </item>
 <item>
   <title>Hugo 博客添加 Giscus 评论功能</title>
@@ -18,21 +18,7 @@
   <pubDate>Wed, 08 Nov 2023 12:58:06 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/hugo-add-component/</guid>
-  <description><![CDATA[<p>本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。</p>]]></description>
-</item>
-<item>
-  <title>Windows下使用hugo和Github Pages配置博客</title>
-  <link>https://haoyep.com/posts/windows-hugo-blog-github/</link>
-  <pubDate>Tue, 07 Nov 2023 23:13:11 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
-  <description><![CDATA[前提 默认本地已安装了 Git、VSCode。
-hugo 配置 1. 安装 Hugo 推荐使用 Hugo extended 版本
-预构建的二进制文件 访问最新版本页面，然后向下滚动到Assets部分。选择对应平台下载。 image.png解压到某个目录，然后将该目录添加到环境变量中： image.png通过包管理器（Windows） Chocolatey Chocolatey 是一个免费的开源 Windows 包管理器。这将安装 Hugo 的扩展版本：
-1 choco install hugo-extended Scoop Scoop 是适用于 Windows 的免费开源包管理器。这将安装 Hugo 的扩展版本：
-1 scoop install hugo-extended Winget Winget是Microsoft的官方免费开源Windows包管理器。这将安装 Hugo 的扩展版本：
-1 winget install Hugo.Hugo.Extended 2.创建 Hugo 网站 通过上述操作安装 hugo 程序后，就可以通过 hugo new site 命令进行网站创建、配置与本地调试了。 选择一个本地文件夹作为根目录，右键——Git Bash Here，输入下面的命令
-1 hugo new site &lt;site-name&gt; image.png注：后续命令未经说明，均在 Git Bash 中的 E:\Workspace\blog 目录下运行]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311122215835.png" title="本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。" alt="Hugo 博客添加 Giscus 评论功能" referrerpolicy="no-referrer"/></div><p>本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。</p>]]></description>
 </item>
 </channel>
 </rss>
