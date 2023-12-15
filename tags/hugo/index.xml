@@ -13,12 +13,12 @@
   <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150115425.png" title="本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。" alt="Windows下使用hugo和Github Pages配置博客" referrerpolicy="no-referrer"/></div><p>本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。</p>]]></description>
 </item>
 <item>
-  <title>Loveit自带的admonition样式</title>
-  <link>https://haoyep.com/posts/loveit-admonition/</link>
+  <title>Fixit自带的admonition样式</title>
+  <link>https://haoyep.com/posts/fixit-admonition/</link>
   <pubDate>Wed, 08 Nov 2023 23:05:02 &#43;0800</pubDate>
   <author>云吱</author>
-  <guid>https://haoyep.com/posts/loveit-admonition/</guid>
-  <description><![CDATA[LoveIt提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。]]></description>
+  <guid>https://haoyep.com/posts/fixit-admonition/</guid>
+  <description><![CDATA[Fixit提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。]]></description>
 </item>
 <item>
   <title>Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</title>

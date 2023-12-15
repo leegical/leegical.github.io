@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Fixit - 标签 - 云吱的小站</title>
+    <link>https://haoyep.com/tags/fixit/</link>
+    <description>Fixit - 标签 - 云吱的小站</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
+      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Wed, 08 Nov 2023 23:05:02 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/tags/fixit/" rel="self" type="application/rss+xml" /><item>
+  <title>Fixit自带的admonition样式</title>
+  <link>https://haoyep.com/posts/fixit-admonition/</link>
+  <pubDate>Wed, 08 Nov 2023 23:05:02 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/fixit-admonition/</guid>
+  <description><![CDATA[Fixit提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。]]></description>
+</item>
+</channel>
+</rss>

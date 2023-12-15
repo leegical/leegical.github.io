@@ -4,17 +4,9 @@
     <link>https://haoyep.com/</link>
     <description>云吱的博客，记录个人学习过程。好耶！</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
-      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Thu, 14 Dec 2023 20:14:56 &#43;0800</lastBuildDate>
+      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Thu, 14 Dec 2023 19:16:31 &#43;0800</lastBuildDate>
       <atom:link href="https://haoyep.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-  <title>Test</title>
-  <link>https://haoyep.com/posts/test/</link>
-  <pubDate>Thu, 14 Dec 2023 20:14:56 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/test/</guid>
-  <description><![CDATA[<p>此处内容将会出现在摘要（summary）里</p>]]></description>
-</item>
-<item>
   <title>通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</title>
   <link>https://haoyep.com/posts/github-graph-beds-cdn/</link>
   <pubDate>Thu, 14 Dec 2023 19:16:31 &#43;0800</pubDate>
@@ -63,12 +55,12 @@
   <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311121634466.png" title="文献管理软件 zotero 下载安装使用与配置分享" alt="文献管理软件 zotero 下载安装使用与配置分享" referrerpolicy="no-referrer"/></div>前言 最开始阅读文献是使用readpaper 平台，在线翻译、做笔记、文献管理都很方便，具体使用可以参考同济子豪兄和官方 ReadPaper 保姆级教程。 但随着科研]]></description>
 </item>
 <item>
-  <title>Loveit自带的admonition样式</title>
-  <link>https://haoyep.com/posts/loveit-admonition/</link>
+  <title>Fixit自带的admonition样式</title>
+  <link>https://haoyep.com/posts/fixit-admonition/</link>
   <pubDate>Wed, 08 Nov 2023 23:05:02 &#43;0800</pubDate>
   <author>云吱</author>
-  <guid>https://haoyep.com/posts/loveit-admonition/</guid>
-  <description><![CDATA[LoveIt提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。]]></description>
+  <guid>https://haoyep.com/posts/fixit-admonition/</guid>
+  <description><![CDATA[Fixit提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。]]></description>
 </item>
 <item>
   <title>通过热点共享网络，让局域网内的手机等设备共享本机代理</title>
@@ -85,6 +77,14 @@
   <author>云吱</author>
   <guid>https://haoyep.com/posts/zerotier-ssh/</guid>
   <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311122217763.png" title="一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。" alt="通过ZeroTier SSH连接内网主机" referrerpolicy="no-referrer"/></div>一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。]]></description>
+</item>
+<item>
+  <title>Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</title>
+  <link>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</link>
+  <pubDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311122216423.png" title="使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。" alt="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客" referrerpolicy="no-referrer"/></div><p>使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。</p>]]></description>
 </item>
 </channel>
 </rss>

@@ -4,55 +4,7 @@
     <link>https://haoyep.com/posts/</link>
     <description>所有文章 | 云吱的小站</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
-      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Thu, 14 Dec 2023 20:14:56 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/posts/" rel="self" type="application/rss+xml" /><item>
-  <title>Windows下使用hugo和Github Pages配置博客</title>
-  <link>https://haoyep.com/posts/windows-hugo-blog-github/</link>
-  <pubDate>Fri, 17 Nov 2023 23:13:11 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150115425.png" title="本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。" alt="Windows下使用hugo和Github Pages配置博客" referrerpolicy="no-referrer"/></div><p>本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。</p>]]></description>
-</item>
-<item>
-  <title>PTATM（一）：初始化工作</title>
-  <link>https://haoyep.com/posts/ptatm-1/</link>
-  <pubDate>Sat, 18 Nov 2023 20:42:47 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/ptatm-1/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150108603.png" title="本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。" alt="PTATM（一）：初始化工作" referrerpolicy="no-referrer"/></div>本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。]]></description>
-</item>
-<item>
-  <title>Digfuzz工具论文调研</title>
-  <link>https://haoyep.com/posts/digfuzz/</link>
-  <pubDate>Sun, 10 Dec 2023 17:04:08 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/digfuzz/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150119403.png" title="Digfuzz工具论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》" alt="Digfuzz工具论文调研" referrerpolicy="no-referrer"/></div><p>论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》</p>]]></description>
-</item>
-<item>
-  <title>使用PicGo &#43; GitHub 搭建 Obsidian 图床</title>
-  <link>https://haoyep.com/posts/github-graph-beds/</link>
-  <pubDate>Thu, 14 Dec 2023 16:12:20 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/github-graph-beds/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150105460.png" title="使用 PicGo &#43; GitHub 搭建 Obsidian 图床，剪贴板自动上传图片，稳定可靠" alt="使用PicGo &#43; GitHub 搭建 Obsidian 图床" referrerpolicy="no-referrer"/></div><p>使用 Obsidian 等 Markdown 编辑器时，可靠又稳定的图床是必不可少的。PicGo + GitHub 背靠微软，稳定性问题基本不用担心，可以实现粘贴图片自动上传到 GitHub 的公有仓库。而且配置简单，使用优雅。</p>]]></description>
-</item>
-<item>
-  <title>Test</title>
-  <link>https://haoyep.com/posts/test/</link>
-  <pubDate>Thu, 14 Dec 2023 20:14:56 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/test/</guid>
-  <description><![CDATA[<p>此处内容将会出现在摘要（summary）里</p>]]></description>
-</item>
-<item>
-  <title>通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</title>
-  <link>https://haoyep.com/posts/github-graph-beds-cdn/</link>
-  <pubDate>Thu, 14 Dec 2023 19:16:31 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/github-graph-beds-cdn/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141934762.png" title="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。" alt="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源" referrerpolicy="no-referrer"/></div><p>通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。</p>]]></description>
-</item>
-<item>
+      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Thu, 14 Dec 2023 19:16:31 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/posts/" rel="self" type="application/rss+xml" /><item>
   <title>通过ZeroTier SSH连接内网主机</title>
   <link>https://haoyep.com/posts/zerotier-ssh/</link>
   <pubDate>Wed, 08 Nov 2023 22:49:04 &#43;0800</pubDate>
@@ -61,84 +13,124 @@
   <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311122217763.png" title="一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。" alt="通过ZeroTier SSH连接内网主机" referrerpolicy="no-referrer"/></div>一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。]]></description>
 </item>
 <item>
-  <title>通过热点共享网络，让局域网内的手机等设备共享本机代理</title>
-  <link>https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/</link>
-  <pubDate>Wed, 08 Nov 2023 22:59:29 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311122213294.png" title="通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理" alt="通过热点共享网络，让局域网内的手机等设备共享本机代理" referrerpolicy="no-referrer"/></div>通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理]]></description>
-</item>
-<item>
-  <title>文献管理软件 zotero 下载安装使用与配置分享</title>
-  <link>https://haoyep.com/posts/zotero-config/</link>
-  <pubDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/zotero-config/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311121634466.png" title="文献管理软件 zotero 下载安装使用与配置分享" alt="文献管理软件 zotero 下载安装使用与配置分享" referrerpolicy="no-referrer"/></div>前言 最开始阅读文献是使用readpaper 平台，在线翻译、做笔记、文献管理都很方便，具体使用可以参考同济子豪兄和官方 ReadPaper 保姆级教程。 但随着科研]]></description>
-</item>
-<item>
-  <title>Test</title>
-  <link>https://haoyep.com/posts/test/</link>
-  <pubDate>Thu, 14 Dec 2023 20:14:56 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/test/</guid>
-  <description><![CDATA[<p>此处内容将会出现在摘要（summary）里</p>]]></description>
-</item>
-<item>
-  <title>通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</title>
-  <link>https://haoyep.com/posts/github-graph-beds-cdn/</link>
-  <pubDate>Thu, 14 Dec 2023 19:16:31 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/github-graph-beds-cdn/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141934762.png" title="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。" alt="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源" referrerpolicy="no-referrer"/></div><p>通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。</p>]]></description>
-</item>
-<item>
-  <title>使用PicGo &#43; GitHub 搭建 Obsidian 图床</title>
-  <link>https://haoyep.com/posts/github-graph-beds/</link>
-  <pubDate>Thu, 14 Dec 2023 16:12:20 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/github-graph-beds/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150105460.png" title="使用 PicGo &#43; GitHub 搭建 Obsidian 图床，剪贴板自动上传图片，稳定可靠" alt="使用PicGo &#43; GitHub 搭建 Obsidian 图床" referrerpolicy="no-referrer"/></div><p>使用 Obsidian 等 Markdown 编辑器时，可靠又稳定的图床是必不可少的。PicGo + GitHub 背靠微软，稳定性问题基本不用担心，可以实现粘贴图片自动上传到 GitHub 的公有仓库。而且配置简单，使用优雅。</p>]]></description>
-</item>
-<item>
-  <title>Digfuzz工具论文调研</title>
-  <link>https://haoyep.com/posts/digfuzz/</link>
-  <pubDate>Sun, 10 Dec 2023 17:04:08 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/digfuzz/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150119403.png" title="Digfuzz工具论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》" alt="Digfuzz工具论文调研" referrerpolicy="no-referrer"/></div><p>论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》</p>]]></description>
-</item>
-<item>
-  <title>PTATM（一）：初始化工作</title>
-  <link>https://haoyep.com/posts/ptatm-1/</link>
-  <pubDate>Sat, 18 Nov 2023 20:42:47 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/ptatm-1/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150108603.png" title="本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。" alt="PTATM（一）：初始化工作" referrerpolicy="no-referrer"/></div>本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。]]></description>
-</item>
-<item>
-  <title>Windows下使用hugo和Github Pages配置博客</title>
-  <link>https://haoyep.com/posts/windows-hugo-blog-github/</link>
-  <pubDate>Fri, 17 Nov 2023 23:13:11 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150115425.png" title="本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。" alt="Windows下使用hugo和Github Pages配置博客" referrerpolicy="no-referrer"/></div><p>本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。</p>]]></description>
-</item>
-<item>
-  <title>文献管理软件 zotero 下载安装使用与配置分享</title>
-  <link>https://haoyep.com/posts/zotero-config/</link>
-  <pubDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/zotero-config/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311121634466.png" title="文献管理软件 zotero 下载安装使用与配置分享" alt="文献管理软件 zotero 下载安装使用与配置分享" referrerpolicy="no-referrer"/></div>前言 最开始阅读文献是使用readpaper 平台，在线翻译、做笔记、文献管理都很方便，具体使用可以参考同济子豪兄和官方 ReadPaper 保姆级教程。 但随着科研]]></description>
-</item>
-<item>
-  <title>Loveit自带的admonition样式</title>
-  <link>https://haoyep.com/posts/loveit-admonition/</link>
+  <title>Fixit自带的admonition样式</title>
+  <link>https://haoyep.com/posts/fixit-admonition/</link>
   <pubDate>Wed, 08 Nov 2023 23:05:02 &#43;0800</pubDate>
   <author>云吱</author>
-  <guid>https://haoyep.com/posts/loveit-admonition/</guid>
-  <description><![CDATA[LoveIt提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。]]></description>
+  <guid>https://haoyep.com/posts/fixit-admonition/</guid>
+  <description><![CDATA[Fixit提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。]]></description>
+</item>
+<item>
+  <title>文献管理软件 zotero 下载安装使用与配置分享</title>
+  <link>https://haoyep.com/posts/zotero-config/</link>
+  <pubDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/zotero-config/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311121634466.png" title="文献管理软件 zotero 下载安装使用与配置分享" alt="文献管理软件 zotero 下载安装使用与配置分享" referrerpolicy="no-referrer"/></div>前言 最开始阅读文献是使用readpaper 平台，在线翻译、做笔记、文献管理都很方便，具体使用可以参考同济子豪兄和官方 ReadPaper 保姆级教程。 但随着科研]]></description>
+</item>
+<item>
+  <title>Windows下使用hugo和Github Pages配置博客</title>
+  <link>https://haoyep.com/posts/windows-hugo-blog-github/</link>
+  <pubDate>Fri, 17 Nov 2023 23:13:11 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150115425.png" title="本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。" alt="Windows下使用hugo和Github Pages配置博客" referrerpolicy="no-referrer"/></div><p>本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。</p>]]></description>
+</item>
+<item>
+  <title>PTATM（一）：初始化工作</title>
+  <link>https://haoyep.com/posts/ptatm-1/</link>
+  <pubDate>Sat, 18 Nov 2023 20:42:47 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/ptatm-1/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150108603.png" title="本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。" alt="PTATM（一）：初始化工作" referrerpolicy="no-referrer"/></div>本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。]]></description>
+</item>
+<item>
+  <title>Digfuzz工具论文调研</title>
+  <link>https://haoyep.com/posts/digfuzz/</link>
+  <pubDate>Sun, 10 Dec 2023 17:04:08 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/digfuzz/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150119403.png" title="Digfuzz工具论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》" alt="Digfuzz工具论文调研" referrerpolicy="no-referrer"/></div><p>论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》</p>]]></description>
+</item>
+<item>
+  <title>使用PicGo &#43; GitHub 搭建 Obsidian 图床</title>
+  <link>https://haoyep.com/posts/github-graph-beds/</link>
+  <pubDate>Thu, 14 Dec 2023 16:12:20 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/github-graph-beds/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150105460.png" title="使用 PicGo &#43; GitHub 搭建 Obsidian 图床，剪贴板自动上传图片，稳定可靠" alt="使用PicGo &#43; GitHub 搭建 Obsidian 图床" referrerpolicy="no-referrer"/></div><p>使用 Obsidian 等 Markdown 编辑器时，可靠又稳定的图床是必不可少的。PicGo + GitHub 背靠微软，稳定性问题基本不用担心，可以实现粘贴图片自动上传到 GitHub 的公有仓库。而且配置简单，使用优雅。</p>]]></description>
+</item>
+<item>
+  <title>通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</title>
+  <link>https://haoyep.com/posts/github-graph-beds-cdn/</link>
+  <pubDate>Thu, 14 Dec 2023 19:16:31 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/github-graph-beds-cdn/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141934762.png" title="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。" alt="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源" referrerpolicy="no-referrer"/></div><p>通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。</p>]]></description>
+</item>
+<item>
+  <title>通过热点共享网络，让局域网内的手机等设备共享本机代理</title>
+  <link>https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/</link>
+  <pubDate>Wed, 08 Nov 2023 22:59:29 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311122213294.png" title="通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理" alt="通过热点共享网络，让局域网内的手机等设备共享本机代理" referrerpolicy="no-referrer"/></div>通过热点共享网络，配置网关，让让局域网内的手机等设备也走本机代理]]></description>
+</item>
+<item>
+  <title>通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</title>
+  <link>https://haoyep.com/posts/github-graph-beds-cdn/</link>
+  <pubDate>Thu, 14 Dec 2023 19:16:31 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/github-graph-beds-cdn/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141934762.png" title="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。" alt="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源" referrerpolicy="no-referrer"/></div><p>通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。</p>]]></description>
+</item>
+<item>
+  <title>使用PicGo &#43; GitHub 搭建 Obsidian 图床</title>
+  <link>https://haoyep.com/posts/github-graph-beds/</link>
+  <pubDate>Thu, 14 Dec 2023 16:12:20 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/github-graph-beds/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150105460.png" title="使用 PicGo &#43; GitHub 搭建 Obsidian 图床，剪贴板自动上传图片，稳定可靠" alt="使用PicGo &#43; GitHub 搭建 Obsidian 图床" referrerpolicy="no-referrer"/></div><p>使用 Obsidian 等 Markdown 编辑器时，可靠又稳定的图床是必不可少的。PicGo + GitHub 背靠微软，稳定性问题基本不用担心，可以实现粘贴图片自动上传到 GitHub 的公有仓库。而且配置简单，使用优雅。</p>]]></description>
+</item>
+<item>
+  <title>Digfuzz工具论文调研</title>
+  <link>https://haoyep.com/posts/digfuzz/</link>
+  <pubDate>Sun, 10 Dec 2023 17:04:08 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/digfuzz/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150119403.png" title="Digfuzz工具论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》" alt="Digfuzz工具论文调研" referrerpolicy="no-referrer"/></div><p>论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》</p>]]></description>
+</item>
+<item>
+  <title>PTATM（一）：初始化工作</title>
+  <link>https://haoyep.com/posts/ptatm-1/</link>
+  <pubDate>Sat, 18 Nov 2023 20:42:47 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/ptatm-1/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150108603.png" title="本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。" alt="PTATM（一）：初始化工作" referrerpolicy="no-referrer"/></div>本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。]]></description>
+</item>
+<item>
+  <title>Windows下使用hugo和Github Pages配置博客</title>
+  <link>https://haoyep.com/posts/windows-hugo-blog-github/</link>
+  <pubDate>Fri, 17 Nov 2023 23:13:11 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150115425.png" title="本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。" alt="Windows下使用hugo和Github Pages配置博客" referrerpolicy="no-referrer"/></div><p>本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。</p>]]></description>
+</item>
+<item>
+  <title>文献管理软件 zotero 下载安装使用与配置分享</title>
+  <link>https://haoyep.com/posts/zotero-config/</link>
+  <pubDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/zotero-config/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311121634466.png" title="文献管理软件 zotero 下载安装使用与配置分享" alt="文献管理软件 zotero 下载安装使用与配置分享" referrerpolicy="no-referrer"/></div>前言 最开始阅读文献是使用readpaper 平台，在线翻译、做笔记、文献管理都很方便，具体使用可以参考同济子豪兄和官方 ReadPaper 保姆级教程。 但随着科研]]></description>
+</item>
+<item>
+  <title>Fixit自带的admonition样式</title>
+  <link>https://haoyep.com/posts/fixit-admonition/</link>
+  <pubDate>Wed, 08 Nov 2023 23:05:02 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/fixit-admonition/</guid>
+  <description><![CDATA[Fixit提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。]]></description>
 </item>
 <item>
   <title>通过热点共享网络，让局域网内的手机等设备共享本机代理</title>
@@ -155,6 +147,14 @@
   <author>云吱</author>
   <guid>https://haoyep.com/posts/zerotier-ssh/</guid>
   <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311122217763.png" title="一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。" alt="通过ZeroTier SSH连接内网主机" referrerpolicy="no-referrer"/></div>一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。]]></description>
+</item>
+<item>
+  <title>Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</title>
+  <link>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</link>
+  <pubDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311122216423.png" title="使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。" alt="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客" referrerpolicy="no-referrer"/></div><p>使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。</p>]]></description>
 </item>
 </channel>
 </rss>

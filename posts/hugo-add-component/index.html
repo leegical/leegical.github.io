@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png" /><meta name="twitter:title" content="Hugo 博客添加 Giscus 评论功能"/>
 <meta name="twitter:description" content="本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。"/>
 <meta name="application-name" content="云吱">
-<meta name="apple-mobile-web-app-title" content="云吱"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://cdn.haoyep.com/gh/leegical/Blog_img/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haoyep.com/posts/hugo-add-component/" /><link rel="next" href="https://haoyep.com/posts/windows-hugo-blog-cloudflare/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="云吱"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://cdn.haoyep.com/gh/leegical/Blog_img/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haoyep.com/posts/hugo-add-component/" /><link rel="prev" href="https://haoyep.com/offline/" /><link rel="next" href="https://haoyep.com/posts/windows-hugo-blog-cloudflare/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -141,12 +141,28 @@
   </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
     <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/posts/" title="Posts">文章</a></li><li class="breadcrumb-item active" aria-current="page">Hugo 博客添加 Giscus 评论功能</li>
     </ol>
-  </nav><main class="container"><aside class="aside-collection" aria-label="合集"></aside>
+  </nav><main class="container"><aside class="aside-collection" aria-label="合集"><div class="details collection-details open">
+      <div class="details-summary collection-summary">
+        <span class="collection-title">
+          <i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>
+          <span class="collection-name">合集・建站日志</span>
+          <span class="text-secondary">4</span>
+        </span><i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+      <div class="details-content collection-content">
+        <nav>
+          <ul class="collection-list"><li class="collection-item"><span class="active" title="Hugo 博客添加 Giscus 评论功能">Hugo 博客添加 Giscus 评论功能</span></li>
+                <li class="collection-item"><a href="/posts/windows-hugo-blog-cloudflare/" title="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客">Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</a></li>
+                <li class="collection-item"><a href="/posts/fixit-admonition/" title="Fixit自带的admonition样式">Fixit自带的admonition样式</a></li>
+                <li class="collection-item"><a href="/posts/windows-hugo-blog-github/" title="Windows下使用hugo和Github Pages配置博客">Windows下使用hugo和Github Pages配置博客</a></li></ul>
+          <div class="collection-nav-simple"><i class="fa-solid fa-angle-left fa-fw collection-nav-item text-secondary" aria-hidden="true"></i><span class="text-secondary">1/4</span><a href="/posts/windows-hugo-blog-cloudflare/" class="collection-nav-item" rel="next" title="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客"><i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+        </nav>
+      </div>
+    </div></aside>
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Hugo 博客添加 Giscus 评论功能</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://dn-qiniu-avatar.qbox.me/avatar/867c2859fc58e987cb357c7a67ac01cb?s=32&amp;d=identicon" data-title="云吱" data-alt="云吱" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;云吱</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/git/" class="post-category" title="分类 - git"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> git</a>&ensp;<a href="/categories/hugo/" class="post-category" title="分类 - hugo"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> hugo</a></span></div>
+      <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://dn-qiniu-avatar.qbox.me/avatar/867c2859fc58e987cb357c7a67ac01cb?s=32&amp;d=identicon" data-title="云吱" data-alt="云吱" class="avatar" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;云吱</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/blog/" class="post-category" title="分类 - blog"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> blog</a> 和 <a href="/collections/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/" class="post-collection" title="合集 - 建站日志"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 建站日志</a></span></div>
       <div class="post-meta-line"><span title="发布于 2023-11-08 12:58:06"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-08">2023-11-08</time></span>&nbsp;<span title="更新于 2023-11-08 12:58:06"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-08">2023-11-08</time></span>&nbsp;<span title="719 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 800 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Hugo 博客添加 Giscus 评论功能">
               <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
@@ -271,7 +287,13 @@
 <p>用户登录 Github 后即可评论，效果图如下：
 
 <figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081302484.png" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081302484.png" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081302484.png" data-title="image.png" data-alt="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081302484.png" style="background: url(/svg/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;this.alt=this.dataset.alt;for(const i of ['style', 'data-title','data-alt','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
-    </figure></p></div><div class="post-footer" id="post-footer">
+    </figure></p></div><div class="collection-card">
+      <div class="collection-title text-secondary">
+        收录于 <a href="/collections/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> <span>合集・建站日志</span></span></a> 4
+      </div>
+      <div class="collection-nav"><a href="/posts/windows-hugo-blog-cloudflare/" class="collection-nav-item" rel="next" title="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客">
+            <span>Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</span><i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
@@ -302,7 +324,7 @@
     </section>
   </div>
 
-  <div class="post-nav">
+  <div class="post-nav"><a href="/offline/" class="post-nav-item" rel="prev" title=""><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i></a>
       <a href="/posts/windows-hugo-blog-cloudflare/" class="post-nav-item" rel="next" title="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客">Windows 下使用 Hugo 和 Cloudflare Pages 配置博客<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="giscus">
