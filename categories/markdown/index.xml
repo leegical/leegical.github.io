@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>markdown - 分类 - 云吱的小站</title>
+    <title>markdown - 分类 - 云吱</title>
     <link>https://haoyep.com/categories/markdown/</link>
-    <description>markdown - 分类 - 云吱的小站</description>
+    <description>markdown - 分类 - 云吱</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
       <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Thu, 14 Dec 2023 19:16:31 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/categories/markdown/" rel="self" type="application/rss+xml" /><item>
   <title>通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</title>
