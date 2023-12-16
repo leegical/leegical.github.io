@@ -37,7 +37,7 @@ sudo apt-get install linux-image-5.19.0-50-generic
 sudo apt-get install linux-headers-5.19.0-50-generic linux-modules-extra-5.19.0-50-generic
 ```
 如果要安装其他版本的内核，记得把上面命令中的`5.19.0-50-generic`改成对应的版本。
-### 1.3 更新grub
+### 1.3 更新`grub`
 还是假设要更换到`5.19.0-50-generic`内核版本。
 ```bash
 # 将 5.19.0-50-generic 替换你需要的version
