@@ -1,6 +1,7 @@
 https://haoyep.com/posts/github-graph-beds-cdn/
 https://haoyep.com/posts/github-graph-beds/
 https://haoyep.com/posts/digfuzz/
+https://haoyep.com/about/
 https://haoyep.com/posts/ptatm-1/
 https://haoyep.com/posts/windows-hugo-blog-github/
 https://haoyep.com/posts/zotero-config/
@@ -9,4 +10,6 @@ https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/
 https://haoyep.com/posts/zerotier-ssh/
 https://haoyep.com/posts/windows-hugo-blog-cloudflare/
 https://haoyep.com/posts/hugo-add-component/
+https://haoyep.com/friends/
+https://haoyep.com/guestbook/
 https://haoyep.com/offline/
