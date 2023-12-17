@@ -1,24 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Fixit - 标签 - 云吱的小站</title>
-    <link>https://haoyep.com/tags/fixit/</link>
-    <description>Fixit - 标签 - 云吱的小站</description>
+    <title>建站日志 - 分类 - 云吱的小站</title>
+    <link>https://haoyep.com/categories/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/</link>
+    <description>建站日志 - 分类 - 云吱的小站</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
-      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Sun, 17 Dec 2023 15:00:18 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/tags/fixit/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Sun, 17 Dec 2023 15:00:18 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/categories/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/" rel="self" type="application/rss+xml" /><item>
   <title>Github Pages 博客网站访问速度优化</title>
   <link>https://haoyep.com/posts/optimize-github-pages-blog-access-speed/</link>
   <pubDate>Sun, 17 Dec 2023 15:00:18 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/optimize-github-pages-blog-access-speed/</guid>
   <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/Optimize-Github-Pages-blog-access-speed.png" title="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。" alt="Github Pages 博客网站访问速度优化" referrerpolicy="no-referrer"/></div>个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。]]></description>
-</item>
-<item>
-  <title>Fixit自带的admonition样式</title>
-  <link>https://haoyep.com/posts/fixit-admonition/</link>
-  <pubDate>Wed, 08 Nov 2023 23:05:02 &#43;0800</pubDate>
-  <author>云吱</author>
-  <guid>https://haoyep.com/posts/fixit-admonition/</guid>
-  <description><![CDATA[Fixit提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。]]></description>
 </item>
 </channel>
 </rss>

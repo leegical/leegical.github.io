@@ -4,13 +4,21 @@
     <link>https://haoyep.com/posts/</link>
     <description>所有文章 | 云吱的小站</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
-      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Thu, 14 Dec 2023 19:16:31 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/posts/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Sun, 17 Dec 2023 15:00:18 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/posts/" rel="self" type="application/rss+xml" /><item>
   <title>Windows下使用hugo和Github Pages配置博客</title>
   <link>https://haoyep.com/posts/windows-hugo-blog-github/</link>
   <pubDate>Fri, 17 Nov 2023 23:13:11 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
   <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150115425.png" title="本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。" alt="Windows下使用hugo和Github Pages配置博客" referrerpolicy="no-referrer"/></div><p>本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。</p>]]></description>
+</item>
+<item>
+  <title>Github Pages 博客网站访问速度优化</title>
+  <link>https://haoyep.com/posts/optimize-github-pages-blog-access-speed/</link>
+  <pubDate>Sun, 17 Dec 2023 15:00:18 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/optimize-github-pages-blog-access-speed/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/Optimize-Github-Pages-blog-access-speed.png" title="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。" alt="Github Pages 博客网站访问速度优化" referrerpolicy="no-referrer"/></div>个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。]]></description>
 </item>
 <item>
   <title>通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</title>
