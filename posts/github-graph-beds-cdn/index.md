@@ -35,7 +35,7 @@ https://cdn.jsdelivr.net/gh/leegical/Blog_img/md_img202305061640828.png
 
 也就是说，我希望对于同一个资源链接，能够根据国内外请求来源自动重定向，使用不同的 CDN 加速链接。这就可以使用 Cloudflare 的重定向规则。
 ## Cloudflare
-### 1. 配置域名
+### 配置域名
 使用 Cloudflare 托管域名，这一点教程很多，跟着做就行，
 ![托管域名](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141651245.png)
 

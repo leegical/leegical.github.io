@@ -9,21 +9,21 @@
 经过研究发现，相比 Endnote，zotero 功能够用，而且**开源**。通过插件也可以实现 readpaper 的在线翻译功能，配合 snipaste 软件可以截图固定，非常 nice！
 >【注】本文参考了[知乎专栏]( https://zhuanlan.zhihu.com/p/347493385 "知乎专栏")。
 
-## 1.下载安装
-### 1.1 蓝奏云
+## 下载安装
+### 蓝奏云
 官网访问困难的，可以点击[蓝奏云]( https://hzyy.lanzoux.com/b0e4ci3bi "蓝奏云")链接下载，_更新于2023-11-8_
 >密码:2333
 
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071323017.png)
 
 
-### 1.2 官网下载
-#### 1.2.1 本体[Zotero 下载]( https://www.zotero.org/ "Zotero 下载")
+### 官网下载
+#### 本体[Zotero 下载]( https://www.zotero.org/ "Zotero 下载")
 Zotero 官网访问速度慢的，建议使用蓝奏云中`Zotero-6.0.18_setup.exe`进行安装。
-#### 1.2.2 浏览器插件：[Zotero Connector]( https://www.zotero.org/download/connectors "Zotero Connector")下载
-#### 1.2.3 翻译器：[Zotero translators_CN]( https://github.com/l0o0/translators_CN "Zotero translators_CN")下载
+#### 浏览器插件：[Zotero Connector]( https://www.zotero.org/download/connectors "Zotero Connector")下载
+#### 翻译器：[Zotero translators_CN]( https://github.com/l0o0/translators_CN "Zotero translators_CN")下载
 Zotero 官网访问速度慢的，建议下载蓝奏云中的`translators.zip`。
-#### 1.2.4 插件
+#### 插件
 - zotero 官方插件下载地址： https://www.zotero.org/support/plugins
 - zotero 中文社区推荐插件： https://plugins.zotero-chinese.com/#/
 访问速度慢的，建议下载蓝奏云中`插件.zip`，压缩包里包含本文全部插件。
@@ -52,14 +52,14 @@ Zotero 官网访问速度慢的，建议下载蓝奏云中的`translators.zip`�
 按需启用插件。我的插件启用情况如下：
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071536098.png)
 
-## 2.基础配置
+## 基础配置
 打开【Zotero】—【编辑】—【首选项】
-### 2.0 高级
-#### 2.0.1 更改数据存储位置
+### 高级
+#### 更改数据存储位置
 安装完 zotero 后，第一件事就是更改数据存储位置。因为以后要存 PDF 文献，所以建议放在一个存储空间充裕的地方。改完位置后点击 OK 保存，重启 zotero 生效。
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071537731.png)
 
-#### 2.0.2 添加搜索引擎
+#### 添加搜索引擎
 1. 【Zotero】—【编辑】—【首选项】— 文件和文件夹 —【打开数据文件夹】
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071537485.png)
 2. locate — 打开`engines.json`文件
@@ -652,7 +652,7 @@ Zotero 官网访问速度慢的，建议下载蓝奏云中的`translators.zip`�
 ]
 ```
 
-#### 2.0.3 更新翻译器
+#### 更新翻译器
 >【注】下方2.0.3、2.0.4内容也可以直接观看这个 up 主的[视频教程]( https://www.bilibili.com/video/BV13d4y1Z78D "视频教程")
 {{< bilibili id=BV13d4y1Z78D >}}
 
@@ -665,7 +665,7 @@ Zotero 官网访问速度慢的，建议下载蓝奏云中的`translators.zip`�
 4) 右键单击 Zotero Connector 插件图标——扩展选项——Advanced——勾选图中两项，然后多点几下 update
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071539986.png)
 
-#### 2.0.4 设置 scihub 下载文献
+#### 设置 scihub 下载文献
 【Zotero】—【编辑】—【首选项】—— 【高级】—— 【设置编辑器】
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071539685.png)
 搜索`extensions.zotero.findPDFs.resolvers`，双击打开，默认情况下是只有一对`[]`，删除`[]`，并将以下代码粘贴进去。
@@ -684,10 +684,10 @@ Zotero 官网访问速度慢的，建议下载蓝奏云中的`translators.zip`�
 到此就成功将 Sci-Hub 配置为 PDF 解析器了，也就是说替代了默认的 Unpaywall。现在，无需重启 Zotero，即可调用 Sci-Hub 免费下载文献了。
 >【注】此处参考自[文章]( https://mp.weixin.qq.com/s/QMSG24tgn4z8ShfE9pVYMg "文章")。
 
-### 2.1 常规
+### 常规
 我的常规配置：
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071540110.png)
-### 2.2 同步
+### 同步
 我采用了坚果云进行同步。
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071540066.png)
 #### 坚果云使用
@@ -702,13 +702,13 @@ Zotero 官网访问速度慢的，建议下载蓝奏云中的`translators.zip`�
 
 >【注】坚果云验证失败看[这里]( https://mp.weixin.qq.com/s/2QhDmtWu6ISgDZ9FrIdIBw "这里")。
 
-### 2.3 引用
-#### 2.3.1 zotero 官方7714样式
+### 引用
+#### zotero 官方7714样式
 1. 点击【获取更多样式】
 2. 搜索【7714】即可安装国标引用样式。注意有1987、2005和2015三个时间，note、author-date 和 numeric 三个格式，鼠标悬停即可【预览】样式。
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071542774.png)
 
-#### 2.3.2 比较贴近东北大学要求的7714样式
+#### 比较贴近东北大学要求的7714样式
 zotero 官方的7714样式存在一些问题，如不能区分中英文文献，导致引用英文文献也是“等”，而不是“et al”。github 上的[Chinese-STD-GB-T-7714-related-csl]( https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl "Chinese-STD-GB-T-7714-related-csl")仓库（[Gitee]( https://gitee.com/redleafnew00/Chinese-STD-GB-T-7714-related-csl "Gitee")）提供7714 2015的官方样式及众多修改版，其中[002gb]( https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl/blob/main/002gb-t-7714-2015-numeric-bilingual-no-uppercase-no-url-doi.csl "002gb")样式比较符合东北大学的要求，除了网络文献的引用顺序有点差异。
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071542161.png)
 
@@ -719,13 +719,13 @@ zotero 官方的7714样式存在一些问题，如不能区分中英文文献，
 3. 点击 OK 保存退出首选项。然后重新打开【编辑】—【首选项】— 【导出】— 项目格式，选择为7714
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071542424.png)
 
-## 3.插件配置
+## 插件配置
 下面这些插件都建议在[中文插件网站](https://plugins.zotero-chinese.com/#/)下载。注意要下载对应 zotero 版本的插件，本文中下载的都是 zotero6的插件。
-### 3.1 Zotero 插件合集
+### Zotero 插件合集
 点击工具栏中的 [![image](https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png)]( https://github.com/syt2/zotero-addons/blob/z6/addon/chrome/content/icons/favicon.png ) ，自动管理、更新、添加 Zotero 插件
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311082224234.png)
 
-### 3.1 ZotFile
+### ZotFile
 #### 功能
 - 自动修改附件名
 - 提取附件中的笔记
@@ -742,7 +742,7 @@ zotero 官方的7714样式存在一些问题，如不能区分中英文文献，
 - 【Renaming Rules】和【Advanced Settings】：可自行修改
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071543092.png)
 
-### 3.2 [ZoteroQuickLook]( https://github.com/404neko/ZoteroQuickLookReload "ZoteroQuickLook")
+### [ZoteroQuickLook]( https://github.com/404neko/ZoteroQuickLookReload "ZoteroQuickLook")
 #### 功能
 按【空格】实现快速预览
 #### 配置
@@ -751,7 +751,7 @@ Windows：[QuickLook for Windows]( https://github.com/QL-Win/QuickLook/releases 
 2. 【Zotero】—【编辑】—【首选项】—— 【高级】—— 【设置编辑器】，搜索`extensions.zoteroquicklook.customviewcommand`，双击将里面的内容修改为`QuickLook.exe`的文件路径
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071543870.png)
 
-### 3.3 [茉莉花-Jasminum]( https://github.com/l0o0/jasminum "茉莉花-Jasminum")
+### [茉莉花-Jasminum]( https://github.com/l0o0/jasminum "茉莉花-Jasminum")
 #### 功能
 - 拆分或合并 Zotero 中条目作者姓和名
 - 根据知网上下载的文献文件来抓取引用信息（根据文件名）
@@ -767,7 +767,7 @@ Windows：[QuickLook for Windows]( https://github.com/QL-Win/QuickLook/releases 
 打开【Zotero】—进入【首选项】—进入【茉莉花】 选择【PDFtk Server】的路径，最后须选择 bin
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071543556.png)
 
-### 3.4 zotero citation update
+### zotero citation update
 #### 功能
 更新文献被引用数
 #### 配置
@@ -776,7 +776,7 @@ Windows：[QuickLook for Windows]( https://github.com/QL-Win/QuickLook/releases 
 
 使用：工具——更新引用
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071544321.png)
-### 3.5 Zotero PDF Translate
+### Zotero PDF Translate
 - 各翻译引擎 api 格式设置详见[github]( https://github.com/windingwind/zotero-pdf-translate#readme "github")
 - 各翻译引擎 api[中文申请教程]( https://doc.tern.1c7.me/zh/folder/setting/#%E5%B0%8F%E7%89%9B "中文申请教程")
 >【注】不想看文字的也可以看这个 up 的[视频讲解]( https://www.bilibili.com/video/BV1q94y1D7dy "视频讲解")，演示了如何申请小牛 api
@@ -790,21 +790,21 @@ Windows：[QuickLook for Windows]( https://github.com/QL-Win/QuickLook/releases 
 >【注】小牛翻译注册后需要在首页手动领取100万免费流量，有效期一年
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071544542.png)
 
-### 3.6 [Crush Reference](https://github.com/MuiseDestiny/zotero-reference)
+### [Crush Reference](https://github.com/MuiseDestiny/zotero-reference)
 论文右侧——参考文献——点击“刷新”，自动拉取参考文献目录。
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311082216865.png)
-### 3.7 移动端 ：多平台同步阅读环境配置
-具体操作与 [#2.2 同步](#22-同步) 设置相同
+### 移动端 ：多平台同步阅读环境配置
+具体操作与 [#2.2 同步](#同步) 设置相同
 - iPadOS：【Papership【绑定 Zotero 账号+WebDav
 可参考 [青柠学术 - 详解【Zotero+PaperShip+坚果云】文献生态的同步机制！]( https://mp.weixin.qq.com/s?__biz=MzAxNzgyMDg0MQ==&mid=2650456887&idx=2&sn=f33a0a4461ee915e1c8f9880066cab68&chksm=83d1def1b4a657e7d9d7c18062dbb1977725e9a891294b686379311d71d9fcf1beac81e168bb&scene=178&cur_album_id=1319074508795641857#rd "青柠学术 - 详解【Zotero+PaperShip+坚果云】文献生态的同步机制！")
 - Android：【Zoo for Zotero】绑定 Zotero 账号+WebDav
 可参考 [青柠学术 - Zoo for Zotero，安卓上阅读 Zotero 文献的利器！]( https://mp.weixin.qq.com/s?__biz=MzAxNzgyMDg0MQ==&mid=2650456795&idx=2&sn=2060a39b9ed6798c1990aa72765c637e&chksm=83d1df1db4a6560b76ee330c13a917027b271ce9e61bb8aad31cf28bbbb0e95459763b67af63&scene=178&cur_album_id=1319074508795641857#rd "青柠学术 - Zoo for Zotero，安卓上阅读 Zotero 文献的利器！")
 
-## 4.工作流
-### 4.0 联动 obsidian
+## 工作流
+### 联动 obsidian
 参考[最新zotero与obsidian笔记联动教程（可代替citations和mdnotes）](https://blog.csdn.net/qq_43309940/article/details/125150487)
 
-### 4.1 工作流：以 Zotero 为中枢
+### 工作流：以 Zotero 为中枢
 还是参考 Eleven 的[知乎专栏]( https://zhuanlan.zhihu.com/p/347493385 "知乎专栏")
 
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071545111.png)
@@ -821,7 +821,7 @@ Windows：[QuickLook for Windows]( https://github.com/QL-Win/QuickLook/releases 
 - 回溯
 	- 用 Zotero 搭建自己的知识库
 
-### 4.2 下载论文
+### 下载论文
 - 正着下：抓取
 	- 单篇——浏览器中打开一篇论文的详情页，左键点击右上角【插件】，出现【Full Text PDF】即为成功
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071545565.png)
@@ -837,10 +837,10 @@ Windows：[QuickLook for Windows]( https://github.com/QL-Win/QuickLook/releases 
 	- 检索：从题录到文献，利用【搜索引擎】进入知网下载文献
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071545208.png)
 
-### 4.3 储存&分类
-#### 4.3.1 新建分类
+### 储存&分类
+#### 新建分类
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071546648.png)
-#### 4.3.2 Tag 管理
+#### Tag 管理
 - 添加 Tag
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071546235.png)
 
@@ -849,24 +849,24 @@ Windows：[QuickLook for Windows]( https://github.com/QL-Win/QuickLook/releases 
 
 - 检索 Tag：单击左下角【Tag 区】中的 Tag
 
-#### 4.3.3 高级检索
+#### 高级检索
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071546029.png)
 
-### 4.4 阅读
-#### 4.4.1 导出 PDF 批注
+### 阅读
+#### 导出 PDF 批注
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071546337.png)
 
-#### 4.4.2 联结文献笔记
+#### 联结文献笔记
 
-### 4.5 写作
-#### 4.5.1 插入参考文献
+### 写作
+#### 插入参考文献
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071547790.png)
-### 4.6 分享
-#### 4.6.1 导出条目及附件
+### 分享
+#### 导出条目及附件
 导出分类，然后选择【Zotero RDF】格式，勾选附件和笔记
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071547804.png)
 
-#### 4.6.2 团队协作
+#### 团队协作
 - 新建群组
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071547803.png)
 - 三种类型的群组

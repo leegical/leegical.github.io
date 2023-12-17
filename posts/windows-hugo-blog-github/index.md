@@ -8,7 +8,7 @@
 ## 前提
 默认本地已安装了 [Git](https://git-scm.com/downloads)、[VSCode](https://code.visualstudio.com/Download)。
 ## hugo 配置
-### 1. [安装 Hugo](https://gohugo.io/installation/windows/)
+### [安装 Hugo](https://gohugo.io/installation/windows/)
 推荐使用 `Hugo extended` 版本
 #### 预构建的二进制文件
 访问[最新版本](https://github.com/gohugoio/hugo/releases/latest)页面，然后向下滚动到**Assets**部分。选择对应平台下载。
@@ -33,7 +33,7 @@ scoop install hugo-extended
 ```sh
 winget install Hugo.Hugo.Extended
 ```
-### 2.创建 Hugo 网站
+### 创建 Hugo 网站
 通过上述操作安装 hugo 程序后，就可以通过 `hugo new site` 命令进行网站创建、配置与本地调试了。
 选择一个本地文件夹作为根目录，右键——`Git Bash Here`，输入下面的命令
 ```bash
@@ -42,8 +42,8 @@ hugo new site <site-name>
 ![hugo new site 命令进行网站创建](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081636474.png)
 
 **注：后续命令未经说明，均在 Git Bash 中的 `E:\Workspace\blog` 目录下运行**
-### 3.主题
-#### 3.1 安装
+### 主题
+#### 安装
 推荐使用 [**FixIt** 主题](https://github.com/hugo-fixit/FixIt)。
 初始化你的项目目录为一个空的 Git 存储库，将 [FixIt][fixit] 主题克隆到 `themes` 目录中，将其作为 [Git 子模块][git-submodule] 添加到您的项目中。
 
@@ -63,7 +63,7 @@ git submodule add -b dev https://github.com/hugo-fixit/FixIt.git themes/FixIt
 ```bash
 git submodule set-branch -b dev themes/FixIt
 ```
-#### 3.2 基础配置
+#### 基础配置
 用`VScode`打开`E:\Workspace\blog`文件夹，用下面的内容覆盖`hugo.toml`文件。并自行修改`baseURL`和`title`。
 其中，`baseURL`为`你的github账户名.github.io`，也可以像我一样设置自定义域名。记得逐项修改为你的配置。
 ```toml
@@ -1084,7 +1084,7 @@ enableEmoji = true
 
 ![hugo配置文件](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312142004055.png)
 
-#### 3.4 修改文章前缀模板
+#### 修改文章前缀模板
 在每篇 markdown 文章最前面可以用一部分注释来告诉`FixIt主题`，这篇文章的属性，譬如文章标签、分类、是否为草稿等。
 >详细可参考 [FixIt 官方文档](https://fixit.lruihao.cn/zh-cn/documentation/content-management/introduction/#front-matter)
 
@@ -1107,9 +1107,19 @@ draft: false
 # 文章的标签
 tags:
 - 
+
 # 文章所属的类别
 categories:
 - 
+
+# 文章所属的合集
+collections:
+-
+
+# 是否在侧边栏开启合集
+collectionList: true
+# 是否在帖子末尾启用合集
+collectionNavigation: true
 
 # 如果设为 true, 这篇文章将不会显示在主页上
 hiddenFromHomePage: false
@@ -1134,7 +1144,7 @@ license: '<a rel="license external nofollow noopener noreffer" href="https://cre
 
 ![文章前缀模板](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312142018958.png)
 
-### 4.创建你的第一篇文章
+### 创建你的第一篇文章
 以下是创建新文章的命令：
 ```bash
 hugo new posts/文章标题.md
@@ -1143,16 +1153,16 @@ hugo new posts/文章标题.md
 你可以在`VScode`中随意编辑文章。
 ![创建出的新文章](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312142019979.png)
 
-### 5.本地调试
+### 本地调试
 ```bash
-hugo serve -D
+hugo serve -D --disableFastRender
 ```
 ![本地调试](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081636839.png)
 
 浏览器中打开 [http://localhost:1313/](http://localhost:1313/)，就能看到网站效果。
 ![网站效果](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081636924.png)
 ## Github
-### 1.在 Windows 上创建 SSH 密钥并将其添加到 GitHub
+### 在 Windows 上创建 SSH 密钥并将其添加到 GitHub
 #### Windows 端生成 SSH 密钥
 使用 Git Bash 或命令行打开终端窗口，输入以下命令。记得把`your_email@example.com`改成你自己的邮箱地址。
 ```bash
@@ -1170,7 +1180,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 1. 打开`id_rsa.pub`公钥文件 (即你在生成的时候保存的文件) ，将其内容复制到 GitHub 的 “Key” 字段中。
 2. 最后，点击“Add SSH key” （添加 SSH 密钥），完成密钥添加。
 ![添加 SSH 密钥](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081637309.png)
-### 2.创建 blog 仓库
+### 创建 blog 仓库
 用于存储博客源文件，也就是刚才的本地项目文件。
 1. 在 GitHub 网站上登录你的账号，然后点击页面右上角的加号图标，选择 "New repository"（新建仓库）。
 2. 在 "Initialize this repository with"（使用以下方式初始化仓库）部分，选择 "Add a README file"（添加一个 README 文件）选项。
@@ -1195,20 +1205,20 @@ git remote add origin https://github.com/your-username/your-repository.git
 git push -u origin main
 ```
 这将把本地的代码推送到远程仓库的 `main` 分支，并将其设置为默认上游分支。
-### 3.创建 Github Pages 公开仓库
+### 创建 Github Pages 公开仓库
 用于实际展示博客。
 1. 创建新仓库
 ![创建新Github Pages仓库](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081637474.png)
 
 2. `Repository name` 这里一定要填 `[你的github账号].github.io`。`你的github账号`必须小写字母。仓库可见性设为`Public`。选择“使用 README 初始化此存储库”。
 ![新建Github Pages仓库](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081637559.png)
-### 4.上传页面
-##### 4.1 进入项目根目录，执行：
+### 上传页面
+##### 进入项目根目录，执行：
 ```bash
 hugo
 ```
 执行后，站点根目录下会生成一个 `public` 文件夹，该文件下的内容即 Hugo 生成的整个静态网站。每次更新内容后，将 `pubilc` 目录里所有文件 push 到 GitHub Pages 所在的仓库即可。
-##### 4.2 上传代码至 master
+##### 上传代码至 master
 首次使用的时候要执行以下命令：
 ```shell
 cd public
@@ -1219,17 +1229,17 @@ git commit -m "[介绍，随便写点什么，比如日期]"
 git push -u origin master
 ```
 
-##### 4.3 更改 Pages 展示分支
+##### 更改 Pages 展示分支
 进入 Github Pages 仓库的`Setting`-`Pages`，把`Branch`修改为`master`，点击 save。
 ![修改发布Branch](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081637645.png)
 
 稍等几分钟即可通过`[你的github账号].github.io`来访问博客站点了，和`hugo serve -D`本地调试完全一致。
-### 5.Github Action 自动发布
+### Github Action 自动发布
 通过上述命令我们可以手动发布我们的静态文件，但还是有以下弊端：
 1. 发布步骤还是比较繁琐，本地调试后还需要切换到 `public/` 目录进行上传
 2. 无法对博客 `.md` 源文件进行备份与版本管理
 可以通过官方提供的 GitHub Action 进行 CI 自动发布。
-#### 5.1 增加 action 配置文件
+#### 增加 action 配置文件
 回到 blog 仓库的本地文件夹，新增`.github/workflows/deploy.yml`
 ```bash
 mkdir .github
@@ -1289,7 +1299,7 @@ git commit -m "add action config"
 git push
 ```
 ![提交变更](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081637929.png)
-#### 5.2 设置 action 变量
+#### 设置 action 变量
 进入 [Github tokens](https://github.com/settings/tokens) ，点击`Generate new token`——`Generate new token (classic)`
 ![Generate new token](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081637020.png)
 
@@ -1343,7 +1353,7 @@ hugo new posts/文章名.md
 ```
 - 2. 使用`VScode`编辑文章内容或修改，包括修改主题之类的。在本地进行调试:
 ```bash
-hugo serve -D
+hugo serve -D --disableFastRender
 ```
 - 3. 修改完成，确定要上传到 GitHub 上后，**站点目录**下执行：
 ```bash
@@ -1379,7 +1389,6 @@ git push
 
 记得提交更改
 ```bash
-hugo
 git add .
 git commit -m "修改主题"
 git push

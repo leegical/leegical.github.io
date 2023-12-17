@@ -8,7 +8,7 @@
 [PTATM](https://github.com/panzhenyu/PTATM)结合了多路径任务分段方法、共享Cache竞争下的任务段信息收集方法以及分段任务的pWCET分布生成方法，是一种适用于多路径任务的多核系统pWCET分析工具。
 {{< /admonition >}}
 
-## 一、系统环境
+## 系统环境
 [PTATM](https://github.com/panzhenyu/PTATM) 开发时的环境为：
 
 | 环境 | 配置 |
@@ -18,13 +18,13 @@
 
 因此，理论上只要是`5.19.0-x`内核版本的 Ubuntu22.04 即可。使用`uname -r`命令可以查看当前系统版本号。下图表示当前系统的内核的版本是`5.19.0-50-generic`，满足运行条件，可以跳过本节系统环境配置。
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181922930.png)
-### 1.1 查看系统已安装内核
+### 查看系统已安装内核
 ```bash
 dpkg --get-selections | grep linux-image | grep -v deinstall
 ```
 使用上面的命令查看系统已经安装的所有内核版本。如果有`5.19.0-x`内核版本，跳到[1.3 更新 grub](#13-更新grub)。
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181930258.png)
-### 1.2 更换 Linux 内核
+### 更换 Linux 内核
 如果内核版本不是`5.19.0-x`，则需要更换内核。使用下面的命令查看可以安装的内核版本。
 ```bash
 apt-cache search linux-image-5.19.* | grep generic
@@ -37,7 +37,7 @@ sudo apt-get install linux-image-5.19.0-50-generic
 sudo apt-get install linux-headers-5.19.0-50-generic linux-modules-extra-5.19.0-50-generic
 ```
 如果要安装其他版本的内核，记得把上面命令中的`5.19.0-50-generic`改成对应的版本。
-### 1.3 更新`grub`
+### 更新`grub`
 还是假设要更换到`5.19.0-50-generic`内核版本。
 ```bash
 # 将 5.19.0-50-generic 替换你需要的version
@@ -66,7 +66,7 @@ sudo reboot
 uname -r
 ```
 
-## 二、安装 perf
+## 安装 perf
 使用下面的命令安装当前内核版本的 `perf`：
 ```bash
 sudo apt-get install linux-tools-common -y
@@ -76,10 +76,10 @@ sudo apt-get install linux-tools-generic -y
 sudo apt-get install linux-cloud-tools-generic -y
 ```
 
-## 三、Python 环境
+## Python 环境
 使用 Python3，运行时如果发现有依赖包没安装，自行使用`pip3 install <module>`安装缺少的依赖包。
 
-## 四、环境变量
+## 环境变量
 在`PTATM`的本地文件夹中打开终端，输入`pwd`查看当前目录位置：
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182000356.png)
 

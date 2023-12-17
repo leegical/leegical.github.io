@@ -5,11 +5,11 @@
 
 <!--more-->
 
-## 一、Github
-### 1. 创建仓库
+## Github
+### 创建仓库
 登陆 [github]( https://github.com/ ) ，创建**公开**仓库
 ![创建公开图床仓库](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141532137.png)
-### 2. github 获取个人 token
+### github 获取个人 token
 生成一个token用于PicGo访问图床仓库。
 - 访问：[settings-tokens](https://github.com/settings/tokens) ，点击**Generate new token**
 
@@ -29,7 +29,7 @@
 
 ![复制token](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141537568.png)
 
-## 二、PicGo
+## PicGo
 到 Github [发布页面](https://github.com/Molunerfinn/PicGo/releases)下载 PicGo 最新安装包。
 
 {{< admonition quote "2.4.0-beta.6 国内可下载链接" >}}
@@ -49,25 +49,25 @@
 {{< /admonition >}}
 
 ![PicGo安装包列表](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141544560.png)
-### 1.配置 github 图床 
+### 配置 github 图床 
 仓库名的格式是用户名/仓库，一般选择 main 分支。token 是 [1.2](#2-github-获取个人-token) 中获取的。
 - 存储路径：可以选择让上传的图片单独放在仓库的某个文件夹中
 - 自定义域名：下一篇文章 CDN 加速图床使用，这里先不用填
 ![github 图床设置](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141548347.png)
 
-### 2.PicGo 设置
+### PicGo 设置
 如果之后自动粘贴图片上传失败，可以尝试把`内置剪贴板上传`功能**关闭**或**开启**。
 ![](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141553080.png)
-## 三、 Obsidian
+## Obsidian
 Obsidian [官网下载链接](https://obsidian.md/download)
-### 1. 安装插件
+### 安装插件
 设置——第三方插件——关闭安全模式——社区插件市场
 ![准备安装插件](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141604322.png)
 
 搜索 `image auto upload plugin` 插件并安装
 ![安装image auto upload plugin插件](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141605566.png)
 
-### 2. 配置插件
+### 配置插件
 - 开启剪贴板自动上传
 - 接口一一对应（一般默认就是对应好的，不用改）
 ![配置插件](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141610850.png)

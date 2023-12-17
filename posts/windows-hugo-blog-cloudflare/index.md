@@ -14,15 +14,15 @@
 ## 前言
 如果懒得使用 Github Pages 以及配置 Github Action，又想用自定义域名和 cdn 加速访问博客，那么 hugo + Cloudflare Pages 绝对是不二之选。
 **准备工作：** 参考 [Windows 下使用 hugo 和 Github Pages 配置博客](https://haoyep.com/posts/windows_hugo_github_pages_blog/)，从头开始配置，一直到完成 [创建 blog 仓库](https://haoyep.com/posts/windows_hugo_github_pages_blog/#2%E5%88%9B%E5%BB%BA-blog-%E4%BB%93%E5%BA%93)。
-## 1.设置 Cloudflare Pages
-### 1.1 新建 Pages
+## 设置 Cloudflare Pages
+### 新建 Pages
 登录 cloudflare，点击左侧的`Workers和Pages`，选择`Pages`——连接到 Git
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081549200.png)
 
 允许 cloudflare 访问 blog 仓库，选择这个仓库开始设置。
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081550760.png)
 
-### 1.2 设置构建环境
+### 设置构建环境
 - 项目名称：随便写，之后会分配给你一个`[项目名称].pages.dev`。我这里就是 `leev.pages.dev`
 - 生产分支：一般默认选择 main
 - 框架预设：hugo
@@ -30,16 +30,16 @@
 	- 设置 hugo 版本，设置成当前最新版本。我这里是：HUGO_VERSION=0.120.3
 	- 开启 hugo 扩展功能，extend=true
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081553496.png)
-### 1.3 部署成功
+### 部署成功
 通过`[项目名称].pages.dev`访问站点
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081556682.png)
 
 
-## 2.设置域名
-### 2.1 首先自行添加个人域名
+## 设置域名
+### 首先自行添加个人域名
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081559407.png)
 
-### 2.2 绑定域名
+### 绑定域名
 - 进入构建好的 Pages
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081600461.png)
 - 自定义域——设置自定义域
