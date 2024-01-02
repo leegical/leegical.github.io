@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>zsh 安装与配置，使用 oh-my-zsh 美化终端 - 云吱的小站</title><meta name="author" content="云吱">
+<meta name="author-link" content="https://haoyep.com/">
+<meta name="description" content="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。" /><meta name="keywords" content='生产力, Linux' /><meta itemprop="name" content="zsh 安装与配置，使用 oh-my-zsh 美化终端">
+<meta itemprop="description" content="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。"><meta itemprop="datePublished" content="2024-01-02T23:30:39+08:00" />
+<meta itemprop="dateModified" content="2024-01-02T23:30:39+08:00" />
+<meta itemprop="wordCount" content="1601"><meta itemprop="image" content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png" />
+<meta itemprop="keywords" content="生产力,Linux," /><meta property="og:title" content="zsh 安装与配置，使用 oh-my-zsh 美化终端" />
+<meta property="og:description" content="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://haoyep.com/posts/zsh-config-oh-my-zsh/" /><meta property="og:image" content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-02T23:30:39+08:00" />
+<meta property="article:modified_time" content="2024-01-02T23:30:39+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png" /><meta name="twitter:title" content="zsh 安装与配置，使用 oh-my-zsh 美化终端"/>
+<meta name="twitter:description" content="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。"/>
+<meta name="application-name" content="云吱">
+<meta name="apple-mobile-web-app-title" content="云吱"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://haoyep.com/posts/zsh-config-oh-my-zsh/" /><link rel="prev" href="https://haoyep.com/posts/afl-install/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "zsh 安装与配置，使用 oh-my-zsh 美化终端",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/haoyep.com\/posts\/zsh-config-oh-my-zsh\/"
+    },"image": ["https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/202312161447739.ico"],"genre": "posts","keywords": "生产力, Linux","wordcount":  1601 ,
+    "url": "https:\/\/haoyep.com\/posts\/zsh-config-oh-my-zsh\/","datePublished": "2024-01-02T23:30:39+08:00","dateModified": "2024-01-02T23:30:39+08:00","publisher": {
+      "@type": "Organization",
+      "name": "云吱","logo": "https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/weblogo.png"},"author": {
+        "@type": "Person",
+        "name": "云吱"
+      },"description": "传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。"
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="云吱的小站"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.ico" alt="云吱的小站" data-title="云吱的小站" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">云吱</span></a><span class="header-subtitle">好耶！</span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/friends/"
+                title="友情链接"
+                
+              ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/guestbook/"
+                
+                
+              ><i class="fa-solid fa-comments fa-fw fa-sm" aria-hidden="true"></i> 留言</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user-tie fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="云吱的小站"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.ico" alt="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.ico" data-title="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.ico" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">云吱</span></a><span class="header-subtitle">好耶！</span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  title="友情链接"
+                  
+                ><i class="fa-solid fa-users fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/guestbook/"
+                  
+                  
+                ><i class="fa-solid fa-comments fa-fw fa-sm" aria-hidden="true"></i> 留言</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user-tie fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/posts/" title="Posts">文章</a></li><li class="breadcrumb-item active" aria-current="page">zsh 安装与配置，使用 oh-my-zsh 美化终端</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>zsh 安装与配置，使用 oh-my-zsh 美化终端</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://dn-qiniu-avatar.qbox.me/avatar/867c2859fc58e987cb357c7a67ac01cb?s=32&amp;d=mp" alt="云吱" data-title="云吱" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;云吱</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" title="分类 - 技术"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 技术</a> 和 </span></div><div class="post-meta-line"><span title="发布于 2024-01-02 23:30:39"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-02">2024-01-02</time></span>&nbsp;<span title="1601 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="zsh 安装与配置，使用 oh-my-zsh 美化终端">
+              <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#环境配置">环境配置</a>
+      <ul>
+        <li><a href="#安装基本工具">安装基本工具</a></li>
+        <li><a href="#安装-oh-my-zsh">安装 oh-my-zsh</a></li>
+      </ul>
+    </li>
+    <li><a href="#配置主题">配置主题</a>
+      <ul>
+        <li><a href="#自定义主题">自定义主题</a></li>
+        <li><a href="#推荐主题">推荐主题</a>
+          <ul>
+            <li><a href="#powerlevel10k">powerlevel10k</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#安装插件">安装插件</a>
+      <ul>
+        <li><a href="#启用插件">启用插件</a></li>
+        <li><a href="#插件介绍">插件介绍</a>
+          <ul>
+            <li><a href="#zsh--autosuggestions">zsh -autosuggestions</a></li>
+            <li><a href="#zsh-syntax-highlighting">zsh-syntax-highlighting</a></li>
+            <li><a href="#z">z</a></li>
+            <li><a href="#extract">extract</a></li>
+            <li><a href="#web-search">web-search</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#tips">Tips</a>
+      <ul>
+        <li><a href="#root-用户">root 用户</a></li>
+        <li><a href="#配置本地代理">配置本地代理</a></li>
+        <li><a href="#卸载-oh-my-zsh">卸载 Oh My Zsh</a></li>
+        <li><a href="#手动更新-oh-my-zsh">手动更新 Oh My Zsh</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。</p>
+<h2 id="环境配置" class="heading-element">
+  <a href="#%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae" class="heading-mark"></a>环境配置</h2><h3 id="安装基本工具" class="heading-element">
+  <a href="#%e5%ae%89%e8%a3%85%e5%9f%ba%e6%9c%ac%e5%b7%a5%e5%85%b7" class="heading-mark"></a>安装基本工具</h3><div class="highlight" id="id-1"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 更新软件源</span>
+</span></span><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade -y
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装 zsh git curl</span>
+</span></span><span class="line"><span class="cl">sudo apt install zsh git curl -y</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设置默认终端为 zsh（<strong>注意：不要使用 sudo</strong>）。</p>
+<div class="highlight" id="id-2"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chsh -s /bin/zsh</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="安装-oh-my-zsh" class="heading-element">
+  <a href="#%e5%ae%89%e8%a3%85-oh-my-zsh" class="heading-mark"></a>安装 oh-my-zsh</h3><p>官网： <a href="http://ohmyz.sh/"target="_blank" rel="external nofollow noopener noreferrer">http://ohmyz.sh/</a>
+安装方式任选一个即可。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Method</th>
+<th style="text-align:left">Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>curl</strong></td>
+<td style="text-align:left"><code>sh -c &quot;$(curl -fsSL https://install.ohmyz.sh/)&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>wget</strong></td>
+<td style="text-align:left"><code>sh -c &quot;$(wget -O- https://install.ohmyz.sh/)&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>fetch</strong></td>
+<td style="text-align:left"><code>sh -c &quot;$(fetch -o - https://install.ohmyz.sh/)&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">国内镜像</td>
+<td style="text-align:left"><code>export REMOTE=https://gitee.com/mirrors/oh-my-zsh.git &amp;&amp; sh -c &quot;$(wget -O- https//gitee.com/pocmon/mirrors/raw/master/tools/install.sh)&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<p>注意：同意使用 Oh-my-zsh 的配置模板覆盖已有的 <code>.zshrc</code>。
+
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012224221.png" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012224221.png" data-sub-html="<h2> </h2><p>安装 oh-my-zsh</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012224221.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012224221.png" data-title="安装 oh-my-zsh" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">安装 oh-my-zsh</figcaption>
+    </figure></p>
+<h2 id="配置主题" class="heading-element">
+  <a href="#%e9%85%8d%e7%bd%ae%e4%b8%bb%e9%a2%98" class="heading-mark"></a>配置主题</h2><h3 id="自定义主题" class="heading-element">
+  <a href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e4%b8%bb%e9%a2%98" class="heading-mark"></a>自定义主题</h3><div class="highlight" id="id-3"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo wget -O <span class="nv">$ZSH_CUSTOM</span>/themes/haoomz.zsh-theme https://cdn.haoyep.com/gh/leegical/Blog_img/zsh/haoomz.zsh-theme</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编辑 <code>~/.zshrc</code> 文件，将 <code>ZSH_THEME</code> 设为 <code>haoomz</code>。当然你也可以设置为其他主题，例如<code>lukerandall</code>、<code>robbyrussell</code>。</p>
+<div class="highlight" id="id-4"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano ~/.zshrc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&#34;haoomz&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc</span></span></code></pre></td></tr></table>
+</div>
+</div><p>
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012235958.png" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012235958.png" data-sub-html="<h2> </h2><p>设置ZSH_THEME</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012235958.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012235958.png" data-title="设置ZSH_THEME" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">设置ZSH_THEME</figcaption>
+    </figure></p>
+<p>效果如下（<code>robbyrussell</code> → <code>haoomz</code>）：
+
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012238625.png" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012238625.png" data-sub-html="<h2> </h2><p>haoomz主题</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012238625.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012238625.png" data-title="haoomz主题" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">haoomz主题</figcaption>
+    </figure></p>
+<h3 id="推荐主题" class="heading-element">
+  <a href="#%e6%8e%a8%e8%8d%90%e4%b8%bb%e9%a2%98" class="heading-mark"></a>推荐主题</h3><p>你可以在<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes"target="_blank" rel="external nofollow noopener noreferrer">内置主题样式截图</a>中查看所有 zsh 内置的主题样式和对应的主题名。这些内置主题已经放在 ～/.oh-my-zsh/themes 目录下，不需要再下载。</p>
+<div class="highlight" id="id-5"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~/.oh-my-zsh/themes <span class="o">&amp;&amp;</span> ls</span></span></code></pre></td></tr></table>
+</div>
+</div><p>
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012242407.png" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012242407.png" data-sub-html="<h2> </h2><p>zsh 内置的主题样式</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012242407.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012242407.png" data-title="zsh 内置的主题样式" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">zsh 内置的主题样式</figcaption>
+    </figure></p>
+<h4 id="powerlevel10k" class="heading-element">
+  <a href="#powerlevel10k" class="heading-mark"></a>powerlevel10k</h4><p>根据 <a href="https://www.slant.co/topics/7553/~theme-for-oh-my-zsh"target="_blank" rel="external nofollow noopener noreferrer">What&rsquo;s the best theme for Oh My Zsh?</a> 中的排名，以及自定义化、美观程度，强烈建议使用 <a href="https://github.com/romkatv/powerlevel10k"target="_blank" rel="external nofollow noopener noreferrer">powerlevel10k</a> 主题。</p>
+<div class="highlight" id="id-6"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/romkatv/powerlevel10k.git <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 中国用户可以使用 gitee.com 上的官方镜像加速下载</span>
+</span></span><span class="line"><span class="cl">git clone --depth<span class="o">=</span><span class="m">1</span> https://gitee.com/romkatv/powerlevel10k.git <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在 <code>~/.zshrc</code> 设置 <code>ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;</code>。接下来，终端会自动引导你配置 <code>powerlevel10k</code>。</p>
+<h2 id="安装插件" class="heading-element">
+  <a href="#%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6" class="heading-mark"></a>安装插件</h2><p><code>oh-my-zsh</code> 已经内置了 <code>git</code> 插件，内置插件可以在 <code>～/.oh-my-zsh/plugins</code> 中查看，下面介绍一下我常用的插件，更多插件可以在 <a href="https://github.com/unixorn/awesome-zsh-plugins"target="_blank" rel="external nofollow noopener noreferrer">awesome-zsh-plugins</a> 里查看。</p>
+<h3 id="启用插件" class="heading-element">
+  <a href="#%e5%90%af%e7%94%a8%e6%8f%92%e4%bb%b6" class="heading-mark"></a>启用插件</h3><p>修改<code>~/.zshrc</code>中插件列表为：</p>
+<div class="highlight" id="id-7"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">plugins</span><span class="o">=(</span>git zsh-autosuggestions zsh-syntax-highlighting z extract web-search<span class="o">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png" data-sub-html="<h2> </h2><p>zsh插件列表</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png" data-title="zsh插件列表" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">zsh插件列表</figcaption>
+    </figure></p>
+<div class="details admonition note open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">部分插件需要参考<a href="%e6%8f%92%e4%bb%b6%e4%bb%8b%e7%bb%8d">插件介绍</a>进行安装。</div>
+    </div>
+  </div>
+<p>开启新的 Shell 或执行 <code>source ~/.zshrc</code>，就可以开始体验插件。</p>
+<h3 id="插件介绍" class="heading-element">
+  <a href="#%e6%8f%92%e4%bb%b6%e4%bb%8b%e7%bb%8d" class="heading-mark"></a>插件介绍</h3><h4 id="zsh--autosuggestions" class="heading-element">
+  <a href="#zsh--autosuggestions" class="heading-mark"></a>zsh -autosuggestions</h4><p><a href="https://github.com/zsh-users/zsh-autosuggestions"target="_blank" rel="external nofollow noopener noreferrer">zsh-autosuggestions</a> 是一个命令提示插件，，当你输入命令时，会自动推测你可能需要输入的命令，按下右键可以快速采用建议。效果如下：
+
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012250028.png" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012250028.png" data-sub-html="<h2> </h2><p>zsh-autosuggestions自动补全</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012250028.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012250028.png" data-title="zsh-autosuggestions自动补全" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">zsh-autosuggestions自动补全</figcaption>
+    </figure>
+安装方式：把插件下载到本地的 <code>~/.oh-my-zsh/custom/plugins</code> 目录：</p>
+<div class="highlight" id="id-8"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/zsh-users/zsh-autosuggestions <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-autosuggestions</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="zsh-syntax-highlighting" class="heading-element">
+  <a href="#zsh-syntax-highlighting" class="heading-mark"></a>zsh-syntax-highlighting</h4><p><a href="https://github.com/zsh-users/zsh-syntax-highlighting"target="_blank" rel="external nofollow noopener noreferrer">zsh-syntax-highlighting</a> 是一个命令语法校验插件，在输入命令的过程中，若指令不合法，则指令显示为红色，若指令合法就会显示为绿色。效果如下：
+
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012252786.png" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012252786.png" data-sub-html="<h2> </h2><p>命令语法校验</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012252786.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012252786.png" data-title="命令语法校验" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">命令语法校验</figcaption>
+    </figure></p>
+<p>安装方式：把插件下载到本地的 <code>~/.oh-my-zsh/custom/plugins</code> 目录:</p>
+<div class="highlight" id="id-9"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-syntax-highlighting </span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="z" class="heading-element">
+  <a href="#z" class="heading-mark"></a>z</h4><p><code>oh-my-zsh</code> 内置了 <code>z</code> 插件。<code>z</code> 是一个文件夹快捷跳转插件，对于曾经跳转过的目录，只需要输入最终目标文件夹名称，就可以快速跳转，避免再输入长串路径，提高切换文件夹的效率。效果如下：
+
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012254065.png" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012254065.png" data-sub-html="<h2> </h2><p>使用z跳转目录</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012254065.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012254065.png" data-title="使用z跳转目录" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">使用z跳转目录</figcaption>
+    </figure></p>
+<h4 id="extract" class="heading-element">
+  <a href="#extract" class="heading-mark"></a>extract</h4><p><code>oh-my-zsh</code> 内置了 <code>extract</code> 插件。<code>extract</code> 用于解压任何压缩文件，不必根据压缩文件的后缀名来记忆压缩软件。使用 <code>x</code> 命令即可解压文件，效果如下：
+
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012259966.png" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012259966.png" data-sub-html="<h2> </h2><p>extract 解压</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012259966.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012259966.png" data-title="extract 解压" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">extract 解压</figcaption>
+    </figure></p>
+<h4 id="web-search" class="heading-element">
+  <a href="#web-search" class="heading-mark"></a>web-search</h4><p>oh-my-zsh 内置了 <code>web-search</code> 插件。<code>web-search</code> 能让我们在命令行中使用搜索引擎进行搜索。使用<code>搜索引擎关键字+搜索内容</code> 即可自动打开浏览器进行搜索。效果如下：
+
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012302476.png" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012302476.png" data-sub-html="<h2> </h2><p>web-search搜索</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012302476.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012302476.png" data-title="web-search搜索" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">web-search搜索</figcaption>
+    </figure></p>
+<h2 id="tips" class="heading-element">
+  <a href="#tips" class="heading-mark"></a>Tips</h2><h3 id="root-用户" class="heading-element">
+  <a href="#root-%e7%94%a8%e6%88%b7" class="heading-mark"></a>root 用户</h3><p>当你配置好登陆用户的 zsh 后，如果使用<code>sudo su</code>命令进入<code>root</code>用户的终端，发现还是默认的<code>bash</code>。建议在<code>root</code>用户的终端下，也安装<code>on my zsh</code>，设置与普通用户不同的主题以便区分，插件可以使用一样的。
+<code>root</code>用户的<code>~/.zshrc</code>配置，仅供参考：</p>
+<div class="highlight" id="id-10"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&#34;ys&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">plugins</span><span class="o">=(</span>git zsh-autosuggestions zsh-syntax-highlighting z extract web-search<span class="o">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="配置本地代理" class="heading-element">
+  <a href="#%e9%85%8d%e7%bd%ae%e6%9c%ac%e5%9c%b0%e4%bb%a3%e7%90%86" class="heading-mark"></a>配置本地代理</h3><p>如果你配置了本地代理，并希望终端的 git 等命令使用代理，那么可以在<code>~/.zshrc</code>中添加：</p>
+<div class="highlight" id="id-11"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 为 curl wget git 等设置代理</span>
+</span></span><span class="line"><span class="cl">proxy <span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">ALL_PROXY</span><span class="o">=</span><span class="s2">&#34;socks5://127.0.0.1:1089&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">all_proxy</span><span class="o">=</span><span class="s2">&#34;socks5://127.0.0.1:1089&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 取消代理</span>
+</span></span><span class="line"><span class="cl">unproxy <span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">unset</span> ALL_PROXY
+</span></span><span class="line"><span class="cl">  <span class="nb">unset</span> all_proxy
+</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里假设本地代理的端口是<code>1089</code>。
+
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012307093.png" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012307093.png" data-sub-html="<h2> </h2><p>使用本地代理命令</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012307093.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012307093.png" data-title="使用本地代理命令" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">使用本地代理命令</figcaption>
+    </figure></p>
+<p>以后在使用 <code>git</code> 等命令之前，只需要在终端中输入 <code>proxy</code> 命令，即可使用本地代理。</p>
+<h3 id="卸载-oh-my-zsh" class="heading-element">
+  <a href="#%e5%8d%b8%e8%bd%bd-oh-my-zsh" class="heading-mark"></a>卸载 Oh My Zsh</h3><ul>
+<li>终端输入 ：</li>
+</ul>
+<div class="highlight" id="id-12"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">uninstall_oh_my_zsh
+</span></span><span class="line"><span class="cl">Are you sure you want to remove Oh My Zsh? <span class="o">[</span>y/N<span class="o">]</span>  Y</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>终端提示信息：</li>
+</ul>
+<div class="highlight" id="id-13"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Removing ~/.oh-my-zsh
+</span></span><span class="line"><span class="cl">Looking <span class="k">for</span> original zsh config...
+</span></span><span class="line"><span class="cl">Found ~/.zshrc.pre-oh-my-zsh -- Restoring to ~/.zshrc
+</span></span><span class="line"><span class="cl">Found ~/.zshrc -- Renaming to ~/.zshrc.omz-uninstalled-20170820200007
+</span></span><span class="line"><span class="cl">Your original zsh config was restored. Please restart your session.
+</span></span><span class="line"><span class="cl">Thanks <span class="k">for</span> trying out Oh My Zsh. It<span class="err">&#39;</span>s been uninstalled.</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="手动更新-oh-my-zsh" class="heading-element">
+  <a href="#%e6%89%8b%e5%8a%a8%e6%9b%b4%e6%96%b0-oh-my-zsh" class="heading-mark"></a>手动更新 Oh My Zsh</h3><ul>
+<li><strong>Oh My Zsh</strong> 的自动更新提示误触关掉了解决办法</li>
+<li>打开终端输入：</li>
+</ul>
+<div class="highlight" id="id-14"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">upgrade_oh_my_zsh</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2024-01-02 23:30:39">更新于 2024-01-02&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/posts/zsh-config-oh-my-zsh/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haoyep.com/posts/zsh-config-oh-my-zsh/" data-title="zsh 安装与配置，使用 oh-my-zsh 美化终端" data-hashtags="生产力,Linux"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haoyep.com/posts/zsh-config-oh-my-zsh/" data-hashtag="生产力"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://haoyep.com/posts/zsh-config-oh-my-zsh/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://haoyep.com/posts/zsh-config-oh-my-zsh/" data-title="zsh 安装与配置，使用 oh-my-zsh 美化终端"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://haoyep.com/posts/zsh-config-oh-my-zsh/" data-title="zsh 安装与配置，使用 oh-my-zsh 美化终端"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://haoyep.com/posts/zsh-config-oh-my-zsh/" data-title="zsh 安装与配置，使用 oh-my-zsh 美化终端"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://haoyep.com/posts/zsh-config-oh-my-zsh/" data-title="zsh 安装与配置，使用 oh-my-zsh 美化终端"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://haoyep.com/posts/zsh-config-oh-my-zsh/" data-title="zsh 安装与配置，使用 oh-my-zsh 美化终端"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E7%94%9F%E4%BA%A7%E5%8A%9B/" class="post-tag" title="标签 - 生产力">生产力</a><a href="/tags/linux/" class="post-tag" title="标签 - Linux">Linux</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/afl-install/" class="post-nav-item" rel="prev" title="Ubuntu22.04安装AFL及qemu mode实践"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Ubuntu22.04安装AFL及qemu mode实践</a></div>
+</div>
+<div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="leegical/leegical.github.io"
+            data-repo-id="R_kgDOKqVEVg"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOKqVEVs4Cax6P"
+            data-mapping="pathname"
+            data-strict="0"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+        </div>
+        <noscript>
+          Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+        </noscript></div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.121.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.0"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://haoyep.com/"target="_blank" rel="external nofollow noopener noreferrer">云吱</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics order-first"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">博客已运行</span><span class="run-times ms-1">网站运行中……</span></span></div><div class="footer-line visitor">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div><div class="footer-line beian"><span class="icp footer-divider"><a href='https://icp.gov.moe/?keyword=20239399' target='_blank'>萌ICP备20239399号</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/algoliasearch/algoliasearch-lite.umd.min.js" defer></script><script src="/lib/instant-page/instantpage.min.js" async defer type="module"></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script src="https://npm.elemecdn.com/pangu@4.0.7/dist/browser/pangu.min.js" defer></script><script>window.config={"autoBookmark":true,"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"23TF0E394I","algoliaIndex":"index","algoliaSearchKey":"748e3a3e3ef2f537198c57b19d5ff3e6","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"siteTime":"2018-02-06T11:15:22+08:00"};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-QNC2G9BGVM', { 'anonymize_ip': true });
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-QNC2G9BGVM" async></script></body>
+</html>

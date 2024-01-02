@@ -4,13 +4,29 @@
     <link>https://haoyep.com/posts/</link>
     <description>所有文章 | 云吱的小站</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
-      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Sun, 17 Dec 2023 15:00:18 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/posts/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Tue, 02 Jan 2024 23:30:39 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/posts/" rel="self" type="application/rss+xml" /><item>
   <title>Windows下使用hugo和Github Pages配置博客</title>
   <link>https://haoyep.com/posts/windows-hugo-blog-github/</link>
   <pubDate>Fri, 17 Nov 2023 23:13:11 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
   <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312150115425.png" alt="Windows下使用hugo和Github Pages配置博客" title="本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。" referrerpolicy="no-referrer"/></div><p>本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。</p>]]></description>
+</item>
+<item>
+  <title>zsh 安装与配置，使用 oh-my-zsh 美化终端</title>
+  <link>https://haoyep.com/posts/zsh-config-oh-my-zsh/</link>
+  <pubDate>Tue, 02 Jan 2024 23:30:39 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/zsh-config-oh-my-zsh/</guid>
+  <description><![CDATA[传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。]]></description>
+</item>
+<item>
+  <title>Ubuntu22.04安装AFL及qemu mode实践</title>
+  <link>https://haoyep.com/posts/afl-install/</link>
+  <pubDate>Mon, 25 Dec 2023 21:24:00 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/afl-install/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312252205765.png" alt="Ubuntu22.04安装AFL及qemu mode实践" title="Ubuntu22.04 LTS 系统 AFL 2.56b 安装和踩坑记录，使用 QEMU mode 进行简单测试。" referrerpolicy="no-referrer"/></div>Ubuntu22.04 LTS 系统 AFL 2.56b 安装和踩坑记录，使用 QEMU mode 进行简单测试。]]></description>
 </item>
 <item>
   <title>Github Pages 博客网站访问速度优化</title>
