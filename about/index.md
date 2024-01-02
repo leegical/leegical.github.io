@@ -1,10 +1,10 @@
 # 关于
 
 
-<!-- markdownlint-disable-file -->
+&lt;!-- markdownlint-disable-file --&gt;
 
-{{< style "min-height: 230px;" >}}
-{{< typeit code=javascript >}}
+{{&lt; style &#34;min-height: 230px;&#34; &gt;}}
+{{&lt; typeit code=javascript &gt;}}
 /**
  * 作为程序员，总该在互联网上留下一点痕迹。
  * 「Talk is cheap. Show me the code.」
@@ -14,26 +14,26 @@ class Blog {
 public:
   std::string name, author, url;
 
-  Blog(const std::string& name, const std::string& author, const std::string& url)
+  Blog(const std::string&amp; name, const std::string&amp; author, const std::string&amp; url)
     : name(name), author(author), url(url) {}
 };
-Blog site("云吱的小站", "Legical", "https://haoyep.com");
-{{< /typeit >}}
-{{< /style >}}
+Blog site(&#34;云吱的小站&#34;, &#34;Legical&#34;, &#34;https://haoyep.com&#34;);
+{{&lt; /typeit &gt;}}
+{{&lt; /style &gt;}}
 
 ## 关于我
 
-{{< center-quote >}}
+{{&lt; center-quote &gt;}}
 玩会吧，别真学会了\
 戒骄戒躁，久久为功
-{{< /center-quote >}}
+{{&lt; /center-quote &gt;}}
 
 
-- 👨‍💻 一名C/C++工程师
+- 👨‍💻 一名C/C&#43;&#43;工程师
 - 👨‍💼 可能要去享受福报
 - 📝 但是要写Go代码
 
-<!-- link reference definition -->
+&lt;!-- link reference definition --&gt;
 [blog]: https://haoyep.com
 
 

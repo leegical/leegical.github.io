@@ -1,7 +1,7 @@
 # 通过ZeroTier SSH连接内网主机
 
 
-<!--more-->
+&lt;!--more--&gt;
 
 zerotier官网：[https://www.zerotier.com/](https://www.zerotier.com/)
 
@@ -63,9 +63,9 @@ sudo rm -rf /var/lib/zerotier-one/
 ```
 
 #### 加入网络
-运行以下命令并将`<NETWORK-ID>`替换为网络ID：
+运行以下命令并将`&lt;NETWORK-ID&gt;`替换为网络ID：
 ```bash
-sudo zerotier-cli join <NETWORK-ID>
+sudo zerotier-cli join &lt;NETWORK-ID&gt;
 ```
 本文中即为：
 ```bash

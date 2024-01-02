@@ -1,14 +1,14 @@
 # 留言
 
 
-{{< admonition tip "Welcome" >}}
-{{< typeit >}}
+{{&lt; admonition tip &#34;Welcome&#34; &gt;}}
+{{&lt; typeit &gt;}}
 互联网的广大朋友们，欢迎光临我的小博客！欢迎留言！
-{{< /typeit >}}
+{{&lt; /typeit &gt;}}
 
-<!-- markdownlint-disable-next-line no-inline-html -->
+&lt;!-- markdownlint-disable-next-line no-inline-html --&gt;
 
-{{< /admonition >}}
+{{&lt; /admonition &gt;}}
 
 
 

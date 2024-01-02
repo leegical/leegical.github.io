@@ -1,9 +1,9 @@
-# 使用PicGo + GitHub 搭建 Obsidian 图床
+# 使用PicGo &#43; GitHub 搭建 Obsidian 图床
 
 
-使用 Obsidian 等 Markdown 编辑器时，可靠又稳定的图床是必不可少的。PicGo + GitHub 背靠微软，稳定性问题基本不用担心，可以实现粘贴图片自动上传到 GitHub 的公有仓库。而且配置简单，使用优雅。
+使用 Obsidian 等 Markdown 编辑器时，可靠又稳定的图床是必不可少的。PicGo &#43; GitHub 背靠微软，稳定性问题基本不用担心，可以实现粘贴图片自动上传到 GitHub 的公有仓库。而且配置简单，使用优雅。
 
-<!--more-->
+&lt;!--more--&gt;
 
 ## Github
 ### 创建仓库
@@ -23,16 +23,16 @@
 
 点击`Generate token`，生成 token。
 
-{{< admonition >}}
+{{&lt; admonition &gt;}}
 这个 token 生成后只会显示这一次！注意复制、保存到其他地方以备后续使用。
-{{< /admonition >}}
+{{&lt; /admonition &gt;}}
 
 ![复制token](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141537568.png)
 
 ## PicGo
 到 Github [发布页面](https://github.com/Molunerfinn/PicGo/releases)下载 PicGo 最新安装包。
 
-{{< admonition quote "2.4.0-beta.6 国内可下载链接" >}}
+{{&lt; admonition quote &#34;2.4.0-beta.6 国内可下载链接&#34; &gt;}}
 [PicGo-2.4.0-beta.6-arm64.dmg](https://picgo-release.molunerfinn.com/2.4.0-beta.6/PicGo-2.4.0-beta.6-arm64.dmg)
 
 [PicGo-2.4.0-beta.6-x64.dmg](https://picgo-release.molunerfinn.com/2.4.0-beta.6/PicGo-2.4.0-beta.6-x64.dmg)  
@@ -46,7 +46,7 @@
 [PicGo-Setup-2.4.0-beta.6.exe](https://picgo-release.molunerfinn.com/2.4.0-beta.6/PicGo-Setup-2.4.0-beta.6.exe)  
 
 [picgo_2.4.0-beta.6_amd64.snap](https://picgo-release.molunerfinn.com/2.4.0-beta.6/picgo_2.4.0-beta.6_amd64.snap)
-{{< /admonition >}}
+{{&lt; /admonition &gt;}}
 
 ![PicGo安装包列表](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141544560.png)
 ### 配置 github 图床 
@@ -73,11 +73,11 @@ Obsidian [官网下载链接](https://obsidian.md/download)
 ![配置插件](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141610850.png)
 
 ## 参考文章
-{{< link "https://segmentfault.com/a/1190000041076406" "一劳永逸，使用 PicGo + GitHub 搭建个人图床工具" "一劳永逸，使用 PicGo + GitHub 搭建个人图床工具" true >}}
+{{&lt; link &#34;https://segmentfault.com/a/1190000041076406&#34; &#34;一劳永逸，使用 PicGo &#43; GitHub 搭建个人图床工具&#34; &#34;一劳永逸，使用 PicGo &#43; GitHub 搭建个人图床工具&#34; true &gt;}}
 
-{{< link "https://zhuanlan.zhihu.com/p/638224211" "体验PicGo+GitHub搭建图床，使用jsDelivr或Github raw免费加速" "体验PicGo+GitHub搭建图床，使用jsDelivr或Github raw免费加速" true >}}
+{{&lt; link &#34;https://zhuanlan.zhihu.com/p/638224211&#34; &#34;体验PicGo&#43;GitHub搭建图床，使用jsDelivr或Github raw免费加速&#34; &#34;体验PicGo&#43;GitHub搭建图床，使用jsDelivr或Github raw免费加速&#34; true &gt;}}
 
-{{< link "https://zhuanlan.zhihu.com/p/603385132" "obsidian图床（GitHub）设置" "obsidian图床（GitHub）设置" true >}}
+{{&lt; link &#34;https://zhuanlan.zhihu.com/p/603385132&#34; &#34;obsidian图床（GitHub）设置&#34; &#34;obsidian图床（GitHub）设置&#34; true &gt;}}
 
 
 ---
