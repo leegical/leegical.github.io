@@ -78,16 +78,15 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
 ```
 ![zsh插件列表](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png)
 
-{{&lt; admonition &gt;}}
-部分插件需要参考[插件介绍](插件介绍)进行安装。
+{{&lt; admonition tip &#34;部分插件需要参考[插件介绍](#插件介绍)进行安装。&#34; false &gt;}}
 {{&lt; /admonition &gt;}} 
 
 开启新的 Shell 或执行 `source ~/.zshrc`，就可以开始体验插件。
 ### 插件介绍
 #### zsh -autosuggestions
-[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) 是一个命令提示插件，，当你输入命令时，会自动推测你可能需要输入的命令，按下右键可以快速采用建议。效果如下：
+[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) 是一个命令提示插件，当你输入命令时，会自动推测你可能需要输入的命令，按下右键可以快速采用建议。效果如下：
 ![zsh-autosuggestions自动补全](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012250028.png)
-安装方式：把插件下载到本地的 `~/.oh-my-zsh/custom/plugins` 目录：
+安装方式：把插件下载到本地的 `~/.oh-my-zsh/custom/plugins` 目录。
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
@@ -95,7 +94,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) 是一个命令语法校验插件，在输入命令的过程中，若指令不合法，则指令显示为红色，若指令合法就会显示为绿色。效果如下：
 ![命令语法校验](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012252786.png)
 
-安装方式：把插件下载到本地的 `~/.oh-my-zsh/custom/plugins` 目录:
+安装方式：把插件下载到本地的 `~/.oh-my-zsh/custom/plugins` 目录。
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 
 ```
@@ -109,6 +108,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 #### web-search
 oh-my-zsh 内置了 `web-search` 插件。`web-search` 能让我们在命令行中使用搜索引擎进行搜索。使用`搜索引擎关键字&#43;搜索内容` 即可自动打开浏览器进行搜索。效果如下：
 ![web-search搜索](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012302476.png)
+
+{{&lt; admonition success &#34;最后，记得[启用所有插件](#启用插件)。&#34; false &gt;}}
+{{&lt; /admonition &gt;}} 
 
 ## Tips
 ### root 用户

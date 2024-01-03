@@ -18,7 +18,7 @@
   <pubDate>Tue, 02 Jan 2024 23:30:39 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/zsh-config-oh-my-zsh/</guid>
-  <description><![CDATA[传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401031558703.png" alt="zsh 安装与配置，使用 oh-my-zsh 美化终端" title="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。" referrerpolicy="no-referrer"/></div>传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。]]></description>
 </item>
 <item>
   <title>Ubuntu22.04安装AFL及qemu mode实践</title>
