@@ -20,5 +20,13 @@
   <guid>https://haoyep.com/posts/fixit-admonition/</guid>
   <description><![CDATA[Fixit提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。]]></description>
 </item>
+<item>
+  <title>博客搭建过程</title>
+  <link>https://haoyep.com/posts/build-blog/</link>
+  <pubDate>Thu, 12 Oct 2023 15:16:48 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/build-blog/</guid>
+  <description><![CDATA[关于博客搭建过程系列文章。]]></description>
+</item>
 </channel>
 </rss>
