@@ -19,7 +19,7 @@ sudo apt install zsh git curl -y
 chsh -s /bin/zsh
 ```
 ### 安装 oh-my-zsh
-官网： http://ohmyz.sh/
+官网：[http://ohmyz.sh/](http://ohmyz.sh/)。
 安装方式任选一个即可。
 
 | Method | Command |
