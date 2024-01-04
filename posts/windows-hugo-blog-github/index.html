@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>Windows下使用hugo和Github Pages配置博客 - 云吱的小站</title><meta name="author" content="云吱">
+    <title>Windows下使用hugo和Github Pages配置博客 | 云吱的小站</title><meta name="author" content="云吱">
 <meta name="author-link" content="https://haoyep.com/">
 <meta name="description" content="本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。" /><meta name="keywords" content='git, hugo' /><meta itemprop="name" content="Windows下使用hugo和Github Pages配置博客">
 <meta itemprop="description" content="本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。"><meta itemprop="datePublished" content="2023-11-17T23:13:11+08:00" />
@@ -47,25 +47,42 @@
     <div class="header-title">
       <a href="/" title="云吱的小站"><img loading="lazy" src="/pokeball.ico" alt="云吱的小站" data-title="云吱的小站" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">云吱</span></a><span class="header-subtitle">好耶！</span></div>
     <nav>
-      <ul class="menu"><li class="menu-item">
+      <ul class="menu"><li class="menu-item has-children">
               <a
                 class="menu-link"
-                href="/posts/"
+                href="/archives/"
                 
                 
-              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/categories/"
-                
-                
-              ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/tags/"
-                
-                
-              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item">
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/categories/"
+                          
+                          
+                        ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/collections/"
+                          
+                          
+                        ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/tags/"
+                          
+                          
+                        ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a>
+                      </li></ul></li><li class="menu-item">
               <a
                 class="menu-link"
                 href="/friends/"
@@ -127,26 +144,44 @@
             </a>
           </li><li
               class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/posts/"
-                  
-                  
-                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/categories/"
-                  
-                  
-                ><i class="fa-solid fa-th fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/tags/"
-                  
-                  
-                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+            ><span class="nested-item">
+                  <a
+                    class="menu-link"
+                    href="/archives/"
+                    
+                    
+                  ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu">
+                  <li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/categories/"
+                          
+                          
+                        ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/collections/"
+                          
+                          
+                        ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li
+                        class="menu-item"
+                      >
+                        <a
+                          class="menu-link"
+                          href="/tags/"
+                          
+                          
+                        ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a>
+                      </li></ul></li><li
               class="menu-item"
             ><a
                   class="menu-link"
@@ -282,7 +317,7 @@
     </li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><p>本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。</p>
+      </div><div class="content" id="content" data-end-flag="（本文完）"><p>本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。</p>
 <h2 id="前提" class="heading-element">
   <a href="#%e5%89%8d%e6%8f%90" class="heading-mark"></a>1 前提</h2><p>默认本地已安装了 <a href="https://git-scm.com/downloads"target="_blank" rel="external nofollow noopener noreferrer">Git</a>、<a href="https://code.visualstudio.com/Download"target="_blank" rel="external nofollow noopener noreferrer">VSCode</a>。</p>
 <h2 id="hugo-配置" class="heading-element">
@@ -2981,7 +3016,13 @@ Settings——Pages——Custom domain，勾选 <strong>Enforce HTTPS</strong>�
 </span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;修改主题&#34;</span>
 </span></span><span class="line"><span class="cl">git push</span></span></code></pre></td></tr></table>
 </div>
-</div><p>稍等片刻，github action 执行完毕，页面就会更新了。</p></div><div class="collection-card">
+</div><p>稍等片刻，github action 执行完毕，页面就会更新了。</p></div><h2 id="see-also">相关内容</h2>
+    <ul><li>
+          <a href="/posts/windows-hugo-blog-cloudflare/" title="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客">Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</a></li><li>
+          <a href="/posts/optimize-github-pages-blog-access-speed/" title="Github Pages 博客网站访问速度优化">Github Pages 博客网站访问速度优化</a></li><li>
+          <a href="/posts/github-graph-beds/" title="使用PicGo &#43; GitHub 搭建 Obsidian 图床">使用PicGo &#43; GitHub 搭建 Obsidian 图床</a></li><li>
+          <a href="/posts/hugo-add-component/" title="Hugo 博客添加 Giscus 评论功能">Hugo 博客添加 Giscus 评论功能</a></li><li>
+          <a href="/posts/github-graph-beds-cdn/" title="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源">通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</a></li></ul><div class="collection-card">
       <div class="collection-title text-secondary">收录于 <a href="/collections/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> <span>合集・建站日志</span></span></a> 5</div>
       <div class="collection-nav"><a href="/posts/fixit-admonition/" class="collection-nav-item" rel="prev" title="Fixit自带的admonition样式"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i><span>Fixit自带的admonition样式</span>
           </a><a href="/posts/optimize-github-pages-blog-access-speed/" class="collection-nav-item" rel="next" title="Github Pages 博客网站访问速度优化">
@@ -2990,11 +3031,11 @@ Settings——Pages——Custom domain，勾选 <strong>Enforce HTTPS</strong>�
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2023-12-10 18:58:06">更新于 2023-12-10&nbsp;</span>
+        <span title="更新于 2023-12-10 18:58:06">更新于 2023-12-10&nbsp;<a class="git-hash" href="https://github.com/leegical/leegical.github.io/commit/3521dc5f091e4f95b993ba250b1b58903f0f73c2" rel="external nofollow noopener noreferrer" target="_blank" title="commit by CXG-L(chuxuange@gmail.com) 3521dc5f091e4f95b993ba250b1b58903f0f73c2: delete posts maunal toc"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i>3521dc5</a></span>
       </div><div class="post-info-license">
             <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">
-        <div class="post-info-md"><span><a href="/posts/windows-hugo-blog-github/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span></div>
+        <div class="post-info-md"><span><a href="/posts/windows-hugo-blog-github/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span><span><a href="https://github.com/leegical/leegical.github.io/blob/master/content/posts/build-blog/Windows_hugo_Github_Pages_Blog.md?plain=1" title="查看源码"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">查看源码</a></span><span><a href="https://github.com/leegical/leegical.github.io/edit/master/content/posts/build-blog/Windows_hugo_Github_Pages_Blog.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span><span><a href="https://github.com/leegical/leegical.github.io/issues/new?title=[BUG]%20Windows%E4%B8%8B%E4%BD%BF%E7%94%A8hugo%E5%92%8CGithub&#43;Pages%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cWindows%E4%B8%8B%E4%BD%BF%E7%94%A8hugo%E5%92%8CGithub&#43;Pages%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2%7c%0A%7cURL%7chttps://haoyep.com/posts/windows-hugo-blog-github/%7c%0A%7cFilename%7chttps://github.com/leegical/leegical.github.io/blob/master/content/posts/build-blog/Windows_hugo_Github_Pages_Blog.md?plain=1%7c" title="报告问题"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">报告问题</a></span></div>
         <div class="post-info-share">
           <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://haoyep.com/posts/windows-hugo-blog-github/" data-title="Windows下使用hugo和Github Pages配置博客" data-hashtags="git,hugo"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
   <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://haoyep.com/posts/windows-hugo-blog-github/" data-hashtag="git"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
@@ -3015,8 +3056,8 @@ Settings——Pages——Custom domain，勾选 <strong>Enforce HTTPS</strong>�
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/zotero-config/" class="post-nav-item" rel="prev" title="文献管理软件 zotero 下载安装使用与配置分享"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>文献管理软件 zotero 下载安装使用与配置分享</a>
-      <a href="/posts/ptatm-1/" class="post-nav-item" rel="next" title="PTATM（一）：初始化工作">PTATM（一）：初始化工作<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/posts/ptatm-1/" class="post-nav-item" rel="prev" title="PTATM（一）：初始化工作"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>PTATM（一）：初始化工作</a>
+      <a href="/posts/zotero-config/" class="post-nav-item" rel="next" title="文献管理软件 zotero 下载安装使用与配置分享">文献管理软件 zotero 下载安装使用与配置分享<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="giscus">
           <script
@@ -3045,8 +3086,7 @@ Settings——Pages——Custom domain，勾选 <strong>Enforce HTTPS</strong>�
 
   <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.121.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.1-RC"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
-        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">
               <a href="https://haoyep.com/"target="_blank" rel="external nofollow noopener noreferrer">云吱</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics order-first"><span class="site-time" title='网站运行中……'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i><span class="ms-1 d-none">博客已运行</span><span class="run-times ms-1">网站运行中……</span></span></div><div class="footer-line visitor">
           <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
@@ -3056,7 +3096,7 @@ Settings——Pages——Custom domain，勾选 <strong>Enforce HTTPS</strong>�
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
 </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/algoliasearch/algoliasearch-lite.umd.min.js" defer></script><script src="/lib/instant-page/instantpage.min.js" async defer type="module"></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script src="https://npm.elemecdn.com/pangu@4.0.7/dist/browser/pangu.min.js" defer></script><script>window.config={"autoBookmark":true,"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"23TF0E394I","algoliaIndex":"index","algoliaSearchKey":"748e3a3e3ef2f537198c57b19d5ff3e6","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"siteTime":"2018-02-06T11:15:22+08:00"};</script><script src="/js/theme.min.js" defer></script><script>
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/algoliasearch/algoliasearch-lite.umd.min.js" defer></script><script src="/lib/instant-page/instantpage.min.js" async defer type="module"></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script src="https://npm.elemecdn.com/pangu@4.0.7/dist/browser/pangu.min.js" defer></script><script>window.config={"autoBookmark":true,"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":13},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"enablePWA":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"23TF0E394I","algoliaIndex":"index","algoliaSearchKey":"748e3a3e3ef2f537198c57b19d5ff3e6","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"siteTime":"2018-02-06T11:15:22+08:00"};</script><script src="/js/theme.min.js" defer></script><script>
       window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
       gtag('config', 'G-QNC2G9BGVM', { 'anonymize_ip': true });
     </script><script src="https://www.googletagmanager.com/gtag/js?id=G-QNC2G9BGVM" async></script></body>
