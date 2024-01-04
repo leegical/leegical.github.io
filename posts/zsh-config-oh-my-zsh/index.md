@@ -7,7 +7,7 @@
 传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。
 ## 环境配置
 ### 安装基本工具
-```bash
+```bash {title=&#34;安装基本工具&#34;}
 # 更新软件源
 sudo apt update &amp;&amp; sudo apt upgrade -y
 # 安装 zsh git curl
