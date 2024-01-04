@@ -30,6 +30,7 @@ chsh -s /bin/zsh
 | 国内镜像 | `export REMOTE=https://gitee.com/mirrors/oh-my-zsh.git &amp;&amp; sh -c &#34;$(wget -O- https//gitee.com/pocmon/mirrors/raw/master/tools/install.sh)&#34;` |
 
 注意：同意使用 Oh-my-zsh 的配置模板覆盖已有的 `.zshrc`。
+
 ![安装 oh-my-zsh](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012224221.png)
 
 ## 配置主题
@@ -46,9 +47,11 @@ ZSH_THEME=&#34;haoomz&#34;
 
 source ~/.zshrc
 ```
+
 ![设置ZSH_THEME](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012235958.png)
 
 效果如下（`robbyrussell` → `haoomz`）：
+
 ![haoomz主题](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012238625.png)
 
 ### 推荐主题
@@ -56,6 +59,7 @@ source ~/.zshrc
 ```bash
 cd ~/.oh-my-zsh/themes &amp;&amp; ls
 ```
+
 ![zsh 内置的主题样式](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012242407.png)
 
 #### powerlevel10k
@@ -76,6 +80,7 @@ git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$H
 ```bash
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
 ```
+
 ![zsh插件列表](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png)
 
 {{&lt; admonition tip &#34;部分插件需要参考[插件介绍](#插件介绍)进行安装。&#34; false &gt;}}
@@ -85,13 +90,16 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
 ### 插件介绍
 #### zsh -autosuggestions
 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) 是一个命令提示插件，当你输入命令时，会自动推测你可能需要输入的命令，按下右键可以快速采用建议。效果如下：
+
 ![zsh-autosuggestions自动补全](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012250028.png)
+
 安装方式：把插件下载到本地的 `~/.oh-my-zsh/custom/plugins` 目录。
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 #### zsh-syntax-highlighting
 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) 是一个命令语法校验插件，在输入命令的过程中，若指令不合法，则指令显示为红色，若指令合法就会显示为绿色。效果如下：
+
 ![命令语法校验](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012252786.png)
 
 安装方式：把插件下载到本地的 `~/.oh-my-zsh/custom/plugins` 目录。
@@ -100,13 +108,16 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```
 #### z
 `oh-my-zsh` 内置了 `z` 插件。`z` 是一个文件夹快捷跳转插件，对于曾经跳转过的目录，只需要输入最终目标文件夹名称，就可以快速跳转，避免再输入长串路径，提高切换文件夹的效率。效果如下：
+
 ![使用z跳转目录](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012254065.png)
 #### extract
 `oh-my-zsh` 内置了 `extract` 插件。`extract` 用于解压任何压缩文件，不必根据压缩文件的后缀名来记忆压缩软件。使用 `x` 命令即可解压文件，效果如下：
+
 ![extract 解压](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012259966.png)
 
 #### web-search
 oh-my-zsh 内置了 `web-search` 插件。`web-search` 能让我们在命令行中使用搜索引擎进行搜索。使用`搜索引擎关键字&#43;搜索内容` 即可自动打开浏览器进行搜索。效果如下：
+
 ![web-search搜索](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012302476.png)
 
 {{&lt; admonition success &#34;最后，记得[启用所有插件](#启用插件)。&#34; false &gt;}}
@@ -136,7 +147,9 @@ unproxy () {
 }
 ```
 
-这里假设本地代理的端口是`1089`。
+{{&lt; admonition tip &#34;这里假设本地代理的端口是`1089`。&#34; false &gt;}}
+{{&lt; /admonition &gt;}} 
+
 ![使用本地代理命令](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012307093.png)
 
 以后在使用 `git` 等命令之前，只需要在终端中输入 `proxy` 命令，即可使用本地代理。
