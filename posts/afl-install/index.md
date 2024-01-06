@@ -1,4 +1,4 @@
-# Ubuntu22.04安装AFL及qemu mode实践
+# Ubuntu 22.04 安装 AFL 及 qemu mode 实践
 
 
 
