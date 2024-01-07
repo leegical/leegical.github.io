@@ -12,6 +12,7 @@ sudo apt-get install -y cargo \
                         cmake \
                         g&#43;&#43; \
                         git \
+                        bison \
                         libz3-dev  \
                         ninja-build \
                         python3-pip \
