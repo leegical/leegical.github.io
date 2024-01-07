@@ -8,18 +8,44 @@
 ```bash
 sudo apt update
 sudo apt-get install -y cargo \
-                        clang-10 \
+						python2 \
                         cmake \
                         g&#43;&#43; \
                         git \
                         libz3-dev  \
-                        llvm-10-dev \
-                        llvm-10-tools \
                         ninja-build \
                         python3-pip \
                         zlib1g-dev
 pip3 install lit
 ```
+### 添加环境变量 Path
+编辑终端配置文件。
+```
+# bash
+sudo nano ~/.bashrc
+
+# zsh
+sudo nano ~/zshrc
+```
+
+添加环境变量：
+```bash
+export PATH=${HOME}/.local/bin:${PATH}
+```
+
+![编辑Path变量](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401071608420.png)
+
+启用配置文件，**bash** 使用`source ~/.bashrc`；**zsh** 使用`~/.zshrc`。
+### 设置 Python
+AFL 使用的是 Python2，Ubuntu22.04 上没有安装。因此需要安装 Python2并将其设置为默认 Python。
+```bash
+sudo ln -s /usr/bin/python2 /usr/bin/python
+```
+
+### 安装 clang10
+参考此文章安装并设置 `clang10` 为默认版本。
+
+{{&lt; link &#34;https://haoyep.com/posts/afl-install/ubuntu22-install-clang10&#34; &#34;Ubuntu 22.04 LTS 64位系统安装 clang10 版本&#34; &#34;Ubuntu 22.04 LTS 64位系统安装 clang10 版本&#34; true &gt;}}
 
 ## 安装 Z3
 要求版本号大于4.5
@@ -54,17 +80,13 @@ cd afl &amp;&amp; make
 ![afl工具列表](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202312132214349.png)
 
 ### 安装 qemu 模式
-编译qemu，支持二进制文件黑盒分析。
+编译 qemu，支持二进制文件黑盒分析。
 #### 依赖环境
 安装 libtool 等资源库
 ```bash
-sudo apt-get install libtool-bin python2 libgtk2.0-dev -y
+sudo apt-get install libtool-bin libgtk2.0-dev -y
 ```
 
-python 默认为 Python2
-```bash
-sudo ln -s /usr/bin/python2 /usr/bin/python
-```
 #### patch 代码
 为了避免 [AFL/issues/41](https://github.com/google/AFL/issues/41) 中出现的`error: ‘SIOCGSTAMP’ undeclared here (not in a function); did you mean ‘SIOCSRARP’?`、`error: ‘SIOCGSTAMPNS’ undeclared here (not in a function); did you mean ‘SIOCGSTAMP_OLD’?`，需要修改为 [patch](https://github.com/Mindavi/AFL/blob/6c917e3d63a2a0685d58c3518524f9615b001893/qemu_mode/patches/syscall.diff) 中的文件内容。修改 `afl/qemu_mode/patches`目录中的`syscall.diff`文件内容如下：
 ```

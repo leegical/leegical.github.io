@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Linux - 分类 | 云吱的小站</title>
+    <link>https://haoyep.com/categories/linux/</link>
+    <description>Linux - 分类 | 云吱的小站</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
+      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Sun, 07 Jan 2024 15:44:57 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/categories/linux/" rel="self" type="application/rss+xml" /><item>
+  <title>Ubuntu 22.04 LTS 64位系统安装 clang10 版本</title>
+  <link>https://haoyep.com/posts/ubuntu22-install-clang10/</link>
+  <pubDate>Sun, 07 Jan 2024 15:44:57 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/ubuntu22-install-clang10/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401071601658.png" alt="Ubuntu 22.04 LTS 64位系统安装 clang10 版本" title="本文记录了Ubuntu 22.04 LTS 64位系统安装 clang10 版本的过程。" referrerpolicy="no-referrer"/></div>本文记录了Ubuntu 22.04 LTS 64位系统安装 clang10 版本的过程。]]></description>
+</item>
+</channel>
+</rss>

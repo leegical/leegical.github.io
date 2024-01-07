@@ -5,6 +5,14 @@
     <description>所有折腾小工具 | 云吱的小站</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
       <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Fri, 10 Nov 2023 15:16:48 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/posts/%E6%8A%98%E8%85%BE%E5%B7%A5%E5%85%B7/" rel="self" type="application/rss+xml" /><item>
+  <title>Ubuntu 22.04 LTS 64位系统安装 clang10 版本</title>
+  <link>https://haoyep.com/posts/ubuntu22-install-clang10/</link>
+  <pubDate>Sun, 07 Jan 2024 15:44:57 &#43;0800</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/ubuntu22-install-clang10/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401071601658.png" alt="Ubuntu 22.04 LTS 64位系统安装 clang10 版本" title="本文记录了Ubuntu 22.04 LTS 64位系统安装 clang10 版本的过程。" referrerpolicy="no-referrer"/></div>本文记录了Ubuntu 22.04 LTS 64位系统安装 clang10 版本的过程。]]></description>
+</item>
+<item>
   <title>zsh 安装与配置，使用 oh-my-zsh 美化终端</title>
   <link>https://haoyep.com/posts/zsh-config-oh-my-zsh/</link>
   <pubDate>Tue, 02 Jan 2024 23:30:39 &#43;0800</pubDate>
