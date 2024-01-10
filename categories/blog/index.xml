@@ -42,7 +42,7 @@
   <pubDate>Wed, 08 Nov 2023 23:05:02 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/fixit-admonition/</guid>
-  <description><![CDATA[Fixit提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://t.mwm.moe/ycy" alt="Fixit自带的admonition样式" title="Fixit提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。" referrerpolicy="no-referrer"/></div>Fixit提供了admonition shortcode，支持 12 种样式，可以在页面中插入提示的横幅。]]></description>
 </item>
 <item>
   <title>Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</title>
