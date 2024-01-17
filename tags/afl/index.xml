@@ -10,7 +10,7 @@
   <pubDate>Mon, 25 Dec 2023 21:24:00 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/afl-install/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401101528220.webp" alt="Ubuntu 22.04 安装 AFL 及 qemu mode 实践" title="Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。" referrerpolicy="no-referrer"/></div>Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171443369.png" alt="Ubuntu 22.04 安装 AFL 及 qemu mode 实践" title="Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。" referrerpolicy="no-referrer"/></div>Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。]]></description>
 </item>
 </channel>
 </rss>

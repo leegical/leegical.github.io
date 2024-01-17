@@ -10,7 +10,7 @@
   <pubDate>Sun, 07 Jan 2024 15:44:57 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/ubuntu22-install-clang10/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401101535155.webp" alt="Ubuntu 22.04 LTS 64位系统安装 clang10 版本" title="本文记录了Ubuntu 22.04 LTS 64位系统安装 clang10 版本的过程。" referrerpolicy="no-referrer"/></div>本文记录了Ubuntu 22.04 LTS 64位系统安装 clang10 版本的过程。]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171430419.png" alt="Ubuntu 22.04 LTS 64位系统安装 clang10 版本" title="本文记录了Ubuntu 22.04 LTS 64位系统安装 clang10 版本的过程。" referrerpolicy="no-referrer"/></div>本文记录了Ubuntu 22.04 LTS 64位系统安装 clang10 版本的过程。]]></description>
 </item>
 <item>
   <title>zsh 安装与配置，使用 oh-my-zsh 美化终端</title>
@@ -18,7 +18,7 @@
   <pubDate>Tue, 02 Jan 2024 23:30:39 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/zsh-config-oh-my-zsh/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401031558703.png" alt="zsh 安装与配置，使用 oh-my-zsh 美化终端" title="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。" referrerpolicy="no-referrer"/></div>传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171434163.png" alt="zsh 安装与配置，使用 oh-my-zsh 美化终端" title="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。" referrerpolicy="no-referrer"/></div>传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。]]></description>
 </item>
 <item>
   <title>Ubuntu 22.04 安装 AFL 及 qemu mode 实践</title>
@@ -26,7 +26,7 @@
   <pubDate>Mon, 25 Dec 2023 21:24:00 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/afl-install/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401101528220.webp" alt="Ubuntu 22.04 安装 AFL 及 qemu mode 实践" title="Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。" referrerpolicy="no-referrer"/></div>Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171443369.png" alt="Ubuntu 22.04 安装 AFL 及 qemu mode 实践" title="Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。" referrerpolicy="no-referrer"/></div>Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。]]></description>
 </item>
 <item>
   <title>PTATM（一）：初始化工作</title>
