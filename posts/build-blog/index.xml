@@ -10,7 +10,7 @@
   <pubDate>Sun, 17 Dec 2023 15:00:18 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/optimize-github-pages-blog-access-speed/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401101537032.webp" alt="Github Pages 博客网站访问速度优化" title="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。" referrerpolicy="no-referrer"/></div>个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171452357.png" alt="Github Pages 博客网站访问速度优化" title="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。" referrerpolicy="no-referrer"/></div>个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。]]></description>
 </item>
 <item>
   <title>Windows下使用hugo和Github Pages配置博客</title>
@@ -18,7 +18,7 @@
   <pubDate>Fri, 17 Nov 2023 23:13:11 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/windows-hugo-blog-github/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401101537783.webp" alt="Windows下使用hugo和Github Pages配置博客" title="本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。" referrerpolicy="no-referrer"/></div><p>本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。</p>]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171502370.png" alt="Windows下使用hugo和Github Pages配置博客" title="本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。" referrerpolicy="no-referrer"/></div><p>本文介绍了如何使用 hugo 和 Github Pages 免费搭建个人博客，并使用自定义域名访问。</p>]]></description>
 </item>
 <item>
   <title>Fixit自带的admonition样式</title>
@@ -34,7 +34,7 @@
   <pubDate>Wed, 08 Nov 2023 16:33:12 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/windows-hugo-blog-cloudflare/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401101538885.webp" alt="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客" title="使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。" referrerpolicy="no-referrer"/></div><p>使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。</p>]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171502156.png" alt="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客" title="使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。" referrerpolicy="no-referrer"/></div><p>使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。</p>]]></description>
 </item>
 <item>
   <title>Hugo 博客添加 Giscus 评论功能</title>
@@ -42,7 +42,7 @@
   <pubDate>Wed, 08 Nov 2023 12:58:06 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/hugo-add-component/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401101537873.webp" alt="Hugo 博客添加 Giscus 评论功能" title="本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。" referrerpolicy="no-referrer"/></div><p>本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。</p>]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171501614.png" alt="Hugo 博客添加 Giscus 评论功能" title="本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。" referrerpolicy="no-referrer"/></div><p>本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。</p>]]></description>
 </item>
 </channel>
 </rss>
