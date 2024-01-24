@@ -27,7 +27,8 @@ chsh -s /bin/zsh
 | **curl** | `sh -c &#34;$(curl -fsSL https://install.ohmyz.sh/)&#34;` |
 | **wget** | `sh -c &#34;$(wget -O- https://install.ohmyz.sh/)&#34;` |
 | **fetch** | `sh -c &#34;$(fetch -o - https://install.ohmyz.sh/)&#34;` |
-| 国内镜像 | `export REMOTE=https://gitee.com/mirrors/oh-my-zsh.git &amp;&amp; sh -c &#34;$(wget -O- https//gitee.com/pocmon/mirrors/raw/master/tools/install.sh)&#34;` |
+| 国内curl[镜像](https://gitee.com/pocmon/ohmyzsh) | `sh -c &#34;$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)&#34;` |
+| 国内wget[镜像](https://gitee.com/pocmon/ohmyzsh) | `sh -c &#34;$(wget -O- https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)&#34;` |
 
 注意：同意使用 Oh-my-zsh 的配置模板覆盖已有的 `.zshrc`。
 
