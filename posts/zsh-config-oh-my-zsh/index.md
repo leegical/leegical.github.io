@@ -159,6 +159,29 @@ unproxy () {
 
 以后在使用 `git` 等命令之前，只需要在终端中输入 `proxy` 命令，即可使用本地代理。
 
+#### WSL 配置本地代理
+```zsh
+host_ip=$(cat /etc/resolv.conf |grep &#34;nameserver&#34; |cut -f 2 -d &#34; &#34;)
+# 为 curl wget git npm apt 等设置代理
+proxy () {
+  export ALL_PROXY=&#34;http://$host_ip:10811&#34;
+  export all_proxy=&#34;http://$host_ip:10811&#34;
+ # echo -e &#34;Acquire::http::Proxy \&#34;http://$host_ip:10811\&#34;;&#34; | sudo tee -a /etc/apt/apt.conf &gt; /dev/null
+ # echo -e &#34;Acquire::https::Proxy \&#34;http://$host_ip:10811\&#34;;&#34; | sudo tee -a /etc/apt/apt.conf &gt; /dev/null
+}
+
+# 取消代理
+unproxy () {
+  unset ALL_PROXY
+  unset all_proxy
+ # sudo sed -i -e &#39;/Acquire::http::Proxy/d&#39; /etc/apt/apt.conf
+ # sudo sed -i -e &#39;/Acquire::https::Proxy/d&#39; /etc/apt/apt.conf
+}
+```
+
+{{&lt; admonition tip &#34;这里假设宿主机局域网 http 代理的端口是`10811`。&#34; false &gt;}}
+{{&lt; /admonition &gt;}} 
+
 ### 卸载 Oh My Zsh
 - 终端输入 ：
 ```bash

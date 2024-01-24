@@ -10,7 +10,7 @@
 <meta name="description" content="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。" /><meta name="keywords" content='生产力, Linux' /><meta itemprop="name" content="zsh 安装与配置，使用 oh-my-zsh 美化终端">
 <meta itemprop="description" content="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。"><meta itemprop="datePublished" content="2024-01-02T23:30:39+08:00" />
 <meta itemprop="dateModified" content="2024-01-02T23:30:39+08:00" />
-<meta itemprop="wordCount" content="1702"><meta itemprop="image" content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png" />
+<meta itemprop="wordCount" content="1830"><meta itemprop="image" content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png" />
 <meta itemprop="keywords" content="生产力,Linux," /><meta property="og:title" content="zsh 安装与配置，使用 oh-my-zsh 美化终端" />
 <meta property="og:description" content="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。" />
 <meta property="og:type" content="article" />
@@ -33,7 +33,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/haoyep.com\/posts\/zsh-config-oh-my-zsh\/"
-    },"image": ["https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/202312161447739.ico"],"genre": "posts","keywords": "生产力, Linux","wordcount":  1702 ,
+    },"image": ["https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/202312161447739.ico"],"genre": "posts","keywords": "生产力, Linux","wordcount":  1830 ,
     "url": "https:\/\/haoyep.com\/posts\/zsh-config-oh-my-zsh\/","datePublished": "2024-01-02T23:30:39+08:00","dateModified": "2024-01-02T23:30:39+08:00","publisher": {
       "@type": "Organization",
       "name": "云吱","logo": "https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/weblogo.png"},"author": {
@@ -220,7 +220,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>zsh 安装与配置，使用 oh-my-zsh 美化终端</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://dn-qiniu-avatar.qbox.me/avatar/867c2859fc58e987cb357c7a67ac01cb?s=32&amp;d=mp" alt="云吱" data-title="云吱" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;云吱</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" title="分类 - 技术"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 技术</a></span></div><div class="post-meta-line"><span title="发布于 2024-01-02 23:30:39"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-02">2024-01-02</time></span>&nbsp;<span title="1702 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1800 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="zsh 安装与配置，使用 oh-my-zsh 美化终端">
+      <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://dn-qiniu-avatar.qbox.me/avatar/867c2859fc58e987cb357c7a67ac01cb?s=32&amp;d=mp" alt="云吱" data-title="云吱" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;云吱</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" title="分类 - 技术"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 技术</a></span></div><div class="post-meta-line"><span title="发布于 2024-01-02 23:30:39"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-02">2024-01-02</time></span>&nbsp;<span title="1830 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="zsh 安装与配置，使用 oh-my-zsh 美化终端">
               <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="featured-image"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171435767.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171435767.png" data-title="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
@@ -263,7 +263,11 @@
     <li><a href="#tips">Tips</a>
       <ul>
         <li><a href="#root-用户">root 用户</a></li>
-        <li><a href="#配置本地代理">配置本地代理</a></li>
+        <li><a href="#配置本地代理">配置本地代理</a>
+          <ul>
+            <li><a href="#wsl-配置本地代理">WSL 配置本地代理</a></li>
+          </ul>
+        </li>
         <li><a href="#卸载-oh-my-zsh">卸载 Oh My Zsh</a></li>
         <li><a href="#手动更新-oh-my-zsh">手动更新 Oh My Zsh</a></li>
       </ul>
@@ -526,11 +530,57 @@
 <figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012307093.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012307093.png?size=small" data-sub-html="<h2> </h2><p>使用本地代理命令</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012307093.png" alt="使用本地代理命令" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012307093.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012307093.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012307093.png?size=large 2x" sizes="auto" data-title="使用本地代理命令" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">使用本地代理命令</figcaption>
   </figure></p>
 <p>以后在使用 <code>git</code> 等命令之前，只需要在终端中输入 <code>proxy</code> 命令，即可使用本地代理。</p>
+<h4 id="wsl-配置本地代理" class="heading-element">
+  <a href="#wsl-%e9%85%8d%e7%bd%ae%e6%9c%ac%e5%9c%b0%e4%bb%a3%e7%90%86" class="heading-mark"></a>4.2.1 WSL 配置本地代理</h4><div class="highlight" id="id-12"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="nv">host_ip</span><span class="o">=</span><span class="k">$(</span>cat /etc/resolv.conf <span class="p">|</span>grep <span class="s2">&#34;nameserver&#34;</span> <span class="p">|</span>cut -f <span class="m">2</span> -d <span class="s2">&#34; &#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 为 curl wget git npm apt 等设置代理</span>
+</span></span><span class="line"><span class="cl">proxy <span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">ALL_PROXY</span><span class="o">=</span><span class="s2">&#34;http://</span><span class="nv">$host_ip</span><span class="s2">:10811&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">all_proxy</span><span class="o">=</span><span class="s2">&#34;http://</span><span class="nv">$host_ip</span><span class="s2">:10811&#34;</span>
+</span></span><span class="line"><span class="cl"> <span class="c1"># echo -e &#34;Acquire::http::Proxy \&#34;http://$host_ip:10811\&#34;;&#34; | sudo tee -a /etc/apt/apt.conf &gt; /dev/null</span>
+</span></span><span class="line"><span class="cl"> <span class="c1"># echo -e &#34;Acquire::https::Proxy \&#34;http://$host_ip:10811\&#34;;&#34; | sudo tee -a /etc/apt/apt.conf &gt; /dev/null</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 取消代理</span>
+</span></span><span class="line"><span class="cl">unproxy <span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">unset</span> ALL_PROXY
+</span></span><span class="line"><span class="cl">  <span class="nb">unset</span> all_proxy
+</span></span><span class="line"><span class="cl"> <span class="c1"># sudo sed -i -e &#39;/Acquire::http::Proxy/d&#39; /etc/apt/apt.conf</span>
+</span></span><span class="line"><span class="cl"> <span class="c1"># sudo sed -i -e &#39;/Acquire::https::Proxy/d&#39; /etc/apt/apt.conf</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition tip">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>这里假设宿主机局域网 http 代理的端口是<code>10811</code>。<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"></div>
+    </div>
+  </div>
 <h3 id="卸载-oh-my-zsh" class="heading-element">
   <a href="#%e5%8d%b8%e8%bd%bd-oh-my-zsh" class="heading-mark"></a>4.3 卸载 Oh My Zsh</h3><ul>
 <li>终端输入 ：</li>
 </ul>
-<div class="highlight" id="id-12"><div class="chroma">
+<div class="highlight" id="id-13"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -542,7 +592,7 @@
 </div><ul>
 <li>终端提示信息：</li>
 </ul>
-<div class="highlight" id="id-13"><div class="chroma">
+<div class="highlight" id="id-14"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -564,7 +614,7 @@
 <li><strong>Oh My Zsh</strong> 的自动更新提示误触关掉了解决办法</li>
 <li>打开终端输入：</li>
 </ul>
-<div class="highlight" id="id-14"><div class="chroma">
+<div class="highlight" id="id-15"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
