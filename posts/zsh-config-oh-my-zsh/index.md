@@ -80,6 +80,8 @@ git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$H
 修改`~/.zshrc`中插件列表为：
 ```bash
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
+# 或
+plugins=(git colored-man-pages colorize cp man command-not-found sudo suse ubuntu archlinux zsh-navigation-tools z extract history-substring-search python zsh-autosuggestions zsh-syntax-highlighting)
 ```
 
 ![zsh插件列表](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png)
@@ -131,6 +133,8 @@ oh-my-zsh 内置了 `web-search` 插件。`web-search` 能让我们在命令行�
 ```bash
 ZSH_THEME=&#34;ys&#34;
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
+# 或
+plugins=(git colored-man-pages colorize cp man command-not-found sudo suse ubuntu archlinux zsh-navigation-tools z extract history-substring-search python zsh-autosuggestions zsh-syntax-highlighting)
 ```
 ### 配置本地代理
 如果你配置了本地代理，并希望终端的 git 等命令使用代理，那么可以在`~/.zshrc`中添加：
