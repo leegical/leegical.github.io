@@ -10,7 +10,7 @@
   <pubDate>Mon, 25 Dec 2023 21:24:00 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/afl-install/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171443369.png" alt="Ubuntu 22.04 安装 AFL 及 qemu mode 实践" title="Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。" referrerpolicy="no-referrer"/></div>Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171443369.png" alt="Ubuntu 22.04 安装 AFL 及 qemu mode 实践" title="Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。" referrerpolicy="no-referrer"/></div>安装依赖 1 2 3 4 5 6 7 8 9 10 11 12 sudo apt update sudo apt-get install -y cargo \ python2 \ cmake \ g++ \ git \ bison \ libz3-dev \ ninja-build \ python3-pip \ zlib1g-dev pip3 install lit 添加环境变量 Path编辑终端配置文件。 1 2 3 4 5 # bash sudo nano ~/.bashrc # zsh sudo nano ~/zshrc 添加环境变量： 1 export PATH=${HOME}/.local/bin:${PATH} 编辑Path变量 启用配置文件，bash 使用source ~/.bashrc；zsh 使用~/.zshrc。 设置 PythonAFL 使用的是 Pyt]]></description>
 </item>
 </channel>
 </rss>

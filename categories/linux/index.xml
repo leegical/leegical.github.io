@@ -10,7 +10,7 @@
   <pubDate>Sun, 07 Jan 2024 15:44:57 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/ubuntu22-install-clang10/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171430419.png" alt="Ubuntu 22.04 LTS 64位系统安装 clang10 版本" title="本文记录了Ubuntu 22.04 LTS 64位系统安装 clang10 版本的过程。" referrerpolicy="no-referrer"/></div>本文记录了Ubuntu 22.04 LTS 64位系统安装 clang10 版本的过程。]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171430419.png" alt="Ubuntu 22.04 LTS 64位系统安装 clang10 版本" title="本文记录了Ubuntu 22.04 LTS 64位系统安装 clang10 版本的过程。" referrerpolicy="no-referrer"/></div>安装 clang10 编辑 apt 源文件。 1 sudo nano /etc/apt/sources.list 添加以下内容： 1 2 3 4 5 6 7 8 9 10 # clang 9/10 # i386 not available deb http://apt.llvm.org/focal/ llvm-toolchain-focal main deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal main # 9 deb http://apt.llvm.org/focal/ llvm-toolchain-focal-9 main deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal-9 main # 10 deb http://apt.llvm.org/focal/ llvm-toolchain-focal-10 main deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal-10 main 添加clang9/10源 安装 clang10 1 2 3 4 5 6 # 先添加key wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add - # 更新源 sudo apt update # 安装 clang10 sudo apt-get install clang-10 llvm-10-dev llvm-10-tools -y 切换默认命令版本安装完成后，默认的命令是clang-10和]]></description>
 </item>
 </channel>
 </rss>
