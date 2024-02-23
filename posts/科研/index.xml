@@ -10,7 +10,7 @@
   <pubDate>Mon, 25 Dec 2023 21:24:00 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/afl-install/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171443369.png" alt="Ubuntu 22.04 安装 AFL 及 qemu mode 实践" title="Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。" referrerpolicy="no-referrer"/></div>安装依赖 1 2 3 4 5 6 7 8 9 10 11 12 sudo apt update sudo apt-get install -y cargo \ python2 \ cmake \ g++ \ git \ bison \ libz3-dev \ ninja-build \ python3-pip \ zlib1g-dev pip3 install lit 添加环境变量 Path编辑终端配置文件。 1 2 3 4 5 # bash sudo nano ~/.bashrc # zsh sudo nano ~/zshrc 添加环境变量： 1 export PATH=${HOME}/.local/bin:${PATH} 编辑Path变量 启用配置文件，bash 使用source ~/.bashrc；zsh 使用~/.zshrc。 设置 PythonAFL 使用的是 Pyt]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171443369.png" alt="Ubuntu 22.04 安装 AFL 及 qemu mode 实践" title="Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。" referrerpolicy="no-referrer"/></div><p>Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。</p>]]></description>
 </item>
 <item>
   <title>Digfuzz工具论文调研</title>
@@ -26,7 +26,7 @@
   <pubDate>Sat, 18 Nov 2023 20:42:47 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/ptatm-1/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171504235.png" alt="PTATM（一）：初始化工作" title="本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。" referrerpolicy="no-referrer"/></div>本文介绍 PTATM 的初始化工作，如内核、环境变量等。 PTATM简介 PTATM结合了多路径任务分段方法、共享Cache竞争下的任务段信息收集方法以及分段任务的pWCET分布生成方法，是一种适用于多路径任务的多核系统pWCET分析工具。 系统环境PTATM 开发时的环境为： 环境 配置 操作系统 Ubuntu 22.04 内核版本 5.19.0-32-generic 因此，理论上]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171504235.png" alt="PTATM（一）：初始化工作" title="本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。" referrerpolicy="no-referrer"/></div><p>本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。</p>]]></description>
 </item>
 <item>
   <title>文献管理软件 zotero 下载安装使用与配置分享</title>
@@ -34,7 +34,7 @@
   <pubDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/zotero-config/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171504720.png" alt="文献管理软件 zotero 下载安装使用与配置分享" title="文献管理软件 zotero 下载安装使用与配置分享" referrerpolicy="no-referrer"/></div>前言最开始阅读文献是使用readpaper 平台，在线翻译、做笔记、文献管理都很方便，具体使用可以参考同济子豪兄和官方 ReadPaper 保姆级教程。 但随着科研深入，readpaper 的文献管理功能逐渐跟不上了，而且很多文献没有 PDF 文件，需要自己下载后上传。 经过研究发现，相比 Endnote，zotero 功能够用，而且开源]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171504720.png" alt="文献管理软件 zotero 下载安装使用与配置分享" title="个人 zotero 折腾过程记录与配置、插件分享。" referrerpolicy="no-referrer"/></div><p>个人 zotero 折腾过程记录与配置、插件分享。</p>]]></description>
 </item>
 </channel>
 </rss>

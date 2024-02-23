@@ -1,6 +1,6 @@
 # PTATM（一）：初始化工作
 
-
+本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。
 &lt;!--more--&gt;
 
 本文介绍 [PTATM](https://github.com/panzhenyu/PTATM) 的初始化工作，如内核、环境变量等。

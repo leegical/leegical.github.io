@@ -10,7 +10,7 @@
   <pubDate>Sun, 17 Dec 2023 15:00:18 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/optimize-github-pages-blog-access-speed/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171452357.png" alt="Github Pages 博客网站访问速度优化" title="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。" referrerpolicy="no-referrer"/></div>使用 Github Pages 可以方便地搭建自己的静态网站，详细过程参考我的这篇文章。 使用 hugo 和 Github Pages 搭建个人博客 https://haoyep.com/posts/windows-hugo-blog-github/ 但由于众所周知的原因，此方法搭建的博客在国内访问速度不佳。因此考虑采用一些方法来加速访问，主要思路是使用 CDN 加速网站的静态资源。 对于不同的静态资源，加速方法分别如下： 使用自定义域名，见个人 Github 博客设置自定义域名； j]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171452357.png" alt="Github Pages 博客网站访问速度优化" title="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。" referrerpolicy="no-referrer"/></div><p>个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。</p>]]></description>
 </item>
 <item>
   <title>Windows下使用hugo和Github Pages配置博客</title>

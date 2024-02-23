@@ -10,7 +10,7 @@
 <meta name="description" content="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。" /><meta name="keywords" content='生产力, Linux' /><meta itemprop="name" content="zsh 安装与配置，使用 oh-my-zsh 美化终端">
 <meta itemprop="description" content="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。"><meta itemprop="datePublished" content="2024-01-02T23:30:39+08:00" />
 <meta itemprop="dateModified" content="2024-01-02T23:30:39+08:00" />
-<meta itemprop="wordCount" content="1809"><meta itemprop="image" content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png" />
+<meta itemprop="wordCount" content="1862"><meta itemprop="image" content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png" />
 <meta itemprop="keywords" content="生产力,Linux," /><meta property="og:title" content="zsh 安装与配置，使用 oh-my-zsh 美化终端" />
 <meta property="og:description" content="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。" />
 <meta property="og:type" content="article" />
@@ -33,7 +33,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/haoyep.com\/posts\/zsh-config-oh-my-zsh\/"
-    },"image": ["https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/202312161447739.ico"],"genre": "posts","keywords": "生产力, Linux","wordcount":  1809 ,
+    },"image": ["https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/202312161447739.ico"],"genre": "posts","keywords": "生产力, Linux","wordcount":  1862 ,
     "url": "https:\/\/haoyep.com\/posts\/zsh-config-oh-my-zsh\/","datePublished": "2024-01-02T23:30:39+08:00","dateModified": "2024-01-02T23:30:39+08:00","publisher": {
       "@type": "Organization",
       "name": "云吱","logo": "https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/weblogo.png"},"author": {
@@ -220,7 +220,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>zsh 安装与配置，使用 oh-my-zsh 美化终端</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://dn-qiniu-avatar.qbox.me/avatar/867c2859fc58e987cb357c7a67ac01cb?s=32&amp;d=mp" alt="云吱" data-title="云吱" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;云吱</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" title="分类 - 技术"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 技术</a></span></div><div class="post-meta-line"><span title="发布于 2024-01-02 23:30:39"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-02">2024-01-02</time></span>&nbsp;<span title="1809 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="zsh 安装与配置，使用 oh-my-zsh 美化终端">
+      <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://dn-qiniu-avatar.qbox.me/avatar/867c2859fc58e987cb357c7a67ac01cb?s=32&amp;d=mp" alt="云吱" data-title="云吱" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;云吱</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" title="分类 - 技术"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 技术</a></span></div><div class="post-meta-line"><span title="发布于 2024-01-02 23:30:39"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-01-02">2024-01-02</time></span>&nbsp;<span title="1862 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="zsh 安装与配置，使用 oh-my-zsh 美化终端">
               <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="featured-image"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171435767.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171435767.png" data-title="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
@@ -248,8 +248,7 @@
     </li>
     <li><a href="#安装插件">安装插件</a>
       <ul>
-        <li><a href="#启用插件">启用插件</a></li>
-        <li><a href="#插件介绍">插件介绍</a>
+        <li><a href="#插件推荐">插件推荐</a>
           <ul>
             <li><a href="#zsh--autosuggestions">zsh -autosuggestions</a></li>
             <li><a href="#zsh-syntax-highlighting">zsh-syntax-highlighting</a></li>
@@ -258,6 +257,7 @@
             <li><a href="#web-search">web-search</a></li>
           </ul>
         </li>
+        <li><a href="#启用插件">启用插件</a></li>
       </ul>
     </li>
     <li><a href="#tips">Tips</a>
@@ -275,6 +275,7 @@
   </ul>
 </nav></div>
       </div><div class="content" id="content" data-end-flag="（本文完）"><p>传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。</p>
+<p>传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。</p>
 <h2 id="环境配置" class="heading-element">
   <a href="#%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae" class="heading-mark"></a>环境配置</h2><h3 id="安装基本工具" class="heading-element">
   <a href="#%e5%ae%89%e8%a3%85%e5%9f%ba%e6%9c%ac%e5%b7%a5%e5%85%b7" class="heading-mark"></a>安装基本工具</h3><div class="highlight" id="id-1"><div class="chroma">
@@ -397,39 +398,14 @@
 </div><p>在 <code>~/.zshrc</code> 设置 <code>ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;</code>。接下来，终端会自动引导你配置 <code>powerlevel10k</code>。</p>
 <h2 id="安装插件" class="heading-element">
   <a href="#%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6" class="heading-mark"></a>安装插件</h2><p><code>oh-my-zsh</code> 已经内置了 <code>git</code> 插件，内置插件可以在 <code>～/.oh-my-zsh/plugins</code> 中查看，下面介绍一下我常用的插件，更多插件可以在 <a href="https://github.com/unixorn/awesome-zsh-plugins"target="_blank" rel="external nofollow noopener noreferrer">awesome-zsh-plugins</a> 里查看。</p>
-<h3 id="启用插件" class="heading-element">
-  <a href="#%e5%90%af%e7%94%a8%e6%8f%92%e4%bb%b6" class="heading-mark"></a>启用插件</h3><p>修改<code>~/.zshrc</code>中插件列表为：</p>
-<div class="highlight" id="id-7"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">plugins</span><span class="o">=(</span>git zsh-autosuggestions zsh-syntax-highlighting z extract web-search<span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 或</span>
-</span></span><span class="line"><span class="cl"><span class="nv">plugins</span><span class="o">=(</span>git colored-man-pages colorize cp man command-not-found sudo suse ubuntu archlinux zsh-navigation-tools z extract history-substring-search python zsh-autosuggestions zsh-syntax-highlighting<span class="o">)</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png?size=small" data-sub-html="<h2> </h2><p>zsh插件列表</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png" alt="zsh插件列表" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png?size=large 2x" data-title="zsh插件列表" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">zsh插件列表</figcaption>
-  </figure></p>
-<div class="details admonition tip">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>部分插件需要参考<a href="#%e6%8f%92%e4%bb%b6%e4%bb%8b%e7%bb%8d">插件介绍</a>进行安装。<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content"></div>
-    </div>
-  </div>
-<p>开启新的 Shell 或执行 <code>source ~/.zshrc</code>，就可以开始体验插件。</p>
-<h3 id="插件介绍" class="heading-element">
-  <a href="#%e6%8f%92%e4%bb%b6%e4%bb%8b%e7%bb%8d" class="heading-mark"></a>插件介绍</h3><h4 id="zsh--autosuggestions" class="heading-element">
+<h3 id="插件推荐" class="heading-element">
+  <a href="#%e6%8f%92%e4%bb%b6%e6%8e%a8%e8%8d%90" class="heading-mark"></a>插件推荐</h3><h4 id="zsh--autosuggestions" class="heading-element">
   <a href="#zsh--autosuggestions" class="heading-mark"></a>zsh -autosuggestions</h4><p><a href="https://github.com/zsh-users/zsh-autosuggestions"target="_blank" rel="external nofollow noopener noreferrer">zsh-autosuggestions</a> 是一个命令提示插件，当你输入命令时，会自动推测你可能需要输入的命令，按下右键可以快速采用建议。效果如下：</p>
 <p>
 <figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012250028.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012250028.png?size=small" data-sub-html="<h2> </h2><p>zsh-autosuggestions自动补全</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012250028.png" alt="zsh-autosuggestions自动补全" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012250028.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012250028.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012250028.png?size=large 2x" data-title="zsh-autosuggestions自动补全" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">zsh-autosuggestions自动补全</figcaption>
   </figure></p>
 <p>安装方式：把插件下载到本地的 <code>~/.oh-my-zsh/custom/plugins</code> 目录。</p>
-<div class="highlight" id="id-8"><div class="chroma">
+<div class="highlight" id="id-7"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -442,7 +418,7 @@
 <figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012252786.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012252786.png?size=small" data-sub-html="<h2> </h2><p>命令语法校验</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012252786.png" alt="命令语法校验" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012252786.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012252786.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012252786.png?size=large 2x" data-title="命令语法校验" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">命令语法校验</figcaption>
   </figure></p>
 <p>安装方式：把插件下载到本地的 <code>~/.oh-my-zsh/custom/plugins</code> 目录。</p>
-<div class="highlight" id="id-9"><div class="chroma">
+<div class="highlight" id="id-8"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -472,6 +448,27 @@
       <div class="admonition-content"></div>
     </div>
   </div>
+<h3 id="启用插件" class="heading-element">
+  <a href="#%e5%90%af%e7%94%a8%e6%8f%92%e4%bb%b6" class="heading-mark"></a>启用插件</h3><p>修改<code>~/.zshrc</code>中插件列表为：</p>
+<div class="highlight" id="id-9"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">plugins</span><span class="o">=(</span>git zsh-autosuggestions zsh-syntax-highlighting z extract web-search<span class="o">)</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png?size=small" data-sub-html="<h2> </h2><p>zsh插件列表</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png" alt="zsh插件列表" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png?size=large 2x" data-title="zsh插件列表" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">zsh插件列表</figcaption>
+  </figure></p>
+<div class="details admonition tip">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>部分插件需要参考<a href="#%e6%8f%92%e4%bb%b6%e4%bb%8b%e7%bb%8d">插件介绍</a>进行安装。<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content"></div>
+    </div>
+  </div>
+<p>开启新的 Shell 或执行 <code>source ~/.zshrc</code>，就可以开始体验插件。</p>
 <h2 id="tips" class="heading-element">
   <a href="#tips" class="heading-mark"></a>Tips</h2><h3 id="root-用户" class="heading-element">
   <a href="#root-%e7%94%a8%e6%88%b7" class="heading-mark"></a>root 用户</h3><p>当你配置好登陆用户的 zsh 后，如果使用<code>sudo su</code>命令进入<code>root</code>用户的终端，发现还是默认的<code>bash</code>。建议在<code>root</code>用户的终端下，也安装<code>on my zsh</code>，设置与普通用户不同的主题以便区分，插件可以使用一样的。

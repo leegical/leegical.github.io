@@ -1,6 +1,6 @@
 # 通过ZeroTier SSH连接内网主机
 
-
+一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。
 &lt;!--more--&gt;
 
 zerotier官网：[https://www.zerotier.com/](https://www.zerotier.com/)

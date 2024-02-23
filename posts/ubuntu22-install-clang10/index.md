@@ -1,6 +1,6 @@
 # Ubuntu 22.04 LTS 64位系统安装 clang10 版本
 
-
+本文记录了Ubuntu 22.04 LTS 64位系统安装 clang10 版本的过程。
 
 &lt;!--more--&gt;
 

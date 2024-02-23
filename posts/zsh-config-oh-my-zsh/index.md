@@ -1,6 +1,6 @@
 # zsh 安装与配置，使用 oh-my-zsh 美化终端
 
-
+传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。
 
 &lt;!--more--&gt;
 
@@ -76,21 +76,7 @@ git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$H
 
 ## 安装插件
 `oh-my-zsh` 已经内置了 `git` 插件，内置插件可以在 `～/.oh-my-zsh/plugins` 中查看，下面介绍一下我常用的插件，更多插件可以在 [awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins) 里查看。
-### 启用插件
-修改`~/.zshrc`中插件列表为：
-```bash
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
-# 或
-plugins=(git colored-man-pages colorize cp man command-not-found sudo suse ubuntu archlinux zsh-navigation-tools z extract history-substring-search python zsh-autosuggestions zsh-syntax-highlighting)
-```
-
-![zsh插件列表](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png)
-
-{{&lt; admonition tip &#34;部分插件需要参考[插件介绍](#插件介绍)进行安装。&#34; false &gt;}}
-{{&lt; /admonition &gt;}} 
-
-开启新的 Shell 或执行 `source ~/.zshrc`，就可以开始体验插件。
-### 插件介绍
+### 插件推荐
 #### zsh -autosuggestions
 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) 是一个命令提示插件，当你输入命令时，会自动推测你可能需要输入的命令，按下右键可以快速采用建议。效果如下：
 
@@ -126,6 +112,18 @@ oh-my-zsh 内置了 `web-search` 插件。`web-search` 能让我们在命令行�
 {{&lt; admonition success &#34;最后，记得[启用所有插件](#启用插件)。&#34; false &gt;}}
 {{&lt; /admonition &gt;}} 
 
+### 启用插件
+修改`~/.zshrc`中插件列表为：
+```bash
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
+```
+
+![zsh插件列表](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png)
+
+{{&lt; admonition tip &#34;部分插件需要参考[插件介绍](#插件介绍)进行安装。&#34; false &gt;}}
+{{&lt; /admonition &gt;}} 
+
+开启新的 Shell 或执行 `source ~/.zshrc`，就可以开始体验插件。
 ## Tips
 ### root 用户
 当你配置好登陆用户的 zsh 后，如果使用`sudo su`命令进入`root`用户的终端，发现还是默认的`bash`。建议在`root`用户的终端下，也安装`on my zsh`，设置与普通用户不同的主题以便区分，插件可以使用一样的。

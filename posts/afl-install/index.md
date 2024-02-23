@@ -1,6 +1,6 @@
 # Ubuntu 22.04 安装 AFL 及 qemu mode 实践
 
-
+Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。
 
 &lt;!--more--&gt;
 

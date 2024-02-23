@@ -1,5 +1,8 @@
 # 文献管理软件 zotero 下载安装使用与配置分享
 
+个人 zotero 折腾过程记录与配置、插件分享。
+
+&lt;!--more--&gt;
 
 ## 前言
 最开始阅读文献是使用[readpaper 平台]( https://readpaper.com/ &#34;readpaper 平台&#34;)，在线翻译、做笔记、文献管理都很方便，具体使用可以参考[同济子豪兄]( https://www.bilibili.com/video/BV1dg411P7De &#34;同济子豪兄&#34;)和[官方 ReadPaper 保姆级教程]( https://www.bilibili.com/video/BV13T411V7rN &#34;官方 ReadPaper 保姆级教程&#34;)。
