@@ -1,7 +1,14 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "云吱的小站，好耶！",
+    "short_name": "@Legical",
+    "description": "Legical's Blog",
     "icons": [
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
         {
             "src": "/android-chrome-192x192.png",
             "sizes": "192x192",
@@ -15,5 +22,6 @@
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "display": "standalone",
+    "start_url": "/"
 }
