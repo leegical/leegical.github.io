@@ -14,6 +14,6 @@
 
 ---
 
-> 作者:   
+> 作者: [云吱](https://haoyep.com/)  
 > URL: https://haoyep.com/guestbook/  
 
