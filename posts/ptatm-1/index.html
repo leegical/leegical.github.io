@@ -10,7 +10,7 @@
 <meta name="description" content="本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。" /><meta name="keywords" content='PTATM, Linux, pwcet' /><meta itemprop="name" content="PTATM（一）：初始化工作">
 <meta itemprop="description" content="本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。"><meta itemprop="datePublished" content="2023-11-18T20:42:47+08:00" />
 <meta itemprop="dateModified" content="2023-11-18T20:42:47+08:00" />
-<meta itemprop="wordCount" content="925"><meta itemprop="image" content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png" />
+<meta itemprop="wordCount" content="932"><meta itemprop="image" content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png" />
 <meta itemprop="keywords" content="PTATM,Linux,pwcet," /><meta property="og:title" content="PTATM（一）：初始化工作" />
 <meta property="og:description" content="本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。" />
 <meta property="og:type" content="article" />
@@ -33,7 +33,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/haoyep.com\/posts\/ptatm-1\/"
-    },"image": ["https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/202312161447739.ico"],"genre": "posts","keywords": "PTATM, Linux, pwcet","wordcount":  925 ,
+    },"image": ["https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/202312161447739.ico"],"genre": "posts","keywords": "PTATM, Linux, pwcet","wordcount":  932 ,
     "url": "https:\/\/haoyep.com\/posts\/ptatm-1\/","datePublished": "2023-11-18T20:42:47+08:00","dateModified": "2023-11-18T20:42:47+08:00","publisher": {
       "@type": "Organization",
       "name": "云吱","logo": "https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/weblogo.png"},"author": {
@@ -207,7 +207,7 @@
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>PTATM（一）：初始化工作</span>
       </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://dn-qiniu-avatar.qbox.me/avatar/867c2859fc58e987cb357c7a67ac01cb?s=32&amp;d=mp" alt="云吱" data-title="云吱" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;云吱</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E7%A7%91%E7%A0%94/" class="post-category" title="分类 - 科研"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 科研</a></span></div><div class="post-meta-line"><span title="发布于 2023-11-18 20:42:47"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-18">2023-11-18</time></span>&nbsp;<span title="925 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1000 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="PTATM（一）：初始化工作">
+      <div class="post-meta-line"><span class="post-author"><a href="https://haoyep.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://dn-qiniu-avatar.qbox.me/avatar/867c2859fc58e987cb357c7a67ac01cb?s=32&amp;d=mp" alt="云吱" data-title="云吱" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;云吱</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E7%A7%91%E7%A0%94/" class="post-category" title="分类 - 科研"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 科研</a></span></div><div class="post-meta-line"><span title="发布于 2023-11-18 20:42:47"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-11-18">2023-11-18</time></span>&nbsp;<span title="932 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1000 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="PTATM（一）：初始化工作">
               <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="featured-image"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171504235.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171504235.png" data-title="本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
@@ -247,7 +247,7 @@
     </div>
   </div></p>
 <h2 id="系统环境" class="heading-element">
-  <a href="#%e7%b3%bb%e7%bb%9f%e7%8e%af%e5%a2%83" class="heading-mark"></a>系统环境</h2><p><a href="https://github.com/panzhenyu/PTATM"target="_blank" rel="external nofollow noopener noreferrer">PTATM</a> 开发时的环境为：</p>
+  <a href="#%e7%b3%bb%e7%bb%9f%e7%8e%af%e5%a2%83" class="heading-mark"></a>1 系统环境</h2><p><a href="https://github.com/panzhenyu/PTATM"target="_blank" rel="external nofollow noopener noreferrer">PTATM</a> 开发时的环境为：</p>
 <table>
 <thead>
 <tr>
@@ -268,10 +268,10 @@
 </table>
 <p>因此，理论上只要是<code>5.19.0-x</code>内核版本的 Ubuntu22.04 即可。使用<code>uname -r</code>命令可以查看当前系统版本号。下图表示当前系统的内核的版本是<code>5.19.0-50-generic</code>，满足运行条件，可以跳过本节系统环境配置。
 
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181922930.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181922930.png?size=small" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181922930.png" alt="image.png" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181922930.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181922930.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181922930.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181922930.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181922930.png?size=small" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181922930.png" alt="image.png" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181922930.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181922930.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181922930.png?size=large 2x" sizes="auto" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
   </figure></p>
 <h3 id="查看系统已安装内核" class="heading-element">
-  <a href="#%e6%9f%a5%e7%9c%8b%e7%b3%bb%e7%bb%9f%e5%b7%b2%e5%ae%89%e8%a3%85%e5%86%85%e6%a0%b8" class="heading-mark"></a>查看系统已安装内核</h3><div class="highlight" id="id-1"><div class="chroma">
+  <a href="#%e6%9f%a5%e7%9c%8b%e7%b3%bb%e7%bb%9f%e5%b7%b2%e5%ae%89%e8%a3%85%e5%86%85%e6%a0%b8" class="heading-mark"></a>1.1 查看系统已安装内核</h3><div class="highlight" id="id-1"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -280,10 +280,10 @@
 </div>
 </div><p>使用上面的命令查看系统已经安装的所有内核版本。如果有<code>5.19.0-x</code>内核版本，跳到<a href="#13-%e6%9b%b4%e6%96%b0grub">1.3 更新 grub</a>。
 
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181930258.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181930258.png?size=small" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181930258.png" alt="image.png" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181930258.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181930258.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181930258.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181930258.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181930258.png?size=small" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181930258.png" alt="image.png" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181930258.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181930258.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181930258.png?size=large 2x" sizes="auto" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
   </figure></p>
 <h3 id="更换-linux-内核" class="heading-element">
-  <a href="#%e6%9b%b4%e6%8d%a2-linux-%e5%86%85%e6%a0%b8" class="heading-mark"></a>更换 Linux 内核</h3><p>如果内核版本不是<code>5.19.0-x</code>，则需要更换内核。使用下面的命令查看可以安装的内核版本。</p>
+  <a href="#%e6%9b%b4%e6%8d%a2-linux-%e5%86%85%e6%a0%b8" class="heading-mark"></a>1.2 更换 Linux 内核</h3><p>如果内核版本不是<code>5.19.0-x</code>，则需要更换内核。使用下面的命令查看可以安装的内核版本。</p>
 <div class="highlight" id="id-2"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -292,7 +292,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt-cache search linux-image-5.19.* <span class="p">|</span> grep generic</span></span></code></pre></td></tr></table>
 </div>
 </div><p>
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181942023.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181942023.png?size=small" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181942023.png" alt="image.png" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181942023.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181942023.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181942023.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181942023.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181942023.png?size=small" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181942023.png" alt="image.png" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181942023.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181942023.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181942023.png?size=large 2x" sizes="auto" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
   </figure>
 选择图中最后一个内核版本<code>linux-image-5.19.0-50-generic</code>安装：</p>
 <div class="highlight" id="id-3"><div class="chroma">
@@ -306,7 +306,7 @@
 </div>
 </div><p>如果要安装其他版本的内核，记得把上面命令中的<code>5.19.0-50-generic</code>改成对应的版本。</p>
 <h3 id="更新grub" class="heading-element">
-  <a href="#%e6%9b%b4%e6%96%b0grub" class="heading-mark"></a>更新<code>grub</code></h3><p>还是假设要更换到<code>5.19.0-50-generic</code>内核版本。</p>
+  <a href="#%e6%9b%b4%e6%96%b0grub" class="heading-mark"></a>1.3 更新<code>grub</code></h3><p>还是假设要更换到<code>5.19.0-50-generic</code>内核版本。</p>
 <div class="highlight" id="id-4"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -341,7 +341,7 @@
     </div>
   </div>
 <p>
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181952427.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181952427.png?size=small" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181952427.png" alt="image.png" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181952427.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181952427.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181952427.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181952427.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181952427.png?size=small" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181952427.png" alt="image.png" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181952427.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181952427.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181952427.png?size=large 2x" sizes="auto" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
   </figure></p>
 <p>更新 grub，然后重启。查看内核版本是否切换成功。</p>
 <div class="highlight" id="id-7"><div class="chroma">
@@ -362,7 +362,7 @@
 </span></span><span class="line"><span class="cl">uname -r</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="安装-perf" class="heading-element">
-  <a href="#%e5%ae%89%e8%a3%85-perf" class="heading-mark"></a>安装 perf</h2><p>使用下面的命令安装当前内核版本的 <code>perf</code>：</p>
+  <a href="#%e5%ae%89%e8%a3%85-perf" class="heading-mark"></a>2 安装 perf</h2><p>使用下面的命令安装当前内核版本的 <code>perf</code>：</p>
 <div class="highlight" id="id-8"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -379,11 +379,11 @@
 </span></span><span class="line"><span class="cl">sudo apt-get install linux-cloud-tools-generic -y</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="python-环境" class="heading-element">
-  <a href="#python-%e7%8e%af%e5%a2%83" class="heading-mark"></a>Python 环境</h2><p>使用 Python3，运行时如果发现有依赖包没安装，自行使用<code>pip3 install &lt;module&gt;</code>安装缺少的依赖包。</p>
+  <a href="#python-%e7%8e%af%e5%a2%83" class="heading-mark"></a>3 Python 环境</h2><p>使用 Python3，运行时如果发现有依赖包没安装，自行使用<code>pip3 install &lt;module&gt;</code>安装缺少的依赖包。</p>
 <h2 id="环境变量" class="heading-element">
-  <a href="#%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f" class="heading-mark"></a>环境变量</h2><p>在<code>PTATM</code>的本地文件夹中打开终端，输入<code>pwd</code>查看当前目录位置：
+  <a href="#%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f" class="heading-mark"></a>4 环境变量</h2><p>在<code>PTATM</code>的本地文件夹中打开终端，输入<code>pwd</code>查看当前目录位置：
 
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182000356.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182000356.png?size=small" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182000356.png" alt="image.png" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182000356.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182000356.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182000356.png?size=large 2x" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182000356.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182000356.png?size=small" data-sub-html="<h2> </h2><p>image.png</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182000356.png" alt="image.png" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182000356.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182000356.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182000356.png?size=large 2x" sizes="auto" data-title="image.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">image.png</figcaption>
   </figure></p>
 <p>之后，每次需要运行<code>PTATM</code>时，先在终端导入这个环境变量：</p>
 <div class="highlight" id="id-9"><div class="chroma">
@@ -394,7 +394,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PTATM</span><span class="o">=</span>/home/pzy/project/PTATM_backup</span></span></code></pre></td></tr></table>
 </div>
 </div><p>
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182038059.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182038059.png?size=small" data-sub-html="<h2> </h2><p>设置PTATM目录</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182038059.png" alt="设置PTATM目录" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182038059.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182038059.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182038059.png?size=large 2x" data-title="设置PTATM目录" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">设置PTATM目录</figcaption>
+<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182038059.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182038059.png?size=small" data-sub-html="<h2> </h2><p>设置PTATM目录</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182038059.png" alt="设置PTATM目录" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182038059.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182038059.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311182038059.png?size=large 2x" sizes="auto" data-title="设置PTATM目录" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">设置PTATM目录</figcaption>
   </figure></p></div><h2 id="see-also">相关内容</h2>
     <ul><li>
           <a href="/posts/afl-install/" title="Ubuntu 22.04 安装 AFL 及 qemu mode 实践">Ubuntu 22.04 安装 AFL 及 qemu mode 实践</a></li><li>
@@ -422,13 +422,13 @@
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/ptatm/" class="post-tag" title="标签 - PTATM">PTATM</a><a href="/tags/linux/" class="post-tag" title="标签 - Linux">Linux</a><a href="/tags/pwcet/" class="post-tag" title="标签 - Pwcet">Pwcet</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/ptatm/" class="post-tag" title="标签 - PTATM">PTATM</a><a href="/tags/linux/" class="post-tag" title="标签 - Linux">Linux</a><a href="/tags/pwcet/" class="post-tag" title="标签 - pwcet">pwcet</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/digfuzz/" class="post-nav-item" rel="prev" title="Digfuzz工具论文调研"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Digfuzz工具论文调研</a>
+  <div class="post-nav"><a href="/about/" class="post-nav-item" rel="prev" title="关于"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>关于</a>
       <a href="/posts/windows-hugo-blog-github/" class="post-nav-item" rel="next" title="Windows下使用hugo和Github Pages配置博客">Windows下使用hugo和Github Pages配置博客<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="giscus">

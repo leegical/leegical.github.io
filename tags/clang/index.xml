@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Clang - 标签 | 云吱的小站</title>
+    <title>clang - 标签 | 云吱的小站</title>
     <link>https://haoyep.com/tags/clang/</link>
-    <description>Clang - 标签 | 云吱的小站</description>
+    <description>clang - 标签 | 云吱的小站</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
       <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Sun, 07 Jan 2024 15:44:57 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/tags/clang/" rel="self" type="application/rss+xml" /><item>
   <title>Ubuntu 22.04 LTS 64位系统安装 clang10 版本</title>
