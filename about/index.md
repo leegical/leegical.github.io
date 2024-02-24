@@ -39,6 +39,6 @@ Blog site(&#34;云吱的小站&#34;, &#34;Legical&#34;, &#34;https://haoyep.com&
 
 ---
 
-> 作者: [云吱](https://haoyep.com/)  
+> 作者:   
 > URL: https://haoyep.com/about/  
 
