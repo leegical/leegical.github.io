@@ -8,7 +8,7 @@
 
 ```yaml
 - nickname: 云吱的小站
-  avatar: https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/avatar.png
+  avatar: https://haoyep.com/avatar.jpg
   url: https://haoyep.com
   description: 云吱的博客，记录个人学习过程。好耶！
 ```
