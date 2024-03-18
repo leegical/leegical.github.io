@@ -72,6 +72,10 @@ Obsidian [官网下载链接](https://obsidian.md/download)
 - 接口一一对应（一般默认就是对应好的，不用改）
 ![配置插件](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141610850.png)
 
+### 使用效果
+复制完图片后，在obsidian中使用`Ctrl&#43;V`快捷键自动上传图片，并生成Markdown图片链接。
+![使用效果](https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202403182335967.gif)
+
 ## 参考文章
 {{&lt; link &#34;https://segmentfault.com/a/1190000041076406&#34; &#34;一劳永逸，使用 PicGo &#43; GitHub 搭建个人图床工具&#34; &#34;一劳永逸，使用 PicGo &#43; GitHub 搭建个人图床工具&#34; true &gt;}}
 
