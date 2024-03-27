@@ -4,10 +4,14 @@
 
 ## 2024
 
+共计 2 篇文章
+
 - 01-07 [Ubuntu 22.04 LTS 64位系统安装 clang10 版本](https://haoyep.com/posts/ubuntu22-install-clang10/ "2024-01-07 15:44:57")
 - 01-02 [zsh 安装与配置，使用 oh-my-zsh 美化终端](https://haoyep.com/posts/zsh-config-oh-my-zsh/ "2024-01-02 23:30:39")
 
 ## 2023
+
+共计 13 篇文章
 
 - 12-25 [Ubuntu 22.04 安装 AFL 及 qemu mode 实践](https://haoyep.com/posts/afl-install/ "2023-12-25 21:24:00")
 - 12-17 [Github Pages 博客网站访问速度优化](https://haoyep.com/posts/optimize-github-pages-blog-access-speed/ "2023-12-17 15:00:18")
