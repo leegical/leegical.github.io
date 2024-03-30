@@ -23,7 +23,7 @@ deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal-9 main
 deb http://apt.llvm.org/focal/ llvm-toolchain-focal-10 main
 deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal-10 main
 ```
-![添加clang9/10源](https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171506785.png)
+![添加clang9/10源](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171506785.png)
 
 2. 安装 clang10
 ```bash
@@ -43,13 +43,13 @@ sudo apt-get install clang-10 llvm-10-dev llvm-10-tools -y
 clang  --version
 ```
 如图，当前版本是 clang14
-![clang 默认版本输出](https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171507177.png)
+![clang 默认版本输出](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171507177.png)
 
 ### 切换成 clang10
 ```bash
 sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-10 1 --slave /usr/bin/clang&#43;&#43; clang&#43;&#43; /usr/bin/clang&#43;&#43;-10
 ```
-![切换成 clang10](https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171507032.png)
+![切换成 clang10](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171507032.png)
 
 ### 恢复原有的 clang 版本
 这里也给出切换回 clang14的命令：

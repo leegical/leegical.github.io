@@ -10,7 +10,7 @@
   <pubDate>Tue, 02 Jan 2024 23:30:39 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/zsh-config-oh-my-zsh/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171434163.png" alt="zsh 安装与配置，使用 oh-my-zsh 美化终端" title="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。" referrerpolicy="no-referrer"/></div><p>传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。</p>]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171434163.png" alt="zsh 安装与配置，使用 oh-my-zsh 美化终端" title="传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。" referrerpolicy="no-referrer"/></div><p>传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。</p>]]></description>
 </item>
 <item>
   <title>文献管理软件 zotero 下载安装使用与配置分享</title>
@@ -18,7 +18,7 @@
   <pubDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/zotero-config/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171504720.png" alt="文献管理软件 zotero 下载安装使用与配置分享" title="个人 zotero 折腾过程记录与配置、插件分享。" referrerpolicy="no-referrer"/></div><p>个人 zotero 折腾过程记录与配置、插件分享。</p>]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171504720.png" alt="文献管理软件 zotero 下载安装使用与配置分享" title="个人 zotero 折腾过程记录与配置、插件分享。" referrerpolicy="no-referrer"/></div><p>个人 zotero 折腾过程记录与配置、插件分享。</p>]]></description>
 </item>
 <item>
   <title>折腾小工具</title>
@@ -34,7 +34,7 @@
   <pubDate>Wed, 08 Nov 2023 22:49:04 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/zerotier-ssh/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171459764.png" alt="通过ZeroTier SSH连接内网主机" title="一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。" referrerpolicy="no-referrer"/></div><p>一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。</p>]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171459764.png" alt="通过ZeroTier SSH连接内网主机" title="一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。" referrerpolicy="no-referrer"/></div><p>一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。</p>]]></description>
 </item>
 </channel>
 </rss>

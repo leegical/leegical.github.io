@@ -10,7 +10,7 @@
   <pubDate>Mon, 25 Dec 2023 21:24:00 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/afl-install/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171443369.png" alt="Ubuntu 22.04 安装 AFL 及 qemu mode 实践" title="Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。" referrerpolicy="no-referrer"/></div><p>Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。</p>]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171443369.png" alt="Ubuntu 22.04 安装 AFL 及 qemu mode 实践" title="Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。" referrerpolicy="no-referrer"/></div><p>Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。</p>]]></description>
 </item>
 <item>
   <title>Digfuzz工具论文调研</title>
@@ -18,7 +18,7 @@
   <pubDate>Sun, 10 Dec 2023 17:04:08 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/digfuzz/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171503941.png" alt="Digfuzz工具论文调研" title="Digfuzz工具论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》" referrerpolicy="no-referrer"/></div><p>论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》</p>]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171503941.png" alt="Digfuzz工具论文调研" title="Digfuzz工具论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》" referrerpolicy="no-referrer"/></div><p>论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》</p>]]></description>
 </item>
 <item>
   <title>PTATM（一）：初始化工作</title>
@@ -26,7 +26,7 @@
   <pubDate>Sat, 18 Nov 2023 20:42:47 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/ptatm-1/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171504235.png" alt="PTATM（一）：初始化工作" title="本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。" referrerpolicy="no-referrer"/></div><p>本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。</p>]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171504235.png" alt="PTATM（一）：初始化工作" title="本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。" referrerpolicy="no-referrer"/></div><p>本文介绍适用于多路径任务的多核系统pWCET分析工具——PTATM的初始化工作，如内核、环境变量等。</p>]]></description>
 </item>
 <item>
   <title>科研随想录</title>
@@ -42,7 +42,7 @@
   <pubDate>Fri, 10 Nov 2023 15:19:01 &#43;0800</pubDate>
   <author>云吱</author>
   <guid>https://haoyep.com/posts/zotero-config/</guid>
-  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img@master/cdnimg/202401171504720.png" alt="文献管理软件 zotero 下载安装使用与配置分享" title="个人 zotero 折腾过程记录与配置、插件分享。" referrerpolicy="no-referrer"/></div><p>个人 zotero 折腾过程记录与配置、插件分享。</p>]]></description>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171504720.png" alt="文献管理软件 zotero 下载安装使用与配置分享" title="个人 zotero 折腾过程记录与配置、插件分享。" referrerpolicy="no-referrer"/></div><p>个人 zotero 折腾过程记录与配置、插件分享。</p>]]></description>
 </item>
 </channel>
 </rss>
