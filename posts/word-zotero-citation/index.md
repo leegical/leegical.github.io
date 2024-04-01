@@ -5,7 +5,8 @@
 &lt;!--more--&gt;
 
 ## 准备工作
-### 安装 GB/T 7714-2015 参考文献引用格式
+### 参考文献引用格式
+安装 GB/T 7714-2015 参考文献引用格式。
 #### Zotero 官方7714样式（不推荐）
 {{&lt; admonition &gt;}}
 此官方格式存在一些问题，如不能区分中英文文献，导致引用英文文献也是“等”，而不是“et al”。因此并不推荐。
@@ -15,11 +16,11 @@
 2. 在`样式`中点击`获取更多样式`
 3. 搜索`7714`即可安装国标引用样式。注意有1987、2005和2015三个时间，note、author-date 和 numeric 三个格式，鼠标悬停即可预览样式
 ![安装Zotero 官方7714样式](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071542774.png)
-#### 比较贴近NEU要求的7714样式
+#### 比较贴近 NEU 要求的7714样式
 Github 上的[Chinese-STD-GB-T-7714-related-csl]( https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl &#34;Chinese-STD-GB-T-7714-related-csl&#34;)仓库（或[Gitee 镜像仓库]( https://gitee.com/redleafnew00/Chinese-STD-GB-T-7714-related-csl &#34;Gitee&#34;)）提供7714 2015的官方样式及众多修改版，其中[002gb]( https://github.com/redleafnew/Chinese-STD-GB-T-7714-related-csl/blob/main/002gb-t-7714-2015-numeric-bilingual-no-uppercase-no-url-doi.csl &#34;002gb&#34;)样式比较符合东北大学的要求，除了网络文献的引用顺序有点差异。
 ![002gb样式](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071542161.png)
 
-1. 点击 \[[Github](https://raw.githubusercontent.com/redleafnew/Chinese-STD-GB-T-7714-related-csl/main/002gb-t-7714-2015-numeric-bilingual-no-uppercase-no-url-doi.csl) | [Gitee](https://gitee.com/redleafnew00/Chinese-STD-GB-T-7714-related-csl/raw/main/002gb-t-7714-2015-numeric-bilingual-no-uppercase-no-url-doi.csl)\]下载引用格式文件
+1. 点击 \[[Github](https://raw.githubusercontent.com/redleafnew/Chinese-STD-GB-T-7714-related-csl/main/002gb-t-7714-2015-numeric-bilingual-no-uppercase-no-url-doi.csl) | [Gitee](https://gitee.com/redleafnew00/Chinese-STD-GB-T-7714-related-csl/raw/main/002gb-t-7714-2015-numeric-bilingual-no-uppercase-no-url-doi.csl) \]下载引用格式文件
 2. 打开 Zotero，依次进入`编辑`-&gt;`首选项`-&gt;`引用`
 3. 点击`&#43;`号添加样式。选中已下载的002 csl 样式，打开。
 ![导入样式](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071542053.png)
@@ -88,6 +89,51 @@ NEU **硕士**毕业论文参考文献的格式要求如下：
 将**书目**样式修改为如上格式后，再次插入或刷新参考文献，格式就会保持此样式不变。
 也可以从 [NEU Zotero 参考文献格式 Word分享](https://github.com/leegical/Blog_img/releases/tag/NEU-citation)中下载已经改好样式的 Word 文件。
 ![NEU-zotero-citation](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404011625496.png)
+## 注意事项
+### 等与 et al
+如果英文文献作者超过3个，但显示为中文的`等`，而不是英文 `et al`，需要手动将英文文献信息中的 `语言` 字段修改为 `en`。同理，将中文文献的 `语言` 字段修改为 `zh-CN`。
+![修改文献语言](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404012026213.png)
+### 文献名大小写
+有些期刊或出版社（如 ACS）导出的文章题目（Title）是每个实词的首字母是大写，如：
+- Measurement-Based Probabilistic Timing Analysis for Multi-path Programs
+但一些杂志或学校要求是句子（Sentence）格式，即只是题目的首字母大写（缩写除外，都是大写），如：
+- Measurement-based probabilistic timing analysis for multi-path programs
+修改方法有两种。
+#### 单一文献手动修改
+选中文章，然后在右侧文章信息 `信息/Info` 中 `标题/Title` 字段处右击，选择 `句首大写/Transform Text-Sentence case`，然后再把缩略语等需要大写的手动修改一下。
+![手动句首大写](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404012054249.gif)
+#### 批量修改
+批量转为句首字母大写，即 Sentence 模式的实现方法参考如下链接：
+{{&lt; link &#34;https://zhuanlan.zhihu.com/p/283889592&#34; &#34;Zotero批量文章题目大小写转为首字母大写的方法（含视频）&#34; &#34;Zotero批量文章题目大小写转为首字母大写的方法（含视频）&#34; true &gt;}}
+
+操作有风险，建议先备份库再进行下面的操作。
+1. 选中需要转换的文献，本例中为4条全选。
+2. 在Zotero中依次点击：Zotero&gt;Tools&gt;Developer&gt;Run Javascript
+![运行js](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404012100166.png)
+
+3.在弹出的对话框中将以下代码复制进去：
+```js
+zoteroPane = Zotero.getActiveZoteroPane();
+items = zoteroPane.getSelectedItems();
+var result = &#34;&#34;;
+for (item of items) {
+var title = item.getField(&#39;title&#39;);
+result &#43;= &#34; &#34; &#43; title &#43; &#34;\n&#34;;
+var new_title = title.replace(/\b([A-Z][a-z0-9]&#43;|A)\b/g, function (x) { return x.toLowerCase(); });
+new_title = new_title.replace(/(^|\?\s*)[a-z]/, function (x) { return x.toUpperCase(); });
+result &#43;= &#34;-&gt; &#34; &#43; new_title &#43; &#34;\n\n&#34;;
+// // Do it at your own risk
+ item.setField(&#39;title&#39;, new_title);
+ await item.saveTx();
+}
+return result;
+```
+
+4. 点击Run，右侧会显示题目的修改情况。
+![Run js](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404012101922.png)
+
+5. 关闭此窗口，则在Zotero主窗口发现已经修改完成，都成为句首字母大写，最好再核实一下，如果有不正确的，手动再修改一下。
+![句首字母大写效果](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404012101563.png)
 
 ---
 
