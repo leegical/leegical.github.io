@@ -16,3 +16,4 @@ https://haoyep.com/posts/windows-hugo-blog-cloudflare/
 https://haoyep.com/posts/hugo-add-component/
 https://haoyep.com/friends/
 https://haoyep.com/guestbook/
+https://haoyep.com/posts/word-zotero-citation/

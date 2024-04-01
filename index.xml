@@ -126,5 +126,13 @@
   <guid>https://haoyep.com/posts/hugo-add-component/</guid>
   <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171501614.png" alt="Hugo 博客添加 Giscus 评论功能" title="本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。" referrerpolicy="no-referrer"/></div><p>本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。</p>]]></description>
 </item>
+<item>
+  <title>在 Word 中使用 Zotero 插入参考文献</title>
+  <link>https://haoyep.com/posts/word-zotero-citation/</link>
+  <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+  <author>云吱</author>
+  <guid>https://haoyep.com/posts/word-zotero-citation/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404011654593.png" alt="在 Word 中使用 Zotero 插入参考文献" title="如何在 Word 中使用 Zotero 插入参考文献，并设定东北大学要求的参考文献引用列表格式。" referrerpolicy="no-referrer"/></div><p>本文介绍了如何在 Word 中使用 Zotero 插入参考文献，并设定东北大学要求的参考文献引用列表格式。</p>]]></description>
+</item>
 </channel>
 </rss>
