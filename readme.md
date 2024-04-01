@@ -4,8 +4,9 @@
 
 ## 2024
 
-共计 2 篇文章
+共计 3 篇文章
 
+- 04-01 [在 Word 中使用 Zotero 插入参考文献](https://haoyep.com/posts/word-zotero-citation/ "2024-04-01 16:30:01")
 - 01-07 [Ubuntu 22.04 LTS 64位系统安装 clang10 版本](https://haoyep.com/posts/ubuntu22-install-clang10/ "2024-01-07 15:44:57")
 - 01-02 [zsh 安装与配置，使用 oh-my-zsh 美化终端](https://haoyep.com/posts/zsh-config-oh-my-zsh/ "2024-01-02 23:30:39")
 

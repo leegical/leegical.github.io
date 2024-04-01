@@ -1,3 +1,4 @@
+https://haoyep.com/posts/word-zotero-citation/
 https://haoyep.com/posts/ubuntu22-install-clang10/
 https://haoyep.com/posts/zsh-config-oh-my-zsh/
 https://haoyep.com/posts/afl-install/
@@ -16,4 +17,3 @@ https://haoyep.com/posts/windows-hugo-blog-cloudflare/
 https://haoyep.com/posts/hugo-add-component/
 https://haoyep.com/friends/
 https://haoyep.com/guestbook/
-https://haoyep.com/posts/word-zotero-citation/
