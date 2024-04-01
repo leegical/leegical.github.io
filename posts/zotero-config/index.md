@@ -725,8 +725,8 @@ zotero 官方的7714样式存在一些问题，如不能区分中英文文献，
 ## 插件配置
 下面这些插件都建议在[中文插件网站](https://plugins.zotero-chinese.com/#/)下载。注意要下载对应 zotero 版本的插件，本文中下载的都是 zotero6的插件。
 ### Zotero 插件合集
-点击工具栏中的 [![image](https://github.com/syt2/zotero-addons/raw/z6/addon/chrome/content/icons/favicon.png)]( https://github.com/syt2/zotero-addons/blob/z6/addon/chrome/content/icons/favicon.png ) ，自动管理、更新、添加 Zotero 插件
-![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311082224234.png)
+点击工具栏中的\[![插件市场](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404011705823.png)\] ，自动管理、更新、添加 Zotero 插件
+![插件市场](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404011707043.png)
 
 ### ZotFile
 #### 功能
