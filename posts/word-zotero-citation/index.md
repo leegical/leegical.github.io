@@ -95,9 +95,11 @@ NEU **硕士**毕业论文参考文献的格式要求如下：
 ![修改文献语言](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404012026213.png)
 ### 文献名大小写
 有些期刊或出版社（如 ACS）导出的文章题目（Title）是每个实词的首字母是大写，如：
-- Measurement-Based Probabilistic Timing Analysis for Multi-path Programs
+- **Measurement-Based Probabilistic Timing Analysis for Multi-path Programs**
+
 但一些杂志或学校要求是句子（Sentence）格式，即只是题目的首字母大写（缩写除外，都是大写），如：
-- Measurement-based probabilistic timing analysis for multi-path programs
+- **Measurement-based probabilistic timing analysis for multi-path programs**
+
 修改方法有两种。
 #### 单一文献手动修改
 选中文章，然后在右侧文章信息 `信息/Info` 中 `标题/Title` 字段处右击，选择 `句首大写/Transform Text-Sentence case`，然后再把缩略语等需要大写的手动修改一下。
@@ -117,14 +119,14 @@ zoteroPane = Zotero.getActiveZoteroPane();
 items = zoteroPane.getSelectedItems();
 var result = &#34;&#34;;
 for (item of items) {
-var title = item.getField(&#39;title&#39;);
-result &#43;= &#34; &#34; &#43; title &#43; &#34;\n&#34;;
-var new_title = title.replace(/\b([A-Z][a-z0-9]&#43;|A)\b/g, function (x) { return x.toLowerCase(); });
-new_title = new_title.replace(/(^|\?\s*)[a-z]/, function (x) { return x.toUpperCase(); });
-result &#43;= &#34;-&gt; &#34; &#43; new_title &#43; &#34;\n\n&#34;;
-// // Do it at your own risk
- item.setField(&#39;title&#39;, new_title);
- await item.saveTx();
+    var title = item.getField(&#39;title&#39;);
+    result &#43;= &#34; &#34; &#43; title &#43; &#34;\n&#34;;
+    var new_title = title.replace(/\b([A-Z][a-z0-9]&#43;|A)\b/g, function (x) { return x.toLowerCase(); });
+    new_title = new_title.replace(/(^|\?\s*)[a-z]/, function (x) { return x.toUpperCase(); });
+    result &#43;= &#34;-&gt; &#34; &#43; new_title &#43; &#34;\n\n&#34;;
+    // Do it at your own risk
+    item.setField(&#39;title&#39;, new_title);
+    await item.saveTx();
 }
 return result;
 ```
