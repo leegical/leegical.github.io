@@ -63,9 +63,9 @@ Zotero 官网访问速度慢的，建议下载蓝奏云中的`translators.zip`�
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071537731.png)
 
 #### 添加搜索引擎
-1. 【Zotero】—【编辑】—【首选项】— 文件和文件夹 —【打开数据文件夹】
+1. 【Zotero】—【编辑】—【首选项】—【高级】— 文件和文件夹 —【打开数据文件夹】
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071537485.png)
-2. locate — 打开`engines.json`文件
+2. 在 `locate` 文件夹中打开`engines.json`文件
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071538437.png)
 3. 编辑`engines.json`文件，将里面的内容全选删除，粘贴为以下内容并保存。
 
@@ -75,16 +75,16 @@ Zotero 官网访问速度慢的，建议下载蓝奏云中的`translators.zip`�
 		&#34;_name&#34;: &#34;熊猫学术&#34;,
 		&#34;_alias&#34;: &#34;panda&#34;,
 		&#34;_description&#34;: &#34;谷歌学术镜像&#34;,
-		&#34;_icon&#34;: &#34;https://sc.panda321.com/static/base/images/favicon.ico&#34;,
+		&#34;_icon&#34;: &#34;https://sc.panda985.com/static/base/images/favicon.ico&#34;,
 		&#34;_hidden&#34;: false,
-		&#34;_urlTemplate&#34;: &#34;https://sc.panda321.com/scholar?hl=zh-CN&amp;as_sdt=0%2C5&amp;q={z:title}&#34;,
+		&#34;_urlTemplate&#34;: &#34;https://sc.panda985.com/scholar?hl=zh-CN&amp;as_sdt=0%2C5&amp;q={z:title}&#34;,
 		&#34;_urlParams&#34;: [],
 		&#34;_urlNamespaces&#34;: {
 			&#34;rft&#34;: &#34;info:ofi/fmt:kev:mtx:journal&#34;,
 			&#34;z&#34;: &#34;http://www.zotero.org/namespaces/openSearch#&#34;,
 			&#34;&#34;: &#34;http://a9.com/-/spec/opensearch/1.1/&#34;
 		},
-		&#34;_iconSourceURI&#34;: &#34;https://sc.panda321.com/static/base/images/favicon.ico&#34;
+		&#34;_iconSourceURI&#34;: &#34;https://sc.panda985.com/static/base/images/favicon.ico&#34;
 	},
 	{
 		&#34;_name&#34;: &#34;CNKI新版&#34;,
