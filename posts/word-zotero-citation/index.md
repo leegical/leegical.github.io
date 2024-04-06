@@ -36,7 +36,7 @@ Github 上的[Chinese-STD-GB-T-7714-related-csl]( https://github.com/redleafnew/
 ![安装加载项 Microsoft Word](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404011508777.png)
 
 ## Zotero Word 插件选项卡
-![Zotero Word 插件选项卡](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404011513060.png)
+![Zotero Word 插件选项卡](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404061347758.png)
 
 一般情况下，Zotero 安装时会安装 Zotero Word 插件，其会在 Microsoft Word 里添加一个 Zotero 选项卡。如果你的 Word 里没有 Zotero 选项卡，请参见 [故障排除 | 安装 Zotero 的 Word 插件](https://zotero-chinese.com/user-guide/faqs/word-addon.html#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%8F%8A%E4%B8%8E%E6%A0%B7%E5%BC%8F%E7%9B%B8%E5%85%B3%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98) 。
 
