@@ -84,7 +84,7 @@ Zotero 选项卡包含以下图标：
 ## 设置参考文献格式
 Zotero 插入的参考文献引用列表，默认使用了 Word 中的**书目**样式。因此，只需要修改**书目**样式为学校要求的参考文献格式，就能保证刷新后不改变，且格式与学校要求保持一致。
 NEU **硕士**毕业论文参考文献的格式要求如下：
-![NEU硕士毕业论文参考文献格式要求](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404011619038.png)
+![NEU硕士毕业论文参考文献格式要求](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404061323866.png)
 
 将**书目**样式修改为如上格式后，再次插入或刷新参考文献，格式就会保持此样式不变。
 也可以从 [NEU Zotero 参考文献格式 Word分享](https://github.com/leegical/Blog_img/releases/tag/NEU-citation)中下载已经改好样式的 Word 文件。
