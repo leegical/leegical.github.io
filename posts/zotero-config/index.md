@@ -90,15 +90,15 @@ Zotero 官网访问速度慢的，建议下载蓝奏云中的`translators.zip`�
 		&#34;_name&#34;: &#34;CNKI新版&#34;,
 		&#34;_alias&#34;: &#34;CNKI&#34;,
 		&#34;_description&#34;: &#34;CNKI新版&#34;,
-		&#34;_icon&#34;: &#34;http://kns8.cnki.net/favicon.ico&#34;,
+		&#34;_icon&#34;: &#34;https://kns.cnki.net/favicon.ico&#34;,
 		&#34;_hidden&#34;: false,
-		&#34;_urlTemplate&#34;: &#34;http://kns8.cnki.net/kns/DefaultResult/Index?dbcode=SCDB&amp;kw={z:title}&amp;korder=SU&#34;,
+		&#34;_urlTemplate&#34;: &#34;https://kns.cnki.net/kns8s/defaultresult/index?dbcode=SCDB&amp;kw={z:title}&amp;korder=SU&#34;,
 		&#34;_urlParams&#34;: [],
 		&#34;_urlNamespaces&#34;: {
 			&#34;z&#34;: &#34;http://www.zotero.org/namespaces/openSearch#&#34;,
 			&#34;&#34;: &#34;http://a9.com/-/spec/opensearch/1.1/&#34;
 		},
-		&#34;_iconSourceURI&#34;: &#34;http://kns8.cnki.net/favicon.ico&#34;
+		&#34;_iconSourceURI&#34;: &#34;https://kns.cnki.net/favicon.ico&#34;
 	},
 	{
 		&#34;_name&#34;: &#34;南京师范大学图书馆&#34;,
@@ -745,7 +745,9 @@ zotero 官方的7714样式存在一些问题，如不能区分中英文文献，
 - 【Renaming Rules】和【Advanced Settings】：可自行修改
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071543092.png)
 
-### [ZoteroQuickLook]( https://github.com/404neko/ZoteroQuickLookReload &#34;ZoteroQuickLook&#34;)
+### ZoteroQuickLook
+- [Github仓库]( https://github.com/404neko/ZoteroQuickLookReload &#34;ZoteroQuickLook&#34;)
+
 #### 功能
 按【空格】实现快速预览
 #### 配置
@@ -754,7 +756,9 @@ Windows：[QuickLook for Windows]( https://github.com/QL-Win/QuickLook/releases 
 2. 【Zotero】—【编辑】—【首选项】—— 【高级】—— 【设置编辑器】，搜索`extensions.zoteroquicklook.customviewcommand`，双击将里面的内容修改为`QuickLook.exe`的文件路径
 ![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071543870.png)
 
-### [茉莉花-Jasminum]( https://github.com/l0o0/jasminum &#34;茉莉花-Jasminum&#34;)
+### 茉莉花-Jasminum
+- [Github仓库]( https://github.com/l0o0/jasminum &#34;茉莉花-Jasminum&#34;)
+
 #### 功能
 - 拆分或合并 Zotero 中条目作者姓和名
 - 根据知网上下载的文献文件来抓取引用信息（根据文件名）
@@ -775,10 +779,10 @@ Windows：[QuickLook for Windows]( https://github.com/QL-Win/QuickLook/releases 
 更新文献被引用数
 #### 配置
 列标题启用【存档位置】
-![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071543229.png)
+![列标题启用【存档位置】](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071543229.png)
 
 使用：工具——更新引用
-![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071544321.png)
+![更新引用](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071544321.png)
 ### Zotero PDF Translate
 - 各翻译引擎 api 格式设置详见[github]( https://github.com/windingwind/zotero-pdf-translate#readme &#34;github&#34;)
 - 各翻译引擎 api[中文申请教程]( https://doc.tern.1c7.me/zh/folder/setting/#%E5%B0%8F%E7%89%9B &#34;中文申请教程&#34;)
@@ -791,9 +795,11 @@ Windows：[QuickLook for Windows]( https://github.com/QL-Win/QuickLook/releases 
 #### 翻译引擎配置
 建议使用腾讯云 api，免费额度量大管饱，翻译效果也很好。或者小牛、有道智云，这两虽然免费额度是有期限的，但是可以建立自己的术语表，翻译起来更准确。
 &gt;【注】小牛翻译注册后需要在首页手动领取100万免费流量，有效期一年
-![image](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071544542.png)
+![小牛翻译](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311071544542.png)
 
-### [Crush Reference](https://github.com/MuiseDestiny/zotero-reference)
+### Crush Reference
+- [Github仓库](https://github.com/MuiseDestiny/zotero-reference)
+
 论文右侧——参考文献——点击“刷新”，自动拉取参考文献目录。
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311082216865.png)
 ### 移动端 ：多平台同步阅读环境配置

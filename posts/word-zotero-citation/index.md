@@ -91,8 +91,14 @@ NEU **硕士**毕业论文参考文献的格式要求如下：
 ![NEU-zotero-citation](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404011625496.png)
 ## 注意事项
 ### 等与 et al
-如果英文文献作者超过3个，但显示为中文的`等`，而不是英文 `et al`，需要手动将英文文献信息中的 `语言` 字段修改为 `en`。同理，将中文文献的 `语言` 字段修改为 `zh-CN`。
+如果英文文献作者超过3个，但显示为中文的`等`，而不是英文 `et al`。这是没有设置文献语言的原因。
+![英文但显示等](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404061329315.png)
+
+需要手动将英文文献信息中的 `语言` 字段修改为 `en`。同理，将中文文献的 `语言` 字段修改为 `zh-CN`。
 ![修改文献语言](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404012026213.png)
+
+你也可以使用[茉莉花插件](https://haoyep.com/posts/zotero-config/#%E5%8A%9F%E8%83%BD-1)实现自动识别语言。只需要全选文献——右键——小工具——**Auto:智能识别语言**，就可以自动更新文献语言。
+![Auto:智能识别语言](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404061333176.png)
 ### 文献名大小写
 有些期刊或出版社（如 ACS）导出的文章题目（Title）是每个实词的首字母是大写，如：
 - **Measurement-Based Probabilistic Timing Analysis for Multi-path Programs**
