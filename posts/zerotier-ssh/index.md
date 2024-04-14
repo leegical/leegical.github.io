@@ -89,6 +89,6 @@ sudo zerotier-cli join a09acf0233953bab
 
 ---
 
-> 作者: [云吱](https://haoyep.com/)  
-> URL: https://haoyep.com/posts/zerotier-ssh/  
+> 作者: [云吱](https://www.haoyep.com/)  
+> URL: https://www.haoyep.com/posts/zerotier-ssh/  
 

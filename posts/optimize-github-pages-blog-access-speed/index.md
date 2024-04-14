@@ -5,24 +5,24 @@
 &lt;!--more--&gt;
 
 使用 Github Pages 可以方便地搭建自己的静态网站，详细过程参考我的这篇文章。
-{{&lt; link &#34;https://haoyep.com/posts/windows-hugo-blog-github/&#34; &#34;使用 hugo 和 Github Pages 搭建个人博客&#34; &#34;使用 hugo 和 Github Pages 搭建个人博客&#34; true &gt;}}
+{{&lt; link &#34;https://www.haoyep.com/posts/windows-hugo-blog-github/&#34; &#34;使用 hugo 和 Github Pages 搭建个人博客&#34; &#34;使用 hugo 和 Github Pages 搭建个人博客&#34; true &gt;}}
 
 但由于众所周知的原因，此方法搭建的博客在国内访问速度不佳。因此考虑采用一些方法来加速访问，主要思路是使用 CDN 加速网站的静态资源。
 
 对于不同的静态资源，加速方法分别如下：
 
-1. 使用自定义域名，见[个人 Github 博客设置自定义域名](https://haoyep.com/posts/windows-hugo-blog-github/#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%9A%E5%AE%A2%E5%9F%9F%E5%90%8D)；
+1. 使用自定义域名，见[个人 Github 博客设置自定义域名](https://www.haoyep.com/posts/windows-hugo-blog-github/#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%9A%E5%AE%A2%E5%9F%9F%E5%90%8D)；
 2. `js/css`文件
 	- ~~使用`jsdelivr` 和 `unpkg` 进行 CDN 加速~~，亲测使用自定义域名后，这两个 CDN 反而会降速。因此不需要单独对`js/css`文件加速。
 3. 托管在 Github 仓库上的[图床图片](#图片加速)。
-	- 本人博客上的图片都是使用 PicGo 上传到图床，图床是用 GitHub 仓库搭建的，见[图床搭建过程](https://haoyep.com/posts/github-graph-beds) 。为了加快 GitHub 文件访问速度，参考[通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源](https://haoyep.com/posts/github-graph-beds-cdn/)，通过自定义域名区分国内外请求，分配不同的 CDN 资源。最后，替换博客内所有 Github 文件链接即可。
+	- 本人博客上的图片都是使用 PicGo 上传到图床，图床是用 GitHub 仓库搭建的，见[图床搭建过程](https://www.haoyep.com/posts/github-graph-beds) 。为了加快 GitHub 文件访问速度，参考[通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源](https://www.haoyep.com/posts/github-graph-beds-cdn/)，通过自定义域名区分国内外请求，分配不同的 CDN 资源。最后，替换博客内所有 Github 文件链接即可。
 ![替换 Github 文件链接](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152140943.png)
 4. [加速谷歌字体](#加速谷歌字体)
 5. [加速 avatar 头像](#加速-avatar-头像)
 
 ## 图片加速
 首先参考这篇文章，搭建加速域名。
-{{&lt; link &#34;https://haoyep.com/posts/github-graph-beds-cdn/&#34; &#34;通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源&#34; &#34;通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源&#34; true &gt;}}
+{{&lt; link &#34;https://www.haoyep.com/posts/github-graph-beds-cdn/&#34; &#34;通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源&#34; &#34;通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源&#34; true &gt;}}
 
 对于要使用的图片，使用 PicGo 上传到 GitHub 图床，获取 CDN 加速链接。然后在配置文件中使用相应的链接即可。下面介绍几个配置中常见的图片。
 
@@ -94,6 +94,6 @@ $code-font-family: JetBrains Mono, Fira Mono, Source Code Pro, Menlo, Consolas, 
 
 ---
 
-> 作者: [云吱](https://haoyep.com/)  
-> URL: https://haoyep.com/posts/optimize-github-pages-blog-access-speed/  
+> 作者: [云吱](https://www.haoyep.com/)  
+> URL: https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/  
 

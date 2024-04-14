@@ -80,7 +80,7 @@ git submodule set-branch -b dev themes/FixIt
 # 网站标题
 title = &#34;云吱的小站&#34;
 # Hostname (and path) to the root
-baseURL = &#34;https://haoyep.com/&#34;
+baseURL = &#34;https://www.haoyep.com/&#34;
 # baseURL = &#34;https://leegical.github.io/&#34;
 # 更改使用 Hugo 构建网站时使用的默认主题
 theme = [&#34;FixIt&#34;]
@@ -1397,6 +1397,6 @@ git push
 
 ---
 
-> 作者: [云吱](https://haoyep.com/)  
-> URL: https://haoyep.com/posts/windows-hugo-blog-github/  
+> 作者: [云吱](https://www.haoyep.com/)  
+> URL: https://www.haoyep.com/posts/windows-hugo-blog-github/  
 

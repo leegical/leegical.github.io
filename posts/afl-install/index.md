@@ -46,7 +46,7 @@ sudo ln -s /usr/bin/python2 /usr/bin/python
 ### 安装 clang10
 参考此文章安装并设置 `clang10` 为默认版本。
 
-{{&lt; link &#34;https://haoyep.com/posts/ubuntu22-install-clang10/&#34; &#34;Ubuntu 22.04 LTS 64位系统安装 clang10 版本&#34; &#34;Ubuntu 22.04 LTS 64位系统安装 clang10 版本&#34; true &gt;}}
+{{&lt; link &#34;https://www.haoyep.com/posts/ubuntu22-install-clang10/&#34; &#34;Ubuntu 22.04 LTS 64位系统安装 clang10 版本&#34; &#34;Ubuntu 22.04 LTS 64位系统安装 clang10 版本&#34; true &gt;}}
 
 ## 安装 Z3
 要求版本号大于4.5
@@ -295,6 +295,6 @@ export AFL_SKIP_CPUFREQ=1
 
 ---
 
-> 作者: [云吱](https://haoyep.com/)  
-> URL: https://haoyep.com/posts/afl-install/  
+> 作者: [云吱](https://www.haoyep.com/)  
+> URL: https://www.haoyep.com/posts/afl-install/  
 

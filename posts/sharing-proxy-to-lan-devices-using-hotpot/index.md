@@ -88,6 +88,6 @@
 
 ---
 
-> 作者: [云吱](https://haoyep.com/)  
-> URL: https://haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/  
+> 作者: [云吱](https://www.haoyep.com/)  
+> URL: https://www.haoyep.com/posts/sharing-proxy-to-lan-devices-using-hotpot/  
 

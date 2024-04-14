@@ -92,6 +92,6 @@ export PTATM=/home/pzy/project/PTATM_backup
 
 ---
 
-> 作者: [云吱](https://haoyep.com/)  
-> URL: https://haoyep.com/posts/ptatm-1/  
+> 作者: [云吱](https://www.haoyep.com/)  
+> URL: https://www.haoyep.com/posts/ptatm-1/  
 

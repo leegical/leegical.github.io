@@ -7,7 +7,7 @@
 
 ## 前言
 上一篇文章讲述了如何使用 PicGo &#43; GitHub 搭建图床，这样搭建的图床很稳定，但缺点是国内访问速度慢。可以使用 `jsDelivr` 对 Github 图床等静态资源进行免费 CDN 加速
-{{&lt; link &#34;https://haoyep.com/posts/github-graph-beds/&#34; &#34;使用PicGo &#43; GitHub 搭建 Obsidian 图床&#34; &#34;使用PicGo &#43; GitHub 搭建 Obsidian 图床&#34; true &gt;}}
+{{&lt; link &#34;https://www.haoyep.com/posts/github-graph-beds/&#34; &#34;使用PicGo &#43; GitHub 搭建 Obsidian 图床&#34; &#34;使用PicGo &#43; GitHub 搭建 Obsidian 图床&#34; true &gt;}}
 
 {{&lt; admonition question &#34;jsDelivr是什么？&#34; &gt;}}
 `jsDelivr`是国外的一家优秀的公共 CDN 服务提供商，该平台是首个「打通中国大陆与海外的免费 CDN 服务」，无须担心中国防火墙问题而影响使用。官网：[http://www.jsdelivr.com/(opens new window)](http://www.jsdelivr.com/)
@@ -95,6 +95,6 @@ https://cdn.haoyep.com/gh/leegical/Blog_img
 
 ---
 
-> 作者: [云吱](https://haoyep.com/)  
-> URL: https://haoyep.com/posts/github-graph-beds-cdn/  
+> 作者: [云吱](https://www.haoyep.com/)  
+> URL: https://www.haoyep.com/posts/github-graph-beds-cdn/  
 

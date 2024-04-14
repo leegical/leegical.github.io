@@ -86,6 +86,6 @@ Obsidian [官网下载链接](https://obsidian.md/download)
 
 ---
 
-> 作者: [云吱](https://haoyep.com/)  
-> URL: https://haoyep.com/posts/github-graph-beds/  
+> 作者: [云吱](https://www.haoyep.com/)  
+> URL: https://www.haoyep.com/posts/github-graph-beds/  
 

@@ -17,7 +17,7 @@ public:
   Blog(const std::string&amp; name, const std::string&amp; author, const std::string&amp; url)
     : name(name), author(author), url(url) {}
 };
-Blog site(&#34;云吱的小站&#34;, &#34;Legical&#34;, &#34;https://haoyep.com&#34;);
+Blog site(&#34;云吱的小站&#34;, &#34;Legical&#34;, &#34;https://www.haoyep.com&#34;);
 {{&lt; /typeit &gt;}}
 {{&lt; /style &gt;}}
 
@@ -34,11 +34,11 @@ Blog site(&#34;云吱的小站&#34;, &#34;Legical&#34;, &#34;https://haoyep.com&
 - 📝 但是要写Go代码
 
 &lt;!-- link reference definition --&gt;
-[blog]: https://haoyep.com
+[blog]: https://www.haoyep.com
 
 
 ---
 
 > 作者:   
-> URL: https://haoyep.com/about/  
+> URL: https://www.haoyep.com/about/  
 

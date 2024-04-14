@@ -2,14 +2,14 @@
 
 
 &lt;!-- markdownlint-disable-next-line no-bare-urls --&gt;
-{{&lt; link href=&#34;https://haoyep.com/friends/opml.xml&#34; content=&#34;:(far fa-star fa-fw): Subscribe ours&#34; download=&#34;opml.xml&#34; card=true &gt;}}
+{{&lt; link href=&#34;https://www.haoyep.com/friends/opml.xml&#34; content=&#34;:(far fa-star fa-fw): Subscribe ours&#34; download=&#34;opml.xml&#34; card=true &gt;}}
 
 ## 基本信息
 
 ```yaml
 - nickname: 云吱的小站
-  avatar: https://haoyep.com/avatar.jpg
-  url: https://haoyep.com
+  avatar: https://www.haoyep.com/avatar.jpg
+  url: https://www.haoyep.com
   description: 云吱的个人博客，好耶！
 ```
 
@@ -27,5 +27,5 @@
 ---
 
 > 作者:   
-> URL: https://haoyep.com/friends/  
+> URL: https://www.haoyep.com/friends/  
 

@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>AFL - 标签 | 云吱的小站</title>
-    <link>https://haoyep.com/tags/afl/</link>
+    <link>https://www.haoyep.com/tags/afl/</link>
     <description>AFL - 标签 | 云吱的小站</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (云吱)</managingEditor>
-      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Mon, 25 Dec 2023 21:24:00 &#43;0800</lastBuildDate><atom:link href="https://haoyep.com/tags/afl/" rel="self" type="application/rss+xml" /><item>
+      <webMaster>chuxuange@gmail.com (云吱)</webMaster><lastBuildDate>Mon, 25 Dec 2023 21:24:00 &#43;0800</lastBuildDate><atom:link href="https://www.haoyep.com/tags/afl/" rel="self" type="application/rss+xml" /><item>
   <title>Ubuntu 22.04 安装 AFL 及 qemu mode 实践</title>
-  <link>https://haoyep.com/posts/afl-install/</link>
+  <link>https://www.haoyep.com/posts/afl-install/</link>
   <pubDate>Mon, 25 Dec 2023 21:24:00 &#43;0800</pubDate>
   <author>云吱</author>
-  <guid>https://haoyep.com/posts/afl-install/</guid>
+  <guid>https://www.haoyep.com/posts/afl-install/</guid>
   <description><![CDATA[<div class="featured-image"><img loading="eager" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171443369.png" alt="Ubuntu 22.04 安装 AFL 及 qemu mode 实践" title="Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。" referrerpolicy="no-referrer"/></div><p>Ubuntu 22.04 LTS 64位系统安装 American Fuzzy Lop (AFL) 2.56b 踩坑记录，使用 QEMU mode 进行简单测试实践。</p>]]></description>
 </item>
 </channel>

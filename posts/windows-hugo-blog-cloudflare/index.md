@@ -9,11 +9,11 @@
 经过测试，在开启自定义域名时，Cloudflare Pages 在国内的访问速度远慢于 Github Pages。因此建议还是使用 Github Pages。
 {{&lt; /admonition &gt;}}
 
-{{&lt; link &#34;https://haoyep.com/posts/windows-hugo-blog-github/&#34; &#34;使用hugo和Github Pages配置博客&#34; &#34;使用hugo和Github Pages配置博客&#34; true &gt;}}
+{{&lt; link &#34;https://www.haoyep.com/posts/windows-hugo-blog-github/&#34; &#34;使用hugo和Github Pages配置博客&#34; &#34;使用hugo和Github Pages配置博客&#34; true &gt;}}
 
 ## 前言
 如果懒得使用 Github Pages 以及配置 Github Action，又想用自定义域名和 cdn 加速访问博客，那么 hugo &#43; Cloudflare Pages 绝对是不二之选。
-**准备工作：** 参考 [Windows 下使用 hugo 和 Github Pages 配置博客](https://haoyep.com/posts/windows_hugo_github_pages_blog/)，从头开始配置，一直到完成 [创建 blog 仓库](https://haoyep.com/posts/windows_hugo_github_pages_blog/#2%E5%88%9B%E5%BB%BA-blog-%E4%BB%93%E5%BA%93)。
+**准备工作：** 参考 [Windows 下使用 hugo 和 Github Pages 配置博客](https://www.haoyep.com/posts/windows_hugo_github_pages_blog/)，从头开始配置，一直到完成 [创建 blog 仓库](https://www.haoyep.com/posts/windows_hugo_github_pages_blog/#2%E5%88%9B%E5%BB%BA-blog-%E4%BB%93%E5%BA%93)。
 ## 设置 Cloudflare Pages
 ### 新建 Pages
 登录 cloudflare，点击左侧的`Workers和Pages`，选择`Pages`——连接到 Git
@@ -54,7 +54,7 @@
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081604721.png)
 ## 成果展示
 现在可以直接通过自定义域名访问博客了，而且自动有 SSL。
-例如现在就可以通过 [https://haoyep.com/](https://haoyep.com/) 来访问云吱的小站啦~
+例如现在就可以通过 [https://www.haoyep.com/](https://www.haoyep.com/) 来访问云吱的小站啦~
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081606080.png)
 
 ## 总结
@@ -81,6 +81,6 @@ git push
 
 ---
 
-> 作者: [云吱](https://haoyep.com/)  
-> URL: https://haoyep.com/posts/windows-hugo-blog-cloudflare/  
+> 作者: [云吱](https://www.haoyep.com/)  
+> URL: https://www.haoyep.com/posts/windows-hugo-blog-cloudflare/  
 

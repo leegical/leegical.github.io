@@ -97,7 +97,7 @@ NEU **硕士**毕业论文参考文献的格式要求如下：
 需要手动将英文文献信息中的 `语言` 字段修改为 `en`。同理，将中文文献的 `语言` 字段修改为 `zh-CN`。
 ![修改文献语言](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404012026213.png)
 
-你也可以使用[茉莉花插件](https://haoyep.com/posts/zotero-config/#%E5%8A%9F%E8%83%BD-1)实现自动识别语言。只需要全选文献——右键——小工具——**Auto:智能识别语言**，就可以自动更新文献语言。
+你也可以使用[茉莉花插件](https://www.haoyep.com/posts/zotero-config/#%E5%8A%9F%E8%83%BD-1)实现自动识别语言。只需要全选文献——右键——小工具——**Auto:智能识别语言**，就可以自动更新文献语言。
 ![Auto:智能识别语言](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404061333176.png)
 ### 文献名大小写
 有些期刊或出版社（如 ACS）导出的文章题目（Title）是每个实词的首字母是大写，如：
@@ -145,6 +145,6 @@ return result;
 
 ---
 
-> 作者: [云吱](https://haoyep.com/)  
-> URL: https://haoyep.com/posts/word-zotero-citation/  
+> 作者: [云吱](https://www.haoyep.com/)  
+> URL: https://www.haoyep.com/posts/word-zotero-citation/  
 
