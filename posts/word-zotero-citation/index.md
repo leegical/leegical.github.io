@@ -143,6 +143,238 @@ return result;
 5. 关闭此窗口，则在Zotero主窗口发现已经修改完成，都成为句首字母大写，最好再核实一下，如果有不正确的，手动再修改一下。
 ![句首字母大写效果](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404012101563.png)
 
+### 交叉引用
+Zotero 在 Word 中参考文献的上标并不是超链接/交叉引用格式，因此无法点击上标跳转到具体参考文献列表条目。可以通过 Word 中的宏实现交叉引用。
+&gt; 参考教程：[Zotero 和 Word 参考文献与文末引用条目的超链接设置](https://zhuanlan.zhihu.com/p/674910734)
+
+1. 打开Word -&gt; 视图 -&gt; 宏，选择**查看宏**
+![查看宏](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404232108298.png)
+2. 输入宏名：`ZoteroLinkCitation`，点击**创建**宏
+![创建宏ZoteroLinkCitation](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404232111552.png)
+3. 将代码全部替换为：
+```vba
+Public Sub ZoteroLinkCitation()
+    
+&#39; get selected area (if applicable)
+    Dim nStart&amp;, nEnd&amp;
+    nStart = Selection.Start
+    nEnd = Selection.End
+    
+&#39; toggle screen updating
+    Application.ScreenUpdating = False
+    
+&#39; define variables
+    Dim title As String
+    Dim titleAnchor As String
+    Dim style As String
+    Dim fieldCode As String
+    Dim numOrYear As String
+    Dim pos&amp;, n1&amp;, n2&amp;, n3&amp;
+
+    ActiveWindow.View.ShowFieldCodes = True
+    Selection.Find.ClearFormatting
+ 
+&#39; find the Zotero bibliography
+    With Selection.Find
+        .Text = &#34;^d ADDIN ZOTERO_BIBL&#34;
+        .Replacement.Text = &#34;&#34;
+        .Forward = True
+        .Wrap = wdFindContinue
+        .Format = False
+        .MatchCase = False
+        .MatchWholeWord = False
+        .MatchWildcards = False
+        .MatchSoundsLike = False
+        .MatchAllWordForms = False
+    End With
+    Selection.Find.Execute
+    
+    &#39; add bookmark for the Zotero bibliography
+    With ActiveDocument.Bookmarks
+        .Add Range:=Selection.Range, name:=&#34;Zotero_Bibliography&#34;
+        .DefaultSorting = wdSortByName
+        .ShowHidden = True
+    End With
+    
+    &#39; loop through each field in the document
+    For Each aField In ActiveDocument.Fields
+        &#39; check if the field is a Zotero in-text reference
+        &#39;##################################################
+        If InStr(aField.Code, &#34;ADDIN ZOTERO_ITEM&#34;) &gt; 0 Then
+            fieldCode = aField.Code
+            &#39;#############
+            &#39; Prepare
+            &#39; Plain citation== Format of Textfield shown
+            &#39; must be in Brackets
+            Dim plain_Cit As String
+            plCitStrBeg = &#34;&#34;&#34;plainCitation&#34;&#34;:&#34;&#34;[&#34;
+            plCitStrEnd = &#34;]&#34;&#34;&#34;
+            n1 = InStr(fieldCode, plCitStrBeg)
+            n1 = n1 &#43; Len(plCitStrBeg)
+            n2 = InStr(Mid(fieldCode, n1, Len(fieldCode) - n1), plCitStrEnd) - 1 &#43; n1
+            plain_Cit = Mid$(fieldCode, n1 - 1, n2 - n1 &#43; 2)
+            &#39;Reference &#39;as shown&#39; in word as a string
+            
+            &#39;Title array in fieldCode (all referenced Titles within this field)
+            Dim array_RefTitle(32) As String
+            i = 0
+            Do While InStr(fieldCode, &#34;&#34;&#34;title&#34;&#34;:&#34;&#34;&#34;) &gt; 0
+                n1 = InStr(fieldCode, &#34;&#34;&#34;title&#34;&#34;:&#34;&#34;&#34;) &#43; Len(&#34;&#34;&#34;title&#34;&#34;:&#34;&#34;&#34;)
+                n2 = InStr(Mid(fieldCode, n1, Len(fieldCode) - n1), &#34;&#34;&#34;,&#34;&#34;&#34;) - 1 &#43; n1
+                If n2 &lt; n1 Then &#39;Exception the type &#39;Article&#39;
+                    n2 = InStr(Mid(fieldCode, n1, Len(fieldCode) - n1), &#34;}&#34;) - 1 &#43; n1 - 1
+                End If
+                array_RefTitle(i) = Mid(fieldCode, n1, n2 - n1)
+                fieldCode = Mid(fieldCode, n2 &#43; 1, Len(fieldCode) - n2 - 1)
+                i = i &#43; 1
+            Loop
+            Titles_in_Cit = i
+            
+            &#39;Number array with References shown in PlainCit
+            &#39;Numer is equal or less than Titels, depending on the type
+            &#39;[3], [8]-[10]; [2]-[4]; [2], [4], [5]
+            &#39; All citations have to be in Brackets each! [3], [8] not [3, 8]
+            &#39; This doesnt work otherwise!
+            &#39; --&gt; treatment of other delimiters could be implemented here
+            Dim RefNumber(32) As String
+            i = 0
+            Do While (InStr(plain_Cit, &#34;]&#34;) Or InStr(plain_Cit, &#34;[&#34;)) &gt; 0
+                n1 = InStr(plain_Cit, &#34;[&#34;)
+                n2 = InStr(plain_Cit, &#34;]&#34;)
+                RefNumber(i) = Mid(plain_Cit, n1 &#43; 1, n2 - (n1 &#43; 1))
+                plain_Cit = Mid(plain_Cit, n2 &#43; 1, Len(plain_Cit) - (n2 &#43; 1) &#43; 1)
+            i = i &#43; 1
+            Loop
+            Refs_in_Cit = i
+            &#39;treat only the shown references (skip the rest)
+            &#39;[3], [8]-[10] --&gt; skip [9]
+            &#39;Order of titles given from fieldcode, not checked!
+            If Titles_in_Cit &gt; Refs_in_Cit Then
+                array_RefTitle(Refs_in_Cit - 1) = array_RefTitle(Titles_in_Cit - 1)
+                i = 1
+                Do While Refs_in_Cit &#43; i &lt;= Titles_in_Cit
+                    array_RefTitle(Refs_in_Cit &#43; i - 1) = &#34;&#34;
+                    i = i &#43; 1
+                Loop
+            End If
+            
+            &#39;#############
+            &#39;Make the links
+            For Refs = 0 To Refs_in_Cit - 1 Step 1
+                title = array_RefTitle(Refs)
+                array_RefTitle(Refs) = &#34;&#34;
+                &#39; make title a valid bookmark name
+                titleAnchor = title
+                titleAnchor = MakeValidBMName(titleAnchor)
+                
+                ActiveWindow.View.ShowFieldCodes = False
+                Selection.GoTo What:=wdGoToBookmark, name:=&#34;Zotero_Bibliography&#34;
+                
+                &#39;&#39; locate the corresponding reference in the bibliography
+                &#39;&#39; by searching for its title
+                Selection.Find.ClearFormatting
+                With Selection.Find
+                    .Text = Left(title, 255)
+                    .Replacement.Text = &#34;&#34;
+                    .Forward = True
+                    .Wrap = wdFindContinue
+                    .Format = False
+                    .MatchCase = False
+                    .MatchWholeWord = False
+                    .MatchWildcards = False
+                    .MatchSoundsLike = False
+                    .MatchAllWordForms = False
+                End With
+                Selection.Find.Execute
+                               
+                &#39; select the whole caption (for mouseover tooltip)
+                Selection.MoveStartUntil (&#34;[&#34;), Count:=wdBackward
+                Selection.MoveEndUntil (vbBack)
+                lnkcap = &#34;[&#34; &amp; Selection.Text
+                lnkcap = Left(lnkcap, 70)
+                
+                &#39; add bookmark for the reference within the bibliography
+                Selection.Shrink
+                With ActiveDocument.Bookmarks
+                    .Add Range:=Selection.Range, name:=titleAnchor
+                    .DefaultSorting = wdSortByName
+                    .ShowHidden = True
+                End With
+                
+                &#39; jump back to the field
+                aField.Select
+                &#39; find and select the numeric part of the field which will become the hyperlink
+                Selection.Find.ClearFormatting
+                With Selection.Find
+                    .Text = RefNumber(Refs)
+                    .Replacement.Text = &#34;&#34;
+                    .Forward = True
+                    .Wrap = wdFindContinue
+                    .Format = False
+                    .MatchCase = False
+                    .MatchWholeWord = False
+                    .MatchWildcards = False
+                    .MatchSoundsLike = False
+                    .MatchAllWordForms = False
+                End With
+                Selection.Find.Execute
+                        
+                numOrYear = Selection.Range.Text &amp; &#34;&#34;
+                                    
+                &#39; store current style这一行如果不注释可能会存在格式变化
+                &#39; style = Selection.style
+                
+                &#39; Generate the Hyperlink --&gt;Forward!
+                ActiveDocument.Hyperlinks.Add anchor:=Selection.Range, Address:=&#34;&#34;, SubAddress:=titleAnchor, ScreenTip:=lnkcap, TextToDisplay:=&#34;&#34; &amp; numOrYear
+                
+                &#39; reset the style这一行如果不注释可能会存在格式变化
+                &#39; Selection.style = style
+
+                &#39; comment if you want standard link style
+                aField.Select
+                With Selection.Font
+                     .Underline = wdUnderlineNone
+                     .Color = wdColorBlack
+                End With
+                    
+            Next Refs &#39;References in Cit
+
+        End If  &#39;If Zotero-Field
+        &#39;#########################
+
+        Next aField &#39; next field
+
+        &#39; go back to original range selected
+        ActiveWindow.View.ShowFieldCodes = False
+        ActiveDocument.Range(nStart, nEnd).Select
+        
+    End Sub
+    Function MakeValidBMName(strIn As String)
+        Dim pFirstChr As String
+        Dim i As Long
+        Dim tempStr As String
+        strIn = Trim(strIn)
+        pFirstChr = Left(strIn, 1)
+        If Not pFirstChr Like &#34;[A-Za-z]&#34; Then
+            strIn = &#34;A_&#34; &amp; strIn
+        End If
+        For i = 1 To Len(strIn)
+            Select Case Asc(Mid$(strIn, i, 1))
+            Case 49 To 57, 65 To 90, 97 To 122
+                tempStr = tempStr &amp; Mid$(strIn, i, 1)
+            Case Else
+                tempStr = tempStr &amp; &#34;_&#34;
+            End Select
+            Next i
+            tempStr = Replace(tempStr, &#34;  &#34;, &#34; &#34;)
+            MakeValidBMName = Left(tempStr, 40)
+        End Function
+```
+4. Ctrl&#43;s 保存，左下角重命名为 ZoteroLinkCitation，关闭页面，并关闭 Word
+![重命名宏](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404232116706.png)
+5. 重新打开 Word -&gt; 视图 -&gt; 宏，选择`ZoteroLinkCitation`，点击运行即可
+![运行宏ZoteroLinkCitation](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202404232119280.png)
+
 ---
 
 > 作者: [云吱](https://www.haoyep.com/)  
