@@ -1,511 +1,84 @@
-<!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-  <head>
-    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-    <meta name="robots" content="noodp" />
-    <title>Github Pages 博客网站访问速度优化 | 云吱的小站</title><meta name="author" content="云吱">
-<meta name="author-link" content="https://www.haoyep.com/">
-<meta name="description" content="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。" /><meta name="keywords" content='git, Fixit' />
-  <meta itemprop="name" content="Github Pages 博客网站访问速度优化">
-  <meta itemprop="description" content="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。">
-  <meta itemprop="datePublished" content="2023-12-17T15:00:18+08:00">
-  <meta itemprop="dateModified" content="2024-04-14T14:04:45+08:00">
-  <meta itemprop="wordCount" content="1134">
-  <meta itemprop="image" content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png">
-  <meta itemprop="keywords" content="git,Fixit"><meta property="og:url" content="https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/">
-  <meta property="og:site_name" content="云吱的小站">
-  <meta property="og:title" content="Github Pages 博客网站访问速度优化">
-  <meta property="og:description" content="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。">
-  <meta property="og:locale" content="zh-CN">
-  <meta property="og:type" content="article">
-  <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2023-12-17T15:00:18+08:00">
-    <meta property="article:modified_time" content="2024-04-14T14:04:45+08:00">
-    <meta property="article:tag" content="git">
-    <meta property="article:tag" content="Fixit">
-    <meta property="og:image" content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png"><meta name="twitter:title" content="Github Pages 博客网站访问速度优化">
-<meta name="twitter:description" content="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。">
-<meta name="application-name" content="云吱">
-<meta name="apple-mobile-web-app-title" content="云吱"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/" /><link rel="prev" href="https://www.haoyep.com/posts/github-graph-beds-cdn/" /><link rel="next" href="https://www.haoyep.com/posts/afl-install/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Github Pages 博客网站访问速度优化",
-    "inLanguage": "zh-CN",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https:\/\/www.haoyep.com\/posts\/optimize-github-pages-blog-access-speed\/"
-    },"image": ["https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/202312161447739.ico"],"genre": "posts","keywords": "git, Fixit","wordcount":  1134 ,
-    "url": "https:\/\/www.haoyep.com\/posts\/optimize-github-pages-blog-access-speed\/","datePublished": "2023-12-17T15:00:18+08:00","dateModified": "2024-04-14T14:04:45+08:00","publisher": {
-      "@type": "Organization",
-      "name": "云吱","logo": "https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/weblogo.png"},"author": {
-        "@type": "Person",
-        "name": "云吱"
-      },"description": "个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。"
-  }
-  </script></head>
-  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
-  <div class="header-wrapper">
-    <div class="header-title">
-      <a href="/" title="云吱的小站"><img loading="lazy" src="/pokeball.ico" alt="云吱的小站" data-title="云吱的小站" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">云吱</span></a><span class="header-subtitle">好耶！</span></div>
-    <nav>
-      <ul class="menu"><li class="menu-item has-children">
-              <a
-                class="menu-link"
-                href="/archives/"
-                
-                
-              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
-                <ul class="sub-menu">
-                  <li
-                        class="menu-item"
-                      >
-                        <a
-                          class="menu-link"
-                          href="/categories/"
-                          
-                          
-                        ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
-                      </li><li
-                        class="menu-item"
-                      >
-                        <a
-                          class="menu-link"
-                          href="/collections/"
-                          
-                          
-                        ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
-                      </li><li
-                        class="menu-item"
-                      >
-                        <a
-                          class="menu-link"
-                          href="/tags/"
-                          
-                          
-                        ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a>
-                      </li></ul></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/friends/"
-                title="友情链接"
-                
-              ><i class="fa-solid fa-users-viewfinder fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/guestbook/"
-                
-                
-              ><i class="fa-regular fa-comments fa-fw fa-sm" aria-hidden="true"></i> 留言</a></li><li class="menu-item">
-              <a
-                class="menu-link"
-                href="/about/"
-                
-                
-              ><i class="fa-regular fa-id-card fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
-            <input type="text" placeholder="搜索文章标题或内容……" id="search-input-desktop">
-            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
-            </a>
-            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
-              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
-            </a>
-            <span class="search-button search-loading" id="search-loading-desktop">
-              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-            </span>
-          </li><li class="menu-item theme-switch" title="切换主题">
-          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
-        </li></ul>
-    </nav>
-  </div>
-</header><header class="mobile animate__faster" id="header-mobile">
-  <div class="header-container">
-    <div class="header-wrapper">
-      <div class="header-title">
-        <a href="/" title="云吱的小站"><img loading="lazy" src="/pokeball.ico" alt="/pokeball.ico" data-title="/pokeball.ico" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">云吱</span></a><span class="header-subtitle">好耶！</span></div>
-      <div class="menu-toggle" id="menu-toggle-mobile">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-    <nav>
-      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
-            <div class="search mobile" id="search-mobile">
-              <input type="text" placeholder="搜索文章标题或内容……" id="search-input-mobile">
-              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
-              </a>
-              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
-                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
-              </a>
-              <span class="search-button search-loading" id="search-loading-mobile">
-                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
-              </span>
-            </div>
-            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-              取消
-            </a>
-          </li><li
-              class="menu-item"
-            ><span class="nested-item">
-                  <a
-                    class="menu-link"
-                    href="/archives/"
-                    
-                    
-                  ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 归档</a>
-                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
-                </span>
-                <ul class="sub-menu">
-                  <li
-                        class="menu-item"
-                      >
-                        <a
-                          class="menu-link"
-                          href="/categories/"
-                          
-                          
-                        ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
-                      </li><li
-                        class="menu-item"
-                      >
-                        <a
-                          class="menu-link"
-                          href="/collections/"
-                          
-                          
-                        ><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
-                      </li><li
-                        class="menu-item"
-                      >
-                        <a
-                          class="menu-link"
-                          href="/tags/"
-                          
-                          
-                        ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> 标签</a>
-                      </li></ul></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/friends/"
-                  title="友情链接"
-                  
-                ><i class="fa-solid fa-users-viewfinder fa-fw fa-sm" aria-hidden="true"></i> 友链</a></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/guestbook/"
-                  
-                  
-                ><i class="fa-regular fa-comments fa-fw fa-sm" aria-hidden="true"></i> 留言</a></li><li
-              class="menu-item"
-            ><a
-                  class="menu-link"
-                  href="/about/"
-                  
-                  
-                ><i class="fa-regular fa-id-card fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item menu-system">
-          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
-      </ul>
-    </nav>
-  </div>
-</header><div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-  </div>
-  <div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-  </div><nav aria-label="breadcrumb" class="breadcrumb-container sticky">
-    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/posts/" title="posts">文章</a></li><li class="breadcrumb-item"><a href="/posts/build-blog/" title="关于博客搭建过程系列文章。">博客搭建过程</a></li><li class="breadcrumb-item active" aria-current="page">Github Pages 博客网站访问速度优化</li>
-    </ol>
-  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details collection-details open">
-      <div class="details-summary collection-summary">
-        <i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>
-        <span class="collection-name" data-collections="合集">建站日志</span>
-        <span class="collection-count">5</span><i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
-      <div class="details-content collection-content">
-        <nav>
-          <ul class="collection-list">
-                <li class="collection-item"><a href="/posts/hugo-add-component/" title="Hugo 博客添加 Giscus 评论功能">Hugo 博客添加 Giscus 评论功能</a></li>
-                <li class="collection-item"><a href="/posts/windows-hugo-blog-cloudflare/" title="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客">Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</a></li>
-                <li class="collection-item"><a href="/posts/fixit-admonition/" title="Fixit自带的admonition样式">Fixit自带的admonition样式</a></li>
-                <li class="collection-item"><a href="/posts/windows-hugo-blog-github/" title="Windows下使用hugo和Github Pages配置博客">Windows下使用hugo和Github Pages配置博客</a></li><li class="collection-item"><span class="active" title="Github Pages 博客网站访问速度优化">Github Pages 博客网站访问速度优化</span></li></ul>
-          <div class="collection-nav-simple"><a href="/posts/windows-hugo-blog-github/" class="collection-nav-item" rel="prev" title="Windows下使用hugo和Github Pages配置博客"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i></a><span class="text-secondary">5/5</span><i class="fa-solid fa-angle-right fa-fw collection-nav-item text-secondary" aria-hidden="true"></i></div>
-        </nav>
-      </div>
-    </div></aside>
-
-  <article class="page single">
-    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Github Pages 博客网站访问速度优化</span>
-      </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><a href="https://www.haoyep.com/" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img loading="lazy" src="https://dn-qiniu-avatar.qbox.me/avatar/867c2859fc58e987cb357c7a67ac01cb?s=32&amp;d=mp" alt="云吱" data-title="云吱" class="avatar" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&nbsp;云吱</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/blog/" class="post-category" title="分类 - blog"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> blog</a> 和 <a href="/collections/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/" class="post-collection" title="合集 - 建站日志"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 建站日志</a></span></div><div class="post-meta-line"><span title="发布于 2023-12-17 15:00:18"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-17">2023-12-17</time></span>&nbsp;<span title="更新于 2024-04-14 14:04:45"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2024-04-14">2024-04-14</time></span>&nbsp;<span title="1134 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Github Pages 博客网站访问速度优化">
-              <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
-            </span>&nbsp;</div>
-    </div><div class="featured-image"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171452357.png" alt="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171452357.png" data-title="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></div><div class="details toc" id="toc-static" data-kept="false">
-        <div class="details-summary toc-title">
-          <span>目录</span>
-          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
-        </div>
-        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ol>
-    <li><a href="#图片加速">图片加速</a>
-      <ol>
-        <li><a href="#网站图片">网站图片</a></li>
-        <li><a href="#网站图标">网站图标</a></li>
-        <li><a href="#网站-logo">网站 logo</a></li>
-        <li><a href="#主页头像">主页头像</a></li>
-      </ol>
-    </li>
-    <li><a href="#加速谷歌字体">加速谷歌字体</a></li>
-    <li><a href="#加速-avatar-头像">加速 avatar 头像</a></li>
-  </ol>
-</nav></div>
-      </div><div class="content" id="content" data-end-flag="（本文完）"><p>个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。</p>
-<p>使用 Github Pages 可以方便地搭建自己的静态网站，详细过程参考我的这篇文章。
-<a href="https://www.haoyep.com/posts/windows-hugo-blog-github/" title="使用 hugo 和 Github Pages 搭建个人博客"target="_blank" rel="external nofollow noopener noreferrer" class="card-link"><span class="cl-backdrop" style="--cl-bg-url: url(/images/fixit.min.svg);"></span>
-    <span class="cl-content">
-      <span class="cl-text">
-        <span class="cl-title">使用 hugo 和 Github Pages 搭建个人博客</span>
-        <span class="cl-meta">
-          <svg class="cl-icon-link" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M574 665.4c-3.1-3.1-8.2-3.1-11.3 0L446.5 781.6c-53.8 53.8-144.6 59.5-204 0-59.5-59.5-53.8-150.2 0-204l116.2-116.2c3.1-3.1 3.1-8.2 0-11.3l-39.8-39.8c-3.1-3.1-8.2-3.1-11.3 0L191.4 526.5c-84.6 84.6-84.6 221.5 0 306s221.5 84.6 306 0l116.2-116.2c3.1-3.1 3.1-8.2 0-11.3L574 665.4zM832.6 191.4c-84.6-84.6-221.5-84.6-306 0L410.3 307.6c-3.1 3.1-3.1 8.2 0 11.3l39.7 39.7c3.1 3.1 8.2 3.1 11.3 0l116.2-116.2c53.8-53.8 144.6-59.5 204 0 59.5 59.5 53.8 150.2 0 204L665.3 562.6c-3.1 3.1-3.1 8.2 0 11.3l39.8 39.8c3.1 3.1 8.2 3.1 11.3 0l116.2-116.2c84.5-84.6 84.5-221.5 0-306.1z" fill="#a9a9b3"></path><path d="M610.1 372.3c-3.1-3.1-8.2-3.1-11.3 0L372.3 598.7c-3.1 3.1-3.1 8.2 0 11.3l39.6 39.6c3.1 3.1 8.2 3.1 11.3 0l226.4-226.4c3.1-3.1 3.1-8.2 0-11.3l-39.5-39.6z" fill="#a9a9b3"></path></svg>
-          <span class="cl-url">https://www.haoyep.com/posts/windows-hugo-blog-github/</span>
-        </span>
-      </span><svg class="cl-icon-globe" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="64" height="64"><path d="M960 512c0 249.408-203.2 448-448 448-244.778667 0-448-198.592-448-448S262.592 64 512 64s448 198.592 448 448" fill="#2196F3"></path><path d="M507.52 718.08c0-8.96-4.48-13.44-13.44-17.92-26.88-8.96-53.76-8.96-76.16-31.381333-4.48-8.96-4.48-17.92-8.96-26.88-8.96-8.96-31.36-13.44-44.8-17.92h-89.6c-13.44-4.48-22.4-22.4-31.36-35.84 0-4.48 0-13.461333-8.96-13.461334-8.96-4.458667-17.92 4.501333-26.88 0-4.48-4.458667-4.48-8.96-4.48-13.418666 0-13.461333 8.96-26.901333 17.92-35.861334 13.44-8.96 26.88 4.48 40.32 4.48 4.48 0 4.48 0 8.96 4.48 13.44 4.48 17.92 22.4 17.92 35.861334v8.96c0 4.48 4.48 4.48 8.96 4.48 4.48-22.4 4.48-44.821333 8.96-67.2 0-26.88 26.88-53.781333 49.28-62.72 8.96-4.458667 13.44 4.501333 22.4 0 26.88-8.96 94.08-35.84 80.64-71.658667-8.96-31.381333-35.84-62.698667-71.68-58.24-8.96 4.501333-13.44 8.96-22.4 13.461333-13.44 8.96-40.32 35.84-53.76 35.84-22.4-4.48-22.4-35.84-17.92-49.301333 4.48-17.92 44.8-76.138667 71.68-67.178667l17.92 17.92c8.96 4.48 22.4 4.48 35.84 4.48 4.48 0 8.96 0 13.44-4.48 4.48-4.48 4.48-4.48 4.48-8.96 0-13.44-13.44-26.901333-22.4-35.861333s-22.4-17.92-35.84-22.378667c-44.8-13.461333-116.48 4.458667-152.32 35.84-35.84 31.36-62.72 85.12-80.64 129.92-8.96 26.88-17.92 62.698667-22.4 94.08-4.48 22.4-8.96 40.32 4.48 62.698667 13.44 26.88 40.32 53.781333 67.2 71.68 17.92 13.44 53.76 13.44 71.68 35.84 13.44 17.941333 8.96 40.32 8.96 62.72 0 26.88 17.92 49.28 26.88 71.658667 4.48 13.461333 8.96 31.381333 13.44 44.821333 0 4.48 4.48 31.36 4.48 35.84 26.88 13.44 49.28 26.901333 80.64 35.861333 4.48 0 22.4-26.901333 22.4-31.381333 13.44-13.44 22.4-31.36 35.84-40.32 8.96-4.48 17.92-8.96 26.88-17.941333 8.96-8.96 13.44-26.88 17.92-40.32 4.48-8.938667 8.96-26.858667 4.48-40.298667M516.48 305.92c4.48 0 8.96-4.48 17.92-8.96 13.44-8.96 26.901333-22.4 40.32-31.36 13.461333-8.96 26.901333-22.4 35.861333-31.36 13.44-8.96 22.4-26.88 26.88-40.341333 4.48-8.96 17.941333-26.88 13.44-40.32-4.48-8.96-26.88-13.44-35.84-17.92C579.2 126.698667 547.84 122.24 512 122.24c-13.44 0-31.36 4.458667-35.84 17.92-4.48 22.4 13.44 17.92 31.36 22.4 0 0 4.48 35.84 4.48 40.32 4.48 22.421333-8.96 35.84-8.96 58.24 0 13.44 0 35.84 8.96 44.8h4.48zM892.8 619.52c4.501333-8.96 4.501333-22.4 8.96-31.36 4.501333-22.421333 4.501333-44.8 4.501333-67.2 0-44.8-4.501333-89.578667-17.92-129.92-8.96-13.44-13.461333-26.88-17.941333-40.341333-8.96-22.378667-22.4-44.8-40.32-62.698667-17.92-22.4-40.341333-85.12-80.64-67.2-13.44 4.501333-22.4 22.421333-31.36 31.381333l-26.88 40.32c-4.501333 4.48-8.96 13.44-4.501333 17.92 0 4.48 4.501333 4.48 8.96 4.48 8.96 4.501333 13.461333 4.501333 22.421333 8.96 4.48 0 8.96 4.501333 4.48 8.96 0 0 0 4.501333-4.48 4.501334-22.421333 22.4-44.8 40.32-67.2 62.698666-4.48 4.48-8.96 13.44-8.96 17.92s4.48 4.48 4.48 8.96c0 4.501333-4.48 4.501333-8.96 8.96-8.96 4.501333-17.92 8.96-22.4 13.461334-4.48 8.96 0 22.4-4.48 31.36-4.48 22.4-17.941333 40.32-26.901333 62.72-8.96 13.418667-13.418667 26.88-22.378667 40.32 0 17.92-4.501333 31.36 4.458667 44.8 22.421333 31.36 62.72 13.44 94.08 26.901333 8.96 4.458667 17.92 4.458667 22.421333 13.418667 13.418667 13.461333 13.418667 35.861333 17.92 49.301333 4.458667 17.92 8.96 35.84 17.92 53.76 4.48 22.421333 13.44 44.821333 17.92 62.72 40.341333-31.36 76.16-67.178667 103.04-112 26.88-31.424 40.341333-67.242667 53.76-103.104" fill="#CDDC39"></path></svg></span></a></p>
-<p>但由于众所周知的原因，此方法搭建的博客在国内访问速度不佳。因此考虑采用一些方法来加速访问，主要思路是使用 CDN 加速网站的静态资源。</p>
-<p>对于不同的静态资源，加速方法分别如下：</p>
-<ol>
-<li>使用自定义域名，见<a href="https://www.haoyep.com/posts/windows-hugo-blog-github/#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%9A%E5%AE%A2%E5%9F%9F%E5%90%8D"target="_blank" rel="external nofollow noopener noreferrer">个人 Github 博客设置自定义域名</a>；</li>
-<li><code>js/css</code>文件
-<ul>
-<li><del>使用<code>jsdelivr</code> 和 <code>unpkg</code> 进行 CDN 加速</del>，亲测使用自定义域名后，这两个 CDN 反而会降速。因此不需要单独对<code>js/css</code>文件加速。</li>
-</ul>
-</li>
-<li>托管在 Github 仓库上的<a href="#%e5%9b%be%e7%89%87%e5%8a%a0%e9%80%9f">图床图片</a>。
-<ul>
-<li>本人博客上的图片都是使用 PicGo 上传到图床，图床是用 GitHub 仓库搭建的，见<a href="https://www.haoyep.com/posts/github-graph-beds"target="_blank" rel="external nofollow noopener noreferrer">图床搭建过程</a> 。为了加快 GitHub 文件访问速度，参考<a href="https://www.haoyep.com/posts/github-graph-beds-cdn/"target="_blank" rel="external nofollow noopener noreferrer">通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</a>，通过自定义域名区分国内外请求，分配不同的 CDN 资源。最后，替换博客内所有 Github 文件链接即可。
-
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152140943.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152140943.png?size=small" data-sub-html="<h2> </h2><p>替换 Github 文件链接</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152140943.png" alt="替换 Github 文件链接" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152140943.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152140943.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152140943.png?size=large 2x" data-title="替换 Github 文件链接" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">替换 Github 文件链接</figcaption>
-  </figure></li>
-</ul>
-</li>
-<li><a href="#%e5%8a%a0%e9%80%9f%e8%b0%b7%e6%ad%8c%e5%ad%97%e4%bd%93">加速谷歌字体</a></li>
-<li><a href="#%e5%8a%a0%e9%80%9f-avatar-%e5%a4%b4%e5%83%8f">加速 avatar 头像</a></li>
-</ol>
-<h2 id="图片加速" class="heading-element">
-  <a href="#%e5%9b%be%e7%89%87%e5%8a%a0%e9%80%9f" class="heading-mark"></a>1 图片加速</h2><p>首先参考这篇文章，搭建加速域名。
-<a href="https://www.haoyep.com/posts/github-graph-beds-cdn/" title="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源"target="_blank" rel="external nofollow noopener noreferrer" class="card-link"><span class="cl-backdrop" style="--cl-bg-url: url(/images/fixit.min.svg);"></span>
-    <span class="cl-content">
-      <span class="cl-text">
-        <span class="cl-title">通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</span>
-        <span class="cl-meta">
-          <svg class="cl-icon-link" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M574 665.4c-3.1-3.1-8.2-3.1-11.3 0L446.5 781.6c-53.8 53.8-144.6 59.5-204 0-59.5-59.5-53.8-150.2 0-204l116.2-116.2c3.1-3.1 3.1-8.2 0-11.3l-39.8-39.8c-3.1-3.1-8.2-3.1-11.3 0L191.4 526.5c-84.6 84.6-84.6 221.5 0 306s221.5 84.6 306 0l116.2-116.2c3.1-3.1 3.1-8.2 0-11.3L574 665.4zM832.6 191.4c-84.6-84.6-221.5-84.6-306 0L410.3 307.6c-3.1 3.1-3.1 8.2 0 11.3l39.7 39.7c3.1 3.1 8.2 3.1 11.3 0l116.2-116.2c53.8-53.8 144.6-59.5 204 0 59.5 59.5 53.8 150.2 0 204L665.3 562.6c-3.1 3.1-3.1 8.2 0 11.3l39.8 39.8c3.1 3.1 8.2 3.1 11.3 0l116.2-116.2c84.5-84.6 84.5-221.5 0-306.1z" fill="#a9a9b3"></path><path d="M610.1 372.3c-3.1-3.1-8.2-3.1-11.3 0L372.3 598.7c-3.1 3.1-3.1 8.2 0 11.3l39.6 39.6c3.1 3.1 8.2 3.1 11.3 0l226.4-226.4c3.1-3.1 3.1-8.2 0-11.3l-39.5-39.6z" fill="#a9a9b3"></path></svg>
-          <span class="cl-url">https://www.haoyep.com/posts/github-graph-beds-cdn/</span>
-        </span>
-      </span><svg class="cl-icon-globe" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="64" height="64"><path d="M960 512c0 249.408-203.2 448-448 448-244.778667 0-448-198.592-448-448S262.592 64 512 64s448 198.592 448 448" fill="#2196F3"></path><path d="M507.52 718.08c0-8.96-4.48-13.44-13.44-17.92-26.88-8.96-53.76-8.96-76.16-31.381333-4.48-8.96-4.48-17.92-8.96-26.88-8.96-8.96-31.36-13.44-44.8-17.92h-89.6c-13.44-4.48-22.4-22.4-31.36-35.84 0-4.48 0-13.461333-8.96-13.461334-8.96-4.458667-17.92 4.501333-26.88 0-4.48-4.458667-4.48-8.96-4.48-13.418666 0-13.461333 8.96-26.901333 17.92-35.861334 13.44-8.96 26.88 4.48 40.32 4.48 4.48 0 4.48 0 8.96 4.48 13.44 4.48 17.92 22.4 17.92 35.861334v8.96c0 4.48 4.48 4.48 8.96 4.48 4.48-22.4 4.48-44.821333 8.96-67.2 0-26.88 26.88-53.781333 49.28-62.72 8.96-4.458667 13.44 4.501333 22.4 0 26.88-8.96 94.08-35.84 80.64-71.658667-8.96-31.381333-35.84-62.698667-71.68-58.24-8.96 4.501333-13.44 8.96-22.4 13.461333-13.44 8.96-40.32 35.84-53.76 35.84-22.4-4.48-22.4-35.84-17.92-49.301333 4.48-17.92 44.8-76.138667 71.68-67.178667l17.92 17.92c8.96 4.48 22.4 4.48 35.84 4.48 4.48 0 8.96 0 13.44-4.48 4.48-4.48 4.48-4.48 4.48-8.96 0-13.44-13.44-26.901333-22.4-35.861333s-22.4-17.92-35.84-22.378667c-44.8-13.461333-116.48 4.458667-152.32 35.84-35.84 31.36-62.72 85.12-80.64 129.92-8.96 26.88-17.92 62.698667-22.4 94.08-4.48 22.4-8.96 40.32 4.48 62.698667 13.44 26.88 40.32 53.781333 67.2 71.68 17.92 13.44 53.76 13.44 71.68 35.84 13.44 17.941333 8.96 40.32 8.96 62.72 0 26.88 17.92 49.28 26.88 71.658667 4.48 13.461333 8.96 31.381333 13.44 44.821333 0 4.48 4.48 31.36 4.48 35.84 26.88 13.44 49.28 26.901333 80.64 35.861333 4.48 0 22.4-26.901333 22.4-31.381333 13.44-13.44 22.4-31.36 35.84-40.32 8.96-4.48 17.92-8.96 26.88-17.941333 8.96-8.96 13.44-26.88 17.92-40.32 4.48-8.938667 8.96-26.858667 4.48-40.298667M516.48 305.92c4.48 0 8.96-4.48 17.92-8.96 13.44-8.96 26.901333-22.4 40.32-31.36 13.461333-8.96 26.901333-22.4 35.861333-31.36 13.44-8.96 22.4-26.88 26.88-40.341333 4.48-8.96 17.941333-26.88 13.44-40.32-4.48-8.96-26.88-13.44-35.84-17.92C579.2 126.698667 547.84 122.24 512 122.24c-13.44 0-31.36 4.458667-35.84 17.92-4.48 22.4 13.44 17.92 31.36 22.4 0 0 4.48 35.84 4.48 40.32 4.48 22.421333-8.96 35.84-8.96 58.24 0 13.44 0 35.84 8.96 44.8h4.48zM892.8 619.52c4.501333-8.96 4.501333-22.4 8.96-31.36 4.501333-22.421333 4.501333-44.8 4.501333-67.2 0-44.8-4.501333-89.578667-17.92-129.92-8.96-13.44-13.461333-26.88-17.941333-40.341333-8.96-22.378667-22.4-44.8-40.32-62.698667-17.92-22.4-40.341333-85.12-80.64-67.2-13.44 4.501333-22.4 22.421333-31.36 31.381333l-26.88 40.32c-4.501333 4.48-8.96 13.44-4.501333 17.92 0 4.48 4.501333 4.48 8.96 4.48 8.96 4.501333 13.461333 4.501333 22.421333 8.96 4.48 0 8.96 4.501333 4.48 8.96 0 0 0 4.501333-4.48 4.501334-22.421333 22.4-44.8 40.32-67.2 62.698666-4.48 4.48-8.96 13.44-8.96 17.92s4.48 4.48 4.48 8.96c0 4.501333-4.48 4.501333-8.96 8.96-8.96 4.501333-17.92 8.96-22.4 13.461334-4.48 8.96 0 22.4-4.48 31.36-4.48 22.4-17.941333 40.32-26.901333 62.72-8.96 13.418667-13.418667 26.88-22.378667 40.32 0 17.92-4.501333 31.36 4.458667 44.8 22.421333 31.36 62.72 13.44 94.08 26.901333 8.96 4.458667 17.92 4.458667 22.421333 13.418667 13.418667 13.461333 13.418667 35.861333 17.92 49.301333 4.458667 17.92 8.96 35.84 17.92 53.76 4.48 22.421333 13.44 44.821333 17.92 62.72 40.341333-31.36 76.16-67.178667 103.04-112 26.88-31.424 40.341333-67.242667 53.76-103.104" fill="#CDDC39"></path></svg></span></a></p>
-<p>对于要使用的图片，使用 PicGo 上传到 GitHub 图床，获取 CDN 加速链接。然后在配置文件中使用相应的链接即可。下面介绍几个配置中常见的图片。</p>
-<h3 id="网站图片" class="heading-element">
-  <a href="#%e7%bd%91%e7%ab%99%e5%9b%be%e7%89%87" class="heading-mark"></a>1.1 网站图片</h3><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># 网站图片，用于 Open Graph 和 Twitter Cards</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">images</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png&#34;</span><span class="p">]</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161421814.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161421814.png?size=small" data-sub-html="<h2> </h2><p>网站图片，用于 Open Graph 和 Twitter Cards</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161421814.png" alt="网站图片，用于 Open Graph 和 Twitter Cards" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161421814.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161421814.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161421814.png?size=large 2x" data-title="网站图片，用于 Open Graph 和 Twitter Cards" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">网站图片，用于 Open Graph 和 Twitter Cards</figcaption>
-  </figure></p>
-<h3 id="网站图标" class="heading-element">
-  <a href="#%e7%bd%91%e7%ab%99%e5%9b%be%e6%a0%87" class="heading-mark"></a>1.2 网站图标</h3><p>配置：<code>[params]</code>——<code>[params.app]</code>。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># 应用图标配置</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">app</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># 当添加到 iOS 主屏幕或者 Android 启动器时的标题，覆盖默认标题</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;云吱&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># 是否隐藏网站图标资源链接</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">noFavicon</span> <span class="p">=</span> <span class="kc">false</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># 更现代的 SVG 网站图标，可替代旧的 .png 和 .ico 文件</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">svgFavicon</span> <span class="p">=</span> <span class="s2">&#34;https://cdn.haoyep.com/gh/leegical/Blog_img/favicon.svg&#34;</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161426248.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161426248.png?size=small" data-sub-html="<h2> </h2><p>网站图标</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161426248.png" alt="网站图标" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161426248.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161426248.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161426248.png?size=large 2x" data-title="网站图标" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">网站图标</figcaption>
-  </figure></p>
-<h3 id="网站-logo" class="heading-element">
-  <a href="#%e7%bd%91%e7%ab%99-logo" class="heading-mark"></a>1.3 网站 logo</h3><p>配置：<code>[params]</code>——<code>[params.header]</code>——<code>[params.header.title]</code>。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c">#  页面头部导航栏标题配置</span>
-</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">header</span><span class="p">.</span><span class="nx">title</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">      <span class="c"># LOGO 的 URL</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">logo</span> <span class="p">=</span> <span class="s2">&#34;https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png&#34;</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161428936.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161428936.png?size=small" data-sub-html="<h2> </h2><p>网站 logo</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161428936.png" alt="网站 logo" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161428936.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161428936.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161428936.png?size=large 2x" data-title="网站 logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">网站 logo</figcaption>
-  </figure></p>
-<h3 id="主页头像" class="heading-element">
-  <a href="#%e4%b8%bb%e9%a1%b5%e5%a4%b4%e5%83%8f" class="heading-mark"></a>1.4 主页头像</h3><p>配置：<code>[params]</code>——<code>[params.home]</code>——<code>[params.home.profile]</code>。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># 主页个人信息</span>
-</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">home</span><span class="p">.</span><span class="nx">profile</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
-</span></span><span class="line"><span class="cl">      <span class="c"># Gravatar 邮箱，用于优先在主页显示的头像</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">gravatarEmail</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">      <span class="c"># 主页显示头像的 URL</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">avatarURL</span> <span class="p">=</span> <span class="s2">&#34;https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/avatar.png&#34;</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161433480.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161433480.png?size=small" data-sub-html="<h2> </h2><p>主页头像</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161433480.png" alt="主页头像" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161433480.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161433480.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161433480.png?size=large 2x" data-title="主页头像" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">主页头像</figcaption>
-  </figure></p>
-<h2 id="加速谷歌字体" class="heading-element">
-  <a href="#%e5%8a%a0%e9%80%9f%e8%b0%b7%e6%ad%8c%e5%ad%97%e4%bd%93" class="heading-mark"></a>2 加速谷歌字体</h2><p><a href="https://github.com/hugo-fixit/FixIt"target="_blank" rel="external nofollow noopener noreferrer"><strong>FixIt</strong> 主题</a>默认使用系统字体作为博客渲染字体，免去了加载字体。
-
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152148953.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152148953.png?size=small" data-sub-html="<h2> </h2><p>Fixit主题全局字体</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152148953.png" alt="Fixit主题全局字体" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152148953.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152148953.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152148953.png?size=large 2x" data-title="Fixit主题全局字体" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">Fixit主题全局字体</figcaption>
-  </figure></p>
-<p>但是想要为一些特定区域，如 <code>code</code> 设置特别字体时，就需要用到谷歌字体。这里选择使用 <code>fonts.loli.net</code> 加速。在 <code>assets/css</code> 中新建 <code>_override.scss</code> 文件，内容如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="k">@import</span> <span class="sx">url(&#39;https://fonts.loli.net/css?family=JetBrains+Mono:400,700&amp;display=swap&amp;subset=latin-ext&#39;)</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$code-font-family</span><span class="o">:</span> <span class="n">JetBrains</span> <span class="n">Mono</span><span class="o">,</span> <span class="n">Fira</span> <span class="n">Mono</span><span class="o">,</span> <span class="n">Source</span> <span class="n">Code</span> <span class="n">Pro</span><span class="o">,</span> <span class="n">Menlo</span><span class="o">,</span> <span class="n">Consolas</span><span class="o">,</span> <span class="n">Monaco</span><span class="o">,</span> <span class="ni">monospace</span><span class="p">;</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152151358.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152151358.png?size=small" data-sub-html="<h2> </h2><p>加速code的谷歌字体</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152151358.png" alt="加速code的谷歌字体" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152151358.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152151358.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152151358.png?size=large 2x" data-title="加速code的谷歌字体" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">加速code的谷歌字体</figcaption>
-  </figure></p>
-<h2 id="加速-avatar-头像" class="heading-element">
-  <a href="#%e5%8a%a0%e9%80%9f-avatar-%e5%a4%b4%e5%83%8f" class="heading-mark"></a>3 加速 avatar 头像</h2><p>在 <code>hugo.toml</code> 设置 Gravatar 主机为七牛云地址 <code>dn-qiniu-avatar.qbox.me</code>：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl">  <span class="c"># FixIt 0.2.14 | NEW Gravatar 设置</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">gravatar</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="c">#  取决于作者邮箱，作者邮箱未设置则使用本地头像</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># Gravatar 主机，默认：“www.gravatar.com”</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">host</span> <span class="p">=</span> <span class="s2">&#34;dn-qiniu-avatar.qbox.me&#34;</span> <span class="c"># [&#34;cn.gravatar.com&#34;, &#34;gravatar.loli.net&#34;, ...]</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">style</span> <span class="p">=</span> <span class="s2">&#34;identicon&#34;</span> <span class="c"># [&#34;&#34;, &#34;mp&#34;, &#34;identicon&#34;, &#34;monsterid&#34;, &#34;wavatar&#34;, &#34;retro&#34;, &#34;blank&#34;, &#34;robohash&#34;]</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>
-<figure><a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152153926.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152153926.png?size=small" data-sub-html="<h2> </h2><p>设置 Gravatar 主机为七牛云地址</p>"><img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152153926.png" alt="设置 Gravatar 主机为七牛云地址" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152153926.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152153926.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152153926.png?size=large 2x" data-title="设置 Gravatar 主机为七牛云地址" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></a><figcaption class="image-caption">设置 Gravatar 主机为七牛云地址</figcaption>
-  </figure></p></div><h2 id="see-also">相关内容</h2>
-    <ul><li>
-          <a href="/posts/windows-hugo-blog-github/" title="Windows下使用hugo和Github Pages配置博客">Windows下使用hugo和Github Pages配置博客</a></li><li>
-          <a href="/posts/github-graph-beds-cdn/" title="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源">通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</a></li><li>
-          <a href="/posts/github-graph-beds/" title="使用PicGo &#43; GitHub 搭建 Obsidian 图床">使用PicGo &#43; GitHub 搭建 Obsidian 图床</a></li><li>
-          <a href="/posts/fixit-admonition/" title="Fixit自带的admonition样式">Fixit自带的admonition样式</a></li><li>
-          <a href="/posts/windows-hugo-blog-cloudflare/" title="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客">Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</a></li></ul><div class="collection-card">
-      <div class="collection-title text-secondary">收录于 <a href="/collections/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> <span>合集・建站日志</span></span></a> 5</div>
-      <div class="collection-nav"><a href="/posts/windows-hugo-blog-github/" class="collection-nav-item" rel="prev" title="Windows下使用hugo和Github Pages配置博客"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i><span>Windows下使用hugo和Github Pages配置博客</span>
-          </a></div>
-    </div><div class="post-footer" id="post-footer">
-  <div class="post-info">
-    <div class="post-info-line">
-      <div class="post-info-mod">
-        <span title="更新于 2024-04-14 14:04:45">更新于 2024-04-14&nbsp;<a class="git-hash" href="https://github.com/leegical/blog/commit/c03c157e34a071743107dafc06e53b5eaea21aea" rel="external nofollow noopener noreferrer" target="_blank" title="commit by CXG-L(chuxuange@gmail.com) c03c157e34a071743107dafc06e53b5eaea21aea: domain add www."><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i>c03c157</a></span>
-      </div><div class="post-info-license">
-            <span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
-          </div></div><div class="post-info-line">
-        <div class="post-info-md"><span><a href="/posts/optimize-github-pages-blog-access-speed/index.md" title="阅读原始文档" class="link-to-markdown">阅读原始文档</a></span><span><a href="https://github.com/leegical/blog/blob/main/content/posts/build-blog/Optimize-Github-Pages-blog-access-speed.md?plain=1" title="查看源码"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">查看源码</a></span><span><a href="https://github.com/leegical/blog/edit/main/content/posts/build-blog/Optimize-Github-Pages-blog-access-speed.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span></div>
-        <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/" data-title="Github Pages 博客网站访问速度优化" data-hashtags="git,Fixit"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/" data-hashtag="git"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/" data-title="Github Pages 博客网站访问速度优化" data-image="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171452357.png"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/" data-title="Github Pages 博客网站访问速度优化"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/" data-title="Github Pages 博客网站访问速度优化"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
-  </span>
-        </div>
-      </div></div>
-
-  <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/git/" class="post-tag" title="标签 - git">git</a><a href="/tags/fixit/" class="post-tag" title="标签 - Fixit">Fixit</a></section>
-    <section>
-      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
-    </section>
-  </div>
-
-  <div class="post-nav"><a href="/posts/afl-install/" class="post-nav-item" rel="prev" title="Ubuntu 22.04 安装 AFL 及 qemu mode 实践"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Ubuntu 22.04 安装 AFL 及 qemu mode 实践</a>
-      <a href="/posts/github-graph-beds-cdn/" class="post-nav-item" rel="next" title="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源">通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
-</div>
-<div id="comments"><div id="giscus" class="comment">
-          <script
-            src="https://giscus.app/client.js"
-            data-repo="leegical/leegical.github.io"
-            data-repo-id="R_kgDOKqVEVg"
-            data-category="Announcements"
-            data-category-id="DIC_kwDOKqVEVs4Cax6P"
-            data-mapping="pathname"
-            data-strict="0"
-            
-            data-theme="preferred_color_scheme"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="top"
-            data-lang="zh-CN"
-            data-loading="lazy"
-            crossorigin="anonymous"
-            async
-            defer
-          ></script>
-        </div>
-        <noscript>
-          Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
-        </noscript></div></article>
-
-  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
-      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
-            <span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">
-              <a href="https://www.haoyep.com/"target="_blank" rel="external nofollow noopener noreferrer">云吱</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line visitor">
-          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
-        </div><div class="footer-line beian"><span class="icp footer-divider"><a href='https://icp.gov.moe/?keyword=20239399' target='_blank'>萌ICP备20239399号</a></span></div></div>
-  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric">0%</span>
-        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
-    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
-  </noscript>
-</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/pace/themes/orange/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/algoliasearch/algoliasearch-lite.umd.min.js" defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="//npm.elemecdn.com/penndu@1.0.0/bsz.js" async defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":true,"expired":false,"giscus":{"darkTheme":"dark","lightTheme":"light"}},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"23TF0E394I","algoliaIndex":"index","algoliaSearchKey":"748e3a3e3ef2f537198c57b19d5ff3e6","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script src="/js/theme.min.js" defer></script></body>
-</html>
+<!doctype html><html itemscope itemtype=http://schema.org/WebPage lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=2"><meta name=robots content="noodp"><title>Github Pages 博客网站访问速度优化 | 云吱的小站</title><meta name=author content="云吱">
+<meta name=author-link content="https://www.haoyep.com/"><meta name=description content="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。"><meta name=keywords content='git,Fixit'><meta itemprop=name content="Github Pages 博客网站访问速度优化"><meta itemprop=description content="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。"><meta itemprop=datePublished content="2023-12-17T15:00:18+08:00"><meta itemprop=dateModified content="2024-04-14T14:04:45+08:00"><meta itemprop=wordCount content="1134"><meta itemprop=image content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png"><meta itemprop=keywords content="git,Fixit"><meta property="og:url" content="https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/"><meta property="og:site_name" content="云吱的小站"><meta property="og:title" content="Github Pages 博客网站访问速度优化"><meta property="og:description" content="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。"><meta property="og:locale" content="zh-CN"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-12-17T15:00:18+08:00"><meta property="article:modified_time" content="2024-04-14T14:04:45+08:00"><meta property="article:tag" content="git"><meta property="article:tag" content="Fixit"><meta property="og:image" content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png"><meta name=twitter:title content="Github Pages 博客网站访问速度优化"><meta name=twitter:description content="个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。"><meta name=application-name content="云吱"><meta name=apple-mobile-web-app-title content="云吱"><meta name=theme-color data-light=#f8f8f8 data-dark=#252627 content="#f8f8f8"><meta name=msapplication-TileColor content="#da532c"><link rel=icon href=https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/favicon.svg><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/><link rel=prev href=https://www.haoyep.com/posts/github-graph-beds-cdn/><link rel=next href=https://www.haoyep.com/posts/afl-install/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=/lib/fontawesome-free/all.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/fontawesome-free/all.min.css></noscript><link rel=preload href=/lib/animate/animate.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/animate/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Github Pages 博客网站访问速度优化","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.haoyep.com\/posts\/optimize-github-pages-blog-access-speed\/"},"image":["https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/202312161447739.ico"],"genre":"posts","keywords":"git, Fixit","wordcount":1134,"url":"https:\/\/www.haoyep.com\/posts\/optimize-github-pages-blog-access-speed\/","datePublished":"2023-12-17T15:00:18+08:00","dateModified":"2024-04-14T14:04:45+08:00","publisher":{"@type":"Organization","name":"云吱","logo":"https:\/\/cdn.haoyep.com\/gh\/leegical\/Blog_img\/cdnimg\/weblogo.png"},"author":{"@type":"Person","name":"云吱"},"description":"个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。"}</script></head><body data-header-desktop=sticky data-header-mobile=auto><script>(window.localStorage?.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("data-theme","dark")</script><div class=wrapper data-page-style=normal><header class="desktop animate__faster" id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=云吱的小站><img loading=lazy src=/pokeball.ico alt=云吱的小站 data-title=云吱的小站 class=logo style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'><span class=header-title-text>云吱</span></a><span class=header-subtitle>好耶！</span></div><nav><ul class=menu><li class="menu-item has-children"><a class=menu-link href=/archives/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> 归档</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden=true></i><ul class=sub-menu><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden=true></i> 分类</a></li><li class=menu-item><a class=menu-link href=/collections/><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden=true></i> 合集</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> 标签</a></li></ul></li><li class=menu-item><a class=menu-link href=/friends/ title=友情链接><i class="fa-solid fa-users-viewfinder fa-fw fa-sm" aria-hidden=true></i> 友链</a></li><li class=menu-item><a class=menu-link href=/guestbook/><i class="fa-regular fa-comments fa-fw fa-sm" aria-hidden=true></i> 留言</a></li><li class=menu-item><a class=menu-link href=/about/><i class="fa-regular fa-id-card fa-fw fa-sm" aria-hidden=true></i> 关于</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id=search-desktop><input type=text placeholder=搜索文章标题或内容…… id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fa-solid fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空><i class="fa-solid fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></li><li class="menu-item theme-switch" title=切换主题><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></li></ul></nav></div></header><header class="mobile animate__faster" id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=云吱的小站><img loading=lazy src=/pokeball.ico alt=/pokeball.ico data-title=/pokeball.ico class=logo style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'><span class=header-title-text>云吱</span></a><span class=header-subtitle>好耶！</span></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><nav><ul class=menu id=menu-mobile><li class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容…… id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fa-solid fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空><i class="fa-solid fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>取消</a></li><li class=menu-item><span class=nested-item><a class=menu-link href=/archives/><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden=true></i> 归档</a>
+<i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden=true></i></span><ul class=sub-menu><li class=menu-item><a class=menu-link href=/categories/><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden=true></i> 分类</a></li><li class=menu-item><a class=menu-link href=/collections/><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden=true></i> 合集</a></li><li class=menu-item><a class=menu-link href=/tags/><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden=true></i> 标签</a></li></ul></li><li class=menu-item><a class=menu-link href=/friends/ title=友情链接><i class="fa-solid fa-users-viewfinder fa-fw fa-sm" aria-hidden=true></i> 友链</a></li><li class=menu-item><a class=menu-link href=/guestbook/><i class="fa-regular fa-comments fa-fw fa-sm" aria-hidden=true></i> 留言</a></li><li class=menu-item><a class=menu-link href=/about/><i class="fa-regular fa-id-card fa-fw fa-sm" aria-hidden=true></i> 关于</a></li><li class="menu-item menu-system"><span class="menu-system-item theme-switch" title=切换主题><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></span></li></ul></nav></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><nav aria-label=breadcrumb class="breadcrumb-container sticky"><ol class=breadcrumb><li class=breadcrumb-item><a href=/posts/ title=posts>文章</a></li><li class=breadcrumb-item><a href=/posts/build-blog/ title=关于博客搭建过程系列文章。>博客搭建过程</a></li><li class="breadcrumb-item active" aria-current=page>Github Pages 博客网站访问速度优化</li></ol></nav><main class=container><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label=合集><div class="details collection-details open"><div class="details-summary collection-summary"><i class="fa-solid fa-layer-group fa-fw" aria-hidden=true></i>
+<span class=collection-name data-collections=合集>建站日志</span>
+<span class=collection-count>5</span><i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden=true></i></div><div class="details-content collection-content"><nav><ul class=collection-list><li class=collection-item><a href=/posts/hugo-add-component/ title="Hugo 博客添加 Giscus 评论功能">Hugo 博客添加 Giscus 评论功能</a></li><li class=collection-item><a href=/posts/windows-hugo-blog-cloudflare/ title="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客">Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</a></li><li class=collection-item><a href=/posts/fixit-admonition/ title=Fixit自带的admonition样式>Fixit自带的admonition样式</a></li><li class=collection-item><a href=/posts/windows-hugo-blog-github/ title="Windows下使用hugo和Github Pages配置博客">Windows下使用hugo和Github Pages配置博客</a></li><li class=collection-item><span class=active title="Github Pages 博客网站访问速度优化">Github Pages 博客网站访问速度优化</span></li></ul><div class=collection-nav-simple><a href=/posts/windows-hugo-blog-github/ class=collection-nav-item rel=prev title="Windows下使用hugo和Github Pages配置博客"><i class="fa-solid fa-angle-left fa-fw" aria-hidden=true></i></a><span class=text-secondary>5/5</span><i class="fa-solid fa-angle-right fa-fw collection-nav-item text-secondary" aria-hidden=true></i></div></nav></div></div></aside><article class="page single"><div class=header><h1 class="single-title animate__animated animate__flipInX"><span>Github Pages 博客网站访问速度优化</span></h1></div><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://www.haoyep.com/ title=作者 target=_blank rel="external nofollow noopener noreferrer author" class=author><img loading=lazy src="https://dn-qiniu-avatar.qbox.me/avatar/867c2859fc58e987cb357c7a67ac01cb?s=32&amp;d=mp" alt=云吱 data-title=云吱 class=avatar style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'>&nbsp;云吱</a></span><span class=post-included-in>&nbsp;收录于 <a href=/categories/blog/ class=post-category title="分类 - blog"><i class="fa-regular fa-folder fa-fw" aria-hidden=true></i> blog</a> 和 <a href=/collections/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/ class=post-collection title="合集 - 建站日志"><i class="fa-solid fa-layer-group fa-fw" aria-hidden=true></i> 建站日志</a></span></div><div class=post-meta-line><span title="发布于 2023-12-17 15:00:18"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden=true></i><time datetime=2023-12-17>2023-12-17</time></span>&nbsp;<span title="更新于 2024-04-14 14:04:45"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden=true></i><time datetime=2024-04-14>2024-04-14</time></span>&nbsp;<span title="1134 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden=true></i>约 1200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden=true></i>预计阅读 3 分钟</span>&nbsp;<span id=busuanzi_container_page_pv class="busuanzi_visitors comment-visitors" data-flag-title="Github Pages 博客网站访问速度优化">
+<i class="fa-regular fa-eye fa-fw me-1" aria-hidden=true></i><span id=busuanzi_value_page_pv>-</span>&nbsp;次阅读
+</span>&nbsp;</div></div><div class=featured-image><img loading=lazy src=https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171452357.png alt=https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171452357.png data-title=个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。 style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></div><div class="details toc" id=toc-static data-kept=false><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fa-solid fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ol><li><a href=#图片加速>图片加速</a><ol><li><a href=#网站图片>网站图片</a></li><li><a href=#网站图标>网站图标</a></li><li><a href=#网站-logo>网站 logo</a></li><li><a href=#主页头像>主页头像</a></li></ol></li><li><a href=#加速谷歌字体>加速谷歌字体</a></li><li><a href=#加速-avatar-头像>加速 avatar 头像</a></li></ol></nav></div></div><div class=content id=content data-end-flag=（本文完）><p>个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。</p><p>使用 Github Pages 可以方便地搭建自己的静态网站，详细过程参考我的这篇文章。
+<a href=https://www.haoyep.com/posts/windows-hugo-blog-github/ title="使用 hugo 和 Github Pages 搭建个人博客" target=_blank rel="external nofollow noopener noreferrer" class=card-link><span class=cl-backdrop style=--cl-bg-url:url(/images/fixit.min.svg)></span>
+<span class=cl-content><span class=cl-text><span class=cl-title>使用 hugo 和 Github Pages 搭建个人博客</span>
+<span class=cl-meta><svg class="cl-icon-link" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M574 665.4c-3.1-3.1-8.2-3.1-11.3.0L446.5 781.6c-53.8 53.8-144.6 59.5-204 0-59.5-59.5-53.8-150.2.0-204l116.2-116.2c3.1-3.1 3.1-8.2.0-11.3l-39.8-39.8c-3.1-3.1-8.2-3.1-11.3.0L191.4 526.5c-84.6 84.6-84.6 221.5.0 306s221.5 84.6 306 0l116.2-116.2c3.1-3.1 3.1-8.2.0-11.3L574 665.4zm258.6-474c-84.6-84.6-221.5-84.6-306 0L410.3 307.6c-3.1 3.1-3.1 8.2.0 11.3l39.7 39.7c3.1 3.1 8.2 3.1 11.3.0l116.2-116.2c53.8-53.8 144.6-59.5 204 0 59.5 59.5 53.8 150.2.0 204L665.3 562.6c-3.1 3.1-3.1 8.2.0 11.3l39.8 39.8c3.1 3.1 8.2 3.1 11.3.0l116.2-116.2c84.5-84.6 84.5-221.5.0-306.1z" fill="#a9a9b3"/><path d="M610.1 372.3c-3.1-3.1-8.2-3.1-11.3.0L372.3 598.7c-3.1 3.1-3.1 8.2.0 11.3l39.6 39.6c3.1 3.1 8.2 3.1 11.3.0l226.4-226.4c3.1-3.1 3.1-8.2.0-11.3l-39.5-39.6z" fill="#a9a9b3"/></svg>
+<span class=cl-url>https://www.haoyep.com/posts/windows-hugo-blog-github/</span></span></span><svg class="cl-icon-globe" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="64" height="64"><path d="M960 512c0 249.408-203.2 448-448 448-244.778667.0-448-198.592-448-448S262.592 64 512 64s448 198.592 448 448" fill="#2196f3"/><path d="M507.52 718.08c0-8.96-4.48-13.44-13.44-17.92-26.88-8.96-53.76-8.96-76.16-31.381333-4.48-8.96-4.48-17.92-8.96-26.88-8.96-8.96-31.36-13.44-44.8-17.92h-89.6c-13.44-4.48-22.4-22.4-31.36-35.84.0-4.48.0-13.461333-8.96-13.461334-8.96-4.458667-17.92 4.501333-26.88.0-4.48-4.458667-4.48-8.96-4.48-13.418666.0-13.461333 8.96-26.901333 17.92-35.861334 13.44-8.96 26.88 4.48 40.32 4.48 4.48.0 4.48.0 8.96 4.48 13.44 4.48 17.92 22.4 17.92 35.861334v8.96c0 4.48 4.48 4.48 8.96 4.48 4.48-22.4 4.48-44.821333 8.96-67.2.0-26.88 26.88-53.781333 49.28-62.72 8.96-4.458667 13.44 4.501333 22.4.0 26.88-8.96 94.08-35.84 80.64-71.658667-8.96-31.381333-35.84-62.698667-71.68-58.24-8.96 4.501333-13.44 8.96-22.4 13.461333-13.44 8.96-40.32 35.84-53.76 35.84-22.4-4.48-22.4-35.84-17.92-49.301333 4.48-17.92 44.8-76.138667 71.68-67.178667l17.92 17.92c8.96 4.48 22.4 4.48 35.84 4.48 4.48.0 8.96.0 13.44-4.48s4.48-4.48 4.48-8.96c0-13.44-13.44-26.901333-22.4-35.861333s-22.4-17.92-35.84-22.378667c-44.8-13.461333-116.48 4.458667-152.32 35.84-35.84 31.36-62.72 85.12-80.64 129.92-8.96 26.88-17.92 62.698667-22.4 94.08-4.48 22.4-8.96 40.32 4.48 62.698667 13.44 26.88 40.32 53.781333 67.2 71.68 17.92 13.44 53.76 13.44 71.68 35.84 13.44 17.941333 8.96 40.32 8.96 62.72.0 26.88 17.92 49.28 26.88 71.658667C305.92 785.28 310.4 803.2 314.88 816.64c0 4.48 4.48 31.36 4.48 35.84 26.88 13.44 49.28 26.901333 80.64 35.861333 4.48.0 22.4-26.901333 22.4-31.381333 13.44-13.44 22.4-31.36 35.84-40.32 8.96-4.48 17.92-8.96 26.88-17.941333 8.96-8.96 13.44-26.88 17.92-40.32C507.52 749.44 512 731.52 507.52 718.08M516.48 305.92c4.48.0 8.96-4.48 17.92-8.96 13.44-8.96 26.901333-22.4 40.32-31.36 13.461333-8.96 26.901333-22.4 35.861333-31.36 13.44-8.96 22.4-26.88 26.88-40.341333 4.48-8.96 17.941333-26.88 13.44-40.32-4.48-8.96-26.88-13.44-35.84-17.92C579.2 126.698667 547.84 122.24 512 122.24c-13.44.0-31.36 4.458667-35.84 17.92-4.48 22.4 13.44 17.92 31.36 22.4.0.0 4.48 35.84 4.48 40.32 4.48 22.421333-8.96 35.84-8.96 58.24.0 13.44.0 35.84 8.96 44.8h4.48zM892.8 619.52c4.501333-8.96 4.501333-22.4 8.96-31.36 4.501333-22.421333 4.501333-44.8 4.501333-67.2.0-44.8-4.501333-89.578667-17.92-129.92-8.96-13.44-13.461333-26.88-17.941333-40.341333C861.44 328.32 848 305.898667 830.08 288c-17.92-22.4-40.341333-85.12-80.64-67.2-13.44 4.501333-22.4 22.421333-31.36 31.381333l-26.88 40.32c-4.501333 4.48-8.96 13.44-4.501333 17.92.0 4.48 4.501333 4.48 8.96 4.48 8.96 4.501333 13.461333 4.501333 22.421333 8.96 4.48.0 8.96 4.501333 4.48 8.96.0.0.0 4.501333-4.48 4.501334-22.421333 22.4-44.8 40.32-67.2 62.698666-4.48 4.48-8.96 13.44-8.96 17.92s4.48 4.48 4.48 8.96c0 4.501333-4.48 4.501333-8.96 8.96-8.96 4.501333-17.92 8.96-22.4 13.461334-4.48 8.96.0 22.4-4.48 31.36-4.48 22.4-17.941333 40.32-26.901333 62.72-8.96 13.418667-13.418667 26.88-22.378667 40.32.0 17.92-4.501333 31.36 4.458667 44.8 22.421333 31.36 62.72 13.44 94.08 26.901333 8.96 4.458667 17.92 4.458667 22.421333 13.418667C695.658667 682.304 695.658667 704.704 700.16 718.144c4.458667 17.92 8.96 35.84 17.92 53.76 4.48 22.421333 13.44 44.821333 17.92 62.72 40.341333-31.36 76.16-67.178667 103.04-112 26.88-31.424 40.341333-67.242667 53.76-103.104" fill="#cddc39"/></svg></span></a></p><p>但由于众所周知的原因，此方法搭建的博客在国内访问速度不佳。因此考虑采用一些方法来加速访问，主要思路是使用 CDN 加速网站的静态资源。</p><p>对于不同的静态资源，加速方法分别如下：</p><ol><li>使用自定义域名，见<a href=https://www.haoyep.com/posts/windows-hugo-blog-github/#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%9A%E5%AE%A2%E5%9F%9F%E5%90%8D target=_blank rel="external nofollow noopener noreferrer">个人 Github 博客设置自定义域名</a>；</li><li><code>js/css</code>文件<ul><li><del>使用<code>jsdelivr</code> 和 <code>unpkg</code> 进行 CDN 加速</del>，亲测使用自定义域名后，这两个 CDN 反而会降速。因此不需要单独对<code>js/css</code>文件加速。</li></ul></li><li>托管在 Github 仓库上的<a href=#%e5%9b%be%e7%89%87%e5%8a%a0%e9%80%9f>图床图片</a>。<ul><li>本人博客上的图片都是使用 PicGo 上传到图床，图床是用 GitHub 仓库搭建的，见<a href=https://www.haoyep.com/posts/github-graph-beds target=_blank rel="external nofollow noopener noreferrer">图床搭建过程</a> 。为了加快 GitHub 文件访问速度，参考<a href=https://www.haoyep.com/posts/github-graph-beds-cdn/ target=_blank rel="external nofollow noopener noreferrer">通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</a>，通过自定义域名区分国内外请求，分配不同的 CDN 资源。最后，替换博客内所有 Github 文件链接即可。<figure><a class=lightgallery href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152140943.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152140943.png?size=small" data-sub-html="<h2> </h2><p>替换 Github 文件链接</p>"><img loading=lazy src=https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152140943.png alt="替换 Github 文件链接" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152140943.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152140943.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152140943.png?size=large 2x" data-title="替换 Github 文件链接" style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></a><figcaption class=image-caption>替换 Github 文件链接</figcaption></figure></li></ul></li><li><a href=#%e5%8a%a0%e9%80%9f%e8%b0%b7%e6%ad%8c%e5%ad%97%e4%bd%93>加速谷歌字体</a></li><li><a href=#%e5%8a%a0%e9%80%9f-avatar-%e5%a4%b4%e5%83%8f>加速 avatar 头像</a></li></ol><h2 id=图片加速 class=heading-element><a href=#%e5%9b%be%e7%89%87%e5%8a%a0%e9%80%9f class=heading-mark></a>1 图片加速</h2><p>首先参考这篇文章，搭建加速域名。
+<a href=https://www.haoyep.com/posts/github-graph-beds-cdn/ title="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源" target=_blank rel="external nofollow noopener noreferrer" class=card-link><span class=cl-backdrop style=--cl-bg-url:url(/images/fixit.min.svg)></span>
+<span class=cl-content><span class=cl-text><span class=cl-title>通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</span>
+<span class=cl-meta><svg class="cl-icon-link" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M574 665.4c-3.1-3.1-8.2-3.1-11.3.0L446.5 781.6c-53.8 53.8-144.6 59.5-204 0-59.5-59.5-53.8-150.2.0-204l116.2-116.2c3.1-3.1 3.1-8.2.0-11.3l-39.8-39.8c-3.1-3.1-8.2-3.1-11.3.0L191.4 526.5c-84.6 84.6-84.6 221.5.0 306s221.5 84.6 306 0l116.2-116.2c3.1-3.1 3.1-8.2.0-11.3L574 665.4zm258.6-474c-84.6-84.6-221.5-84.6-306 0L410.3 307.6c-3.1 3.1-3.1 8.2.0 11.3l39.7 39.7c3.1 3.1 8.2 3.1 11.3.0l116.2-116.2c53.8-53.8 144.6-59.5 204 0 59.5 59.5 53.8 150.2.0 204L665.3 562.6c-3.1 3.1-3.1 8.2.0 11.3l39.8 39.8c3.1 3.1 8.2 3.1 11.3.0l116.2-116.2c84.5-84.6 84.5-221.5.0-306.1z" fill="#a9a9b3"/><path d="M610.1 372.3c-3.1-3.1-8.2-3.1-11.3.0L372.3 598.7c-3.1 3.1-3.1 8.2.0 11.3l39.6 39.6c3.1 3.1 8.2 3.1 11.3.0l226.4-226.4c3.1-3.1 3.1-8.2.0-11.3l-39.5-39.6z" fill="#a9a9b3"/></svg>
+<span class=cl-url>https://www.haoyep.com/posts/github-graph-beds-cdn/</span></span></span><svg class="cl-icon-globe" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="64" height="64"><path d="M960 512c0 249.408-203.2 448-448 448-244.778667.0-448-198.592-448-448S262.592 64 512 64s448 198.592 448 448" fill="#2196f3"/><path d="M507.52 718.08c0-8.96-4.48-13.44-13.44-17.92-26.88-8.96-53.76-8.96-76.16-31.381333-4.48-8.96-4.48-17.92-8.96-26.88-8.96-8.96-31.36-13.44-44.8-17.92h-89.6c-13.44-4.48-22.4-22.4-31.36-35.84.0-4.48.0-13.461333-8.96-13.461334-8.96-4.458667-17.92 4.501333-26.88.0-4.48-4.458667-4.48-8.96-4.48-13.418666.0-13.461333 8.96-26.901333 17.92-35.861334 13.44-8.96 26.88 4.48 40.32 4.48 4.48.0 4.48.0 8.96 4.48 13.44 4.48 17.92 22.4 17.92 35.861334v8.96c0 4.48 4.48 4.48 8.96 4.48 4.48-22.4 4.48-44.821333 8.96-67.2.0-26.88 26.88-53.781333 49.28-62.72 8.96-4.458667 13.44 4.501333 22.4.0 26.88-8.96 94.08-35.84 80.64-71.658667-8.96-31.381333-35.84-62.698667-71.68-58.24-8.96 4.501333-13.44 8.96-22.4 13.461333-13.44 8.96-40.32 35.84-53.76 35.84-22.4-4.48-22.4-35.84-17.92-49.301333 4.48-17.92 44.8-76.138667 71.68-67.178667l17.92 17.92c8.96 4.48 22.4 4.48 35.84 4.48 4.48.0 8.96.0 13.44-4.48s4.48-4.48 4.48-8.96c0-13.44-13.44-26.901333-22.4-35.861333s-22.4-17.92-35.84-22.378667c-44.8-13.461333-116.48 4.458667-152.32 35.84-35.84 31.36-62.72 85.12-80.64 129.92-8.96 26.88-17.92 62.698667-22.4 94.08-4.48 22.4-8.96 40.32 4.48 62.698667 13.44 26.88 40.32 53.781333 67.2 71.68 17.92 13.44 53.76 13.44 71.68 35.84 13.44 17.941333 8.96 40.32 8.96 62.72.0 26.88 17.92 49.28 26.88 71.658667C305.92 785.28 310.4 803.2 314.88 816.64c0 4.48 4.48 31.36 4.48 35.84 26.88 13.44 49.28 26.901333 80.64 35.861333 4.48.0 22.4-26.901333 22.4-31.381333 13.44-13.44 22.4-31.36 35.84-40.32 8.96-4.48 17.92-8.96 26.88-17.941333 8.96-8.96 13.44-26.88 17.92-40.32C507.52 749.44 512 731.52 507.52 718.08M516.48 305.92c4.48.0 8.96-4.48 17.92-8.96 13.44-8.96 26.901333-22.4 40.32-31.36 13.461333-8.96 26.901333-22.4 35.861333-31.36 13.44-8.96 22.4-26.88 26.88-40.341333 4.48-8.96 17.941333-26.88 13.44-40.32-4.48-8.96-26.88-13.44-35.84-17.92C579.2 126.698667 547.84 122.24 512 122.24c-13.44.0-31.36 4.458667-35.84 17.92-4.48 22.4 13.44 17.92 31.36 22.4.0.0 4.48 35.84 4.48 40.32 4.48 22.421333-8.96 35.84-8.96 58.24.0 13.44.0 35.84 8.96 44.8h4.48zM892.8 619.52c4.501333-8.96 4.501333-22.4 8.96-31.36 4.501333-22.421333 4.501333-44.8 4.501333-67.2.0-44.8-4.501333-89.578667-17.92-129.92-8.96-13.44-13.461333-26.88-17.941333-40.341333C861.44 328.32 848 305.898667 830.08 288c-17.92-22.4-40.341333-85.12-80.64-67.2-13.44 4.501333-22.4 22.421333-31.36 31.381333l-26.88 40.32c-4.501333 4.48-8.96 13.44-4.501333 17.92.0 4.48 4.501333 4.48 8.96 4.48 8.96 4.501333 13.461333 4.501333 22.421333 8.96 4.48.0 8.96 4.501333 4.48 8.96.0.0.0 4.501333-4.48 4.501334-22.421333 22.4-44.8 40.32-67.2 62.698666-4.48 4.48-8.96 13.44-8.96 17.92s4.48 4.48 4.48 8.96c0 4.501333-4.48 4.501333-8.96 8.96-8.96 4.501333-17.92 8.96-22.4 13.461334-4.48 8.96.0 22.4-4.48 31.36-4.48 22.4-17.941333 40.32-26.901333 62.72-8.96 13.418667-13.418667 26.88-22.378667 40.32.0 17.92-4.501333 31.36 4.458667 44.8 22.421333 31.36 62.72 13.44 94.08 26.901333 8.96 4.458667 17.92 4.458667 22.421333 13.418667C695.658667 682.304 695.658667 704.704 700.16 718.144c4.458667 17.92 8.96 35.84 17.92 53.76 4.48 22.421333 13.44 44.821333 17.92 62.72 40.341333-31.36 76.16-67.178667 103.04-112 26.88-31.424 40.341333-67.242667 53.76-103.104" fill="#cddc39"/></svg></span></a></p><p>对于要使用的图片，使用 PicGo 上传到 GitHub 图床，获取 CDN 加速链接。然后在配置文件中使用相应的链接即可。下面介绍几个配置中常见的图片。</p><h3 id=网站图片 class=heading-element><a href=#%e7%bd%91%e7%ab%99%e5%9b%be%e7%89%87 class=heading-mark></a>1.1 网站图片</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=c># 网站图片，用于 Open Graph 和 Twitter Cards</span>
+</span></span><span class=line><span class=cl>  <span class=nx>images</span> <span class=p>=</span> <span class=p>[</span><span class=s2>&#34;https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png&#34;</span><span class=p>]</span></span></span></code></pre></td></tr></table></div></div><p><figure><a class=lightgallery href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161421814.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161421814.png?size=small" data-sub-html="<h2> </h2><p>网站图片，用于 Open Graph 和 Twitter Cards</p>"><img loading=lazy src=https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161421814.png alt="网站图片，用于 Open Graph 和 Twitter Cards" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161421814.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161421814.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161421814.png?size=large 2x" data-title="网站图片，用于 Open Graph 和 Twitter Cards" style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></a><figcaption class=image-caption>网站图片，用于 Open Graph 和 Twitter Cards</figcaption></figure></p><h3 id=网站图标 class=heading-element><a href=#%e7%bd%91%e7%ab%99%e5%9b%be%e6%a0%87 class=heading-mark></a>1.2 网站图标</h3><p>配置：<code>[params]</code>——<code>[params.app]</code>。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=c># 应用图标配置</span>
+</span></span><span class=line><span class=cl>  <span class=p>[</span><span class=nx>params</span><span class=p>.</span><span class=nx>app</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=c># 当添加到 iOS 主屏幕或者 Android 启动器时的标题，覆盖默认标题</span>
+</span></span><span class=line><span class=cl>    <span class=nx>title</span> <span class=p>=</span> <span class=s2>&#34;云吱&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=c># 是否隐藏网站图标资源链接</span>
+</span></span><span class=line><span class=cl>    <span class=nx>noFavicon</span> <span class=p>=</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl>    <span class=c># 更现代的 SVG 网站图标，可替代旧的 .png 和 .ico 文件</span>
+</span></span><span class=line><span class=cl>    <span class=nx>svgFavicon</span> <span class=p>=</span> <span class=s2>&#34;https://cdn.haoyep.com/gh/leegical/Blog_img/favicon.svg&#34;</span></span></span></code></pre></td></tr></table></div></div><p><figure><a class=lightgallery href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161426248.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161426248.png?size=small" data-sub-html="<h2> </h2><p>网站图标</p>"><img loading=lazy src=https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161426248.png alt=网站图标 srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161426248.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161426248.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161426248.png?size=large 2x" data-title=网站图标 style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></a><figcaption class=image-caption>网站图标</figcaption></figure></p><h3 id=网站-logo class=heading-element><a href=#%e7%bd%91%e7%ab%99-logo class=heading-mark></a>1.3 网站 logo</h3><p>配置：<code>[params]</code>——<code>[params.header]</code>——<code>[params.header.title]</code>。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=c>#  页面头部导航栏标题配置</span>
+</span></span><span class=line><span class=cl>    <span class=p>[</span><span class=nx>params</span><span class=p>.</span><span class=nx>header</span><span class=p>.</span><span class=nx>title</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>      <span class=c># LOGO 的 URL</span>
+</span></span><span class=line><span class=cl>      <span class=nx>logo</span> <span class=p>=</span> <span class=s2>&#34;https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png&#34;</span></span></span></code></pre></td></tr></table></div></div><p><figure><a class=lightgallery href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161428936.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161428936.png?size=small" data-sub-html="<h2> </h2><p>网站 logo</p>"><img loading=lazy src=https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161428936.png alt="网站 logo" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161428936.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161428936.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161428936.png?size=large 2x" data-title="网站 logo" style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></a><figcaption class=image-caption>网站 logo</figcaption></figure></p><h3 id=主页头像 class=heading-element><a href=#%e4%b8%bb%e9%a1%b5%e5%a4%b4%e5%83%8f class=heading-mark></a>1.4 主页头像</h3><p>配置：<code>[params]</code>——<code>[params.home]</code>——<code>[params.home.profile]</code>。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=c># 主页个人信息</span>
+</span></span><span class=line><span class=cl>    <span class=p>[</span><span class=nx>params</span><span class=p>.</span><span class=nx>home</span><span class=p>.</span><span class=nx>profile</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>      <span class=nx>enable</span> <span class=p>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>      <span class=c># Gravatar 邮箱，用于优先在主页显示的头像</span>
+</span></span><span class=line><span class=cl>      <span class=nx>gravatarEmail</span> <span class=p>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=c># 主页显示头像的 URL</span>
+</span></span><span class=line><span class=cl>      <span class=nx>avatarURL</span> <span class=p>=</span> <span class=s2>&#34;https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/avatar.png&#34;</span></span></span></code></pre></td></tr></table></div></div><p><figure><a class=lightgallery href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161433480.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161433480.png?size=small" data-sub-html="<h2> </h2><p>主页头像</p>"><img loading=lazy src=https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161433480.png alt=主页头像 srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161433480.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161433480.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161433480.png?size=large 2x" data-title=主页头像 style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></a><figcaption class=image-caption>主页头像</figcaption></figure></p><h2 id=加速谷歌字体 class=heading-element><a href=#%e5%8a%a0%e9%80%9f%e8%b0%b7%e6%ad%8c%e5%ad%97%e4%bd%93 class=heading-mark></a>2 加速谷歌字体</h2><p><a href=https://github.com/hugo-fixit/FixIt target=_blank rel="external nofollow noopener noreferrer"><strong>FixIt</strong> 主题</a>默认使用系统字体作为博客渲染字体，免去了加载字体。<figure><a class=lightgallery href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152148953.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152148953.png?size=small" data-sub-html="<h2> </h2><p>Fixit主题全局字体</p>"><img loading=lazy src=https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152148953.png alt=Fixit主题全局字体 srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152148953.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152148953.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152148953.png?size=large 2x" data-title=Fixit主题全局字体 style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></a><figcaption class=image-caption>Fixit主题全局字体</figcaption></figure></p><p>但是想要为一些特定区域，如 <code>code</code> 设置特别字体时，就需要用到谷歌字体。这里选择使用 <code>fonts.loli.net</code> 加速。在 <code>assets/css</code> 中新建 <code>_override.scss</code> 文件，内容如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=line><span class=cl><span class=k>@import</span> <span class=sx>url(&#39;https://fonts.loli.net/css?family=JetBrains+Mono:400,700&amp;display=swap&amp;subset=latin-ext&#39;)</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nv>$code-font-family</span><span class=o>:</span> <span class=n>JetBrains</span> <span class=n>Mono</span><span class=o>,</span> <span class=n>Fira</span> <span class=n>Mono</span><span class=o>,</span> <span class=n>Source</span> <span class=n>Code</span> <span class=n>Pro</span><span class=o>,</span> <span class=n>Menlo</span><span class=o>,</span> <span class=n>Consolas</span><span class=o>,</span> <span class=n>Monaco</span><span class=o>,</span> <span class=ni>monospace</span><span class=p>;</span></span></span></code></pre></td></tr></table></div></div><p><figure><a class=lightgallery href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152151358.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152151358.png?size=small" data-sub-html="<h2> </h2><p>加速code的谷歌字体</p>"><img loading=lazy src=https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152151358.png alt=加速code的谷歌字体 srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152151358.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152151358.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152151358.png?size=large 2x" data-title=加速code的谷歌字体 style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></a><figcaption class=image-caption>加速code的谷歌字体</figcaption></figure></p><h2 id=加速-avatar-头像 class=heading-element><a href=#%e5%8a%a0%e9%80%9f-avatar-%e5%a4%b4%e5%83%8f class=heading-mark></a>3 加速 avatar 头像</h2><p>在 <code>hugo.toml</code> 设置 Gravatar 主机为七牛云地址 <code>dn-qiniu-avatar.qbox.me</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl>  <span class=c># FixIt 0.2.14 | NEW Gravatar 设置</span>
+</span></span><span class=line><span class=cl>  <span class=p>[</span><span class=nx>params</span><span class=p>.</span><span class=nx>gravatar</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=c>#  取决于作者邮箱，作者邮箱未设置则使用本地头像</span>
+</span></span><span class=line><span class=cl>    <span class=nx>enable</span> <span class=p>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>    <span class=c># Gravatar 主机，默认：“www.gravatar.com”</span>
+</span></span><span class=line><span class=cl>    <span class=nx>host</span> <span class=p>=</span> <span class=s2>&#34;dn-qiniu-avatar.qbox.me&#34;</span> <span class=c># [&#34;cn.gravatar.com&#34;, &#34;gravatar.loli.net&#34;, ...]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>style</span> <span class=p>=</span> <span class=s2>&#34;identicon&#34;</span> <span class=c># [&#34;&#34;, &#34;mp&#34;, &#34;identicon&#34;, &#34;monsterid&#34;, &#34;wavatar&#34;, &#34;retro&#34;, &#34;blank&#34;, &#34;robohash&#34;]</span></span></span></code></pre></td></tr></table></div></div><p><figure><a class=lightgallery href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152153926.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152153926.png?size=small" data-sub-html="<h2> </h2><p>设置 Gravatar 主机为七牛云地址</p>"><img loading=lazy src=https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152153926.png alt="设置 Gravatar 主机为七牛云地址" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152153926.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152153926.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152153926.png?size=large 2x" data-title="设置 Gravatar 主机为七牛云地址" style="background:url(/images/loading.min.svg)no-repeat 50%" onload='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e);this.dataset.lazyloaded=""' onerror='this.title=this.dataset.title;for(const e of["style","data-title","onerror","onload"])this.removeAttribute(e)'></a><figcaption class=image-caption>设置 Gravatar 主机为七牛云地址</figcaption></figure></p></div><h2 id=see-also>相关内容</h2><ul><li><a href=/posts/windows-hugo-blog-github/ title="Windows下使用hugo和Github Pages配置博客">Windows下使用hugo和Github Pages配置博客</a></li><li><a href=/posts/github-graph-beds-cdn/ title="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源">通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源</a></li><li><a href=/posts/github-graph-beds/ title="使用PicGo + GitHub 搭建 Obsidian 图床">使用PicGo + GitHub 搭建 Obsidian 图床</a></li><li><a href=/posts/fixit-admonition/ title=Fixit自带的admonition样式>Fixit自带的admonition样式</a></li><li><a href=/posts/windows-hugo-blog-cloudflare/ title="Windows 下使用 Hugo 和 Cloudflare Pages 配置博客">Windows 下使用 Hugo 和 Cloudflare Pages 配置博客</a></li></ul><div class=collection-card><div class="collection-title text-secondary">收录于 <a href=/collections/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/><i class="fa-solid fa-layer-group fa-fw" aria-hidden=true></i> <span>合集・建站日志</span></span></a> 5</div><div class=collection-nav><a href=/posts/windows-hugo-blog-github/ class=collection-nav-item rel=prev title="Windows下使用hugo和Github Pages配置博客"><i class="fa-solid fa-angle-left fa-fw" aria-hidden=true></i><span>Windows下使用hugo和Github Pages配置博客</span></a></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span title="更新于 2024-04-14 14:04:45">更新于 2024-04-14&nbsp;<a class=git-hash href=https://github.com/leegical/blog/commit/c03c157e34a071743107dafc06e53b5eaea21aea rel="external nofollow noopener noreferrer" target=_blank title="commit by CXG-L(chuxuange@gmail.com) c03c157e34a071743107dafc06e53b5eaea21aea: domain add www."><i class="fa-solid fa-hashtag fa-fw" aria-hidden=true></i>c03c157</a></span></div><div class=post-info-license><span><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div><div class=post-info-line><div class=post-info-md><span><a href=/posts/optimize-github-pages-blog-access-speed/index.md title=阅读原始文档 class=link-to-markdown>阅读原始文档</a></span><span><a href="https://github.com/leegical/blog/blob/main/content/posts/build-blog/Optimize-Github-Pages-blog-access-speed.md?plain=1" title=查看源码 target=_blank rel="external nofollow noopener noreferrer" class=link-to-source>查看源码</a></span><span><a href=https://github.com/leegical/blog/edit/main/content/posts/build-blog/Optimize-Github-Pages-blog-access-speed.md title=编辑此页 target=_blank rel="external nofollow noopener noreferrer" class=link-to-edit>编辑此页</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/ data-title="Github Pages 博客网站访问速度优化" data-hashtags=git,Fixit><i class="fa-brands fa-twitter fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/ data-hashtag=git><i class="fa-brands fa-facebook-square fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="分享到 Linkedin" data-sharer=linkedin data-url=https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/><i class="fa-brands fa-linkedin fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/ data-title="Github Pages 博客网站访问速度优化" data-image=https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171452357.png><i class="fa-brands fa-weibo fa-fw" aria-hidden=true></i></a>
+<a href=javascript:void(0); title="分享到 百度" data-sharer=baidu data-url=https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/ data-title="Github Pages 博客网站访问速度优化"><i data-svg-src=/lib/simple-icons/icons/baidu.min.svg aria-hidden=true></i></a>
+<a href=javascript:void(0); title="分享到 Skype" data-sharer=skype data-url=https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/ data-title="Github Pages 博客网站访问速度优化"><i class="fa-brands fa-skype fa-fw" aria-hidden=true></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fa-solid fa-tags fa-fw me-1" aria-hidden=true></i><a href=/tags/git/ class=post-tag title="标签 - git">git</a><a href=/tags/fixit/ class=post-tag title="标签 - Fixit">Fixit</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/afl-install/ class=post-nav-item rel=prev title="Ubuntu 22.04 安装 AFL 及 qemu mode 实践"><i class="fa-solid fa-angle-left fa-fw" aria-hidden=true></i>Ubuntu 22.04 安装 AFL 及 qemu mode 实践</a>
+<a href=/posts/github-graph-beds-cdn/ class=post-nav-item rel=next title="通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源">通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源<i class="fa-solid fa-angle-right fa-fw" aria-hidden=true></i></a></div></div><div id=comments><div id=giscus class=comment><script src=https://giscus.app/client.js data-repo=leegical/leegical.github.io data-repo-id=R_kgDOKqVEVg data-category=Announcements data-category-id=DIC_kwDOKqVEVs4Cax6P data-mapping=pathname data-strict=0 data-theme=preferred_color_scheme data-reactions-enabled=1 data-emit-metadata=0 data-input-position=top data-lang=zh-CN data-loading=lazy crossorigin=anonymous async defer></script></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://giscus.app/ rel="external nofollow noopener noreferrer">giscus</a>.</noscript></div></article><aside class=toc id=toc-auto aria-label=目录><h2 class=toc-title>目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden=true></i></h2><div class=toc-content id=toc-content-auto></div></aside></main><footer class=footer><div class=footer-container><div class="footer-line copyright" itemscope itemtype=http://schema.org/CreativeWork><i class="fa-regular fa-copyright fa-fw" aria-hidden=true></i>
+<span itemprop=copyrightYear>2019 - 2024</span><span class=author itemprop=copyrightHolder>
+<a href=https://www.haoyep.com/ target=_blank rel="external nofollow noopener noreferrer">云吱</a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div><div class="footer-line visitor"><span id=busuanzi_container_site_uv title=总访客数><i class="fa-regular fa-user fa-fw" aria-hidden=true></i>&nbsp;<span id=busuanzi_value_site_uv><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden=true></i></span></span><span id=busuanzi_container_site_pv class=footer-divider title=总访问量><i class="fa-regular fa-eye fa-fw" aria-hidden=true></i>&nbsp;<span id=busuanzi_value_site_pv><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden=true></i></span></span></div><div class="footer-line beian"><span class="icp footer-divider"><a href='https://icp.gov.moe/?keyword=20239399' target=_blank>萌ICP备20239399号</a></span></div></div></footer></div><div class=widgets><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role=button aria-label=回到顶部><i class="fa-solid fa-arrow-up fa-fw" aria-hidden=true></i><span class=variant-numeric>0%</span></div><div class="fixed-button view-comments d-none" role=button aria-label=查看评论><i class="fa-solid fa-comment fa-fw" aria-hidden=true></i></div></div><div id=mask></div><div class=reading-progress-bar style=left:0;top:0></div><noscript><div class=noscript-warning>FixIt 主题在启用 JavaScript 的情况下效果最佳。</div></noscript></div><link rel=preload href=/lib/katex/katex.min.css as=style onload='this.removeAttribute("onload"),this.rel="stylesheet"'><noscript><link rel=stylesheet href=/lib/katex/katex.min.css></noscript><link rel=stylesheet href=/lib/pace/themes/orange/pace-theme-minimal.css><script src=/lib/autocomplete/autocomplete.min.js defer></script><script src=/lib/algoliasearch/algoliasearch-lite.umd.min.js defer></script><script src=/lib/katex/katex.min.js defer></script><script src=/lib/katex/auto-render.min.js defer></script><script src=/lib/katex/copy-tex.min.js defer></script><script src=/lib/katex/mhchem.min.js defer></script><script src=//npm.elemecdn.com/penndu@1.0.0/bsz.js async defer></script><script src=/lib/pace/pace.min.js async defer></script><script>window.config={code:{copyTitle:"复制到剪贴板",editLockTitle:"锁定可编辑代码块",editUnLockTitle:"解锁可编辑代码块",editable:!0,maxShownLines:10},comment:{enable:!0,expired:!1,giscus:{darkTheme:"dark",lightTheme:"light"}},enablePWA:!0,math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!0,left:"\\begin{equation}",right:"\\end{equation}"},{display:!0,left:"\\begin{equation*}",right:"\\end{equation*}"},{display:!0,left:"\\begin{align}",right:"\\end{align}"},{display:!0,left:"\\begin{align*}",right:"\\end{align*}"},{display:!0,left:"\\begin{alignat}",right:"\\end{alignat}"},{display:!0,left:"\\begin{alignat*}",right:"\\end{alignat*}"},{display:!0,left:"\\begin{gather}",right:"\\end{gather}"},{display:!0,left:"\\begin{CD}",right:"\\end{CD}"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{algoliaAppID:"23TF0E394I",algoliaIndex:"index",algoliaSearchKey:"748e3a3e3ef2f537198c57b19d5ff3e6",highlightTag:"em",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"algolia"}}</script><script src=/js/theme.min.js defer></script></body></html>
