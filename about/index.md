@@ -17,7 +17,7 @@ public:
   Blog(const std::string&amp; name, const std::string&amp; author, const std::string&amp; url)
     : name(name), author(author), url(url) {}
 };
-Blog site(&#34;Leehow的小站&#34;, &#34;Legical&#34;, &#34;https://www.haoyep.com&#34;);
+Blog site(&#34;Leehow的小站&#34;, &#34;Leehow&#34;, &#34;https://www.haoyep.com&#34;);
 {{&lt; /typeit &gt;}}
 {{&lt; /style &gt;}}
 
