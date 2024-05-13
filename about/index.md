@@ -4,7 +4,7 @@
 &lt;!-- markdownlint-disable-file --&gt;
 
 {{&lt; style &#34;min-height: 230px;&#34; &gt;}}
-{{&lt; typeit code=cpp &gt;}}
+{{&lt; typeit code=javascript &gt;}}
 /**
  * 作为程序员，总该在互联网上留下一点痕迹。
  * 「Talk is cheap. Show me the code.」
