@@ -59,6 +59,6 @@ sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-14 2 --sl
 
 ---
 
-> 作者: [云吱](https://www.haoyep.com/)  
+> 作者: [Leehow](https://www.haoyep.com/)  
 > URL: https://www.haoyep.com/posts/ubuntu22-install-clang10/  
 

@@ -140,6 +140,6 @@
 
 ---
 
-> 作者: [云吱](https://www.haoyep.com/)  
+> 作者: [Leehow](https://www.haoyep.com/)  
 > URL: https://www.haoyep.com/posts/fixit-admonition/  
 

@@ -884,6 +884,6 @@ Windows：[QuickLook for Windows]( https://github.com/QL-Win/QuickLook/releases 
 
 ---
 
-> 作者: [云吱](https://www.haoyep.com/)  
+> 作者: [Leehow](https://www.haoyep.com/)  
 > URL: https://www.haoyep.com/posts/zotero-config/  
 

@@ -206,6 +206,6 @@ upgrade_oh_my_zsh
 
 ---
 
-> 作者: [云吱](https://www.haoyep.com/)  
+> 作者: [Leehow](https://www.haoyep.com/)  
 > URL: https://www.haoyep.com/posts/zsh-config-oh-my-zsh/  
 

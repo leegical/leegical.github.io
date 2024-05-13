@@ -38,7 +38,7 @@
 # 应用图标配置
   [params.app]
     # 当添加到 iOS 主屏幕或者 Android 启动器时的标题，覆盖默认标题
-    title = &#34;云吱&#34;
+    title = &#34;Leehow&#34;
     # 是否隐藏网站图标资源链接
     noFavicon = false
     # 更现代的 SVG 网站图标，可替代旧的 .png 和 .ico 文件
@@ -94,6 +94,6 @@ $code-font-family: JetBrains Mono, Fira Mono, Source Code Pro, Menlo, Consolas, 
 
 ---
 
-> 作者: [云吱](https://www.haoyep.com/)  
+> 作者: [Leehow](https://www.haoyep.com/)  
 > URL: https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/  
 

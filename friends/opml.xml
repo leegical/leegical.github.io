@@ -4,7 +4,7 @@
     <title>Feeds of Legical tagged as 博客邻居 from Inoreader [https://www.inoreader.com]</title>
   </head>
   <body>
-    <outline text="博客邻居" title="博客邻居"><outline text="云吱" title="云吱" type="rss" xmlUrl="https://www.haoyep.com/index.xml" htmlUrl="https://www.haoyep.com/"/>
+    <outline text="博客邻居" title="博客邻居"><outline text="Leehow" title="Leehow" type="rss" xmlUrl="https://www.haoyep.com/index.xml" htmlUrl="https://www.haoyep.com/"/>
       <outline text="FixIt-CN" title="FixIt-CN" type="rss" xmlUrl="https://fixit.lruihao.cn/zh-cn/index.xml" htmlUrl="https://fixit.lruihao.cn/zh-cn/"/>
       <outline text="菠菜眾長" title="菠菜眾長" type="rss" xmlUrl="https://lruihao.cn/index.xml" htmlUrl="https://lruihao.cn/"/>
     </outline>

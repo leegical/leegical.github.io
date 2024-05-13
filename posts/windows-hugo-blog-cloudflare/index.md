@@ -54,7 +54,7 @@
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081604721.png)
 ## 成果展示
 现在可以直接通过自定义域名访问博客了，而且自动有 SSL。
-例如现在就可以通过 [https://www.haoyep.com/](https://www.haoyep.com/) 来访问云吱的小站啦~
+例如现在就可以通过 [https://www.haoyep.com/](https://www.haoyep.com/) 来访问Leehow的小站啦~
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081606080.png)
 
 ## 总结
@@ -81,6 +81,6 @@ git push
 
 ---
 
-> 作者: [云吱](https://www.haoyep.com/)  
+> 作者: [Leehow](https://www.haoyep.com/)  
 > URL: https://www.haoyep.com/posts/windows-hugo-blog-cloudflare/  
 

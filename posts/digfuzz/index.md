@@ -288,6 +288,6 @@ QSYM [46]使用动态二进制转换将符号仿真与本机执行集成在一�
 
 ---
 
-> 作者: [云吱](https://www.haoyep.com/)  
+> 作者: [Leehow](https://www.haoyep.com/)  
 > URL: https://www.haoyep.com/posts/digfuzz/  
 

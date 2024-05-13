@@ -78,7 +78,7 @@ git submodule set-branch -b dev themes/FixIt
 # -------------------------------------------------------------------------------------
 
 # 网站标题
-title = &#34;云吱的小站&#34;
+title = &#34;Leehow的小站&#34;
 # Hostname (and path) to the root
 baseURL = &#34;https://www.haoyep.com/&#34;
 # baseURL = &#34;https://leegical.github.io/&#34;
@@ -192,7 +192,7 @@ enableEmoji = true
   # 应用图标配置
   [params.app]
     # 当添加到 iOS 主屏幕或者 Android 启动器时的标题，覆盖默认标题
-    title = &#34;云吱的小站&#34;
+    title = &#34;Leehow的小站&#34;
     # 是否隐藏网站图标资源链接
     noFavicon = false
     # 更现代的 SVG 网站图标，可替代旧的 .png 和 .ico 文件
@@ -250,7 +250,7 @@ enableEmoji = true
       # LOGO 的 URL
       logo = &#34;/logo.png&#34;
       # 标题名称
-      name = &#34;云吱的小站&#34;
+      name = &#34;Leehow的小站&#34;
       # 你可以在名称（允许 HTML 格式）之前添加其他信息，例如图标
       pre = &#34;&#34;
       # 你可以在名称（允许 HTML 格式）之后添加其他信息，例如图标
@@ -353,7 +353,7 @@ enableEmoji = true
       #  头像菜单链接的 identifier
       avatarMenu = &#34;&#34;
       #  主页显示的网站标题（支持 HTML 格式）
-      title = &#34;云吱的小站&#34;
+      title = &#34;Leehow的小站&#34;
       # 主页显示的网站副标题
       subtitle = &#34;色相事一刹那，光阴里无尽藏&#34;
       # 是否为副标题显示打字机动画
@@ -766,7 +766,7 @@ enableEmoji = true
       images = [&#34;/favicon.ico&#34;]
       # 出版者信息
       [params.page.seo.publisher]
-        name = &#34;云吱&#34;
+        name = &#34;Leehow&#34;
         logoUrl = &#34;/logo.png&#34;
 
   #  TypeIt 配置
@@ -1397,6 +1397,6 @@ git push
 
 ---
 
-> 作者: [云吱](https://www.haoyep.com/)  
+> 作者: [Leehow](https://www.haoyep.com/)  
 > URL: https://www.haoyep.com/posts/windows-hugo-blog-github/  
 

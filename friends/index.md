@@ -7,10 +7,10 @@
 ## 基本信息
 
 ```yaml
-- nickname: 云吱的小站
+- nickname: Leehow的小站
   avatar: https://www.haoyep.com/avatar.jpg
   url: https://www.haoyep.com
-  description: 云吱的个人博客，好耶！
+  description: Leehow的个人博客，好耶！
 ```
 
 ## 友情提醒
