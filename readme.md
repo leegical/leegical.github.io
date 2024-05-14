@@ -1,11 +1,12 @@
 # Leehow的小站
 
-共计 16 篇文章
+共计 17 篇文章
 
 ## 2024
 
-共计 3 篇文章
+共计 4 篇文章
 
+- 05-14 [重装Windows系统记录](https://www.haoyep.com/posts/reinstall-windows/ "2024-05-14 14:48:37")
 - 04-01 [在 Word 中使用 Zotero 插入参考文献](https://www.haoyep.com/posts/word-zotero-citation/ "2024-04-01 16:30:01")
 - 01-07 [Ubuntu 22.04 LTS 64位系统安装 clang10 版本](https://www.haoyep.com/posts/ubuntu22-install-clang10/ "2024-01-07 15:44:57")
 - 01-02 [zsh 安装与配置，使用 oh-my-zsh 美化终端](https://www.haoyep.com/posts/zsh-config-oh-my-zsh/ "2024-01-02 23:30:39")

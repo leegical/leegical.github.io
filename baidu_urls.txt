@@ -1,3 +1,4 @@
+https://www.haoyep.com/posts/reinstall-windows/
 https://www.haoyep.com/posts/word-zotero-citation/
 https://www.haoyep.com/posts/ubuntu22-install-clang10/
 https://www.haoyep.com/posts/zsh-config-oh-my-zsh/
