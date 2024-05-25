@@ -4,8 +4,6 @@
 
 ## 2024
 
-共计 5 篇文章
-
 - 05-14 [通过Cloudflare tunnel访问内网端口](https://www.haoyep.com/posts/access-intranet-ports-via-cloudflare-tunnel/ "2024-05-14 15:00:08")
 - 05-14 [重装Windows系统记录](https://www.haoyep.com/posts/reinstall-windows/ "2024-05-14 14:48:37")
 - 04-01 [在 Word 中使用 Zotero 插入参考文献](https://www.haoyep.com/posts/word-zotero-citation/ "2024-04-01 16:30:01")
@@ -13,8 +11,6 @@
 - 01-02 [zsh 安装与配置，使用 oh-my-zsh 美化终端](https://www.haoyep.com/posts/zsh-config-oh-my-zsh/ "2024-01-02 23:30:39")
 
 ## 2023
-
-共计 13 篇文章
 
 - 12-25 [Ubuntu 22.04 安装 AFL 及 qemu mode 实践](https://www.haoyep.com/posts/afl-install/ "2023-12-25 21:24:00")
 - 12-17 [Github Pages 博客网站访问速度优化](https://www.haoyep.com/posts/optimize-github-pages-blog-access-speed/ "2023-12-17 15:00:18")
