@@ -1,4 +1,4 @@
-# 通过 Cloudflare 和 JsDelivr 免费加速博客 GitHub 图床等静态资源
+# 通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源
 
 
 通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。
