@@ -4,6 +4,7 @@
 &lt;!-- markdownlint-disable-file --&gt;
 
 ## Blog
+
 {{&lt; style &#34;min-height: 230px;&#34; &gt;}}
 {{&lt; typeit code=cpp &gt;}}
 class Blog {
