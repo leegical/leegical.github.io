@@ -7,6 +7,11 @@
 
 {{&lt; style &#34;min-height: 230px;&#34; &gt;}}
 {{&lt; typeit code=cpp &gt;}}
+/**
+ * 建站的初衷不是為了炫耀所知，而是記錄無知。
+ * 人知道的越多，就會發現無知的越多。有更廣袤的世界可以探索，是莫大的快樂！
+ * @since 2019-03-26 12:13:14
+ */
 class Blog {
 public:
   std::string name, author, url;
