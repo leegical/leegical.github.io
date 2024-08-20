@@ -41,21 +41,20 @@
 
 ### 绑定域名
 - 进入构建好的 Pages
-![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081600461.png)
+![选择对应的Page](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081600461.png)
 - 自定义域——设置自定义域
-![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081601828.png)
+![设置自定义域](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408202330986.png)
 - 添加自定义域。可以设置一级或二级域名，这里我直接用了一级域名
-![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081602294.png)
-![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081603622.png)
+![设置域名](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081602294.png)
+![设置域名](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081603622.png)
 
 然后进入 Pages，绑定域名。
-![image](https://img.allworldg.xyz/2022/05/4b4a00bb92c5985a9e60925c9e3c7426.png)
 - 等待片刻，DNS 解析生效
-![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081604721.png)
+![ 等待DNS解析](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081604721.png)
 ## 成果展示
 现在可以直接通过自定义域名访问博客了，而且自动有 SSL。
 例如现在就可以通过 [https://www.haoyep.com/](https://www.haoyep.com/) 来访问Leehow的小站啦~
-![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081606080.png)
+![自定义域名访问博客效果展示](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081606080.png)
 
 ## 总结
 以上整个环境部署好之后，接下来的常用命令就是以下几个：
