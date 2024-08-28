@@ -1,11 +1,12 @@
 # Leehow的小站
 
-共计 18 篇文章
+共计 19 篇文章
 
 ## 2024
 
-共计 5 篇文章
+共计 6 篇文章
 
+- 08-29 [利用 Cloudflare Pages 和 BPB 面板搭建免费VPN订阅节点](https://www.haoyep.com/posts/cf-bpb-vpn/ "2024-08-29 01:32:43")
 - 05-14 [通过Cloudflare tunnel访问内网端口](https://www.haoyep.com/posts/access-intranet-ports-via-cloudflare-tunnel/ "2024-05-14 15:00:08")
 - 05-14 [重装Windows系统记录](https://www.haoyep.com/posts/reinstall-windows/ "2024-05-14 14:48:37")
 - 04-01 [在 Word 中使用 Zotero 插入参考文献](https://www.haoyep.com/posts/word-zotero-citation/ "2024-04-01 16:30:01")
