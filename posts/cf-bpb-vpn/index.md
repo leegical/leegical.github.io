@@ -5,7 +5,7 @@
 
 &lt;!--more--&gt;
 
-此处开始为正文## GitHub
+## GitHub
 登录 GitHub，fork [BPB 面板](https://github.com/bia-pain-bache/BPB-Worker-Panel)到自己仓库中。可以更改仓库名。
 ![fork仓库](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057058.png)
 ## Cloudflare
@@ -66,7 +66,7 @@ KV 空间绑定后，在所有部署中 点击三个点——重试部署。
 2) 点击 [Scan Now](https://scanner.github1.cloud/) 扫描 Clean IP。一般来说，Clean IP 的节点RTT 会更短。
 ![Scan Now](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057503.png)
 
-{{&lt; admonition warn &#34;注意，为了扫描出和你实际网络通信时间最短的IP，扫描时记得关闭代理&#34; false &gt;}}
+{{&lt; admonition warn &#34;注意，为了扫描出与你实际网络通信时间最短的IP，扫描时记得关闭代理&#34; false &gt;}}
 
 {{&lt; /admonition &gt;}}
 
