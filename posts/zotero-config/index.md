@@ -30,10 +30,10 @@ Zotero 官网访问速度慢的，建议下载蓝奏云中的`translators.zip`�
 - zotero 官方插件下载地址： https://www.zotero.org/support/plugins
 - zotero 中文社区推荐插件： https://plugins.zotero-chinese.com/#/
 访问速度慢的，建议下载蓝奏云中`插件.zip`，压缩包里包含本文全部插件。
-{{&lt; admonition tip &gt;}}
-强烈建议下载[Zotero 插件合集](https://github.com/syt2/zotero-addons)，这个插件可以帮你自动管理、更新zotero插件。
-![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311082226948.png)
-{{&lt; /admonition &gt;}}
+&gt; [!TIP]
+&gt; 强烈建议下载[Zotero 插件合集](https://github.com/syt2/zotero-addons)，这个插件可以帮你自动管理、更新zotero插件。
+&gt; ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311082226948.png)
+
 ##### 插件安装
 - 方法一：
 打开【Zotero】

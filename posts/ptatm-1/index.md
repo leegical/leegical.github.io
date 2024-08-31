@@ -4,9 +4,9 @@
 &lt;!--more--&gt;
 
 本文介绍 [PTATM](https://github.com/panzhenyu/PTATM) 的初始化工作，如内核、环境变量等。
-{{&lt; admonition info &#34;PTATM简介&#34; &gt;}}
+
+- PTATM简介
 [PTATM](https://github.com/panzhenyu/PTATM)结合了多路径任务分段方法、共享Cache竞争下的任务段信息收集方法以及分段任务的pWCET分布生成方法，是一种适用于多路径任务的多核系统pWCET分析工具。
-{{&lt; /admonition &gt;}}
 
 ## 系统环境
 [PTATM](https://github.com/panzhenyu/PTATM) 开发时的环境为：
@@ -51,8 +51,9 @@ sudo nano /etc/default/grub
 ```bash
 &#34;Advanced options for Ubuntu&gt;Ubuntu, with Linux 5.19.0-50-generic&#34;
 ```
-{{&lt; admonition tip &#34;同理，记得把`5.19.0-50-generic`替换你需要的 version&#34; false &gt;}}
-{{&lt; /admonition &gt;}}
+
+&gt; [!NOTE]
+&gt; 同理，记得把`5.19.0-50-generic`替换你需要的 version。
 
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311181952427.png)
 

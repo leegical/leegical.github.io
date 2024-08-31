@@ -109,8 +109,8 @@ oh-my-zsh 内置了 `web-search` 插件。`web-search` 能让我们在命令行�
 
 ![web-search搜索](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012302476.png)
 
-{{&lt; admonition success &#34;最后，记得[启用所有插件](#启用插件)。&#34; false &gt;}}
-{{&lt; /admonition &gt;}} 
+&gt; [!IMPORTANT]
+&gt; 最后，记得[启用所有插件](#启用插件)。
 
 ### 启用插件
 修改`~/.zshrc`中插件列表为：
@@ -120,8 +120,8 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
 
 ![zsh插件列表](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png)
 
-{{&lt; admonition tip &#34;部分插件需要参考[插件介绍](#插件介绍)进行安装。&#34; false &gt;}}
-{{&lt; /admonition &gt;}} 
+&gt; [!TIP]
+&gt; 部分插件需要参考[插件介绍](#插件介绍)进行安装。
 
 开启新的 Shell 或执行 `source ~/.zshrc`，就可以开始体验插件。
 ## Tips
@@ -149,9 +149,8 @@ unproxy () {
   unset all_proxy
 }
 ```
-
-{{&lt; admonition tip &#34;这里假设本地代理的端口是`1089`。&#34; false &gt;}}
-{{&lt; /admonition &gt;}} 
+&gt; [!TIP]
+&gt; 这里假设本地代理的端口是`1089`。
 
 ![使用本地代理命令](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012307093.png)
 
@@ -176,9 +175,8 @@ unproxy () {
  # sudo sed -i -e &#39;/Acquire::https::Proxy/d&#39; /etc/apt/apt.conf
 }
 ```
-
-{{&lt; admonition tip &#34;这里假设宿主机局域网 http 代理的端口是`10811`。&#34; false &gt;}}
-{{&lt; /admonition &gt;}} 
+&gt; [!NOTE]
+&gt; 这里假设宿主机局域网 http 代理的端口是`10811`。
 
 ### 卸载 Oh My Zsh
 - 终端输入 ：

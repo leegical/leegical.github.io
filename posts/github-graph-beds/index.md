@@ -23,9 +23,8 @@
 
 点击`Generate token`，生成 token。
 
-{{&lt; admonition &gt;}}
-这个 token 生成后只会显示这一次！注意复制、保存到其他地方以备后续使用。
-{{&lt; /admonition &gt;}}
+&gt; [!CAUTION]
+&gt; 这个 token 生成后只会显示这一次！注意复制、保存到其他地方以备后续使用。
 
 ![复制token](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141537568.png)
 

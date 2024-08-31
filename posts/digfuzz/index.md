@@ -6,12 +6,11 @@
 &lt;!--more--&gt;
 
 ## 背景知识
-{{&lt; admonition info &#34;参考文章&#34; &gt;}}
+&gt; [!NOTE]
+&gt; - 参考文章
+&gt; [阅读笔记：《The Art, Science, and Engineering of Fuzzing: A Survey》](https://blog.csdn.net/qq_41513009/article/details/121039888)
+&gt; [Hybrid Fuzzing Paper Summary](https://www.anquanke.com/post/id/263725)
 
-[阅读笔记：《The Art, Science, and Engineering of Fuzzing: A Survey》](https://blog.csdn.net/qq_41513009/article/details/121039888)
-[Hybrid Fuzzing Paper Summary](https://www.anquanke.com/post/id/263725)
-
-{{&lt; /admonition &gt;}}
 
 ### fuzzing 的分类
 - 根据 fuzzer 观察到的语义粒度，fuzzer 被分为黑盒 fuzzer、灰盒 fuzzer 和白盒 fuzzer。
@@ -35,11 +34,9 @@
 
 相比较于灰盒或者黑盒方法而言，动态符号执行是很慢的，这是由于它需要分析 PUT 的每一条指令并插桩。为了解决开销过大的问题，一种缩小动态符号执行范畴的通用策略被提出：让用户确定代码中不感兴趣的部分或者感兴趣的片段、交替使用 conclic testing 和灰盒 fuzzing。
 
-{{&lt; admonition abstract &#34;DigFuzz&#34; &gt;}}
-
-**DigFuzz**: 用灰盒测试确定每个分支执行概率，再使用白盒 fuzzer 对对于灰盒 fuzzing 比较 challenging 的路径进行 fuzzing
-**DigFuzz** 提出基于蒙特卡洛的路径概率排序模型 (Monte Carlo Based Probabilistic Path Prioritization Model, $MCP^3$)，在 fuzzing 的过程中，用 seed 的 trace 构建执行路径树，用覆盖率计算每个分支的概率，路径的概率为路径上分支的概率相乘，最后基于路径的概率对路径进行排序，概率越小代表路径越难探索，将最难探索的路径优先给 concolic execution 进行探索。
-{{&lt; /admonition &gt;}}
+&gt; [!NOTE]
+&gt; **DigFuzz**: 用灰盒测试确定每个分支执行概率，再使用白盒 fuzzer 对对于灰盒 fuzzing 比较 challenging 的路径进行 fuzzing
+&gt; **DigFuzz** 提出基于蒙特卡洛的路径概率排序模型 (Monte Carlo Based Probabilistic Path Prioritization Model, $MCP^3$)，在 fuzzing 的过程中，用 seed 的 trace 构建执行路径树，用覆盖率计算每个分支的概率，路径的概率为路径上分支的概率相乘，最后基于路径的概率对路径进行排序，概率越小代表路径越难探索，将最难探索的路径优先给 concolic execution 进行探索。
 
 [Probabilistic Path Prioritization for Hybrid Fuzzing](https://ieeexplore.ieee.org/abstract/document/9280412)
 主要翻译参考自 [DigFuzz](https://fgroove.github.io/2019/03/27/digfuzz/)。
@@ -194,9 +191,9 @@ DigFuzz 需要进行随机抽样来使用蒙特卡罗方法计算概率[35]。�
 
 基于这一观察，我们提出了执行抽样的算法（Algorithm 1）。该算法接受3个输入并在 $HashMap$ 中生成 coverage 统计信息。
 
-{{&lt; admonition info &#34;算法1的3个输入&#34; &gt;}}
-1）目标二进制$P$；  2）模糊测试器$Fuzzer$；  3）存储在$Set_{inputs}$中的初始种子
-{{&lt; /admonition &gt;}}
+&gt; [!TIP]
+&gt; - 算法1的3个输入
+&gt; 1）目标二进制$P$；  2）模糊测试器$Fuzzer$；  3）存储在$Set_{inputs}$中的初始种子
 
 给定这3个输入，算法在模糊测试过程中进行迭代抽样。
 1. $Fuzzer$使用$P$和$Set_{inputs}$以生成新输入 $Set_{NewInputs}$（Ln.7）。
@@ -207,14 +204,14 @@ DigFuzz 需要进行随机抽样来使用蒙特卡罗方法计算概率[35]。�
 如图3所示，DigFuzz 使用来自模糊器的运行时信息生成基于$MCP^3$的执行树。
 ![Fig. 3: Overview of DigFuzz](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202312101450165.png)
 
-{{&lt; admonition info &#34;Algorithm 2的输入、输出&#34; &gt;}}
-输入，也是`Algorithm 1`的输出：
-1）目标二进制文件的控制流图$CFG$；
-2）fuzzer 保留的输入$Set_{inputs}$；
-3）覆盖统计$HashMap_{CovStat}$
-
-输出：基于$MCP^3$的执行树 $ExecTree$
-{{&lt; /admonition &gt;}}
+&gt; [!TIP]
+&gt; - Algorithm 2的输入、输出
+&gt; 输入，也是`Algorithm 1`的输出：
+&gt; 1）目标二进制文件的控制流图$CFG$；
+&gt; 2）fuzzer 保留的输入$Set_{inputs}$；
+&gt; 3）覆盖统计$HashMap_{CovStat}$
+&gt; 
+&gt; 输出：基于$MCP^3$的执行树 $ExecTree$
 
 `Algorithm 2`展示了树构建过程。算法主要分为两个步骤。
 - **Step1**：对 $Set_{inputs}$中的每个输入执行跟踪分析，提取相应的跟踪，然后将跟踪合并到 $ExecTree$ 中（Ln. 6到11）
@@ -235,11 +232,11 @@ DigFuzz 需要进行随机抽样来使用蒙特卡罗方法计算概率[35]。�
 我们基于概率对路径进行优先排序。如方程2所示，路径被视为一个马尔可夫链，其概率是基于路径内所有分支的概率计算得出的。路径可以表示为一系列已覆盖的分支，每个分支都标记有其概率，该概率表示随机输入能够满足条件的可能性有多大。因此，我们利用马尔可夫链模型，将路径的概率看作是转换的概率序列。
 ![算法3. DigFuzz中的路径优先排序](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202312101709167.png)
 
-{{&lt; admonition info &#34;Algorithm 3的输入、输出&#34; &gt;}}
-输入，也是`Algorithm 2`的输出：基于$MCP^3$的执行树$ExecTree$
-
-输出：$Set_{Prob}$，一组未探索（遗漏）的路径及其概率
-{{&lt; /admonition &gt;}}
+&gt; [!TIP]
+&gt; Algorithm 3的输入、输出
+&gt; 输入，也是`Algorithm 2`的输出：基于$MCP^3$的执行树$ExecTree$
+&gt; 
+&gt; 输出：$Set_{Prob}$，一组未探索（遗漏）的路径及其概率
 
 `Algorithm 3`详细地呈现了这个算法。`DigFuzz` 将根据$Set_{Prob}$对这些 **未探索（遗漏）** 的路径进行进一步的优先排序，并将概率最低的路径提供给符号执行。该算法：
 1) 从执行树遍历开始。对于 $ExecTree$ 中每个跟踪上的每个分支$b_{ri}$，它首先提取相邻的分支$b_{rj}$（Ln. 5），然后收集沿给定跟踪未探索的路径（Ln. 6）。

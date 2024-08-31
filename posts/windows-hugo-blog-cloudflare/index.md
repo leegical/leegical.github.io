@@ -5,9 +5,8 @@
 
 &lt;!--more--&gt;
 
-{{&lt; admonition warning &#34;更新于2023-12-14&#34; &gt;}}
-经过测试，在开启自定义域名时，Cloudflare Pages 在国内的访问速度远慢于 Github Pages。因此建议还是使用 Github Pages。
-{{&lt; /admonition &gt;}}
+&gt; [!IMPORTANT]
+&gt; [**2023-12-14**] 经过测试，在开启自定义域名时，Cloudflare Pages 在国内的访问速度远慢于 Github Pages。因此建议还是使用 Github Pages。
 
 {{&lt; link &#34;https://www.haoyep.com/posts/windows-hugo-blog-github/&#34; &#34;使用hugo和Github Pages配置博客&#34; &#34;使用hugo和Github Pages配置博客&#34; true &gt;}}
 

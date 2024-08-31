@@ -59,9 +59,8 @@ docker run --name cf-tunnel -d --restart always cloudflare/cloudflared:latest tu
 - 子域名（Subdomain）：自定义一个。Path 留空。
 - Type：`SSH`。URL ：`localhost:22`。
 
-{{&lt; admonition &gt;}}
-如果需要转发其他协议和端口，你可以选择相应的 Type 和 URL。
-{{&lt; /admonition &gt;}} 
+&gt; [!TIP]
+&gt; 如果需要转发其他协议和端口，你可以选择相应的 Type 和 URL。
 
 ![配置域名](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401130019856.png)
 

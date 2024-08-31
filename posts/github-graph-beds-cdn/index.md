@@ -66,9 +66,9 @@ https://cdn.jsdelivr.net/gh/leegical/Blog_img/md_img202305061640828.png
 
 ![国外重定向规则配置](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141700130.png)
 
-{{&lt; admonition tip &gt;}}
-HTTP 重定向状态选择302而不是301。虽然两类请求都会被 Cloudflare 缓存，但301理论上是永久跳转而302是临时跳转，因此301可能会导致长时间缓存，不利于今后修改重定向到新地址。
-{{&lt; /admonition &gt;}}
+&gt; [!TIP]
+&gt; HTTP 重定向状态选择302而不是301。虽然两类请求都会被 Cloudflare 缓存，但301理论上是永久跳转而302是临时跳转，因此301可能会导致长时间缓存，不利于今后修改重定向到新地址。
+
 ## PicGo 设置
 为了让上传的图片自动生成 CDN 链接，还需要配置 PicGo：
 ![PicGo Github 图床设置](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141324478.png)

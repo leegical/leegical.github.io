@@ -260,9 +260,8 @@ afl-fuzz -i in/ -o out/ -Q ./benchmark
 export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
 ```
 
-{{&lt; admonition &gt;}}
-按照之前 [stackoverflow问题](https://stackoverflow.com/questions/35441062/afl-fuzzing-without-root-avoid-modifying-proc-sys-kernel-core-pattern)中的评论，这个环境变量只是抑制了有关它的警告？使用此标志，AFL 将运行并且不会显示警告消息，并[可能错过崩溃](https://github.com/google/fuzzer-test-suite/issues/60)。
-{{&lt; /admonition &gt;}}
+&gt; [!NOTE]
+&gt; 按照之前 [stackoverflow问题](https://stackoverflow.com/questions/35441062/afl-fuzzing-without-root-avoid-modifying-proc-sys-kernel-core-pattern)中的评论，这个环境变量只是抑制了有关它的警告？使用此标志，AFL 将运行并且不会显示警告消息，并[可能错过崩溃](https://github.com/google/fuzzer-test-suite/issues/60)。
 
 2. 按照 AFL 提示修改文件
 ```bash

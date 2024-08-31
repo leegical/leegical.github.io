@@ -15,13 +15,10 @@
 
 ## 友情提醒
 
-{{&lt; admonition info &#34;Notice&#34; true &gt;}}
-
-1. 互换友链请按以上格式在评论留言。（仅限个人非商业网站）
-2. :(fa-solid fa-exclamation-triangle): 网站失效、停止维护、内容不当都可能被取消link！
-3. 那些不尊重他人劳动成果，转载不加出处的，或恶意行为的网站，还请你不要来进行交换了。
-
-{{&lt; /admonition &gt;}}
+&gt; [!WARNING]
+&gt; 1. 互换友链请按以上格式在评论留言。（仅限个人非商业网站）
+&gt; 2. :(fa-solid fa-exclamation-triangle): 网站失效、停止维护、内容不当都可能被取消link！
+&gt; 3. 那些不尊重他人劳动成果，转载不加出处的，或恶意行为的网站，还请你不要来进行交换了。
 
 
 ---
