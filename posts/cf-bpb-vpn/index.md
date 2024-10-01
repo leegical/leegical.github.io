@@ -15,6 +15,9 @@
 随便起个名字，点击添加。
 ![创建 KV](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282353466.png)
 
+&gt; [!NOTE]
+&gt; 如果创建失败，或者遇到进不去页面等问题，可以尝试先进行下一步[创建 Pages](#创建-pages)再回来创建 KV。
+
 ### 创建 Pages
 1) 点击左侧栏 **Workers 和 Pages** -&gt; 【概述】，点击**创建**
 ![创建 Pages](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337942.png)
