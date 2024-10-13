@@ -34,6 +34,19 @@ chsh -s /bin/zsh
 
 ![安装 oh-my-zsh](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012224221.png)
 
+### 从`.bashrc`中迁移配置（可选）
+如果之前在使用`bash`时自定义了一些环境变量、别名等，那么在切换到`zsh`后，你需要手动迁移这些自定义配置。
+```shell
+# 查看bash配置文件，并手动复制自定义配置
+cat ~/.bashrc
+# 编辑zsh配置文件，并粘贴自定义配置
+nano ~/.zshrc
+# 启动新的zsh配置
+source ~/.zshrc
+```
+
+`root`用户在执行`sudo su`命令后，再运行上述代码查看、手动复制、粘贴自定义配置。
+
 ## 配置主题
 ### 自定义主题
 ```bash
