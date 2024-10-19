@@ -35,20 +35,20 @@
 ![开始设置](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005720.png)
 
 项目名称随便写。点击环境变量，分别设置 **UUID** 和 **PROXYIP**。点击部署。
-- **UUID**：直接安装的 BPB 面板默认使用同一个 UUID[89b3cbba-e6ac-485a-9481-976a0415eab9]，可能存在安全隐患。可以去 [在线生成 UUID 1](https://1024tools.com/uuid)  | [在线生成 UUID 2](https://www.lddgo.net/string/uuid) 等网站随机生成一个新的 UUID
-- **PROXYIP**：去这里[随机选择一个代理 IP](https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/)，或者你也可以直接把代理 IP 设置为 cdn-b100.xn--b6gac.eu.org
+- **UUID**：直接安装的 BPB 面板默认使用同一个 UUID [89b3cbba-e6ac-485a-9481-976a0415eab9]，可能存在安全隐患。可以去 [在线生成 UUID 1](https://1024tools.com/uuid)  | [在线生成 UUID 2](https://www.lddgo.net/string/uuid) 等网站随机生成一个新的 UUID
+- **PROXYIP**：去这里[随机选择一个代理 IP](https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/)，或者你也可以直接把代理 IP 设置为 `cdn-b100.xn--b6gac.eu.org`
 
 ![设置环境变量并部署](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013515.png)
 
 稍等片刻，部署成功！
-![](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png)
+![部署成功](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png)
 
 ### 绑定 KV
 部署完成后，点击继续处理项目。或者返回到概述中，选择部署的项目，点击访问站点，访问项目页面。
 点击**设置** -&gt; **函数**，在函数页面中，找到 KV 命名空间绑定，点击**添加绑定**。
 - 变量名称：能且仅能填写 **bpb**
 - KV 命名空间：选择[创建 KV](#创建-kv) 中设置的命名空间
-![](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039054.png)
+![绑定kv](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039054.png)
 
 ### 重新部署
 KV 空间绑定后，在所有部署中 点击三个点——重试部署。
@@ -72,10 +72,10 @@ KV 空间绑定后，在所有部署中 点击三个点——重试部署。
 &gt; [!NOTE]
 &gt; 为了扫描出与你实际网络通信时间最短的IP，扫描时记得关闭代理。
 
-	- 点击Start Scan，开始扫描。第一次扫描的IP数较少，你可以点击下方提示，扫描更多IP。
+点击Start Scan，开始扫描。第一次扫描的IP数较少，你可以点击下方提示，扫描更多IP。
 ![扫描Clean IP](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290102440.png)
 	
-	- 将扫描到的Clean IP填到BPB面板配置中
+将扫描到的Clean IP填到BPB面板配置中。
 ![配置Clean IP](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290105211.png)
 
 3) TLS 端口处勾选你想启用的端口，或者默认使用443端口。
