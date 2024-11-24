@@ -1,4 +1,4 @@
-# 使用 Vercel 加速 Github 图床
+# 使用 vercel 加速 Github 图床
 
 
 考虑到 Chinajsdelivr 的审查限制，本文改用 vercel 加速 GitHub 图床访问，并通过仓库结构调整和 GitHub Action，兼容国内外分流加速策略，自动化完成分支同步。
