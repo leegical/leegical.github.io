@@ -104,9 +104,9 @@ Cloudflare 为 Pages 分配的 `.pages.dev` 域名被墙了，无法直接访问
 
 最后，点击 **APPLY SETTINGS**，应用设置。
 ### 导入节点
-根据你所使用的代理应用，点击 【NORMAL SUB】或【FULL NORMAL SUB】对应的 **COPY SUB** 按钮，复制 BPB 面板生成的订阅链接。
+根据你所使用的代理应用，点击对应的 **COPY SUB** 按钮，复制 BPB 面板生成的订阅链接。
 
-![复制订阅链接](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110701.png)
+![复制订阅链接](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110711.png)
 
 #### PC-V2rayN
 ##### 导入
