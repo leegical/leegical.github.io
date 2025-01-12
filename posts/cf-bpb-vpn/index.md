@@ -19,14 +19,14 @@
 
 ### 上传并创建
 点击左侧栏 **Compute (Workers)** -&gt; 【Workers 和 Pages】，点击**创建**。
-![创建 Pages](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337942.png)
+![创建 Pages](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337943.png)
 
 点击 **Pages** -&gt; 【上传资产】。
-![上传worker](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003015.png)
+![上传worker](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003016.png)
 
 - 项目名称：随便取，但是不能包含 `bpb`。
 - 上传压缩包：将第一步中下载的 `worker.zip` 上传。
-![上传worker](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356132.png)
+![上传worker](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356133.png)
 
 稍等片刻，部署成功！
 ![部署成功](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png)
@@ -38,19 +38,19 @@
 - **PROXYIP**：去这里[随机选择一个代理 IP](https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/)，或者你也可以直接把代理 IP 设置为 `cdn-b100.xn--b6gac.eu.org` 或 `bpb.yousef.isegaro.com`。
 - **TR_PASS**: 去[随机字符串生成器](https://www.jyshare.com/front-end/9111/) | [随机字符串生成](http://tool.pfan.cn/random) 生成一串复杂字符串做为密码。
 
-![设置变量](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005720.png)
+![设置变量](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005721.png)
 ## 绑定 KV
 ### 创建
 点击左侧栏 **存储和数据库** -&gt; 【KV】，点击**创建**。
 - 名称：随便取一个，但是不能包含 `bpb`。
-![创建kv](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057058.png)
+![创建kv](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057059.png)
 ### 绑定
 回到创建的 Pages 界面。点击 **设置** -&gt; 【绑定】，点击**添加**，选择添加 KV 命名空间。
-![添加KV](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013515.png)
+![添加KV](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013516.png)
 - 变量名称：能且仅能填写 `kv`
 - KV 命名空间：选择[创建 KV](#创建-kv) 中设置的命名空间
 
-![绑定kv](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039054.png)
+![绑定kv](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039050.png)
 
 ## 绑定域名（可选）
 Cloudflare 为 Pages 分配的 `.pages.dev` 域名被墙了，无法直接访问。你可以为创建的 pages 设定一个自定义域名，从而访问它。
@@ -63,7 +63,7 @@ Cloudflare 为 Pages 分配的 `.pages.dev` 域名被墙了，无法直接访问
 &gt; [!NOTE]
 &gt; 注意：在项目有任何改动后，都需要进行重新部署，否则改动不会生效。
 
-![重新部署](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046972.png)
+![重新部署](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png)
 
 ## BPB 面板
 访问项目网址： *https://你的项目地址.pages.dev/panel* 
@@ -71,7 +71,7 @@ Cloudflare 为 Pages 分配的 `.pages.dev` 域名被墙了，无法直接访问
 或者 *https://自定义域名/panel* 。
 ### 修改密码
 第一次访问面板会提示你修改密码，建议修改成一个复杂密码，避免面板被盗用。
-![修改密码](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050299.png)
+![修改密码](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png)
 
 ### 面板配置
 使用修改后的密码重新登录面板。
@@ -86,10 +86,10 @@ Cloudflare 为 Pages 分配的 `.pages.dev` 域名被墙了，无法直接访问
 ![扫描Clean IP](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290102440.png)
 
 将扫描到的 Clean IP 填到 BPB 面板配置中。
-![Scan Now](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057503.png)
+![Scan Now](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057500.png)
 
 4) TLS 端口处勾选你想启用的端口，或者默认使用443端口。
-![启用TLS端口](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290056538.png)
+![启用TLS端口](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290056530.png)
 
 5) **ROUTING RULES**：配置一些路由规则。**Bypass xxx**是指 xxx 不走代理（直连访问）；**Block xxx**是指 xxx 被屏蔽访问（无法访问）。可以按需勾选。
 	- **Bypass LAN**：绕过本地局域网
@@ -100,13 +100,13 @@ Cloudflare 为 Pages 分配的 `.pages.dev` 域名被墙了，无法直接访问
 	- **Block QUIC**：屏蔽 QUIC 协议
 	- **Bypass Russia**：绕过俄罗斯
 	- **CUSTOM RULES**：除了上面预设的规则外，你可以在这里自定义一些需要直连（Bypass）和屏蔽（Block）的 IP 地址/网站。
-	![路由规则](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290053192.png)
+	![路由规则](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290053190.png)
 
 最后，点击 **APPLY SETTINGS**，应用设置。
 ### 导入节点
 根据你所使用的代理应用，点击 【NORMAL SUB】或【FULL NORMAL SUB】对应的 **COPY SUB** 按钮，复制 BPB 面板生成的订阅链接。
 
-![复制订阅链接](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110707.png)
+![复制订阅链接](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110701.png)
 
 #### PC-V2rayN
 ##### 导入
