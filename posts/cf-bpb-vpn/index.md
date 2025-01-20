@@ -1,22 +1,101 @@
-# 利用 Cloudflare Pages 和 BPB 面板搭建免费VPN订阅节点
+# 利用 Cloudflare Pages 和 BPB 面板搭建个人专属免费VPN订阅节点, 避免 1101 等报错
 
 
-无需域名，无需 SSL，通过 Cloudflare 和 BPB Panel，搭建一个永久免费且高速的免费 VPN。结合 Cloudflare 实现优选订阅、永久免费 vless 节点订阅，为使用（singbox-core 和 xray-core）的跨平台客户端提供配置。
+无需域名，无需 SSL，通过 Cloudflare 和 BPB Panel，解决1101等报错，搭建一个个人专属永久免费且高速的免费 VPN。结合 Cloudflare 实现优选订阅永久免费节点订阅，为使用（singbox-core 和 xray-core）的跨平台客户端提供配置。
 
 &lt;!--more--&gt;
 
+## 搭建思路
+当前 Cloudflare 收紧了 BPB 等项目的审查，直接使用源码或者原作者提供的混淆代码，很容易出现1101的报错。合理推测 Cloudflare 通过以下方面做了限制：
+- 代理类关键词：如 `vless`
+- 项目类关键词：如 `bpb`
+- 源码：如某个代理类代码被多次使用（这也是为什么混淆代码刚开始好使，过两三天又会出现1101的原因）
+
+混淆代码可以绕过 Cloudflare 的审查，前提是使用同一份混淆代码的人不多。BPB 项目现在也提供了未混淆加密前的[源代码](https://github.com/bia-pain-bache/BPB-Worker-Panel/blob/main/unobfuscated/worker.js)，我们可以加密该代码来获得自己独一无二的混淆代码，从而成功完成搭建。
+
+&gt; [!NOTE]
+&gt; 如果你已经有成功搭建且运行很长时间的 BPB，不要轻易更新 `_worker.js`！能用就不要动！如果想体验新版本 BPB，可以重新创建个 worker。
 ## 前提
-有一个 Cloudflare 账号，以及一个域名。
-登录 [Cloudflare](https://dash.cloudflare.com/login?lang=zh-cn)。
+- Github 账号：通过 Github action 自动拉取最新源代码并进行混淆
+- Cloudflare 账号
+- 域名：解决 Cloudflare Pages 自带域名被墙
+
+## 混淆代码
+新建一个 Github 仓库，在仓库里新建文件夹 `.github/workflows`，并在该文件夹中创建 `Obfuscate.yml` 文件，粘贴代码如下（也可以去我提供的 [demoPanel示例仓库](https://github.com/leegical/demoPanel/) 中复制相关代码。）：
+```yml
+name: Build Obfuscate BPB Panel
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+        # Runs everyday at 1:00 AM
+        - cron: &#34;0 1 * * *&#34;
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: &#34;latest&#34;
+
+      - name: Install dependencies
+        run: |
+          npm install -g javascript-obfuscator
+
+      - name: Clone BPB workjs
+        run: |
+          wget -O origin.js https://raw.githubusercontent.com/bia-pain-bache/BPB-Worker-Panel/refs/heads/main/unobfuscated/worker.js
+      
+      - name: Obfuscate BPB worker js
+        run: |
+          javascript-obfuscator origin.js --output _worker.js \
+          --compact true \
+          --control-flow-flattening true \
+          --control-flow-flattening-threshold 1 \
+          --dead-code-injection true \
+          --dead-code-injection-threshold 1 \
+          --identifier-names-generator hexadecimal \
+          --rename-globals true \
+          --string-array true \
+          --string-array-encoding &#39;rc4&#39; \
+          --string-array-threshold 1 \
+          --transform-object-keys true \
+          --unicode-escape-sequence true
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          branch: main
+          commit_message: &#39;:arrow_up: update latest bpb panel&#39;
+          commit_author: &#39;github-actions[bot] &lt;github-actions[bot]@users.noreply.github.com&gt;&#39;
+          push_options: &#39;--set-upstream&#39;
+```
+
+&gt; [!NOTE]
+&gt; 仓库主分支名需为 **main**。
+
+`Obfuscate.yml` 为你的代码仓库创建了一个 action，它将在每次 main 分支有 push 时、每天1点钟下载最新的 BPB 源代码，并执行混淆。
+
+push `Obfuscate.yml` 到你的代码仓库。稍等片刻，仓库根目录中会出现两个新的文件：
+- `origin.js`：最新未加密的 BPB 源代码 
+- `_worker.js`：混淆后的个人专属 BPB 代码
+![自动构建的文件](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250120234002592.png)
+
+下载混淆后的代码文件 `_worker.js` 到本地，压缩为 `worker.zip`.
 
 ## 创建 Pages
-### 下载代码文件
-从以下几个链接任选其一，下载最新的 `worker.zip` 到本地。
-- [Github Release](https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/latest/download/worker.zip)
-- [中国大陆加速1](https://github.moeyy.xyz/https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/latest/download/worker.zip)
-- [中国大陆加速2](https://gh.xmly.dev/https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/latest/download/worker.zip)
-- [中国大陆加速3](https://gh.api.99988866.xyz/https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/latest/download/worker.zip)
-
+登录 [Cloudflare](https://dash.cloudflare.com/login?lang=zh-cn)。
 ### 上传并创建
 点击左侧栏 **Compute (Workers)** -&gt; 【Workers 和 Pages】，点击**创建**。
 ![创建 Pages](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337943.png)
@@ -25,7 +104,7 @@
 ![上传worker](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003016.png)
 
 - 项目名称：随便取，但是不能包含 `bpb`。
-- 上传压缩包：将第一步中下载的 `worker.zip` 上传。
+- 上传压缩包：将通过混淆代码创建的 `worker.zip` 上传。
 ![上传worker](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356133.png)
 
 稍等片刻，部署成功！
@@ -66,9 +145,9 @@ Cloudflare 为 Pages 分配的 `.pages.dev` 域名被墙了，无法直接访问
 ![重新部署](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png)
 
 ## BPB 面板
-访问项目网址： *https://你的项目地址.pages.dev/panel* 
+访问项目网址： * https://你的项目地址.pages.dev/panel* 
 
-或者 *https://自定义域名/panel* 。
+或者 * https://自定义域名/panel* 。
 ### 修改密码
 第一次访问面板会提示你修改密码，建议修改成一个复杂密码，避免面板被盗用。
 ![修改密码](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png)

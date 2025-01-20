@@ -1,4 +1,376 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Leehow的小站</title><link>https://www.haoyep.com/</link><description>Leehow的博客，记录个人学习过程。好耶！</description><generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (Leehow)</managingEditor><webMaster>chuxuange@gmail.com (Leehow)</webMaster><copyright>本站内容采用 CC BY-NC-SA 4.0 国际许可协议。</copyright><lastBuildDate>Mon, 20 Jan 2025 00:54:00 +0000</lastBuildDate><atom:link href="https://www.haoyep.com/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 vercel 加速 Github 图床</title><link>https://www.haoyep.com/posts/github-graph-beds-vercel-cdn/</link><pubDate>Sun, 27 Oct 2024 23:48:46 +0800</pubDate><author>chuxuange@gmail.com (Leehow)</author><guid>https://www.haoyep.com/posts/github-graph-beds-vercel-cdn/</guid><category domain="https://www.haoyep.com/categories/blog/">blog</category><category domain="https://www.haoyep.com/categories/markdown/">markdown</category><description>&lt;img src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202410280001769.png" alt="featured image" referrerpolicy="no-referrer">&lt;p>考虑到 Chinajsdelivr 的审查限制，本文改用 vercel 加速 GitHub 图床访问，并通过仓库结构调整和 GitHub Action，兼容国内外分流加速策略，自动化完成分支同步。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Leehow的小站</title><link>https://www.haoyep.com/</link><description>Leehow的博客，记录个人学习过程。好耶！</description><generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator><language>zh-CN</language><managingEditor>chuxuange@gmail.com (Leehow)</managingEditor><webMaster>chuxuange@gmail.com (Leehow)</webMaster><copyright>本站内容采用 CC BY-NC-SA 4.0 国际许可协议。</copyright><lastBuildDate>Mon, 20 Jan 2025 15:50:24 +0000</lastBuildDate><atom:link href="https://www.haoyep.com/index.xml" rel="self" type="application/rss+xml"/><item><title>利用 Cloudflare Pages 和 BPB 面板搭建个人专属免费VPN订阅节点, 避免 1101 等报错</title><link>https://www.haoyep.com/posts/cf-bpb-vpn/</link><pubDate>Sun, 19 Jan 2025 01:32:43 +0800</pubDate><author>chuxuange@gmail.com (Leehow)</author><guid>https://www.haoyep.com/posts/cf-bpb-vpn/</guid><category domain="https://www.haoyep.com/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;img src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290144107.png" alt="featured image" referrerpolicy="no-referrer">&lt;p>无需域名，无需 SSL，通过 Cloudflare 和 BPB Panel，解决1101等报错，搭建一个个人专属永久免费且高速的免费 VPN。结合 Cloudflare 实现优选订阅永久免费节点订阅，为使用（singbox-core 和 xray-core）的跨平台客户端提供配置。&lt;/p>
+&lt;h2 id="搭建思路" class="heading-element">&lt;span>1 搭建思路&lt;/span>
+ &lt;a href="#%e6%90%ad%e5%bb%ba%e6%80%9d%e8%b7%af" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>当前 Cloudflare 收紧了 BPB 等项目的审查，直接使用源码或者原作者提供的混淆代码，很容易出现1101的报错。合理推测 Cloudflare 通过以下方面做了限制：&lt;/p>
+&lt;ul>
+&lt;li>代理类关键词：如 &lt;code>vless&lt;/code>&lt;/li>
+&lt;li>项目类关键词：如 &lt;code>bpb&lt;/code>&lt;/li>
+&lt;li>源码：如某个代理类代码被多次使用（这也是为什么混淆代码刚开始好使，过两三天又会出现1101的原因）&lt;/li>
+&lt;/ul>
+&lt;p>混淆代码可以绕过 Cloudflare 的审查，前提是使用同一份混淆代码的人不多。BPB 项目现在也提供了未混淆加密前的&lt;a href="https://github.com/bia-pain-bache/BPB-Worker-Panel/blob/main/unobfuscated/worker.js"target="_blank" rel="external nofollow noopener noreferrer">源代码&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a>，我们可以加密该代码来获得自己独一无二的混淆代码，从而成功完成搭建。&lt;/p>
+&lt;div class="alert alert-note">&lt;p class="alert-title">&lt;svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">&lt;path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/>&lt;/svg>注意&lt;/p>&lt;p>如果你已经有成功搭建且运行很长时间的 BPB，不要轻易更新 &lt;code>_worker.js&lt;/code>！能用就不要动！如果想体验新版本 BPB，可以重新创建个 worker。&lt;/p>
+&lt;/div>&lt;h2 id="前提" class="heading-element">&lt;span>2 前提&lt;/span>
+ &lt;a href="#%e5%89%8d%e6%8f%90" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;ul>
+&lt;li>Github 账号：通过 Github action 自动拉取最新源代码并进行混淆&lt;/li>
+&lt;li>Cloudflare 账号&lt;/li>
+&lt;li>域名：解决 Cloudflare Pages 自带域名被墙&lt;/li>
+&lt;/ul>
+&lt;h2 id="混淆代码" class="heading-element">&lt;span>3 混淆代码&lt;/span>
+ &lt;a href="#%e6%b7%b7%e6%b7%86%e4%bb%a3%e7%a0%81" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>新建一个 Github 仓库，在仓库里新建文件夹 &lt;code>.github/workflows&lt;/code>，并在该文件夹中创建 &lt;code>Obfuscate.yml&lt;/code> 文件，粘贴代码如下（也可以去我提供的 &lt;a href="https://github.com/leegical/demoPanel/"target="_blank" rel="external nofollow noopener noreferrer">demoPanel示例仓库&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a> 中复制相关代码。）：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yml" data-lang="yml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Build Obfuscate BPB Panel&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">push&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">branches&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">main&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">schedule&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># Runs everyday at 1:00 AM&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">cron&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;0 1 * * *&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">permissions&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">contents&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">write&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">jobs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">build&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">runs-on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ubuntu-latest&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">steps&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Check out the code&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">actions/checkout@v4&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Set up Node.js&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">actions/setup-node@v4&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">node-version&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;latest&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Install dependencies&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">|&lt;/span>&lt;span class="sd">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> npm install -g javascript-obfuscator&lt;/span>&lt;span class="w"> 
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Clone BPB workjs&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">|&lt;/span>&lt;span class="sd">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> wget -O origin.js https://raw.githubusercontent.com/bia-pain-bache/BPB-Worker-Panel/refs/heads/main/unobfuscated/worker.js&lt;/span>&lt;span class="w"> 
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Obfuscate BPB worker js&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">|&lt;/span>&lt;span class="sd">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> javascript-obfuscator origin.js --output _worker.js \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> --compact true \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> --control-flow-flattening true \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> --control-flow-flattening-threshold 1 \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> --dead-code-injection true \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> --dead-code-injection-threshold 1 \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> --identifier-names-generator hexadecimal \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> --rename-globals true \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> --string-array true \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> --string-array-encoding &amp;#39;rc4&amp;#39; \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> --string-array-threshold 1 \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> --transform-object-keys true \
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="sd"> --unicode-escape-sequence true&lt;/span>&lt;span class="w"> 
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Commit changes&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">stefanzweifel/git-auto-commit-action@v5&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">branch&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">main&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">commit_message: &amp;#39;:arrow_up&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">update latest bpb panel&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">commit_author&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;github-actions[bot] &amp;lt;github-actions[bot]@users.noreply.github.com&amp;gt;&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">push_options&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;--set-upstream&amp;#39;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;div class="alert alert-note">&lt;p class="alert-title">&lt;svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">&lt;path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/>&lt;/svg>注意&lt;/p>&lt;p>仓库主分支名需为 &lt;strong>main&lt;/strong>。&lt;/p>
+&lt;/div>&lt;p>&lt;code>Obfuscate.yml&lt;/code> 为你的代码仓库创建了一个 action，它将在每次 main 分支有 push 时、每天1点钟下载最新的 BPB 源代码，并执行混淆。&lt;/p>
+&lt;p>push &lt;code>Obfuscate.yml&lt;/code> 到你的代码仓库。稍等片刻，仓库根目录中会出现两个新的文件：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>origin.js&lt;/code>：最新未加密的 BPB 源代码&lt;/li>
+&lt;li>&lt;code>_worker.js&lt;/code>：混淆后的个人专属 BPB 代码
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250120234002592.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250120234002592.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>自动构建的文件&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250120234002592.png" alt="自动构建的文件" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250120234002592.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250120234002592.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250120234002592.png?size=large 2x" data-title="自动构建的文件" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">自动构建的文件&lt;/figcaption>
+ &lt;/figure>&lt;/li>
+&lt;/ul>
+&lt;p>下载混淆后的代码文件 &lt;code>_worker.js&lt;/code> 到本地，压缩为 &lt;code>worker.zip&lt;/code>.&lt;/p>
+&lt;h2 id="创建-pages" class="heading-element">&lt;span>4 创建 Pages&lt;/span>
+ &lt;a href="#%e5%88%9b%e5%bb%ba-pages" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>登录 &lt;a href="https://dash.cloudflare.com/login?lang=zh-cn"target="_blank" rel="external nofollow noopener noreferrer">Cloudflare&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a>。&lt;/p>
+&lt;h3 id="上传并创建" class="heading-element">&lt;span>4.1 上传并创建&lt;/span>
+ &lt;a href="#%e4%b8%8a%e4%bc%a0%e5%b9%b6%e5%88%9b%e5%bb%ba" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>点击左侧栏 &lt;strong>Compute (Workers)&lt;/strong> -&amp;gt; 【Workers 和 Pages】，点击&lt;strong>创建&lt;/strong>。
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337943.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337943.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>创建 Pages&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337943.png" alt="创建 Pages" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337943.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337943.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337943.png?size=large 2x" data-title="创建 Pages" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">创建 Pages&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;p>点击 &lt;strong>Pages&lt;/strong> -&amp;gt; 【上传资产】。
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003016.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003016.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>上传worker&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003016.png" alt="上传worker" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003016.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003016.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003016.png?size=large 2x" data-title="上传worker" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">上传worker&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>项目名称：随便取，但是不能包含 &lt;code>bpb&lt;/code>。&lt;/li>
+&lt;li>上传压缩包：将通过混淆代码创建的 &lt;code>worker.zip&lt;/code> 上传。
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356133.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356133.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>上传worker&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356133.png" alt="上传worker" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356133.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356133.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356133.png?size=large 2x" data-title="上传worker" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">上传worker&lt;/figcaption>
+ &lt;/figure>&lt;/li>
+&lt;/ul>
+&lt;p>稍等片刻，部署成功！
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>部署成功&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png" alt="部署成功" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png?size=large 2x" data-title="部署成功" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">部署成功&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;h3 id="设置变量" class="heading-element">&lt;span>4.2 设置变量&lt;/span>
+ &lt;a href="#%e8%ae%be%e7%bd%ae%e5%8f%98%e9%87%8f" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>部署成功后，点击右下角 &lt;strong>继续处理项目&lt;/strong> 回到创建的 Pages 的界面。
+点击 &lt;strong>设置&lt;/strong> -&amp;gt; 【变量和机密】，点击&lt;strong>添加&lt;/strong>。添加以下3个变量：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>UUID&lt;/strong>：直接安装的 BPB 面板默认使用同一个 UUID [89b3cbba-e6ac-485a-9481-976a0415eab9]，可能存在安全隐患。可以去&lt;a href="https://1024tools.com/uuid"target="_blank" rel="external nofollow noopener noreferrer">在线生成 UUID 1&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a> | &lt;a href="https://www.lddgo.net/string/uuid"target="_blank" rel="external nofollow noopener noreferrer">在线生成 UUID 2&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a> 等网站随机生成一个新的 UUID。&lt;/li>
+&lt;li>&lt;strong>PROXYIP&lt;/strong>：去这里&lt;a href="https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/"target="_blank" rel="external nofollow noopener noreferrer">随机选择一个代理 IP&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a>，或者你也可以直接把代理 IP 设置为 &lt;code>cdn-b100.xn--b6gac.eu.org&lt;/code> 或 &lt;code>bpb.yousef.isegaro.com&lt;/code>。&lt;/li>
+&lt;li>&lt;strong>TR_PASS&lt;/strong>: 去&lt;a href="https://www.jyshare.com/front-end/9111/"target="_blank" rel="external nofollow noopener noreferrer">随机字符串生成器&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a> | &lt;a href="http://tool.pfan.cn/random"target="_blank" rel="external nofollow noopener noreferrer">随机字符串生成&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a> 生成一串复杂字符串做为密码。&lt;/li>
+&lt;/ul>
+&lt;p>
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005721.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005721.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>设置变量&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005721.png" alt="设置变量" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005721.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005721.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005721.png?size=large 2x" data-title="设置变量" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">设置变量&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;h2 id="绑定-kv" class="heading-element">&lt;span>5 绑定 KV&lt;/span>
+ &lt;a href="#%e7%bb%91%e5%ae%9a-kv" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;h3 id="创建" class="heading-element">&lt;span>5.1 创建&lt;/span>
+ &lt;a href="#%e5%88%9b%e5%bb%ba" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>点击左侧栏 &lt;strong>存储和数据库&lt;/strong> -&amp;gt; 【KV】，点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;ul>
+&lt;li>名称：随便取一个，但是不能包含 &lt;code>bpb&lt;/code>。
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057059.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057059.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>创建kv&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057059.png" alt="创建kv" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057059.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057059.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057059.png?size=large 2x" data-title="创建kv" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">创建kv&lt;/figcaption>
+ &lt;/figure>&lt;/li>
+&lt;/ul>
+&lt;h3 id="绑定" class="heading-element">&lt;span>5.2 绑定&lt;/span>
+ &lt;a href="#%e7%bb%91%e5%ae%9a" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>回到创建的 Pages 界面。点击 &lt;strong>设置&lt;/strong> -&amp;gt; 【绑定】，点击&lt;strong>添加&lt;/strong>，选择添加 KV 命名空间。
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013516.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013516.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>添加KV&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013516.png" alt="添加KV" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013516.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013516.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013516.png?size=large 2x" data-title="添加KV" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">添加KV&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>变量名称：能且仅能填写 &lt;code>kv&lt;/code>&lt;/li>
+&lt;li>KV 命名空间：选择&lt;a href="#%e5%88%9b%e5%bb%ba-kv">创建 KV&lt;/a> 中设置的命名空间&lt;/li>
+&lt;/ul>
+&lt;p>
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039050.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039050.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>绑定kv&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039050.png" alt="绑定kv" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039050.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039050.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039050.png?size=large 2x" data-title="绑定kv" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">绑定kv&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;h2 id="绑定域名可选" class="heading-element">&lt;span>6 绑定域名（可选）&lt;/span>
+ &lt;a href="#%e7%bb%91%e5%ae%9a%e5%9f%9f%e5%90%8d%e5%8f%af%e9%80%89" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>Cloudflare 为 Pages 分配的 &lt;code>.pages.dev&lt;/code> 域名被墙了，无法直接访问。你可以为创建的 pages 设定一个自定义域名，从而访问它。&lt;/p>
+&lt;p>点击&lt;strong>自定义域&lt;/strong>。假设你的域名是 &lt;code>example.com&lt;/code>，这里分配一个三级域名 &lt;code>shop.example.com&lt;/code> 给这个 page。这样，你就可以通过&lt;code>shop.example.com/panel&lt;/code> 来访问你的面板了！
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250112023744473.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250112023744473.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>设置自定义域名&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250112023744473.png" alt="设置自定义域名" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250112023744473.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250112023744473.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250112023744473.png?size=large 2x" data-title="设置自定义域名" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">设置自定义域名&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;h2 id="重新部署" class="heading-element">&lt;span>7 重新部署&lt;/span>
+ &lt;a href="#%e9%87%8d%e6%96%b0%e9%83%a8%e7%bd%b2" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>&lt;a href="#%e8%ae%be%e7%bd%ae%e5%8f%98%e9%87%8f">设置变量&lt;/a>、&lt;a href="#%e7%bb%91%e5%ae%9a">KV 空间绑定&lt;/a>后，点击右上角 &lt;strong>创建部署&lt;/strong>，再上传一次 &lt;code>worker.zip&lt;/code>，重新部署。&lt;/p>
+&lt;div class="alert alert-note">&lt;p class="alert-title">&lt;svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">&lt;path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/>&lt;/svg>注意&lt;/p>&lt;p>注意：在项目有任何改动后，都需要进行重新部署，否则改动不会生效。&lt;/p>
+&lt;/div>&lt;p>
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>重新部署&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png" alt="重新部署" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png?size=large 2x" data-title="重新部署" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">重新部署&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;h2 id="bpb-面板" class="heading-element">&lt;span>8 BPB 面板&lt;/span>
+ &lt;a href="#bpb-%e9%9d%a2%e6%9d%bf" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;p>访问项目网址： * https://你的项目地址.pages.dev/panel*&lt;/p>
+&lt;p>或者 * https://自定义域名/panel* 。&lt;/p>
+&lt;h3 id="修改密码" class="heading-element">&lt;span>8.1 修改密码&lt;/span>
+ &lt;a href="#%e4%bf%ae%e6%94%b9%e5%af%86%e7%a0%81" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>第一次访问面板会提示你修改密码，建议修改成一个复杂密码，避免面板被盗用。
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>修改密码&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png" alt="修改密码" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png?size=large 2x" data-title="修改密码" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">修改密码&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;h3 id="面板配置" class="heading-element">&lt;span>8.2 面板配置&lt;/span>
+ &lt;a href="#%e9%9d%a2%e6%9d%bf%e9%85%8d%e7%bd%ae" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>使用修改后的密码重新登录面板。&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>FakeDNS&lt;/strong>：可以设置为 enable，理论上会加快速度。但可能出现与浏览器 dns 缓存冲突等问题，导致无法正常上网。&lt;/li>
+&lt;li>&lt;strong>Proxy IPs / Domains&lt;/strong>：填写&lt;code>cdn-b100.xn--b6gac.eu.org&lt;/code>或&lt;code>bpb.yousef.isegaro.com&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Clean IPs / Domains&lt;/strong>：前往 &lt;a href="https://scanner.github1.cloud/"target="_blank" rel="external nofollow noopener noreferrer">Scan Now&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a> 点击扫描 Clean IP。一般来说，Clean IP 的节点 RTT 会更短。&lt;/li>
+&lt;/ol>
+&lt;div class="alert alert-note">&lt;p class="alert-title">&lt;svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">&lt;path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/>&lt;/svg>注意&lt;/p>&lt;p>为了扫描出与你实际网络通信时间最短的 IP，扫描时记得关闭代理。&lt;/p>
+&lt;/div>&lt;p>点击 Start Scan，开始扫描。第一次扫描的 IP 数较少，你可以点击下方提示，扫描更多 IP。
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290102440.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290102440.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>扫描Clean IP&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290102440.png" alt="扫描Clean IP" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290102440.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290102440.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290102440.png?size=large 2x" data-title="扫描Clean IP" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">扫描Clean IP&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;p>将扫描到的 Clean IP 填到 BPB 面板配置中。
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057500.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057500.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>Scan Now&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057500.png" alt="Scan Now" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057500.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057500.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057500.png?size=large 2x" data-title="Scan Now" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">Scan Now&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;ol start="4">
+&lt;li>
+&lt;p>TLS 端口处勾选你想启用的端口，或者默认使用443端口。
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290056530.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290056530.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>启用TLS端口&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290056530.png" alt="启用TLS端口" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290056530.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290056530.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290056530.png?size=large 2x" data-title="启用TLS端口" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">启用TLS端口&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>ROUTING RULES&lt;/strong>：配置一些路由规则。&lt;strong>Bypass xxx&lt;/strong>是指 xxx 不走代理（直连访问）；&lt;strong>Block xxx&lt;/strong>是指 xxx 被屏蔽访问（无法访问）。可以按需勾选。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Bypass LAN&lt;/strong>：绕过本地局域网&lt;/li>
+&lt;li>&lt;strong>Block Ads&lt;/strong>：屏蔽广告网址&lt;/li>
+&lt;li>&lt;strong>Bypass Iran&lt;/strong>：绕过伊朗&lt;/li>
+&lt;li>&lt;strong>Block Porn&lt;/strong>：屏蔽颜色网站&lt;/li>
+&lt;li>&lt;strong>Bypass China&lt;/strong>：绕过中国大陆&lt;/li>
+&lt;li>&lt;strong>Block QUIC&lt;/strong>：屏蔽 QUIC 协议&lt;/li>
+&lt;li>&lt;strong>Bypass Russia&lt;/strong>：绕过俄罗斯&lt;/li>
+&lt;li>&lt;strong>CUSTOM RULES&lt;/strong>：除了上面预设的规则外，你可以在这里自定义一些需要直连（Bypass）和屏蔽（Block）的 IP 地址/网站。
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290053190.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290053190.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>路由规则&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290053190.png" alt="路由规则" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290053190.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290053190.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290053190.png?size=large 2x" data-title="路由规则" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">路由规则&lt;/figcaption>
+ &lt;/figure>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>最后，点击 &lt;strong>APPLY SETTINGS&lt;/strong>，应用设置。&lt;/p>
+&lt;h3 id="导入节点" class="heading-element">&lt;span>8.3 导入节点&lt;/span>
+ &lt;a href="#%e5%af%bc%e5%85%a5%e8%8a%82%e7%82%b9" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>根据你所使用的代理应用，点击对应的 &lt;strong>COPY SUB&lt;/strong> 按钮，复制 BPB 面板生成的订阅链接。&lt;/p>
+&lt;p>
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110711.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110711.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>复制订阅链接&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110711.png" alt="复制订阅链接" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110711.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110711.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110711.png?size=large 2x" data-title="复制订阅链接" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">复制订阅链接&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;h4 id="pc-v2rayn" class="heading-element">&lt;span>8.3.1 PC-V2rayN&lt;/span>
+ &lt;a href="#pc-v2rayn" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h4>&lt;h5 id="导入" class="heading-element">&lt;span>8.3.1.1 导入&lt;/span>
+ &lt;a href="#%e5%af%bc%e5%85%a5" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h5>&lt;p>打开 V2rayN，【订阅分组】-&amp;gt;【订阅分组设置】-&amp;gt;【添加】&lt;/p>
+&lt;ul>
+&lt;li>别名：随机写一个&lt;/li>
+&lt;li>可选地址：输入 BPB 面板导出的订阅链接
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290114711.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290114711.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>V2rayN导入订阅链接&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290114711.png" alt="V2rayN导入订阅链接" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290114711.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290114711.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290114711.png?size=large 2x" data-title="V2rayN导入订阅链接" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">V2rayN导入订阅链接&lt;/figcaption>
+ &lt;/figure>&lt;/li>
+&lt;/ul>
+&lt;h5 id="更新获取节点" class="heading-element">&lt;span>8.3.1.2 更新/获取节点&lt;/span>
+ &lt;a href="#%e6%9b%b4%e6%96%b0%e8%8e%b7%e5%8f%96%e8%8a%82%e7%82%b9" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h5>&lt;p>【订阅分组】-&amp;gt;【更新全部订阅(不通过代理)】，获取节点
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290117981.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290117981.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>获取节点&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290117981.png" alt="获取节点" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290117981.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290117981.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290117981.png?size=large 2x" data-title="获取节点" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">获取节点&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;h4 id="安卓-v2rayng" class="heading-element">&lt;span>8.3.2 安卓-V2rayNG&lt;/span>
+ &lt;a href="#%e5%ae%89%e5%8d%93-v2rayng" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h4>&lt;h5 id="导入-1" class="heading-element">&lt;span>8.3.2.1 导入&lt;/span>
+ &lt;a href="#%e5%af%bc%e5%85%a5-1" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h5>&lt;p>【左上角三条横线】-&amp;gt;【订阅分组设置】-&amp;gt; 右上角&lt;code>+&lt;/code>
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290125388.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290125388.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>新建订阅分组&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290125388.png" alt="新建订阅分组" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290125388.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290125388.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290125388.png?size=large 2x" data-title="新建订阅分组" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">新建订阅分组&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;ul>
+&lt;li>备注：随便写一个&lt;/li>
+&lt;li>可选地址：输入 BPB 面板导出的订阅链接
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290127693.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290127693.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>添加订阅分组&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290127693.png" alt="添加订阅分组" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290127693.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290127693.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290127693.png?size=large 2x" data-title="添加订阅分组" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">添加订阅分组&lt;/figcaption>
+ &lt;/figure>&lt;/li>
+&lt;/ul>
+&lt;h5 id="更新获取节点-1" class="heading-element">&lt;span>8.3.2.2 更新/获取节点&lt;/span>
+ &lt;a href="#%e6%9b%b4%e6%96%b0%e8%8e%b7%e5%8f%96%e8%8a%82%e7%82%b9-1" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h5>&lt;p>首页右上角三个点 -&amp;gt; 更新订阅
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290131358.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290131358.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>更新订阅&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290131358.png" alt="更新订阅" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290131358.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290131358.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290131358.png?size=large 2x" data-title="更新订阅" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">更新订阅&lt;/figcaption>
+ &lt;/figure>&lt;/p>
+&lt;h3 id="修改密码-1" class="heading-element">&lt;span>8.4 修改密码&lt;/span>
+ &lt;a href="#%e4%bf%ae%e6%94%b9%e5%af%86%e7%a0%81-1" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h3>&lt;p>如果你觉得原来设置的密码太简单，也可以重新修改密码。
+登录你的 BPB 面板，到页面最底端，点击 &lt;strong>Change Password&lt;/strong> 来修改密码。
+
+&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290120104.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290120104.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>修改密码&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290120104.png" alt="修改密码" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290120104.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290120104.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290120104.png?size=large 2x" data-title="修改密码" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">修改密码&lt;/figcaption>
+ &lt;/figure>&lt;/p></description></item><item><title>使用 vercel 加速 Github 图床</title><link>https://www.haoyep.com/posts/github-graph-beds-vercel-cdn/</link><pubDate>Sun, 27 Oct 2024 23:48:46 +0800</pubDate><author>chuxuange@gmail.com (Leehow)</author><guid>https://www.haoyep.com/posts/github-graph-beds-vercel-cdn/</guid><category domain="https://www.haoyep.com/categories/blog/">blog</category><category domain="https://www.haoyep.com/categories/markdown/">markdown</category><description>&lt;img src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202410280001769.png" alt="featured image" referrerpolicy="no-referrer">&lt;p>考虑到 Chinajsdelivr 的审查限制，本文改用 vercel 加速 GitHub 图床访问，并通过仓库结构调整和 GitHub Action，兼容国内外分流加速策略，自动化完成分支同步。&lt;/p>
 &lt;p>之前的文章介绍了如何搭建图床和使用jsDelivr 加速图床图片访问。
 &lt;a href="https://haoyep.com/posts/github-graph-beds/" title="使用PicGo &amp;#43; GitHub 搭建 Obsidian 图床"target="_blank" rel="external nofollow noopener noreferrer" class="card-link">&lt;span class="cl-backdrop" style="--cl-bg-url: url(/images/fixit.min.svg);">&lt;/span>
  &lt;span class="cl-content">
@@ -507,239 +879,7 @@
  &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
  &lt;/a>
 &lt;/h2>&lt;p>无需设置，按照之前设定好的自定义域名上传图片即可。&lt;/p>
-&lt;p>不过建议转到 &lt;a href="https://piclist.cn/app"target="_blank" rel="external nofollow noopener noreferrer">Piclist&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a>，可以使用更多图片预处理功能，如添加水印、裁剪、转换为 webp 格式等。&lt;/p></description></item><item><title>利用 Cloudflare Pages 和 BPB 面板搭建免费VPN订阅节点</title><link>https://www.haoyep.com/posts/cf-bpb-vpn/</link><pubDate>Thu, 29 Aug 2024 01:32:43 +0800</pubDate><author>chuxuange@gmail.com (Leehow)</author><guid>https://www.haoyep.com/posts/cf-bpb-vpn/</guid><category domain="https://www.haoyep.com/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;img src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290144107.png" alt="featured image" referrerpolicy="no-referrer">&lt;p>无需域名，无需 SSL，通过 Cloudflare 和 BPB Panel，搭建一个永久免费且高速的免费 VPN。结合 Cloudflare 实现优选订阅、永久免费 vless 节点订阅，为使用（singbox-core 和 xray-core）的跨平台客户端提供配置。&lt;/p>
-&lt;h2 id="前提" class="heading-element">&lt;span>1 前提&lt;/span>
- &lt;a href="#%e5%89%8d%e6%8f%90" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>有一个 Cloudflare 账号，以及一个域名。
-登录 &lt;a href="https://dash.cloudflare.com/login?lang=zh-cn"target="_blank" rel="external nofollow noopener noreferrer">Cloudflare&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a>。&lt;/p>
-&lt;h2 id="创建-pages" class="heading-element">&lt;span>2 创建 Pages&lt;/span>
- &lt;a href="#%e5%88%9b%e5%bb%ba-pages" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;h3 id="下载代码文件" class="heading-element">&lt;span>2.1 下载代码文件&lt;/span>
- &lt;a href="#%e4%b8%8b%e8%bd%bd%e4%bb%a3%e7%a0%81%e6%96%87%e4%bb%b6" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>从以下几个链接任选其一，下载最新的 &lt;code>worker.zip&lt;/code> 到本地。&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/latest/download/worker.zip"target="_blank" rel="external nofollow noopener noreferrer">Github Release&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.moeyy.xyz/https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/latest/download/worker.zip"target="_blank" rel="external nofollow noopener noreferrer">中国大陆加速1&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://gh.xmly.dev/https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/latest/download/worker.zip"target="_blank" rel="external nofollow noopener noreferrer">中国大陆加速2&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://gh.api.99988866.xyz/https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/latest/download/worker.zip"target="_blank" rel="external nofollow noopener noreferrer">中国大陆加速3&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h3 id="上传并创建" class="heading-element">&lt;span>2.2 上传并创建&lt;/span>
- &lt;a href="#%e4%b8%8a%e4%bc%a0%e5%b9%b6%e5%88%9b%e5%bb%ba" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>点击左侧栏 &lt;strong>Compute (Workers)&lt;/strong> -&amp;gt; 【Workers 和 Pages】，点击&lt;strong>创建&lt;/strong>。
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337943.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337943.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>创建 Pages&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337943.png" alt="创建 Pages" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337943.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337943.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282337943.png?size=large 2x" data-title="创建 Pages" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">创建 Pages&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;p>点击 &lt;strong>Pages&lt;/strong> -&amp;gt; 【上传资产】。
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003016.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003016.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>上传worker&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003016.png" alt="上传worker" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003016.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003016.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290003016.png?size=large 2x" data-title="上传worker" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">上传worker&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;ul>
-&lt;li>项目名称：随便取，但是不能包含 &lt;code>bpb&lt;/code>。&lt;/li>
-&lt;li>上传压缩包：将第一步中下载的 &lt;code>worker.zip&lt;/code> 上传。
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356133.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356133.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>上传worker&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356133.png" alt="上传worker" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356133.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356133.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408282356133.png?size=large 2x" data-title="上传worker" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">上传worker&lt;/figcaption>
- &lt;/figure>&lt;/li>
-&lt;/ul>
-&lt;p>稍等片刻，部署成功！
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>部署成功&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png" alt="部署成功" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290035625.png?size=large 2x" data-title="部署成功" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">部署成功&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;h3 id="设置变量" class="heading-element">&lt;span>2.3 设置变量&lt;/span>
- &lt;a href="#%e8%ae%be%e7%bd%ae%e5%8f%98%e9%87%8f" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>部署成功后，点击右下角 &lt;strong>继续处理项目&lt;/strong> 回到创建的 Pages 的界面。
-点击 &lt;strong>设置&lt;/strong> -&amp;gt; 【变量和机密】，点击&lt;strong>添加&lt;/strong>。添加以下3个变量：&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>UUID&lt;/strong>：直接安装的 BPB 面板默认使用同一个 UUID [89b3cbba-e6ac-485a-9481-976a0415eab9]，可能存在安全隐患。可以去&lt;a href="https://1024tools.com/uuid"target="_blank" rel="external nofollow noopener noreferrer">在线生成 UUID 1&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a> | &lt;a href="https://www.lddgo.net/string/uuid"target="_blank" rel="external nofollow noopener noreferrer">在线生成 UUID 2&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a> 等网站随机生成一个新的 UUID。&lt;/li>
-&lt;li>&lt;strong>PROXYIP&lt;/strong>：去这里&lt;a href="https://www.nslookup.io/domains/cdn.xn--b6gac.eu.org/dns-records/"target="_blank" rel="external nofollow noopener noreferrer">随机选择一个代理 IP&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a>，或者你也可以直接把代理 IP 设置为 &lt;code>cdn-b100.xn--b6gac.eu.org&lt;/code> 或 &lt;code>bpb.yousef.isegaro.com&lt;/code>。&lt;/li>
-&lt;li>&lt;strong>TR_PASS&lt;/strong>: 去&lt;a href="https://www.jyshare.com/front-end/9111/"target="_blank" rel="external nofollow noopener noreferrer">随机字符串生成器&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a> | &lt;a href="http://tool.pfan.cn/random"target="_blank" rel="external nofollow noopener noreferrer">随机字符串生成&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a> 生成一串复杂字符串做为密码。&lt;/li>
-&lt;/ul>
-&lt;p>
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005721.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005721.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>设置变量&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005721.png" alt="设置变量" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005721.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005721.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290005721.png?size=large 2x" data-title="设置变量" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">设置变量&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;h2 id="绑定-kv" class="heading-element">&lt;span>3 绑定 KV&lt;/span>
- &lt;a href="#%e7%bb%91%e5%ae%9a-kv" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;h3 id="创建" class="heading-element">&lt;span>3.1 创建&lt;/span>
- &lt;a href="#%e5%88%9b%e5%bb%ba" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>点击左侧栏 &lt;strong>存储和数据库&lt;/strong> -&amp;gt; 【KV】，点击&lt;strong>创建&lt;/strong>。&lt;/p>
-&lt;ul>
-&lt;li>名称：随便取一个，但是不能包含 &lt;code>bpb&lt;/code>。
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057059.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057059.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>创建kv&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057059.png" alt="创建kv" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057059.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057059.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408210057059.png?size=large 2x" data-title="创建kv" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">创建kv&lt;/figcaption>
- &lt;/figure>&lt;/li>
-&lt;/ul>
-&lt;h3 id="绑定" class="heading-element">&lt;span>3.2 绑定&lt;/span>
- &lt;a href="#%e7%bb%91%e5%ae%9a" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>回到创建的 Pages 界面。点击 &lt;strong>设置&lt;/strong> -&amp;gt; 【绑定】，点击&lt;strong>添加&lt;/strong>，选择添加 KV 命名空间。
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013516.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013516.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>添加KV&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013516.png" alt="添加KV" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013516.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013516.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290013516.png?size=large 2x" data-title="添加KV" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">添加KV&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;ul>
-&lt;li>变量名称：能且仅能填写 &lt;code>kv&lt;/code>&lt;/li>
-&lt;li>KV 命名空间：选择&lt;a href="#%e5%88%9b%e5%bb%ba-kv">创建 KV&lt;/a> 中设置的命名空间&lt;/li>
-&lt;/ul>
-&lt;p>
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039050.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039050.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>绑定kv&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039050.png" alt="绑定kv" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039050.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039050.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290039050.png?size=large 2x" data-title="绑定kv" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">绑定kv&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;h2 id="绑定域名可选" class="heading-element">&lt;span>4 绑定域名（可选）&lt;/span>
- &lt;a href="#%e7%bb%91%e5%ae%9a%e5%9f%9f%e5%90%8d%e5%8f%af%e9%80%89" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>Cloudflare 为 Pages 分配的 &lt;code>.pages.dev&lt;/code> 域名被墙了，无法直接访问。你可以为创建的 pages 设定一个自定义域名，从而访问它。&lt;/p>
-&lt;p>点击&lt;strong>自定义域&lt;/strong>。假设你的域名是 &lt;code>example.com&lt;/code>，这里分配一个三级域名 &lt;code>shop.example.com&lt;/code> 给这个 page。这样，你就可以通过&lt;code>shop.example.com/panel&lt;/code> 来访问你的面板了！
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250112023744473.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250112023744473.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>设置自定义域名&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250112023744473.png" alt="设置自定义域名" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250112023744473.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250112023744473.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/20250112023744473.png?size=large 2x" data-title="设置自定义域名" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">设置自定义域名&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;h2 id="重新部署" class="heading-element">&lt;span>5 重新部署&lt;/span>
- &lt;a href="#%e9%87%8d%e6%96%b0%e9%83%a8%e7%bd%b2" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>&lt;a href="#%e8%ae%be%e7%bd%ae%e5%8f%98%e9%87%8f">设置变量&lt;/a>、&lt;a href="#%e7%bb%91%e5%ae%9a">KV 空间绑定&lt;/a>后，点击右上角 &lt;strong>创建部署&lt;/strong>，再上传一次 &lt;code>worker.zip&lt;/code>，重新部署。&lt;/p>
-&lt;div class="alert alert-note">&lt;p class="alert-title">&lt;svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">&lt;path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/>&lt;/svg>注意&lt;/p>&lt;p>注意：在项目有任何改动后，都需要进行重新部署，否则改动不会生效。&lt;/p>
-&lt;/div>&lt;p>
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>重新部署&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png" alt="重新部署" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png?size=large 2x" data-title="重新部署" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">重新部署&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;h2 id="bpb-面板" class="heading-element">&lt;span>6 BPB 面板&lt;/span>
- &lt;a href="#bpb-%e9%9d%a2%e6%9d%bf" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>访问项目网址： &lt;em>https://你的项目地址.pages.dev/panel&lt;/em>&lt;/p>
-&lt;p>或者 &lt;em>https://自定义域名/panel&lt;/em> 。&lt;/p>
-&lt;h3 id="修改密码" class="heading-element">&lt;span>6.1 修改密码&lt;/span>
- &lt;a href="#%e4%bf%ae%e6%94%b9%e5%af%86%e7%a0%81" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>第一次访问面板会提示你修改密码，建议修改成一个复杂密码，避免面板被盗用。
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>修改密码&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png" alt="修改密码" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png?size=large 2x" data-title="修改密码" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">修改密码&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;h3 id="面板配置" class="heading-element">&lt;span>6.2 面板配置&lt;/span>
- &lt;a href="#%e9%9d%a2%e6%9d%bf%e9%85%8d%e7%bd%ae" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>使用修改后的密码重新登录面板。&lt;/p>
-&lt;ol>
-&lt;li>&lt;strong>FakeDNS&lt;/strong>：可以设置为 enable，理论上会加快速度。但可能出现与浏览器 dns 缓存冲突等问题，导致无法正常上网。&lt;/li>
-&lt;li>&lt;strong>Proxy IPs / Domains&lt;/strong>：填写&lt;code>cdn-b100.xn--b6gac.eu.org&lt;/code>或&lt;code>bpb.yousef.isegaro.com&lt;/code>&lt;/li>
-&lt;li>&lt;strong>Clean IPs / Domains&lt;/strong>：前往 &lt;a href="https://scanner.github1.cloud/"target="_blank" rel="external nofollow noopener noreferrer">Scan Now&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a> 点击扫描 Clean IP。一般来说，Clean IP 的节点 RTT 会更短。&lt;/li>
-&lt;/ol>
-&lt;div class="alert alert-note">&lt;p class="alert-title">&lt;svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">&lt;path d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-6.5a6.5 6.5.0 100 13 6.5 6.5.0 000-13zM6.5 7.75A.75.75.0 017.25 7h1a.75.75.0 01.75.75v2.75h.25a.75.75.0 010 1.5h-2a.75.75.0 010-1.5h.25v-2h-.25a.75.75.0 01-.75-.75zM8 6a1 1 0 110-2 1 1 0 010 2z"/>&lt;/svg>注意&lt;/p>&lt;p>为了扫描出与你实际网络通信时间最短的 IP，扫描时记得关闭代理。&lt;/p>
-&lt;/div>&lt;p>点击 Start Scan，开始扫描。第一次扫描的 IP 数较少，你可以点击下方提示，扫描更多 IP。
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290102440.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290102440.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>扫描Clean IP&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290102440.png" alt="扫描Clean IP" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290102440.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290102440.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290102440.png?size=large 2x" data-title="扫描Clean IP" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">扫描Clean IP&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;p>将扫描到的 Clean IP 填到 BPB 面板配置中。
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057500.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057500.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>Scan Now&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057500.png" alt="Scan Now" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057500.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057500.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290057500.png?size=large 2x" data-title="Scan Now" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">Scan Now&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;ol start="4">
-&lt;li>
-&lt;p>TLS 端口处勾选你想启用的端口，或者默认使用443端口。
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290056530.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290056530.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>启用TLS端口&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290056530.png" alt="启用TLS端口" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290056530.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290056530.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290056530.png?size=large 2x" data-title="启用TLS端口" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">启用TLS端口&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>ROUTING RULES&lt;/strong>：配置一些路由规则。&lt;strong>Bypass xxx&lt;/strong>是指 xxx 不走代理（直连访问）；&lt;strong>Block xxx&lt;/strong>是指 xxx 被屏蔽访问（无法访问）。可以按需勾选。&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Bypass LAN&lt;/strong>：绕过本地局域网&lt;/li>
-&lt;li>&lt;strong>Block Ads&lt;/strong>：屏蔽广告网址&lt;/li>
-&lt;li>&lt;strong>Bypass Iran&lt;/strong>：绕过伊朗&lt;/li>
-&lt;li>&lt;strong>Block Porn&lt;/strong>：屏蔽颜色网站&lt;/li>
-&lt;li>&lt;strong>Bypass China&lt;/strong>：绕过中国大陆&lt;/li>
-&lt;li>&lt;strong>Block QUIC&lt;/strong>：屏蔽 QUIC 协议&lt;/li>
-&lt;li>&lt;strong>Bypass Russia&lt;/strong>：绕过俄罗斯&lt;/li>
-&lt;li>&lt;strong>CUSTOM RULES&lt;/strong>：除了上面预设的规则外，你可以在这里自定义一些需要直连（Bypass）和屏蔽（Block）的 IP 地址/网站。
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290053190.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290053190.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>路由规则&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290053190.png" alt="路由规则" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290053190.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290053190.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290053190.png?size=large 2x" data-title="路由规则" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">路由规则&lt;/figcaption>
- &lt;/figure>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ol>
-&lt;p>最后，点击 &lt;strong>APPLY SETTINGS&lt;/strong>，应用设置。&lt;/p>
-&lt;h3 id="导入节点" class="heading-element">&lt;span>6.3 导入节点&lt;/span>
- &lt;a href="#%e5%af%bc%e5%85%a5%e8%8a%82%e7%82%b9" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>根据你所使用的代理应用，点击对应的 &lt;strong>COPY SUB&lt;/strong> 按钮，复制 BPB 面板生成的订阅链接。&lt;/p>
-&lt;p>
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110711.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110711.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>复制订阅链接&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110711.png" alt="复制订阅链接" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110711.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110711.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290110711.png?size=large 2x" data-title="复制订阅链接" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">复制订阅链接&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;h4 id="pc-v2rayn" class="heading-element">&lt;span>6.3.1 PC-V2rayN&lt;/span>
- &lt;a href="#pc-v2rayn" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h4>&lt;h5 id="导入" class="heading-element">&lt;span>6.3.1.1 导入&lt;/span>
- &lt;a href="#%e5%af%bc%e5%85%a5" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h5>&lt;p>打开 V2rayN，【订阅分组】-&amp;gt;【订阅分组设置】-&amp;gt;【添加】&lt;/p>
-&lt;ul>
-&lt;li>别名：随机写一个&lt;/li>
-&lt;li>可选地址：输入 BPB 面板导出的订阅链接
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290114711.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290114711.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>V2rayN导入订阅链接&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290114711.png" alt="V2rayN导入订阅链接" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290114711.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290114711.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290114711.png?size=large 2x" data-title="V2rayN导入订阅链接" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">V2rayN导入订阅链接&lt;/figcaption>
- &lt;/figure>&lt;/li>
-&lt;/ul>
-&lt;h5 id="更新获取节点" class="heading-element">&lt;span>6.3.1.2 更新/获取节点&lt;/span>
- &lt;a href="#%e6%9b%b4%e6%96%b0%e8%8e%b7%e5%8f%96%e8%8a%82%e7%82%b9" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h5>&lt;p>【订阅分组】-&amp;gt;【更新全部订阅(不通过代理)】，获取节点
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290117981.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290117981.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>获取节点&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290117981.png" alt="获取节点" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290117981.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290117981.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290117981.png?size=large 2x" data-title="获取节点" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">获取节点&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;h4 id="安卓-v2rayng" class="heading-element">&lt;span>6.3.2 安卓-V2rayNG&lt;/span>
- &lt;a href="#%e5%ae%89%e5%8d%93-v2rayng" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h4>&lt;h5 id="导入-1" class="heading-element">&lt;span>6.3.2.1 导入&lt;/span>
- &lt;a href="#%e5%af%bc%e5%85%a5-1" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h5>&lt;p>【左上角三条横线】-&amp;gt;【订阅分组设置】-&amp;gt; 右上角&lt;code>+&lt;/code>
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290125388.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290125388.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>新建订阅分组&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290125388.png" alt="新建订阅分组" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290125388.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290125388.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290125388.png?size=large 2x" data-title="新建订阅分组" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">新建订阅分组&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;ul>
-&lt;li>备注：随便写一个&lt;/li>
-&lt;li>可选地址：输入 BPB 面板导出的订阅链接
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290127693.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290127693.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>添加订阅分组&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290127693.png" alt="添加订阅分组" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290127693.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290127693.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290127693.png?size=large 2x" data-title="添加订阅分组" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">添加订阅分组&lt;/figcaption>
- &lt;/figure>&lt;/li>
-&lt;/ul>
-&lt;h5 id="更新获取节点-1" class="heading-element">&lt;span>6.3.2.2 更新/获取节点&lt;/span>
- &lt;a href="#%e6%9b%b4%e6%96%b0%e8%8e%b7%e5%8f%96%e8%8a%82%e7%82%b9-1" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h5>&lt;p>首页右上角三个点 -&amp;gt; 更新订阅
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290131358.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290131358.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>更新订阅&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290131358.png" alt="更新订阅" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290131358.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290131358.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290131358.png?size=large 2x" data-title="更新订阅" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">更新订阅&lt;/figcaption>
- &lt;/figure>&lt;/p>
-&lt;h3 id="修改密码-1" class="heading-element">&lt;span>6.4 修改密码&lt;/span>
- &lt;a href="#%e4%bf%ae%e6%94%b9%e5%af%86%e7%a0%81-1" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h3>&lt;p>如果你觉得原来设置的密码太简单，也可以重新修改密码。
-登录你的 BPB 面板，到页面最底端，点击 &lt;strong>Change Password&lt;/strong> 来修改密码。
-
-&lt;figure>&lt;a class="lightgallery" href="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290120104.png?size=large" data-thumbnail="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290120104.png?size=small" data-sub-html="&lt;h2> &lt;/h2>&lt;p>修改密码&lt;/p>">&lt;img loading="lazy" src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290120104.png" alt="修改密码" srcset="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290120104.png?size=small, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290120104.png?size=medium 1.5x, https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290120104.png?size=large 2x" data-title="修改密码" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/a>&lt;figcaption class="image-caption">修改密码&lt;/figcaption>
- &lt;/figure>&lt;/p></description></item><item><title>通过Cloudflare tunnel访问内网端口</title><link>https://www.haoyep.com/posts/access-intranet-ports-via-cloudflare-tunnel/</link><pubDate>Tue, 14 May 2024 15:00:08 +0800</pubDate><author>chuxuange@gmail.com (Leehow)</author><guid>https://www.haoyep.com/posts/access-intranet-ports-via-cloudflare-tunnel/</guid><category domain="https://www.haoyep.com/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;img src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202405141503511.png" alt="featured image" referrerpolicy="no-referrer">&lt;p>通过Cloudflare Tunnel内网穿透，访问内网主机端口。&lt;/p>
+&lt;p>不过建议转到 &lt;a href="https://piclist.cn/app"target="_blank" rel="external nofollow noopener noreferrer">Piclist&lt;i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true">&lt;/i>&lt;/a>，可以使用更多图片预处理功能，如添加水印、裁剪、转换为 webp 格式等。&lt;/p></description></item><item><title>通过Cloudflare tunnel访问内网端口</title><link>https://www.haoyep.com/posts/access-intranet-ports-via-cloudflare-tunnel/</link><pubDate>Tue, 14 May 2024 15:00:08 +0800</pubDate><author>chuxuange@gmail.com (Leehow)</author><guid>https://www.haoyep.com/posts/access-intranet-ports-via-cloudflare-tunnel/</guid><category domain="https://www.haoyep.com/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;img src="https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202405141503511.png" alt="featured image" referrerpolicy="no-referrer">&lt;p>通过Cloudflare Tunnel内网穿透，访问内网主机端口。&lt;/p>
 &lt;h2 id="tunnel-可以做什么" class="heading-element">&lt;span>1 Tunnel 可以做什么&lt;/span>
  &lt;a href="#tunnel-%e5%8f%af%e4%bb%a5%e5%81%9a%e4%bb%80%e4%b9%88" class="heading-mark">
  &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
