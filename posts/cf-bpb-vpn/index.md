@@ -145,9 +145,9 @@ Cloudflare 为 Pages 分配的 `.pages.dev` 域名被墙了，无法直接访问
 ![重新部署](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290046970.png)
 
 ## BPB 面板
-访问项目网址： * https://你的项目地址.pages.dev/panel* 
+打开面板网址： *https://你的项目地址.pages.dev/panel* 
 
-或者 * https://自定义域名/panel* 。
+或者 *https://自定义域名/panel* 。
 ### 修改密码
 第一次访问面板会提示你修改密码，建议修改成一个复杂密码，避免面板被盗用。
 ![修改密码](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202408290050290.png)
