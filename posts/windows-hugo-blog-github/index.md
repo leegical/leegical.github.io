@@ -1131,7 +1131,6 @@ featuredImage: &#34;&#34;
 # 用在主页预览的文章特色图片
 featuredImagePreview: &#34;&#34;
 
-license: &#39;&lt;a rel=&#34;license external nofollow noopener noreffer&#34; href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34;&gt;CC BY-NC 4.0&lt;/a&gt;&#39;
 ---
 
 此处内容将会出现在摘要（summary）里
