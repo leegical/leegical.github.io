@@ -55,7 +55,7 @@ jobs:
 
       - name: Clone BPB workjs
         run: |
-          wget -O origin.js https://raw.githubusercontent.com/bia-pain-bache/BPB-Worker-Panel/refs/heads/main/unobfuscated/worker.js
+          wget -O origin.js https://raw.githubusercontent.com/bia-pain-bache/BPB-Worker-Panel/refs/heads/main/build/unobfuscated-worker.js
       
       - name: Obfuscate BPB worker js
         run: |
