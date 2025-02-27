@@ -5,6 +5,11 @@
 
 &lt;!--more--&gt;
 
+## 更新
+本文内容已过时，最新方法参考：
+
+{{&lt; link &#34;https://www.haoyep.com/posts/github-graph-beds-vercel-cdn/&#34; &#34;使用 vercel 加速 Github 图床&#34; &#34;使用 vercel 加速 Github 图床&#34; true &gt;}}
+
 ## 前言
 上一篇文章讲述了如何使用 PicGo &#43; GitHub 搭建图床，这样搭建的图床很稳定，但缺点是国内访问速度慢。可以使用 `jsDelivr` 对 Github 图床等静态资源进行免费 CDN 加速
 {{&lt; link &#34;https://www.haoyep.com/posts/github-graph-beds/&#34; &#34;使用PicGo &#43; GitHub 搭建 Obsidian 图床&#34; &#34;使用PicGo &#43; GitHub 搭建 Obsidian 图床&#34; true &gt;}}
@@ -17,7 +22,7 @@
 
 因此，本文思路是，对于 Github 公开仓库中的静态资源：
 - 如果访问来源是国内，则使用 [Chinajsdelivr](https://github.com/54ayao/Chinajsdelivr) 进行加速，域名为`jsd.cdn.zzko.cn`
-- 如果访问来源是国内，则使用原版 jsDelivr 进行加速，域名为`cdn.jsDelivr.net`
+- 如果访问来源是国外，则使用原版 jsDelivr 进行加速，域名为`cdn.jsDelivr.net`
 
 即：
 ```
