@@ -11,7 +11,7 @@
 - 项目类关键词：如 `bpb`
 - 源码：如某个代理类代码被多次使用（这也是为什么混淆代码刚开始好使，过两三天又会出现1101的原因）
 
-混淆代码可以绕过 Cloudflare 的审查，前提是使用同一份混淆代码的人不多。BPB 项目现在也提供了未混淆加密前的[源代码](https://github.com/bia-pain-bache/BPB-Worker-Panel/blob/main/unobfuscated/worker.js)，我们可以加密该代码来获得自己独一无二的混淆代码，从而成功完成搭建。
+混淆代码可以绕过 Cloudflare 的审查，前提是使用同一份混淆代码的人不多。BPB 项目现在也提供了未混淆加密前的[源代码](https://github.com/bia-pain-bache/BPB-Worker-Panel/blob/main/build/unobfuscated-worker.js)，我们可以加密该代码来获得自己独一无二的混淆代码，从而成功完成搭建。
 
 &gt; [!NOTE]
 &gt; 如果你已经有成功搭建且运行很长时间的 BPB，不要轻易更新 `_worker.js`！能用就不要动！如果想体验新版本 BPB，可以重新创建个 worker。
