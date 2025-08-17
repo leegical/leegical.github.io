@@ -1,19 +1,19 @@
 # 留言
 
 
-{{&lt; admonition tip &#34;Welcome&#34; &gt;}}
-{{&lt; typeit &gt;}}
+{{< admonition tip "Welcome" >}}
+{{< typeit >}}
 互联网的广大朋友们，欢迎光临我的小博客！欢迎留言！
-{{&lt; /typeit &gt;}}
+{{< /typeit >}}
 
-&lt;!-- markdownlint-disable-next-line no-inline-html --&gt;
+<!-- markdownlint-disable-next-line no-inline-html -->
 
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
 
 
 ---
 
-> 作者:   
+> 作者: <no value>  
 > URL: https://www.haoyep.com/guestbook/  
 

@@ -2,10 +2,10 @@
 
 个人博客访问速度优化记录。使用自定义域名、分流CDN等方法实现加快加载速度。
 
-&lt;!--more--&gt;
+<!--more-->
 
 使用 Github Pages 可以方便地搭建自己的静态网站，详细过程参考我的这篇文章。
-{{&lt; link &#34;https://www.haoyep.com/posts/windows-hugo-blog-github/&#34; &#34;使用 hugo 和 Github Pages 搭建个人博客&#34; &#34;使用 hugo 和 Github Pages 搭建个人博客&#34; true &gt;}}
+{{< link "https://www.haoyep.com/posts/windows-hugo-blog-github/" "使用 hugo 和 Github Pages 搭建个人博客" "使用 hugo 和 Github Pages 搭建个人博客" true >}}
 
 但由于众所周知的原因，此方法搭建的博客在国内访问速度不佳。因此考虑采用一些方法来加速访问，主要思路是使用 CDN 加速网站的静态资源。
 
@@ -22,14 +22,14 @@
 
 ## 图片加速
 首先参考这篇文章，搭建加速域名。
-{{&lt; link &#34;https://www.haoyep.com/posts/github-graph-beds-cdn/&#34; &#34;通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源&#34; &#34;通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源&#34; true &gt;}}
+{{< link "https://www.haoyep.com/posts/github-graph-beds-cdn/" "通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源" "通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 图床等静态资源" true >}}
 
 对于要使用的图片，使用 PicGo 上传到 GitHub 图床，获取 CDN 加速链接。然后在配置文件中使用相应的链接即可。下面介绍几个配置中常见的图片。
 
 ### 网站图片
 ```toml
 # 网站图片，用于 Open Graph 和 Twitter Cards
-  images = [&#34;https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png&#34;]
+  images = ["https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png"]
 ```
 ![网站图片，用于 Open Graph 和 Twitter Cards](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161421814.png)
 ### 网站图标
@@ -38,11 +38,11 @@
 # 应用图标配置
   [params.app]
     # 当添加到 iOS 主屏幕或者 Android 启动器时的标题，覆盖默认标题
-    title = &#34;Leehow&#34;
+    title = "Leehow"
     # 是否隐藏网站图标资源链接
     noFavicon = false
     # 更现代的 SVG 网站图标，可替代旧的 .png 和 .ico 文件
-    svgFavicon = &#34;https://cdn.haoyep.com/gh/leegical/Blog_img/favicon.svg&#34;
+    svgFavicon = "https://cdn.haoyep.com/gh/leegical/Blog_img/favicon.svg"
 ```
 ![网站图标](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161426248.png)
 
@@ -52,7 +52,7 @@
 #  页面头部导航栏标题配置
     [params.header.title]
       # LOGO 的 URL
-      logo = &#34;https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png&#34;
+      logo = "https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/weblogo.png"
 ```
 ![网站 logo](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161428936.png)
 ### 主页头像
@@ -62,9 +62,9 @@
     [params.home.profile]
       enable = true
       # Gravatar 邮箱，用于优先在主页显示的头像
-      gravatarEmail = &#34;&#34;
+      gravatarEmail = ""
       # 主页显示头像的 URL
-      avatarURL = &#34;https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/avatar.png&#34;
+      avatarURL = "https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/avatar.png"
 ```
 ![主页头像](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312161433480.png)
 ## 加速谷歌字体
@@ -73,7 +73,7 @@
 
 但是想要为一些特定区域，如 `code` 设置特别字体时，就需要用到谷歌字体。这里选择使用 `fonts.loli.net` 加速。在 `assets/css` 中新建 `_override.scss` 文件，内容如下：
 ```scss
-@import url(&#39;https://fonts.loli.net/css?family=JetBrains&#43;Mono:400,700&amp;display=swap&amp;subset=latin-ext&#39;);
+@import url('https://fonts.loli.net/css?family=JetBrains+Mono:400,700&display=swap&subset=latin-ext');
 $code-font-family: JetBrains Mono, Fira Mono, Source Code Pro, Menlo, Consolas, Monaco, monospace;
 ```
 ![加速code的谷歌字体](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152151358.png)
@@ -86,8 +86,8 @@ $code-font-family: JetBrains Mono, Fira Mono, Source Code Pro, Menlo, Consolas, 
     #  取决于作者邮箱，作者邮箱未设置则使用本地头像
     enable = true
     # Gravatar 主机，默认：“www.gravatar.com”
-    host = &#34;dn-qiniu-avatar.qbox.me&#34; # [&#34;cn.gravatar.com&#34;, &#34;gravatar.loli.net&#34;, ...]
-    style = &#34;identicon&#34; # [&#34;&#34;, &#34;mp&#34;, &#34;identicon&#34;, &#34;monsterid&#34;, &#34;wavatar&#34;, &#34;retro&#34;, &#34;blank&#34;, &#34;robohash&#34;]
+    host = "dn-qiniu-avatar.qbox.me" # ["cn.gravatar.com", "gravatar.loli.net", ...]
+    style = "identicon" # ["", "mp", "identicon", "monsterid", "wavatar", "retro", "blank", "robohash"]
 ```
 ![设置 Gravatar 主机为七牛云地址](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312152153926.png)
 

@@ -1,12 +1,12 @@
 # Hugo 博客添加 Giscus 评论功能
 
 本文主要记录了如何引入 giscus 为博客添加评论功能。用户登陆Github账号后即可评论文章。
-&lt;!--more--&gt;
+<!--more-->
 
-&gt;参考知乎 [Hugo 的 LoveIt 主题添加 Giscus 评论](https://zhuanlan.zhihu.com/p/642438343)：Giscus 是一个由 Github Discussions 驱动的评论系统，无需自己单独配置，直接白嫖 Github 的资源即可，而且 UI 和功能都十分地合适我，配合 LoveIt 的配置还可以做到十分美观。
+>参考知乎 [Hugo 的 LoveIt 主题添加 Giscus 评论](https://zhuanlan.zhihu.com/p/642438343)：Giscus 是一个由 Github Discussions 驱动的评论系统，无需自己单独配置，直接白嫖 Github 的资源即可，而且 UI 和功能都十分地合适我，配合 LoveIt 的配置还可以做到十分美观。
 
 ## 配置 Github 仓库
-进入 Github Pages 仓库，找到`Settings -&gt; General -&gt; Features -&gt; Discussions` 勾选，为仓库启动 Discussions 功能
+进入 Github Pages 仓库，找到`Settings -> General -> Features -> Discussions` 勾选，为仓库启动 Discussions 功能
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081213743.png)
 
 ## 安装 Giscus
@@ -33,26 +33,26 @@
       [params.page.comment.giscus]
         # 你可以参考官方文档来使用下列配置
         enable = true
-        repo = &#34;leegical/leegical.github.io&#34;
-        repoId = &#34;R_kxxxx&#34;
-        category = &#34;Announcements&#34;
-        categoryId = &#34;DIC_kxxxx&#34;
+        repo = "leegical/leegical.github.io"
+        repoId = "R_kxxxx"
+        category = "Announcements"
+        categoryId = "DIC_kxxxx"
         # 为空时自动适配当前主题 i18n 配置
-        lang = &#34;&#34;
-        mapping = &#34;pathname&#34;
-        reactionsEnabled = &#34;1&#34;
-        emitMetadata = &#34;0&#34;
-        inputPosition = &#34;bottom&#34;
+        lang = ""
+        mapping = "pathname"
+        reactionsEnabled = "1"
+        emitMetadata = "0"
+        inputPosition = "bottom"
         lazyLoading = false
-        lightTheme = &#34;light&#34;
-        darkTheme = &#34;dark&#34;
+        lightTheme = "light"
+        darkTheme = "dark"
 ```
 ![image.png](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202311081236503.png)
 
 ### 提交更改
 ```bash
 git add .
-git commit -m &#34;add comment func&#34;
+git commit -m "add comment func"
 git push
 ```
 稍等片刻，Github Action 会自动更改。

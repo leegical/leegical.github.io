@@ -3,12 +3,12 @@
 
 考虑到 Chinajsdelivr 的审查限制，本文改用 vercel 加速 GitHub 图床访问，并通过仓库结构调整和 GitHub Action，兼容国内外分流加速策略，自动化完成分支同步。
 
-&lt;!--more--&gt;
+<!--more-->
 
 之前的文章介绍了如何搭建图床和使用jsDelivr 加速图床图片访问。
-{{&lt; link &#34;https://haoyep.com/posts/github-graph-beds/&#34; &#34;使用PicGo &#43; GitHub 搭建 Obsidian 图床&#34; &#34;使用PicGo &#43; GitHub 搭建 Obsidian 图床&#34; true &gt;}}
+{{< link "https://haoyep.com/posts/github-graph-beds/" "使用PicGo + GitHub 搭建 Obsidian 图床" "使用PicGo + GitHub 搭建 Obsidian 图床" true >}}
 
-{{&lt; link &#34;https://www.haoyep.com/posts/github-graph-beds-cdn/&#34; &#34;通过 Cloudflare 和 JsDelivr 免费加速博客 GitHub 图床等静态资源&#34; &#34;通过 Cloudflare 和 JsDelivr 免费加速博客 GitHub 图床等静态资源&#34; true &gt;}}
+{{< link "https://www.haoyep.com/posts/github-graph-beds-cdn/" "通过 Cloudflare 和 JsDelivr 免费加速博客 GitHub 图床等静态资源" "通过 Cloudflare 和 JsDelivr 免费加速博客 GitHub 图床等静态资源" true >}}
 
 [Chinajsdelivr](https://github.com/54ayao/Chinajsdelivr) 项目的加速效果不错，但由于成本等因素，加速的图片偶发不可访问。且加速的图片要能经过国内审查，如果图床内有违规图片（如魔法上网等），整个 Github 仓库都会被 [Chinajsdelivr](https://github.com/54ayao/Chinajsdelivr) ban 掉。我本人的图床仓库就在使用了约1个月的时间后被 ban 掉了。虽说可以向开发者写邮件申述，但我懒得整理、清理违规图片，而且这种命运掌握在别人手中的感觉不太好。
 
@@ -26,13 +26,13 @@
 
 例如，下面是一个用于展示当前时间的 html 代码。
 ```html
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&#34;en&#34;&gt;
-&lt;head&gt;
-&lt;meta charset=&#34;UTF-8&#34;&gt;
-&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt;
-&lt;title&gt;实时时钟&lt;/title&gt;
-&lt;style&gt;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>实时时钟</title>
+<style>
   body {
     display: flex;
     justify-content: center;
@@ -47,25 +47,25 @@
     font-weight: bold;
     color: #333;
   }
-&lt;/style&gt;
-&lt;script&gt;
+</style>
+<script>
 function updateTime() {
     var now = new Date(); // 获取当前时间
     var hours = now.getHours(); // 小时
     var minutes = now.getMinutes(); // 分钟
     var seconds = now.getSeconds(); // 秒数
-    var formattedTime = hours &#43; &#39;:&#39; &#43;
-                        (minutes &lt; 10 ? &#39;0&#39; : &#39;&#39;) &#43; minutes &#43; &#39;:&#39; &#43;
-                        (seconds &lt; 10 ? &#39;0&#39; : &#39;&#39;) &#43; seconds;
-    document.getElementById(&#39;clock&#39;).textContent = formattedTime;
+    var formattedTime = hours + ':' +
+                        (minutes < 10 ? '0' : '') + minutes + ':' +
+                        (seconds < 10 ? '0' : '') + seconds;
+    document.getElementById('clock').textContent = formattedTime;
 }
 setInterval(updateTime, 1000); // 每1000毫秒（1秒）更新时间
-&lt;/script&gt;
-&lt;/head&gt;
-&lt;body onload=&#34;updateTime()&#34;&gt;
-&lt;div id=&#34;clock&#34;&gt;&lt;/div&gt; &lt;!-- 时间显示的位置 --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+</script>
+</head>
+<body onload="updateTime()">
+<div id="clock"></div> <!-- 时间显示的位置 -->
+</body>
+</html>
 ```
 
 将上述代码复制并保存到 `index.html` 文件中，再将 `index.html` 文件上传到图床仓库根目录中。
@@ -107,8 +107,8 @@ https://cdn.jsdelivr.net/gh/leegical/Blog_img/cdnimg/a.png
 - 将原图床中的所有文件拷贝到文件夹 `gh/用户名/仓库名` 中
 
 clone 图床仓库到本地，进入图床仓库文件夹，执行以下命令。
-&gt; [!NOTE]
-&gt; 记得将命令中的 **用户名** 和 **仓库名** 替换成你自己的。
+> [!NOTE]
+> 记得将命令中的 **用户名** 和 **仓库名** 替换成你自己的。
 
 - 创建新分支。
 ```shell
@@ -126,39 +126,39 @@ touch index.html
 - 添加 vercel 缓存配置文件 `touch vercel.json`。复制下面的代码到 `vercel.json` 文件中并保存。
 ```json
 {
-    &#34;headers&#34;: [
+    "headers": [
       {
-        &#34;source&#34;: &#34;/sw.js&#34;,
-        &#34;headers&#34;: [
+        "source": "/sw.js",
+        "headers": [
           {
-            &#34;key&#34;: &#34;Cache-Control&#34;,
-            &#34;value&#34;: &#34;public, max-age=0, must-revalidate&#34;
+            "key": "Cache-Control",
+            "value": "public, max-age=0, must-revalidate"
           }
         ]
       },
       {
-        &#34;source&#34;: &#34;/(.*).(jpe?g|png|ico|webp|svg|mp4|gif|xml|ttf|otf|woff2?)&#34;,
-        &#34;headers&#34;: [
+        "source": "/(.*).(jpe?g|png|ico|webp|svg|mp4|gif|xml|ttf|otf|woff2?)",
+        "headers": [
           {
-            &#34;key&#34;: &#34;Cache-Control&#34;,
-            &#34;value&#34;: &#34;public, max-age=31536000, immutable&#34;
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
           }
         ]
       },
       {
-        &#34;source&#34;: &#34;(.*)&#34;,
-        &#34;headers&#34;: [
+        "source": "(.*)",
+        "headers": [
           {
-            &#34;key&#34;: &#34;Cache-Control&#34;,
-            &#34;value&#34;: &#34;public, s-maxage=86400, max-age=86400&#34;
+            "key": "Cache-Control",
+            "value": "public, s-maxage=86400, max-age=86400"
           },
           {
-            &#34;key&#34;: &#34;CDN-Cache-Control&#34;,
-            &#34;value&#34;: &#34;max-age=86400&#34;
+            "key": "CDN-Cache-Control",
+            "value": "max-age=86400"
           },
           {
-            &#34;key&#34;: &#34;Vercel-CDN-Cache-Control&#34;,
-            &#34;value&#34;: &#34;max-age=86400&#34;
+            "key": "Vercel-CDN-Cache-Control",
+            "value": "max-age=86400"
           }
         ]
       }
@@ -173,7 +173,7 @@ git clone https://github.com/用户名/仓库名.git gh/用户名/仓库名
 rm -rf ./gh/用户名/仓库名/.git
 # 保存并提交到 Github 远程分支
 git add .
-git commit -m &#34;初始化vercel分支内容&#34;
+git commit -m "初始化vercel分支内容"
 git push --set-upstream origin/vercelcdn
 ```
 
@@ -196,13 +196,13 @@ git push --set-upstream origin/vercelcdn
 部署成功后，vercel 会自动为你的项目分配 `xxx.vercel.app` 域名。但这类域名已经被墙，无法用于图床图片链接。因此，你需要为项目设置一个自定义域名。
 
 使用 [Vercel CDN:利用 CNAME 负载均衡实现的 Vercel 加速 CDN](https://vercel.cdn.yt-blog.top/) 可以加速 vercel 访问。
-&gt; [**加速原理**](https://www.yt-blog.top/9952/)
-&gt; 
-&gt; Vercel 在大陆周围还有很多节点，其中包含中国台湾、韩国、日本、新加坡等，这些节点的访问延迟在接受范围，且相对香港节点来说带宽更充足。
-&gt; 
-&gt; Vercel 的 Anycast 会自动将节点解析至距离最近的香港服务器，但如果手动解析则太过麻烦。
-&gt; 
-&gt; vercel.cdn.yt-blog.top 经过不断测速（大约消耗了200MB 流量）手动解析，并通过监控检查状态，无法访问时会及时暂停节点。使用时自动解析至附近可用节点，尽可能的选择优质节点。
+> [**加速原理**](https://www.yt-blog.top/9952/)
+> 
+> Vercel 在大陆周围还有很多节点，其中包含中国台湾、韩国、日本、新加坡等，这些节点的访问延迟在接受范围，且相对香港节点来说带宽更充足。
+> 
+> Vercel 的 Anycast 会自动将节点解析至距离最近的香港服务器，但如果手动解析则太过麻烦。
+> 
+> vercel.cdn.yt-blog.top 经过不断测速（大约消耗了200MB 流量）手动解析，并通过监控检查状态，无法访问时会及时暂停节点。使用时自动解析至附近可用节点，尽可能的选择优质节点。
 
 登录 [Cloudflare](https://dash.cloudflare.com/login?lang=zh-cn)。假设自定义域名为 `img.haoyep.com`，添加一条 CNAME 解析记录：
 - 名称：img
@@ -231,8 +231,8 @@ touch sync.yml
 ```
 
 复制下面的代码，粘贴并保存到 `sync.yml` 文件。
-&gt; [!NOTE]
-&gt; 记得替换 28-34 行中的邮箱、用户名、仓库名。
+> [!NOTE]
+> 记得替换 28-34 行中的邮箱、用户名、仓库名。
 ```yml
 name: sync
 
@@ -246,7 +246,7 @@ on:
     workflow_dispatch:
     schedule:
         # Runs everyday at 0:00 AM
-        - cron: &#34;0 0 * * *&#34;
+        - cron: "0 0 * * *"
 
 jobs:
     build:
@@ -261,8 +261,8 @@ jobs:
 			# 记得替换下面的 邮箱、用户名、仓库名
             - name: Sync vercelcdn
               run: |
-                git config --global user.email &#34;邮箱&#34;
-                git config --global user.name &#34;用户名&#34;
+                git config --global user.email "邮箱"
+                git config --global user.name "用户名"
                 git checkout vercelcdn
                 cd gh/用户名
                 rm -rf 仓库名
@@ -274,9 +274,9 @@ jobs:
               uses: stefanzweifel/git-auto-commit-action@v5
               with:
                 branch: vercelcdn
-                commit_message: &#39;:arrow_up: sync vercelcdn img with master&#39;
-                commit_author: &#39;github-actions[bot] &lt;github-actions[bot]@users.noreply.github.com&gt;&#39;
-                push_options: &#39;--set-upstream&#39;
+                commit_message: ':arrow_up: sync vercelcdn img with master'
+                commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
+                push_options: '--set-upstream'
 ```
 
 以后，每次向 master 分支上传图片，GitHub Action 都会自动将其同步到 vercelcdn 分支。vercel 也会在检测分支有更新后，自动重新构建项目。

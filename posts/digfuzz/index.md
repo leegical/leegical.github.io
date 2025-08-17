@@ -3,13 +3,13 @@
 
 论文调研：《Send Hardest Problems My Way: Probabilistic Path Prioritization for Hybrid Fuzzing》
 
-&lt;!--more--&gt;
+<!--more-->
 
 ## 背景知识
-&gt; [!NOTE]
-&gt; - 参考文章
-&gt; [阅读笔记：《The Art, Science, and Engineering of Fuzzing: A Survey》](https://blog.csdn.net/qq_41513009/article/details/121039888)
-&gt; [Hybrid Fuzzing Paper Summary](https://www.anquanke.com/post/id/263725)
+> [!NOTE]
+> - 参考文章
+> [阅读笔记：《The Art, Science, and Engineering of Fuzzing: A Survey》](https://blog.csdn.net/qq_41513009/article/details/121039888)
+> [Hybrid Fuzzing Paper Summary](https://www.anquanke.com/post/id/263725)
 
 
 ### fuzzing 的分类
@@ -21,22 +21,22 @@
 - modern fuzzers：the structural informa about inputs
 #### 白盒（white-box）fuzzer
 - 分析 PUT 内部结构以及 PUT 执行所产生的信息，系统探索 PUT 状态空间
-- DSE 动态符号执行（dynamic symbolic execution，concolic testing，symbolic execution&#43;concrete execution），简化符号执行的约束条件
+- DSE 动态符号执行（dynamic symbolic execution，concolic testing，symbolic execution+concrete execution），简化符号执行的约束条件
 - 污点分析（taint analysis）
-- 开销较大（higher overhead）：动态执行&#43;SMT solving
+- 开销较大（higher overhead）：动态执行+SMT solving
 #### 灰盒（grey-box）fuzzer
 - 部分 PUT 内部结构信息以及 PUT 执行所产生的信息
 - 不考虑完整的语义信息
 - lightweight static analysis or dynamic information about execution（e.g. code coverage）
 - approximated, imperfect information 加快速度和产生更多的测试用例
 #### Dynamic Symbolic Execution
-经典的符号执行是指使用符号化的值作为输入运行一个程序，这些符号化的变量代表所有可能的值。当符号执行器执行 PUT 时，它会建立一个符号表达式而不是计算实际的变量。当它遇到一个条件分支指令的时候，它会分为两个 symbolic interpreter，一个代表正确分支一个代表错误分支。对每一条路径，symbolic interpreter 会为执行过程中遇到的每一条分支指令建立一个路径公式（路径断言）。如果存在一个实际的输入，能够执行目标路径，那么就说该路径公式是可满足的。可以通过求解 SMT solver 来生成一个适用于路径公式的实际输入。动态符号执行是传统的符号执行的变体，在动态符号执行过程中，符号执行和实际的执行会同时进行。因此，**动态符号执行通常被称为 concolic（concrete&#43;symbolic）测试**。结合动态执行的优点是实际的执行可以减小符号约束的复杂度。
+经典的符号执行是指使用符号化的值作为输入运行一个程序，这些符号化的变量代表所有可能的值。当符号执行器执行 PUT 时，它会建立一个符号表达式而不是计算实际的变量。当它遇到一个条件分支指令的时候，它会分为两个 symbolic interpreter，一个代表正确分支一个代表错误分支。对每一条路径，symbolic interpreter 会为执行过程中遇到的每一条分支指令建立一个路径公式（路径断言）。如果存在一个实际的输入，能够执行目标路径，那么就说该路径公式是可满足的。可以通过求解 SMT solver 来生成一个适用于路径公式的实际输入。动态符号执行是传统的符号执行的变体，在动态符号执行过程中，符号执行和实际的执行会同时进行。因此，**动态符号执行通常被称为 concolic（concrete+symbolic）测试**。结合动态执行的优点是实际的执行可以减小符号约束的复杂度。
 
 相比较于灰盒或者黑盒方法而言，动态符号执行是很慢的，这是由于它需要分析 PUT 的每一条指令并插桩。为了解决开销过大的问题，一种缩小动态符号执行范畴的通用策略被提出：让用户确定代码中不感兴趣的部分或者感兴趣的片段、交替使用 conclic testing 和灰盒 fuzzing。
 
-&gt; [!NOTE]
-&gt; **DigFuzz**: 用灰盒测试确定每个分支执行概率，再使用白盒 fuzzer 对对于灰盒 fuzzing 比较 challenging 的路径进行 fuzzing
-&gt; **DigFuzz** 提出基于蒙特卡洛的路径概率排序模型 (Monte Carlo Based Probabilistic Path Prioritization Model, $MCP^3$)，在 fuzzing 的过程中，用 seed 的 trace 构建执行路径树，用覆盖率计算每个分支的概率，路径的概率为路径上分支的概率相乘，最后基于路径的概率对路径进行排序，概率越小代表路径越难探索，将最难探索的路径优先给 concolic execution 进行探索。
+> [!NOTE]
+> **DigFuzz**: 用灰盒测试确定每个分支执行概率，再使用白盒 fuzzer 对对于灰盒 fuzzing 比较 challenging 的路径进行 fuzzing
+> **DigFuzz** 提出基于蒙特卡洛的路径概率排序模型 (Monte Carlo Based Probabilistic Path Prioritization Model, $MCP^3$)，在 fuzzing 的过程中，用 seed 的 trace 构建执行路径树，用覆盖率计算每个分支的概率，路径的概率为路径上分支的概率相乘，最后基于路径的概率对路径进行排序，概率越小代表路径越难探索，将最难探索的路径优先给 concolic execution 进行探索。
 
 [Probabilistic Path Prioritization for Hybrid Fuzzing](https://ieeexplore.ieee.org/abstract/document/9280412)
 主要翻译参考自 [DigFuzz](https://fgroove.github.io/2019/03/27/digfuzz/)。
@@ -51,7 +51,7 @@
 
 软件漏洞被认为是对网络空间最严重的威胁之一。因此，发现一个软件中的漏洞至关重要[12]，[16]，[25]，[27]，[32]。最近，模糊测试和符号执行的组合——混合模糊测试，在漏洞发现中变得越来越流行[5]，[29]，[31]，[39]，[42]，[46]。
 
-由于模糊测试和符号执行本质上是互补的，因此将它们结合起来可以潜在地利用它们的独特优势并减轻弱点。更具体地说，模糊测试（Fuzzing）擅长探索包含一般分支（具有大的满足值空间的分支，比如 x&gt;100）的路径，但是不能探索包含特定分支的路径（具有非常窄的满足值空间的分支,比如 x=2）[27]。相反，符号执行能够生成具体的输入，确保程序沿着特定的执行路径执行，但它会遇到路径爆炸问题[9]。
+由于模糊测试和符号执行本质上是互补的，因此将它们结合起来可以潜在地利用它们的独特优势并减轻弱点。更具体地说，模糊测试（Fuzzing）擅长探索包含一般分支（具有大的满足值空间的分支，比如 x>100）的路径，但是不能探索包含特定分支的路径（具有非常窄的满足值空间的分支,比如 x=2）[27]。相反，符号执行能够生成具体的输入，确保程序沿着特定的执行路径执行，但它会遇到路径爆炸问题[9]。
 
 在混合方案中，模糊测试由于高吞吐量通常承担路径探索的大多数任务，而符号执行辅助模糊测试探索低概率的路径、并且生成满足特定分支的输入。通过这种方式，可以减轻分支符号执行中的路径爆炸问题，因为符号执行仅负责探索可能阻止模糊测试的低概率路径。
 
@@ -138,9 +138,9 @@ Fuzzing [30]和concoic execution [9]是软件测试和漏洞检测的两种代�
 ### Key Challenge
 如上所述，我们策略的关键挑战是**以轻量级方式量化模糊器遍历路径的难度**。
 
-&gt;有一些解决方案可以使用昂贵的程序分析来量化路径的难度，例如值分析[45]和概率符号执行[5]。然而，这些技术并没有解决我们的问题：如果我们已经执行了重量级分析来量化一条路径的难度，我们还不如只解决路径约束并生成一个输入来遍历这条路径。
-&gt;
-&gt;最近的一项研究[42]提出了一种理论框架，用于优化的结构测试。它定义了基于程序路径概率和约束求解成本的最优策略，然后将问题简化为带有成本的马尔可夫决策过程（简称 MDPC）。本研究与我们的工作有着相似的问题范围。然而，马尔可夫决策过程本身对于具有大状态空间的程序来说是重量级的。此外，模糊测试和符号执行的成本对于评估和标准化以进行比较是具有挑战性的。
+>有一些解决方案可以使用昂贵的程序分析来量化路径的难度，例如值分析[45]和概率符号执行[5]。然而，这些技术并没有解决我们的问题：如果我们已经执行了重量级分析来量化一条路径的难度，我们还不如只解决路径约束并生成一个输入来遍历这条路径。
+>
+>最近的一项研究[42]提出了一种理论框架，用于优化的结构测试。它定义了基于程序路径概率和约束求解成本的最优策略，然后将问题简化为带有成本的马尔可夫决策过程（简称 MDPC）。本研究与我们的工作有着相似的问题范围。然而，马尔可夫决策过程本身对于具有大状态空间的程序来说是重量级的。此外，模糊测试和符号执行的成本对于评估和标准化以进行比较是具有挑战性的。
 ### Monte Carlo Based Probabilistic Path Prioritization Model
 在这项研究中，我们提出了一种新的基于`Monte Carlo`的概率路径优先级模型（简称 $MCP^3$）来应对这些挑战。为了轻量化，我们的模型应用`Monte Carlo`方法来计算通过模糊测试探索路径的概率。要使蒙特卡罗方法有效运作，需要满足两个要求：
 
@@ -153,8 +153,8 @@ Fuzzing [30]和concoic execution [9]是软件测试和漏洞检测的两种代�
 
 #### Probability for each branch
 量化了模糊测试器通过条件检查并探索分支的难度。方程式1展示了$MCP^3$如何计算分支的概率。
-\begin{equation*} P\left(br_i\right) = \left\lbrace \begin{array}{lr}\frac{cov \left(br_i \right)}{cov \left(br_i \right) &#43; cov \left(br_j \right)}, &amp; cov \left(br_i \right)\ne 0 \\\\
-\frac{3} {{cov \left(br_j \right)}} , &amp; cov \left(br_i \right) = 0 \end{array} \right. \tag{1} \end{equation*}
+\begin{equation*} P\left(br_i\right) = \left\lbrace \begin{array}{lr}\frac{cov \left(br_i \right)}{cov \left(br_i \right) + cov \left(br_j \right)}, & cov \left(br_i \right)\ne 0 \\\\
+\frac{3} {{cov \left(br_j \right)}} , & cov \left(br_i \right) = 0 \end{array} \right. \tag{1} \end{equation*}
 
 在`方程1`中，$b_{ri}$ 和 $b_{rj}$ 是共享相同前继块的两个分支，$cov(b_{ri})$ 和 $cov(b_{rj})$ 分别指的是 $b_{ri}$ 和 $b_{rj}$ 的覆盖统计，表示模糊测试器的样本覆盖了 $b_{ri}$ 和 $b_{rj}$ 的次数。
 - 当 $b_{ri}$ 已经被模糊测试器探索过（$cov(b_{ri})$ 非零时），$b_{ri}$ 的概率可以通过将 $b_{ri}$ 的覆盖统计除以 $b_{ri}$ 和 $b_{rj}$ 的总覆盖统计来计算。
@@ -191,9 +191,9 @@ DigFuzz 需要进行随机抽样来使用蒙特卡罗方法计算概率[35]。�
 
 基于这一观察，我们提出了执行抽样的算法（Algorithm 1）。该算法接受3个输入并在 $HashMap$ 中生成 coverage 统计信息。
 
-&gt; [!TIP]
-&gt; - 算法1的3个输入
-&gt; 1）目标二进制$P$；  2）模糊测试器$Fuzzer$；  3）存储在$Set_{inputs}$中的初始种子
+> [!TIP]
+> - 算法1的3个输入
+> 1）目标二进制$P$；  2）模糊测试器$Fuzzer$；  3）存储在$Set_{inputs}$中的初始种子
 
 给定这3个输入，算法在模糊测试过程中进行迭代抽样。
 1. $Fuzzer$使用$P$和$Set_{inputs}$以生成新输入 $Set_{NewInputs}$（Ln.7）。
@@ -204,14 +204,14 @@ DigFuzz 需要进行随机抽样来使用蒙特卡罗方法计算概率[35]。�
 如图3所示，DigFuzz 使用来自模糊器的运行时信息生成基于$MCP^3$的执行树。
 ![Fig. 3: Overview of DigFuzz](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202312101450165.png)
 
-&gt; [!TIP]
-&gt; - Algorithm 2的输入、输出
-&gt; 输入，也是`Algorithm 1`的输出：
-&gt; 1）目标二进制文件的控制流图$CFG$；
-&gt; 2）fuzzer 保留的输入$Set_{inputs}$；
-&gt; 3）覆盖统计$HashMap_{CovStat}$
-&gt; 
-&gt; 输出：基于$MCP^3$的执行树 $ExecTree$
+> [!TIP]
+> - Algorithm 2的输入、输出
+> 输入，也是`Algorithm 1`的输出：
+> 1）目标二进制文件的控制流图$CFG$；
+> 2）fuzzer 保留的输入$Set_{inputs}$；
+> 3）覆盖统计$HashMap_{CovStat}$
+> 
+> 输出：基于$MCP^3$的执行树 $ExecTree$
 
 `Algorithm 2`展示了树构建过程。算法主要分为两个步骤。
 - **Step1**：对 $Set_{inputs}$中的每个输入执行跟踪分析，提取相应的跟踪，然后将跟踪合并到 $ExecTree$ 中（Ln. 6到11）
@@ -232,11 +232,11 @@ DigFuzz 需要进行随机抽样来使用蒙特卡罗方法计算概率[35]。�
 我们基于概率对路径进行优先排序。如方程2所示，路径被视为一个马尔可夫链，其概率是基于路径内所有分支的概率计算得出的。路径可以表示为一系列已覆盖的分支，每个分支都标记有其概率，该概率表示随机输入能够满足条件的可能性有多大。因此，我们利用马尔可夫链模型，将路径的概率看作是转换的概率序列。
 ![算法3. DigFuzz中的路径优先排序](https://cdn.haoyep.com/gh/leegical/Blog_img/md_img202312101709167.png)
 
-&gt; [!TIP]
-&gt; Algorithm 3的输入、输出
-&gt; 输入，也是`Algorithm 2`的输出：基于$MCP^3$的执行树$ExecTree$
-&gt; 
-&gt; 输出：$Set_{Prob}$，一组未探索（遗漏）的路径及其概率
+> [!TIP]
+> Algorithm 3的输入、输出
+> 输入，也是`Algorithm 2`的输出：基于$MCP^3$的执行树$ExecTree$
+> 
+> 输出：$Set_{Prob}$，一组未探索（遗漏）的路径及其概率
 
 `Algorithm 3`详细地呈现了这个算法。`DigFuzz` 将根据$Set_{Prob}$对这些 **未探索（遗漏）** 的路径进行进一步的优先排序，并将概率最低的路径提供给符号执行。该算法：
 1) 从执行树遍历开始。对于 $ExecTree$ 中每个跟踪上的每个分支$b_{ri}$，它首先提取相邻的分支$b_{rj}$（Ln. 5），然后收集沿给定跟踪未探索的路径（Ln. 6）。

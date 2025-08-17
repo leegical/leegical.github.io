@@ -3,19 +3,19 @@
 
 通过Cloudflare Tunnel内网穿透，访问内网主机端口。
 
-&lt;!--more--&gt;
+<!--more-->
 
 ## Tunnel 可以做什么
 
 - **将本地网络的服务暴露到公网，可以理解为内网穿透。** 例如我们在本地服务器 `192.168.1.1:3000` 搭建了一个 Transmission 服务用于 BT 下载，我们只能在内网环境才能访问这个服务，但通过内网穿透技术，我们可以在任何广域网环境下访问该服务。相比 NPS 之类传统穿透服务，Tunnel 不需要公网云服务器，同时自带域名解析，无需 DDNS 和公网 IP。
-- **将非常规端口服务转发到 80/443 常规端口。** 无论是使用公网 IP &#43; DDNS 还是传统内网穿透服务，都免不了使用非常规端口进行访问，如果某些服务使用了复杂的重定向可能会导致 URL 中端口号丢失而引起不可控的问题，同时也不够优雅。
+- **将非常规端口服务转发到 80/443 常规端口。** 无论是使用公网 IP + DDNS 还是传统内网穿透服务，都免不了使用非常规端口进行访问，如果某些服务使用了复杂的重定向可能会导致 URL 中端口号丢失而引起不可控的问题，同时也不够优雅。
 - **自动为你的域名提供 HTTPS 认证。**
 - **为你的服务提供额外保护认证。**
 - **最重要的是——免费。**
 
 ## Tunnel 工作原理
 
-Tunnel 通过在本地网络运行的一个 Cloudflare 守护程序，与 Cloudflare 云端通信，将云端请求数据转发到本地网络的 IP &#43; 端口。
+Tunnel 通过在本地网络运行的一个 Cloudflare 守护程序，与 Cloudflare 云端通信，将云端请求数据转发到本地网络的 IP + 端口。
 
 ## 前置条件
 
@@ -52,15 +52,15 @@ Tunnel 部署方式，这里推荐选择 docker。
 
 将图中的 token 替换到下面的命令中，然后执行，启动 docker。
 ```bash
-docker run --name cf-tunnel -d --restart always cloudflare/cloudflared:latest tunnel --no-autoupdate run --token &lt;YourToken&gt;
+docker run --name cf-tunnel -d --restart always cloudflare/cloudflared:latest tunnel --no-autoupdate run --token <YourToken>
 ```
 
 ### 配置域名和转发 URL
 - 子域名（Subdomain）：自定义一个。Path 留空。
 - Type：`SSH`。URL ：`localhost:22`。
 
-&gt; [!TIP]
-&gt; 如果需要转发其他协议和端口，你可以选择相应的 Type 和 URL。
+> [!TIP]
+> 如果需要转发其他协议和端口，你可以选择相应的 Type 和 URL。
 
 ![配置域名](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401130019856.png)
 
@@ -110,7 +110,7 @@ docker run --name cf-tunnel -d --restart always cloudflare/cloudflared:latest tu
 
 ## 参考文章
 
-{{&lt; link &#34;https://niu.sspai.com/post/79278&#34; &#34;CloudFlare Tunnel 免费内网穿透的简明教程&#34; &#34;CloudFlare Tunnel 免费内网穿透的简明教程&#34; true false &gt;}}
+{{< link "https://niu.sspai.com/post/79278" "CloudFlare Tunnel 免费内网穿透的简明教程" "CloudFlare Tunnel 免费内网穿透的简明教程" true false >}}
 
 ---
 

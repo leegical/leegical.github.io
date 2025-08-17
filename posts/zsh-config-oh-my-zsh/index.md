@@ -2,13 +2,13 @@
 
 传统的 bash 功能比较简陋，且不美观。本文基于 Ubuntu22.04 LTS 系统，安装 zsh，并使用 oh-my-zsh 对终端进行美化。Oh My Zsh 是基于 zsh 命令行的一个扩展工具集，提供了丰富的扩展功能。
 
-&lt;!--more--&gt;
+<!--more-->
 
 ## 环境配置
 ### 安装基本工具
-```bash {title=&#34;安装基本工具&#34;}
+```bash {title="安装基本工具"}
 # 更新软件源
-sudo apt update &amp;&amp; sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 # 安装 zsh git curl
 sudo apt install zsh git curl -y
 ```
@@ -23,11 +23,11 @@ chsh -s /bin/zsh
 
 | Method | Command |
 | :--- | :--- |
-| **curl** | `sh -c &#34;$(curl -fsSL https://install.ohmyz.sh/)&#34;` |
-| **wget** | `sh -c &#34;$(wget -O- https://install.ohmyz.sh/)&#34;` |
-| **fetch** | `sh -c &#34;$(fetch -o - https://install.ohmyz.sh/)&#34;` |
-| 国内curl[镜像](https://gitee.com/pocmon/ohmyzsh) | `sh -c &#34;$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)&#34;` |
-| 国内wget[镜像](https://gitee.com/pocmon/ohmyzsh) | `sh -c &#34;$(wget -O- https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)&#34;` |
+| **curl** | `sh -c "$(curl -fsSL https://install.ohmyz.sh/)"` |
+| **wget** | `sh -c "$(wget -O- https://install.ohmyz.sh/)"` |
+| **fetch** | `sh -c "$(fetch -o - https://install.ohmyz.sh/)"` |
+| 国内curl[镜像](https://gitee.com/pocmon/ohmyzsh) | `sh -c "$(curl -fsSL https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)"` |
+| 国内wget[镜像](https://gitee.com/pocmon/ohmyzsh) | `sh -c "$(wget -O- https://gitee.com/pocmon/ohmyzsh/raw/master/tools/install.sh)"` |
 
 注意：同意使用 Oh-my-zsh 的配置模板覆盖已有的 `.zshrc`。
 
@@ -56,7 +56,7 @@ sudo wget -O $ZSH_CUSTOM/themes/haoomz.zsh-theme https://cdn.haoyep.com/gh/leegi
 ```bash
 nano ~/.zshrc
 
-ZSH_THEME=&#34;haoomz&#34;
+ZSH_THEME="haoomz"
 
 source ~/.zshrc
 ```
@@ -70,13 +70,13 @@ source ~/.zshrc
 ### 推荐主题
 你可以在[内置主题样式截图](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)中查看所有 zsh 内置的主题样式和对应的主题名。这些内置主题已经放在 ～/.oh-my-zsh/themes 目录下，不需要再下载。
 ```bash
-cd ~/.oh-my-zsh/themes &amp;&amp; ls
+cd ~/.oh-my-zsh/themes && ls
 ```
 
 ![zsh 内置的主题样式](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012242407.png)
 
 #### powerlevel10k
-根据 [What&#39;s the best theme for Oh My Zsh?](https://www.slant.co/topics/7553/~theme-for-oh-my-zsh) 中的排名，以及自定义化、美观程度，强烈建议使用 [powerlevel10k](https://github.com/romkatv/powerlevel10k) 主题。
+根据 [What's the best theme for Oh My Zsh?](https://www.slant.co/topics/7553/~theme-for-oh-my-zsh) 中的排名，以及自定义化、美观程度，强烈建议使用 [powerlevel10k](https://github.com/romkatv/powerlevel10k) 主题。
 
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -84,7 +84,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # 中国用户可以使用 gitee.com 上的官方镜像加速下载
 git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
-在 `~/.zshrc` 设置 `ZSH_THEME=&#34;powerlevel10k/powerlevel10k&#34;`。接下来，终端会自动引导你配置 `powerlevel10k`。
+在 `~/.zshrc` 设置 `ZSH_THEME="powerlevel10k/powerlevel10k"`。接下来，终端会自动引导你配置 `powerlevel10k`。
 
 ## 安装插件
 `oh-my-zsh` 已经内置了 `git` 插件，内置插件可以在 `～/.oh-my-zsh/plugins` 中查看，下面介绍一下我常用的插件，更多插件可以在 [awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins) 里查看。
@@ -133,12 +133,12 @@ git clone https://gh.api.99988866.xyz/https://github.com/zsh-users/zsh-syntax-hi
 ![extract 解压](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012259966.png)
 
 #### web-search
-oh-my-zsh 内置了 `web-search` 插件。`web-search` 能让我们在命令行中使用搜索引擎进行搜索。使用`搜索引擎关键字&#43;搜索内容` 即可自动打开浏览器进行搜索。效果如下：
+oh-my-zsh 内置了 `web-search` 插件。`web-search` 能让我们在命令行中使用搜索引擎进行搜索。使用`搜索引擎关键字+搜索内容` 即可自动打开浏览器进行搜索。效果如下：
 
 ![web-search搜索](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012302476.png)
 
-&gt; [!IMPORTANT]
-&gt; 最后，记得[启用所有插件](#启用插件)。
+> [!IMPORTANT]
+> 最后，记得[启用所有插件](#启用插件)。
 
 ### 启用插件
 修改`~/.zshrc`中插件列表为：
@@ -148,8 +148,8 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
 
 ![zsh插件列表](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012304774.png)
 
-&gt; [!TIP]
-&gt; 部分插件需要参考[插件介绍](#插件介绍)进行安装。
+> [!TIP]
+> 部分插件需要参考[插件介绍](#插件介绍)进行安装。
 
 开启新的 Shell 或执行 `source ~/.zshrc`，就可以开始体验插件。
 ## Tips
@@ -157,7 +157,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
 当你配置好登陆用户的 zsh 后，如果使用`sudo su`命令进入`root`用户的终端，发现还是默认的`bash`。建议在`root`用户的终端下，也安装`on my zsh`，设置与普通用户不同的主题以便区分，插件可以使用一样的。
 `root`用户的`~/.zshrc`配置，仅供参考：
 ```bash
-ZSH_THEME=&#34;ys&#34;
+ZSH_THEME="ys"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract web-search)
 # 或
 plugins=(git colored-man-pages colorize cp man command-not-found sudo suse ubuntu archlinux zsh-navigation-tools z extract history-substring-search python zsh-autosuggestions zsh-syntax-highlighting)
@@ -167,8 +167,8 @@ plugins=(git colored-man-pages colorize cp man command-not-found sudo suse ubunt
 ```bash
 # 为 curl wget git 等设置代理
 proxy () {
-  export ALL_PROXY=&#34;socks5://127.0.0.1:1089&#34;
-  export all_proxy=&#34;socks5://127.0.0.1:1089&#34;
+  export ALL_PROXY="socks5://127.0.0.1:1089"
+  export all_proxy="socks5://127.0.0.1:1089"
 }
 
 # 取消代理
@@ -177,8 +177,8 @@ unproxy () {
   unset all_proxy
 }
 ```
-&gt; [!TIP]
-&gt; 这里假设本地代理的端口是`1089`。
+> [!TIP]
+> 这里假设本地代理的端口是`1089`。
 
 ![使用本地代理命令](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401012307093.png)
 
@@ -186,25 +186,25 @@ unproxy () {
 
 #### WSL 配置本地代理
 ```zsh
-host_ip=$(cat /etc/resolv.conf |grep &#34;nameserver&#34; |cut -f 2 -d &#34; &#34;)
+host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
 # 为 curl wget git npm apt 等设置代理
 proxy () {
-  export ALL_PROXY=&#34;http://$host_ip:10811&#34;
-  export all_proxy=&#34;http://$host_ip:10811&#34;
- # echo -e &#34;Acquire::http::Proxy \&#34;http://$host_ip:10811\&#34;;&#34; | sudo tee -a /etc/apt/apt.conf &gt; /dev/null
- # echo -e &#34;Acquire::https::Proxy \&#34;http://$host_ip:10811\&#34;;&#34; | sudo tee -a /etc/apt/apt.conf &gt; /dev/null
+  export ALL_PROXY="http://$host_ip:10811"
+  export all_proxy="http://$host_ip:10811"
+ # echo -e "Acquire::http::Proxy \"http://$host_ip:10811\";" | sudo tee -a /etc/apt/apt.conf > /dev/null
+ # echo -e "Acquire::https::Proxy \"http://$host_ip:10811\";" | sudo tee -a /etc/apt/apt.conf > /dev/null
 }
 
 # 取消代理
 unproxy () {
   unset ALL_PROXY
   unset all_proxy
- # sudo sed -i -e &#39;/Acquire::http::Proxy/d&#39; /etc/apt/apt.conf
- # sudo sed -i -e &#39;/Acquire::https::Proxy/d&#39; /etc/apt/apt.conf
+ # sudo sed -i -e '/Acquire::http::Proxy/d' /etc/apt/apt.conf
+ # sudo sed -i -e '/Acquire::https::Proxy/d' /etc/apt/apt.conf
 }
 ```
-&gt; [!NOTE]
-&gt; 这里假设宿主机局域网 http 代理的端口是`10811`。
+> [!NOTE]
+> 这里假设宿主机局域网 http 代理的端口是`10811`。
 
 ### 卸载 Oh My Zsh
 - 终端输入 ：
@@ -220,7 +220,7 @@ Looking for original zsh config...
 Found ~/.zshrc.pre-oh-my-zsh -- Restoring to ~/.zshrc
 Found ~/.zshrc -- Renaming to ~/.zshrc.omz-uninstalled-20170820200007
 Your original zsh config was restored. Please restart your session.
-Thanks for trying out Oh My Zsh. It&#39;s been uninstalled.
+Thanks for trying out Oh My Zsh. It's been uninstalled.
 ```
 
 ### 手动更新 Oh My Zsh

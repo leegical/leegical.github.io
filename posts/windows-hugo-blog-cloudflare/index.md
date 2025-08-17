@@ -3,15 +3,15 @@
 
 使用 Hugo 和 Cloudflare Pages 配置博客，自定义域名并启用SSL，还可以白嫖Cloudflare的CDN。
 
-&lt;!--more--&gt;
+<!--more-->
 
-&gt; [!IMPORTANT]
-&gt; [**2023-12-14**] 经过测试，在开启自定义域名时，Cloudflare Pages 在国内的访问速度远慢于 Github Pages。因此建议还是使用 Github Pages。
+> [!IMPORTANT]
+> [**2023-12-14**] 经过测试，在开启自定义域名时，Cloudflare Pages 在国内的访问速度远慢于 Github Pages。因此建议还是使用 Github Pages。
 
-{{&lt; link &#34;https://www.haoyep.com/posts/windows-hugo-blog-github/&#34; &#34;使用hugo和Github Pages配置博客&#34; &#34;使用hugo和Github Pages配置博客&#34; true &gt;}}
+{{< link "https://www.haoyep.com/posts/windows-hugo-blog-github/" "使用hugo和Github Pages配置博客" "使用hugo和Github Pages配置博客" true >}}
 
 ## 前言
-如果懒得使用 Github Pages 以及配置 Github Action，又想用自定义域名和 cdn 加速访问博客，那么 hugo &#43; Cloudflare Pages 绝对是不二之选。
+如果懒得使用 Github Pages 以及配置 Github Action，又想用自定义域名和 cdn 加速访问博客，那么 hugo + Cloudflare Pages 绝对是不二之选。
 **准备工作：** 参考 [Windows 下使用 hugo 和 Github Pages 配置博客](https://www.haoyep.com/posts/windows_hugo_github_pages_blog/)，从头开始配置，一直到完成 [创建 blog 仓库](https://www.haoyep.com/posts/windows_hugo_github_pages_blog/#2%E5%88%9B%E5%BB%BA-blog-%E4%BB%93%E5%BA%93)。
 ## 设置 Cloudflare Pages
 ### 新建 Pages
@@ -72,7 +72,7 @@ hugo
 进行编译，没错误的话修改的内容就顺利同步到`public`下了，然后执行提交命令：
 ```shell
 git add .
-git commit -m &#34;随便写点提交信息&#34;
+git commit -m "随便写点提交信息"
 git push
 ```
 之后 Cloudflare 就会自动拉取、构建网站。

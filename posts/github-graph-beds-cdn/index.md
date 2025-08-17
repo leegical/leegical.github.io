@@ -3,20 +3,20 @@
 
 通过 Cloudflare 和 jsDelivr 免费加速博客 GitHub 静态资源(GitHub图床)，自动实现 CDN 资源的海内外分流，加速博客访问速度。
 
-&lt;!--more--&gt;
+<!--more-->
 
 ## 更新
 本文内容已过时，最新方法参考：
 
-{{&lt; link &#34;https://www.haoyep.com/posts/github-graph-beds-vercel-cdn/&#34; &#34;使用 vercel 加速 Github 图床&#34; &#34;使用 vercel 加速 Github 图床&#34; true &gt;}}
+{{< link "https://www.haoyep.com/posts/github-graph-beds-vercel-cdn/" "使用 vercel 加速 Github 图床" "使用 vercel 加速 Github 图床" true >}}
 
 ## 前言
-上一篇文章讲述了如何使用 PicGo &#43; GitHub 搭建图床，这样搭建的图床很稳定，但缺点是国内访问速度慢。可以使用 `jsDelivr` 对 Github 图床等静态资源进行免费 CDN 加速
-{{&lt; link &#34;https://www.haoyep.com/posts/github-graph-beds/&#34; &#34;使用PicGo &#43; GitHub 搭建 Obsidian 图床&#34; &#34;使用PicGo &#43; GitHub 搭建 Obsidian 图床&#34; true &gt;}}
+上一篇文章讲述了如何使用 PicGo + GitHub 搭建图床，这样搭建的图床很稳定，但缺点是国内访问速度慢。可以使用 `jsDelivr` 对 Github 图床等静态资源进行免费 CDN 加速
+{{< link "https://www.haoyep.com/posts/github-graph-beds/" "使用PicGo + GitHub 搭建 Obsidian 图床" "使用PicGo + GitHub 搭建 Obsidian 图床" true >}}
 
-{{&lt; admonition question &#34;jsDelivr是什么？&#34; &gt;}}
+{{< admonition question "jsDelivr是什么？" >}}
 `jsDelivr`是国外的一家优秀的公共 CDN 服务提供商，该平台是首个「打通中国大陆与海外的免费 CDN 服务」，无须担心中国防火墙问题而影响使用。官网：[http://www.jsdelivr.com/(opens new window)](http://www.jsdelivr.com/)
-{{&lt; /admonition &gt;}}
+{{< /admonition >}}
 
 但是`jsDelivr`因为掉 ICP 等原因，国内速度越来越慢。好在 [Chinajsdelivr](https://github.com/54ayao/Chinajsdelivr) 项目将它在国内“复活”了。
 
@@ -53,32 +53,32 @@ https://cdn.jsdelivr.net/gh/leegical/Blog_img/md_img202305061640828.png
 
 1. 配置国内重定向
 	- 规则名称 （必需）：标注国内，方便区分
-	- 自定义筛选表达式：`(http.host eq &#34;cdn.haoyep.com&#34; and ip.geoip.country eq &#34;CN&#34;)`
+	- 自定义筛选表达式：`(http.host eq "cdn.haoyep.com" and ip.geoip.country eq "CN")`
 	- URL 重定向
 		- 类型：动态
-		- 表达式：`concat(&#34;https://jsd.cdn.zzko.cn&#34;, http.request.uri.path)`
+		- 表达式：`concat("https://jsd.cdn.zzko.cn", http.request.uri.path)`
 		- 状态代码：`302`
 
 ![国内重定向规则配置](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141658616.png)
 
 2. 配置国外重定向
 	- 规则名称 （必需）：标注国外，方便区分
-	- 自定义筛选表达式：`(http.host eq &#34;cdn.haoyep.com&#34; and ip.geoip.country ne &#34;CN&#34;)`
+	- 自定义筛选表达式：`(http.host eq "cdn.haoyep.com" and ip.geoip.country ne "CN")`
 	- URL 重定向
 		- 类型：动态
-		- 表达式：`concat(&#34;https://cdn.jsdelivr.net&#34;, http.request.uri.path)`
+		- 表达式：`concat("https://cdn.jsdelivr.net", http.request.uri.path)`
 		- 状态代码：`302`
 
 ![国外重定向规则配置](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141700130.png)
 
-&gt; [!TIP]
-&gt; HTTP 重定向状态选择302而不是301。虽然两类请求都会被 Cloudflare 缓存，但301理论上是永久跳转而302是临时跳转，因此301可能会导致长时间缓存，不利于今后修改重定向到新地址。
+> [!TIP]
+> HTTP 重定向状态选择302而不是301。虽然两类请求都会被 Cloudflare 缓存，但301理论上是永久跳转而302是临时跳转，因此301可能会导致长时间缓存，不利于今后修改重定向到新地址。
 
 ## PicGo 设置
 为了让上传的图片自动生成 CDN 链接，还需要配置 PicGo：
 ![PicGo Github 图床设置](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202312141324478.png)
 - 设定存储路径：可以不填，也可以填仓库的某个文件夹
-- 自定义域名： 改为`https://&lt;cdn加速链接&gt;/gh/&lt;用户名&gt;/&lt;图床仓库名&gt;`，如图我这里改成 `https://cdn.haoyep.com/gh/leegical/Blog_img` 即可。
+- 自定义域名： 改为`https://<cdn加速链接>/gh/<用户名>/<图床仓库名>`，如图我这里改成 `https://cdn.haoyep.com/gh/leegical/Blog_img` 即可。
 
 对于之前文章中的 Github raw 或文件链接，替换成 CDN 链接即可。本文只需要进行以下替换：
 ```
@@ -91,11 +91,11 @@ https://cdn.haoyep.com/gh/leegical/Blog_img
 ```
 
 ## 参考文章
-{{&lt; link &#34;https://github.com/54ayao/Chinajsdelivr?tab=readme-ov-file&#34; &#34;Chinajsdelivr简介&#34; &#34;Chinajsdelivr简介&#34; true &gt;}}
+{{< link "https://github.com/54ayao/Chinajsdelivr?tab=readme-ov-file" "Chinajsdelivr简介" "Chinajsdelivr简介" true >}}
 
-{{&lt; link &#34;https://upup.dev/posts/cloudflare-country-based-cdn-redirect/&#34; &#34;利用 Cloudflare 重定向规则实现 CDN 资源的海内外分流&#34; &#34;利用 Cloudflare 重定向规则实现 CDN 资源的海内外分流&#34; true &gt;}}
+{{< link "https://upup.dev/posts/cloudflare-country-based-cdn-redirect/" "利用 Cloudflare 重定向规则实现 CDN 资源的海内外分流" "利用 Cloudflare 重定向规则实现 CDN 资源的海内外分流" true >}}
 
-{{&lt; link &#34;https://irithys.com/p/%E4%BD%BF%E7%94%A8npm%E5%8A%A0%E9%80%9F%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/&#34; &#34;使用npm加速静态资源&#34; &#34;使用npm加速静态资源&#34; true &gt;}}
+{{< link "https://irithys.com/p/%E4%BD%BF%E7%94%A8npm%E5%8A%A0%E9%80%9F%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/" "使用npm加速静态资源" "使用npm加速静态资源" true >}}
 
 
 ---

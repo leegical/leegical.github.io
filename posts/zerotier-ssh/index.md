@@ -1,7 +1,7 @@
 # 通过ZeroTier SSH连接内网主机
 
 一些内网的主机可以访问公网，但是关闭了公网SSH端口。可以通过ZeroTier搭建VPC，让内网主机与client位于同一虚拟局域网中，实现SSH连接。
-&lt;!--more--&gt;
+<!--more-->
 
 zerotier官网：[https://www.zerotier.com/](https://www.zerotier.com/)
 
@@ -63,9 +63,9 @@ sudo rm -rf /var/lib/zerotier-one/
 ```
 
 #### 加入网络
-运行以下命令并将`&lt;NETWORK-ID&gt;`替换为网络ID：
+运行以下命令并将`<NETWORK-ID>`替换为网络ID：
 ```bash
-sudo zerotier-cli join &lt;NETWORK-ID&gt;
+sudo zerotier-cli join <NETWORK-ID>
 ```
 本文中即为：
 ```bash

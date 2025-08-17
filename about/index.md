@@ -1,12 +1,12 @@
 # 关于
 
 
-&lt;!-- markdownlint-disable-file --&gt;
+<!-- markdownlint-disable-file -->
 
 ## Blog
 
-{{&lt; style &#34;min-height: 230px;&#34; &gt;}}
-{{&lt; typeit code=cpp &gt;}}
+{{< style "min-height: 230px;" >}}
+{{< typeit code=cpp >}}
 /**
  * 建站的初衷不是為了炫耀所知，而是記錄無知。
  * 人知道的越多，就會發現無知的越多。有更廣袤的世界可以探索，是莫大的快樂！
@@ -16,31 +16,31 @@ class Blog {
 public:
   std::string name, author, url;
 
-  Blog(const std::string&amp; name, const std::string&amp; author, const std::string&amp; url)
+  Blog(const std::string& name, const std::string& author, const std::string& url)
     : name(name), author(author), url(url) {}
 };
-Blog site(&#34;Leehow的小站&#34;, &#34;Leehow&#34;, &#34;https://www.haoyep.com&#34;);
-{{&lt; /typeit &gt;}}
-{{&lt; /style &gt;}}
+Blog site("Leehow的小站", "Leehow", "https://www.haoyep.com");
+{{< /typeit >}}
+{{< /style >}}
 
 ## 关于我
 
-{{&lt; center-quote &gt;}}
+{{< center-quote >}}
 玩会吧，别真学会了\
 戒骄戒躁，久久为功
-{{&lt; /center-quote &gt;}}
+{{< /center-quote >}}
 
 
-- 👨‍💻 一名C/C&#43;&#43;工程师
+- 👨‍💻 一名C/C++工程师
 - 👨‍💼 可能要去享受福报
 - 📝 但是要写Go代码
 
-&lt;!-- link reference definition --&gt;
+<!-- link reference definition -->
 [blog]: https://www.haoyep.com
 
 
 ---
 
-> 作者:   
+> 作者: <no value>  
 > URL: https://www.haoyep.com/about/  
 

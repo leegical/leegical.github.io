@@ -2,7 +2,7 @@
 
 本文记录了Ubuntu 22.04 LTS 64位系统安装 clang10 版本的过程。
 
-&lt;!--more--&gt;
+<!--more-->
 
 ## 安装 clang10
 1. 编辑 apt 源文件。
@@ -36,7 +36,7 @@ sudo apt-get install clang-10 llvm-10-dev llvm-10-tools -y
 ```
 
 ## 切换默认命令版本
-安装完成后，默认的命令是`clang-10`和`clang&#43;&#43;-10`，需要使用`update-alternatives`来设置成`clang`和`clang&#43;&#43;`。
+安装完成后，默认的命令是`clang-10`和`clang++-10`，需要使用`update-alternatives`来设置成`clang`和`clang++`。
 
 首先查看当前 clang 默认版本：
 ```bash
@@ -47,14 +47,14 @@ clang  --version
 
 ### 切换成 clang10
 ```bash
-sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-10 1 --slave /usr/bin/clang&#43;&#43; clang&#43;&#43; /usr/bin/clang&#43;&#43;-10
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-10 1 --slave /usr/bin/clang++ clang++ /usr/bin/clang++-10
 ```
 ![切换成 clang10](https://cdn.haoyep.com/gh/leegical/Blog_img/cdnimg/202401171507032.png)
 
 ### 恢复原有的 clang 版本
 这里也给出切换回 clang14的命令：
 ```bash
-sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-14 2 --slave /usr/bin/clang&#43;&#43; clang&#43;&#43; /usr/bin/clang&#43;&#43;-14
+sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-14 2 --slave /usr/bin/clang++ clang++ /usr/bin/clang++-14
 ```
 
 ---
