@@ -23,6 +23,6 @@
 
 ---
 
-> 作者: <no value>  
+> 作者: [Leehow](https://www.haoyep.com/)  
 > URL: https://www.haoyep.com/friends/  
 

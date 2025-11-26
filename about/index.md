@@ -41,6 +41,6 @@ Blog site("Leehow的小站", "Leehow", "https://www.haoyep.com");
 
 ---
 
-> 作者: <no value>  
+> 作者: [Leehow](https://www.haoyep.com/)  
 > URL: https://www.haoyep.com/about/  
 

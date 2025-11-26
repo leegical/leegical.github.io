@@ -5,48 +5,59 @@
 const RNC = new (function () {
   const $music = document.querySelector('.netease-music');
   const $comment = document.querySelector('.comment-163');
+  const $loading = document.querySelector('.loading-indicator-wrapper');
   let lastMusic = void 0;
+  let timer = void 0;
+  const TIME_OUT = 60;
 
   /**
    * 获取随机网易云评论
    * @param {Boolean} [autoplay=false] 是否自动播放
+   * @param {Boolean} [current=false] 是否播放当前评论的音乐
    * @name RNC#getRandomComment
    */
-  this.getRandomComment = (autoplay=false) => {
-    fetch(`https://api.uomg.com/api/comments.163?mid=${$music.dataset.mid}`)
-    .then(response => response.json())
-    .then((comment) => {
-      const nickname = comment.data?.nickname || '未知用户';
-      const musicURL = comment.data?.url;
-      if (comment.data.picurl) {
-        $comment.querySelector('.pic-backdrop').style.backgroundImage = `url(${comment.data.picurl.slice(5)})`;
-      }
-      if (comment.data.avatarurl) {
-        const $avatar = $comment.querySelector('.comment-avatar');
-        $avatar.alt = `${nickname}'s avatar`;
-        $avatar.src = comment.data.avatarurl.slice(5);
-        $avatar.classList.remove('d-none');
-      }
-      $comment.querySelector('.comment-nickname').innerHTML = nickname;
-      $comment.querySelector('.comment-content').innerHTML = comment.data.content?.replace('\n','<br/>');
-      $comment.querySelector('.music-name').innerHTML = comment.data?.name;
-      $comment.querySelector('.artists-name').innerHTML = comment.data?.artistsname;
-      if (!musicURL) { return; }
-      if (!lastMusic || (lastMusic !== musicURL)) {
-        const $player = document.createElement('meting-js');
-        $player.setAttribute('auto', musicURL);
-        $player.setAttribute('autoplay', autoplay);
-        $music.dataset.fixed && $player.setAttribute('fixed', $music.dataset.fixed);
-        $music.dataset.mini && $player.setAttribute('mini', $music.dataset.mini);
-        $music.dataset.volume && $player.setAttribute('volume', $music.dataset.volume);
-        $music.innerHTML = '';
-        $music.appendChild($player);
-        lastMusic = musicURL;
-      }
-    }).catch((error) => {
-      console.error('Error fetching comment:', error);
-      $comment.querySelector('.comment-content').innerHTML = '获取评论失败，请稍后再试';
-    });
+  this.getRandomComment = (autoplay = false, current = false) => {
+    $comment.classList.toggle('d-none');
+    $loading.classList.toggle('d-none');
+    fetch(`https://api.lruihao.cn/netease/comment?mid=${$music.dataset.mid}`)
+      .then(response => response.json())
+      .then((comment) => {
+        const nickname = comment.data?.nickname || '未知用户';
+        const musicURL = comment.data?.musicUrl;
+        if (comment.data.picUrl) {
+          $comment.querySelector('.pic-backdrop').style.backgroundImage = `url(${comment.data.picUrl.slice(5)})`;
+        }
+        if (comment.data.avatarUrl) {
+          const $avatar = $comment.querySelector('.comment-avatar');
+          $avatar.alt = `${nickname}'s avatar`;
+          $avatar.src = comment.data.avatarUrl.slice(5);
+          $avatar.classList.remove('d-none');
+        }
+        $comment.querySelector('.comment-nickname').innerHTML = nickname;
+        $comment.querySelector('.comment-time').innerHTML = comment.data.timeStr;
+        $comment.querySelector('.comment-liked').innerHTML = comment.data.likedCount;
+        $comment.querySelector('.comment-content').innerHTML = comment.data.content?.replace('\n', '<br/>');
+        $comment.querySelector('.music-name').innerHTML = comment.data?.musicName;
+        $comment.querySelector('.artists-name').innerHTML = comment.data?.artist;
+        if (!musicURL || !current) { return; }
+        if (!lastMusic || (lastMusic !== musicURL)) {
+          const $player = document.createElement('meting-js');
+          $player.setAttribute('auto', musicURL);
+          $player.setAttribute('autoplay', autoplay);
+          $music.dataset.fixed && $player.setAttribute('fixed', $music.dataset.fixed);
+          $music.dataset.mini && $player.setAttribute('mini', $music.dataset.mini);
+          $music.dataset.volume && $player.setAttribute('volume', $music.dataset.volume);
+          $music.innerHTML = '';
+          $music.appendChild($player);
+          lastMusic = musicURL;
+        }
+      }).catch((error) => {
+        console.error('Error fetching comment:', error);
+        $comment.querySelector('.comment-content').innerHTML = '获取评论失败，请稍后再试...';
+      }).finally(() => {
+        $comment.classList.toggle('d-none');
+        $loading.classList.toggle('d-none');
+      });
   };
 
   /**
@@ -64,6 +75,16 @@ const RNC = new (function () {
     }
   };
 
+  this.refresh = (autoplay = false, current = false) => {
+    this.getRandomComment(autoplay, current);
+    if (timer) {
+      clearInterval(timer);
+    }
+    timer = setInterval(() => {
+      this.getRandomComment(autoplay, current);
+    }, TIME_OUT * 1000);
+  };
+
   /**
    * 初始化 mmt-netease shortcode
    * @name RNC#initRandomComment
@@ -73,10 +94,23 @@ const RNC = new (function () {
       return;
     }
     this.getRequire();
-    this.getRandomComment();
     $comment.addEventListener('click', () => {
-      this.getRandomComment($music.dataset.autoplay);
+      this.refresh($music.dataset.autoplay, $music.dataset.current);
     });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // 进入视口时开始获取评论
+          this.refresh();
+          // 取消观察
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    const target = document.querySelector('.section-comment');
+    if (target) {
+      observer.observe(target);
+    }
   };
 })();
 
