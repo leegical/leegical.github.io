@@ -6,7 +6,7 @@
 
 ## 2025
 
-<details open>
+<details>
 <summary>共计 1 篇文章</summary>
 
 - 01-19 [利用 Cloudflare Pages 和 BPB 面板搭建个人专属免费VPN订阅节点, 避免 1101 等报错](https://www.haoyep.com/posts/cf-bpb-vpn/ "2025-01-19 01:32:43")
