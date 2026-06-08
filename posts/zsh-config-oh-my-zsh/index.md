@@ -13,9 +13,12 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install zsh git curl -y
 ```
 
-设置默认终端为 zsh（**注意：不要使用 sudo**）。
+设置默认终端为 zsh（**注意：不要使用 sudo**）。然后注销并重新登录用户，使更改生效。
 ```bash
 chsh -s /bin/zsh
+
+# 如果无效，尝试采用这个命令
+chsh -s $(which zsh)
 ```
 ### 安装 oh-my-zsh
 官网：[http://ohmyz.sh/](http://ohmyz.sh/)。
